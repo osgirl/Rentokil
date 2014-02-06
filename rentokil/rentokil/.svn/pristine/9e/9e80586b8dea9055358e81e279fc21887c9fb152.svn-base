@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>User Account Screen (logged in)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <!-- Le styles -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <link href="css/datepicker.css" rel="stylesheet">
+        <!-- 
+               HTML5 shim, for IE6-8 support of HTML5 elements 
+               Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+        <!--[if lt IE 9]>
+              <script src="js/html5shiv.js"></script>
+        <![endif]-->
+        <!--[if IE]>
+            <link href="css/edfm-ie.css" rel="stylesheet">
+        <![endif]-->
+        <script type="text/javascript">
+            var loadFileName = 'userbuildingservices_body.html', module_code ='L1BSS';
+        </script>
+    </head>
+    <body>
+        <!--  Models Start -->
+        <div id="divProfileEdit" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:625px">
+        </div>
+        <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+        <div id="divImport" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                <h3 id="myModalLabel">Upload new document</h3>
+            </div>
+            <div class="modal-body">
+                <div id="divUploadfile"></div>
+                <div class="progress progress-info" id="divProgressBar" style="display:none;">
+                    <div class="bar" style="width: 0%" id="divProgressVal"></div>
+                </div>
+                <br>
+                <div id="lblImportError" class="alert alert-error hide"></div>
+                <div id="lblImportSuccess" class="alert alert-success hide"></div>
+            </div>
+            <div class="modal-footer">
+
+                <button class="btn btn-primary" href="#" id="btnImportSubmit" name="btnImportSubmit">Submit</button>
+                <button class="btn btn-primary disabled" id="btnImportFinish" name="btnImportFinish" style="display:none;">Finish</button>
+            </div>
+        </div>
+        <div id="divUploadNewImport" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                <h3 id="myModalLabel">Upload new document</h3>
+            </div>
+            <div class="modal-body" style="padding-bottom:0px;">
+                <div id="divUploadNewdocuments"></div>
+                <div class="progress progress-info" id="divProgressBar" style="display:none;">
+                    <div class="bar" style="width: 0%" id="divProgressVal"></div>
+                </div>
+                <br />
+                <div id="lblImportError" class="alert alert-error hide"></div>
+                <div id="lblImportSuccess" class="alert alert-success hide"></div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadNewDocumentClose" name="UploadNewDocumentClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" href="#" id="btnDocumentImportSubmit" name="btnDocumentImportSubmit">Submit</button>
+                <a class="btn btn-primary" data-toggle="modal" id="btnDocumentImportFinish" name="btnDocumentImportFinish" data-dismiss="modal" style="margin-left: 80%; margin-top: 3%; width: 14%; height: 18px;">Finish</a>
+                <!--<button class="btn btn-primary" href="#" id="btnImportFinish" name="btnImportFinish" style="display:none;">Finish</button>-->
+            </div>
+        </div>
+        <!-- Documents Update Functionality -->
+        <div id="divUploadUpdate" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Update</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <label style="width: 85px;">Status</label>
+                    <span class="select-wrap" style="display: inline-block;vertical-align: middle;width: 70%;"><select id="ddlDocumentStatus" style="width:100%;"></select></span>
+                    <a class="btn btn-primary " id="btnDocumentSave" name="btnDocumentSave" disabled>Saved</a>
+                </form>       
+                <label>Comments</label>
+                <div style="border: 1px solid #DDD;padding: 10px;">
+                    <div class="container-fluid" style="height:100px; overflow-y: auto;" id="divDocumentComments">
+                    </div>
+                </div>
+                <div style="border: 1px solid #DDD;padding: 10px;">
+                    <div class="control-group form-inline input-append" style="margin-bottom:0px;white-space: normal" >
+                        <textarea id='txaComments' placeholder='Enter text....' style="width: 86%;height:50px ;resize: none;" maxlength="250"></textarea>
+                        <button class="btn btn-primary btn-large" type="button" id="btnSaveComments" disabled style="height:60px;">Post</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">	
+                <label id="btnDocumentUpdateClosestatus" style="margin-left: 0px; float:left; color:red;"></label>
+                <a data-toggle="modal" id="btnDocumentUpdateClose" name="btnDocumentUpdateClose" class="btn"
+                   data-dismiss="modal">Close</a>
+
+                <!--<button class="btn btn-primary" href="#" data-toggle="modal" id="btnDocumentUpdateClose"
+                        name="btnDocumentUpdateClose">Close</button>-->
+            </div>
+        </div>
+        <div id="divUploadNewImport" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                <h3 id="myModalLabel">Upload new document</h3>
+            </div>
+            <div class="modal-body" style="padding-bottom:0px;">
+                <div id="divUploadNewdocuments"></div>
+                <div class="progress progress-info" id="divProgressBar" style="display:none;">
+                    <div class="bar" style="width: 0%" id="divProgressVal"></div>
+                </div>
+                <br />
+                <div id="lblImportError" class="alert alert-error hide"></div>
+                <div id="lblImportSuccess" class="alert alert-success hide"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" href="#" id="btnDocumentImportSubmit" name="btnDocumentImportSubmit">Submit</button>
+                <a class="btn btn-primary" data-toggle="modal" id="btnDocumentImportFinish" name="btnDocumentImportFinish" data-dismiss="modal" style="margin-left: 80%; margin-top: 3%; width: 14%; height: 18px;">Finish</a>
+                <!--<button class="btn btn-primary" href="#" id="btnImportFinish" name="btnImportFinish" style="display:none;">Finish</button>-->
+            </div>
+        </div>
+        <!-- Confirmation Box -->
+        <div id="divUploadDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Confirm Delete</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <label> Are you sure you want to delete?</label>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDeleteNo" name="UploadDeleteNo" data-dismiss="modal" >Cancel</a>
+                <a class="btn btn-primary" href="#" data-toggle="modal" id="UploadDeleteYes" name="UploadDeleteYes">Delete</a>		
+            </div>
+        </div>
+        <div id="UploadDeleteIdY" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Deleted</h3>
+            </div>
+            <div class="modal-body">
+                <label> Success. The document has been deleted</label>
+            </div>
+            <div class="modal-footer">			
+                <button class="btn" href="#AddYear" data-dismiss="modal" data-toggle="modal" id="btnNewAddYear"
+                        name="btnNewAddYear">Close</button>
+            </div>	
+        </div>
+        <!-- Confirmation Box -->
+        <div id="divUploadDeleteFail" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Delete</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <label> Only Completed documents can be deleted.</label>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDeleteClose" name="UploadDeleteClose" data-dismiss="modal" >Close</a>
+            </div>
+        </div>
+        <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+        <!--  Models End -->
+
+        <div class="container" id="divcontainer">
+
+        </div><!-- /container -->
+
+        <footer class="row-fluid footer" id="userfooter"></footer> <!-- /row -->
+
+        <!-- The javascript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="minjs/userbuildingservices.min.js"></script>     
+    </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Customer building services(logged in)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Initial prototype">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <!-- Le styles -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <link href="css/datepicker.css" rel="stylesheet">
+        <!-- 
+           HTML5 shim, for IE6-8 support of HTML5 elements 
+               Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+        <!--[if lt IE 9]>
+              <script src="js/html5shiv.js"></script>
+        <![endif]-->
+        <!--[if IE]>
+            <link href="css/edfm-ie.css" rel="stylesheet">
+        <![endif]-->
+        <script type="text/javascript">
+            var loadFileName = 'cabuildingservices_body.html'
+        </script>
+    </head>
+    <body>
+        <!--  Models Start -->
+        <div id="divProfileEdit" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:625px">
+        </div>
+        <div id="selectCreate" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+        <div id="divImport" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                <h3 id="myModalLabel">Upload settings</h3>
+            </div>
+            <div class="modal-body">
+                <div id="divUploadfile"></div>
+                <div class="progress progress-info" id="divProgressBar" style="display:none;">
+                    <div class="bar" style="width: 0%" id="divProgressVal"></div>
+                </div>
+                <br>
+                <div id="lblImportError" class="alert alert-error hide"></div>
+                <div id="lblImportSuccess" class="alert alert-success hide"></div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDataClose" name="UploadDataClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" href="#" id="btnImportSubmit" name="btnImportSubmit">Submit</button>
+                <button class="btn btn-primary disabled" id="btnImportFinish" name="btnImportFinish" style="display:none;">Finish</button>
+            </div>
+        </div>
+        <div id="HistoryModalBox" data-backdrop="static" data-keyboard="false" class="modal hide fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                <h3 id="HistoryModalHeader">History</h3>
+            </div>
+            <div class="modal-body">
+                <label id="HistoryLabel" style="">Revision history for setupdata.csv</label>
+                <br>
+                <div class="row-fluid">
+                    <div class="span12" id="divHistory">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+
+
+        </div>
+        <!-- Documents Update Functionality -->
+        <div id="divUploadUpdate" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Update</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <label style="width: 85px;">Status</label>
+                    <span class="select-wrap" style="display: inline-block;vertical-align: middle;width: 70%;"><select id="ddlDocumentStatus" style="width:100%;"></select></span>
+                    <a class="btn btn-primary " id="btnDocumentSave" name="btnDocumentSave" disabled>Saved</a>
+                </form>       
+                <label>Comments</label>
+                <div style="border: 1px solid #DDD;padding: 10px;">
+                    <div class="container-fluid" style="height:100px; overflow-y: auto;" id="divDocumentComments">
+                    </div>
+                </div>
+                <div style="border: 1px solid #DDD;padding: 10px;">
+                    <div class="control-group form-inline input-append" style="margin-bottom:0px;white-space: normal" >
+                        <textarea id='txaComments' placeholder='Enter text....' style="width: 86%;height:50px ;resize: none;" maxlength="250"></textarea>
+                        <button class="btn btn-primary btn-large" type="button" id="btnSaveComments" disabled style="height:60px;">Post</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">	
+                <label id="btnDocumentUpdateClosestatus" style="margin-left: 0px; float:left; color:red;"></label>
+                <a data-toggle="modal" id="btnDocumentUpdateClose" name="btnDocumentUpdateClose" class="btn"
+                   data-dismiss="modal">Close</a>
+
+                <!--<button class="btn btn-primary" href="#" data-toggle="modal" id="btnDocumentUpdateClose"
+                        name="btnDocumentUpdateClose">Close</button>-->
+            </div>
+        </div>
+        <div id="divUploadNewImport" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                <h3 id="myModalLabel">Upload new document</h3>
+            </div>
+            <div class="modal-body" style="padding-bottom:0px;">
+                <div id="divUploadNewdocuments"></div>
+                <div class="progress progress-info" id="divProgressBar" style="display:none;">
+                    <div class="bar" style="width: 0%" id="divProgressVal"></div>
+                </div>
+                <br />
+                <div id="lblImportError" class="alert alert-error hide"></div>
+                <div id="lblImportSuccess" class="alert alert-success hide"></div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDocumentClose" name="UploadDocumentClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" href="#" id="btnDocumentImportSubmit" name="btnDocumentImportSubmit">Submit</button>
+                <a class="btn btn-primary" data-toggle="modal" id="btnDocumentImportFinish" name="btnDocumentImportFinish" data-dismiss="modal" style="margin-left: 80%; margin-top: 3%; width: 14%; height: 18px;">Finish</a>
+                <!--<button class="btn btn-primary" href="#" id="btnImportFinish" name="btnImportFinish" style="display:none;">Finish</button>-->
+            </div>
+        </div>
+        <!-- Confirmation Box -->
+        <div id="divUploadDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Confirm Delete</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <label> Are you sure you want to delete the selected document?</label>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDeleteNo" name="UploadDeleteNo" data-dismiss="modal" >Cancel</a>
+                <a class="btn btn-primary" href="#" data-toggle="modal" id="UploadDeleteYes" name="UploadDeleteYes">Delete</a>		
+            </div>
+        </div>
+        <!-- Documents Update Functionality -->
+        <div id="divUploadUpdate" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Update</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <table style="width:100%">
+                    <tr>
+                        <td><label >Status</label></td>
+                        <td><table><tr><td><span class="select-wrap"><select id="ddlDocumentStatus"></select></span></td>
+                                    <td><a class="btn btn-primary" id="btnDocumentSave" name="btnDocumentSave" disabled>Save</a></td></tr></table>
+                        </td>
+
+                    </tr>
+                    <tr><td colspan="2"><label>Comments</label></td></tr>
+                    <tr><td colspan="2">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td><div class="container-fluid" style="height:100px; overflow-y: auto;" id="divDocumentComments">
+                                        </div></td>
+                                </tr>
+                                <tr><td>
+                                        <div class="control-group form-inline input-append" style="margin-bottom:-5px;">
+                                            <textarea id='txaComments' placeholder='Enter text....' style="width: 85%;height:50px ;resize: none;"></textarea>
+                                            <button class="btn btn-primary btn-large" type="button" id="btnSaveComments" disabled style="height:60px;">Post</button>
+                                        </div>
+                                    </td></tr>
+                            </table>
+                        </td></tr>
+                </table>
+            </div>
+            <div class="modal-footer" style="margin-top:-30px;">	
+                <label id="btnDocumentUpdateClosestatus" style="margin-left: 0px; float:left; color:red;"></label>
+                <a data-toggle="modal" id="btnDocumentUpdateClose" name="btnDocumentUpdateClose" class="btn"
+                   data-dismiss="modal">Close</a>
+
+                <!--<button class="btn btn-primary" href="#" data-toggle="modal" id="btnDocumentUpdateClose"
+                        name="btnDocumentUpdateClose">Close</button>-->
+            </div>
+        </div>
+        <div id="UploadDeleteIdY" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Deleted</h3>
+            </div>
+            <div class="modal-body">
+                <label> Success. The document has been deleted</label>
+            </div>
+            <div class="modal-footer">			
+                <button class="btn" href="#AddYear" data-dismiss="modal" data-toggle="modal" id="btnNewAddYear"
+                        name="btnNewAddYear">Close</button>
+            </div>	
+        </div>
+        <!-- Confirmation Box -->
+        <div id="divUploadDeleteFail" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Delete</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <label> Only Completed documents can be deleted.</label>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDeleteClose" name="UploadDeleteClose" data-dismiss="modal" >Close</a>
+            </div>
+        </div>
+        <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+        <!--  Models End -->
+        <div class="container" id="divcontainer">
+        </div><!-- /container -->
+        <footer class="row-fluid footer" id="cafooter"></footer>
+        <!-- /row -->
+
+        <!-- The javascript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+       <script src="minjs/cabuildingservices.min.js"></script> 
+       <script type="text/javascript">
+            function LoadPageData() {
+                //Check the session exists
+                //Get the customer data from the database.
+
+                $("#spnContractName").html(localStorage["CUSTOMERNAME"]);
+                loadSetUpEntities();
+                customerModuleAccess('AL3SED', 1);
+
+                $("#SetUpEntitesTab").click(function() {
+                    $("#btnImport").text("Import Setup Data");
+                    activeFormType = 'setup';
+                    loadSetUpEntities();
+                    customerModuleAccess('AL3SED', 1);
+                });
+                $("#NhhReportsTab").click(function() {
+                    $("#btnImport").text("Import NHH Data");
+                    activeFormType = 'nhh';
+                    loadNHHreport();
+                    customerModuleAccess('AL3NHHD', 1);
+                });
+                $("#TargetDataTab").click(function() {
+                    $("#btnImport").text("Import Target Data");
+                    activeFormType = 'target';
+                    loadTargetData();
+                    customerModuleAccess('AL3SETD', 1);
+                });
+                $("#HhReportsTab").click(function() {
+                    $("#btnImport").text("Import HH Data");
+                    activeFormType = 'hh';
+                    loadHHreport();
+                    customerModuleAccess('AL3HHD', 1);
+                });
+                $("#ReportsTab").click(function() {
+                    $("#btnImport").text("Upload New Document");
+                    activeFormType = 'energy_document_admin';
+                    loadMyDocuments();
+                    customerModuleAccess('AL3BDOC', 1);
+                });
+                $("#chkHideComplete", "#documents").bind("click", loadMyDocuments);
+                $("#PurgeDataTab").bind("click", purgeData);
+            }
+
+        </script>
+        <style>
+            @media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {
+                #tblsetupHeader.no-more-tables td:nth-of-type(1):before { content: "Filename"; }
+                #tblsetupHeader.no-more-tables td:nth-of-type(2):before { content: "File Imported Date"; } 
+                #tblsetupHeader.no-more-tables td:nth-of-type(3):before { content: "Last Modified On"; } 
+                #tblsetupHeader.no-more-tables td:nth-of-type(4):before { content: "Last Modified By"; } 
+                #tblsetupHeader.no-more-tables td:nth-of-type(5):before { content: "New Records Added"; }
+                #tblsetupHeader.no-more-tables td:nth-of-type(6):before { content: "Existing Records Amended"; }
+                #HhtblHeader.no-more-tables td:nth-of-type(1):before { content: "Filename"; }
+                #HhtblHeader.no-more-tables td:nth-of-type(2):before { content: "File Imported Date"; } 
+                #HhtblHeader.no-more-tables td:nth-of-type(3):before { content: "Last Modified On"; } 
+                #HhtblHeader.no-more-tables td:nth-of-type(4):before { content: "Last Modified By"; } 
+                #HhtblHeader.no-more-tables td:nth-of-type(5):before { content: "New Records Added"; }
+                #HhtblHeader.no-more-tables td:nth-of-type(6):before { content: "Existing Records Amended"; }
+                #NhhtblHeader.no-more-tables td:nth-of-type(1):before { content: "Filename"; }
+                #NhhtblHeader.no-more-tables td:nth-of-type(2):before { content: "File Imported Date"; } 
+                #NhhtblHeader.no-more-tables td:nth-of-type(3):before { content: "Last Modified On"; } 
+                #NhhtblHeader.no-more-tables td:nth-of-type(4):before { content: "Last Modified By"; } 
+                #NhhtblHeader.no-more-tables td:nth-of-type(5):before { content: "New Records Added"; }
+                #NhhtblHeader.no-more-tables td:nth-of-type(6):before { content: "Existing Records Amended"; }
+                #TargettblHeader.no-more-tables td:nth-of-type(1):before { content: "Filename"; }
+                #TargettblHeader.no-more-tables td:nth-of-type(2):before { content: "File Imported Date"; } 
+                #TargettblHeader.no-more-tables td:nth-of-type(3):before { content: "Last Modified On"; } 
+                #TargettblHeader.no-more-tables td:nth-of-type(4):before { content: "Last Modified By"; } 
+                #TargettblHeader.no-more-tables td:nth-of-type(5):before { content: "New Records Added"; }
+                #TargettblHeader.no-more-tables td:nth-of-type(6):before { content: "Existing Records Amended"; }
+            }
+        </style>
+    </body>
+</html>

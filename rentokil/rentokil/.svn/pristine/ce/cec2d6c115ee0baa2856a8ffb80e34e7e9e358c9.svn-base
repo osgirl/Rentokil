@@ -1,0 +1,82 @@
+h1.logo a {
+	background: transparent url('../img/eden-logo.png') no-repeat;
+}
+
+
+@media (max-width: 767px) {
+	h1.logo a {
+		background: transparent url('../img/eden-logo-small.png') no-repeat;
+	}
+}
+
+userlogininfo .accountlinks {
+	color: #154401;
+}
+.userlogininfo .accountlinks a {
+	color: #154401;
+}
+
+.userlogininfo .accountlinks a:hover {
+	color: #000000;
+}
+
+h3 {
+	color: #154401;
+}
+h5 {
+	color: #154401;
+}
+footer h3 {
+	color:#154401;
+}
+footer div.footercontent p span {
+	color: #154401;
+}
+.modal-header h3 {
+	color:#154401;
+}
+
+a	{
+	color: #154401;
+}
+
+
+a:hover {
+	color: #000000;
+}
+
+body {
+	background-image:url('../img/eden-bodybg.png');
+	background-color: #eaf5e2;
+	background-repeat:repeat-x;
+}
+
+body.guest {
+	background-image:url('../img/eden-bodybg-guest.png');
+	background-repeat:repeat-x;
+}
+
+body.dashboard{
+	background-image:url('../img/eden-bodybg-index.png');
+	background-repeat:repeat-x;
+}
+
+.widget {
+	background: #fff url('../img/eden-widgetbg.png') repeat-x top;
+}
+
+select {
+	background-image: url('../img/eden-selectbg.png');
+}
+
+span.select-wrap {
+	background: url('../img/eden-selectbg.png') no-repeat right 0px;
+}
+div.footercontent span.footerContentlinks a, div.footercontent span.footerContentlinks a:visited {
+		color: #154401;
+		text-decoration: none;
+}
+div.footercontent span.footerContentlinks a:hover {
+		text-decoration: underline;
+		}
+.footer .copyright {color: #154401;font-family: 'helveticaneuelt_std_ltregular', arial; padding-top: 10px; font-size: 13px; padding: 10px;line-height:30px;}

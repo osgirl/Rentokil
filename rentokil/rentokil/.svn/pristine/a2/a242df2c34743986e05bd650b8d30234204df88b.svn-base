@@ -1,0 +1,9 @@
+<div class="span6"><h1 class="logo"><a href="customerpage.html">EDFM</a></h1></div><!-- text is hidden -->
+<div class="span6 alignright userlogininfo">
+    <div class="username" id="divWelcome"></div>
+    <br/>
+    <div class="accountlinks" ><a href="#selectCreate" id="btnManageContract" data-toggle="modal" name="btnManageContract">Manage Contracts</a> | <a href="#divProfileEdit" id="btnProfileEdit" data-toggle="modal"
+                                                                                                                                                     name="btnProfileEdit">My Profile</a> | <a href="#" id="btnLogout" name="btnLogout">Logout</a></div>
+	<div id="header-divider"><img src="img/header-logininfo-divider.png" class="logininfodivider"></div>
+    <div class="location"  id="divLoggedAs"></div>
+</div>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Customer Performancereports (logged in)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+<meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+<meta http-equiv="Cache Control: no-cache" />
+<meta http-equiv="Pragma" content="no-cache" /> 
+<meta http-equiv="Pragma: no-cache" />
+<!-- Le styles -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/edfm-custom.css" rel="stylesheet">
+ <!-- 
+        HTML5 shim, for IE6-8 support of HTML5 elements 
+        Avoid using CDN-based scripts to stop untested updates breaking things!
+    -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if IE]>
+        <link href="css/edfm-ie.css" rel="stylesheet">
+    <![endif]-->
+<script type="text/javascript">
+	var loadFileName = 'caperformancereports_body.html'
+</script>
+</head>
+<body>
+<!--  Models Start -->
+	<div id="divProfileEdit" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:625px">
+	</div>
+	<div id="selectCreate" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	</div>
+	<div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   	</div>
+<!--  Models End -->
+ <div class="container" id="divcontainer">
+</div><!-- /container -->
+        
+<footer class="row-fluid footer" id="cafooter"></footer> <!-- /row -->
+
+	<!-- The javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!--DE 521 session check and redirecting to homepage-->
+	<script>
+	if ((localStorage['SESSIONID'] == '')|| (localStorage['SESSIONID'] == undefined)) {
+		localStorage.clear();
+		location.href = 'index.html';													
+	}
+	</script>
+	<script src="minjs/caperformancereports.min.js"></script> 
+        <script type="text/javascript">
+	function LoadPageData(){ 
+			//Check the session exists
+			//Get the customer data from the database.
+			$("#spnContractName").html(localStorage["CUSTOMERNAME"]);
+			//$("#divLoading").modal('hide');
+		}
+	</script>
+</body>
+</html>

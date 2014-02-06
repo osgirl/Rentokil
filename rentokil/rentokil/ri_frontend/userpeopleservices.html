@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>User Account Screen (logged in)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <!-- Le styles -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <link href="css/print.css" rel="stylesheet" type="text/css" media="print">
+        <link href="css/datepicker.css" rel="stylesheet">
+        <link href="css/bootstrapweek.css" rel="stylesheet">
+
+        <style>
+            body {
+            }
+            <!--.dirtyForm {background-color:#ffffcc;}-->
+            .dirtyChoice {font-style:italic;font-weight:bold;}
+			.row-fluid [class*="span"]:nth-child(4n+1) {
+			  margin-left : 0px;
+			} 
+        </style>
+        <!-- 
+                HTML5 shim, for IE6-8 support of HTML5 elements 
+                Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+        <!--[if lt IE 9]>
+                  <script src="js/html5shiv.js"></script>
+            <![endif]-->
+        <!--[if IE]>
+                <link href="css/edfm-ie.css" rel="stylesheet">
+            <![endif]-->
+
+        <script type="text/javascript">var loadFileName = 'userpeopleservices_body.html', module_code ='L1PSS';</script>
+    </head>
+    <body>
+        <!--  Models Start -->
+        <div id="divProfileEdit" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:625px"></div>
+        <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+        <!-- Add Pupil Popup -->
+        <div id="divAddPupil" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmAddpupil" id="frmAddpupil" method="post"> 
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xNewCustomerAdmin" name="xNewCustomerAdmin">x</button>
+                    <h3 id="myModalLabel">
+                        Add a pupil</h3>
+                </div>
+                <div class="modal-body">               							
+                    <div class="control-group form-horizontal">
+                        <label class="control-label" class="span1" style="margin-left:0px;width: 64px;">Pupil Id</label>                                                                                        
+                        <input type="text" name="AddPupilId" id="AddPupilId" placeholder="enter text...." />
+                    </div>							 
+                    <label style="margin-right: 15px;"></label> 
+                    <!-- US 312 Various UI tidies item 23 label alignment-->
+                    <div class="control-group form-horizontal">
+                        <label class="control-label" class="span1" style="margin-left:0px;visibility:hidden;width: 64px;">Pupil Id</label>                                                                                        
+                        <label>Your pupil's ID number is issued from your school</label> 
+                    </div>                     
+                </div>
+            </form>
+            <div class="modal-footer">
+                <div class="controls"  >
+
+
+                    <!-- <p><input type="text" class="alert alert-error" id="inputError" style="text-align:center; display:none;"  disabled><button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </p> -->
+                </div> 
+                <div id="AddPupilFooterLabelError">
+                    <label id="AddPupilFooterLabel" style="margin-left: 0px; float:left;"></label>
+                </div>
+                <a class="btn" data-toggle="modal" id="btnNewAddPupilAdminClose" name="btnNewAddPupilAdminClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" href="#" data-toggle="modal" id="btnNewAddPupilAdminSubmit"
+                        name="btnNewAddPupilAdminSubmit">Submit</button>
+            </div>
+        </div>
+        <div id="divUploadNewImport" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                <h3 id="myModalLabel">Upload new document</h3>
+            </div>
+            <div class="modal-body" style="padding-bottom:0px;">
+                <div id="divUploadNewdocuments"></div>
+                <div class="progress progress-info" id="divProgressBar" style="display:none;">
+                    <div class="bar" style="width: 0%" id="divProgressVal"></div>
+                </div>
+                <br />
+                <div id="lblImportError" class="alert alert-error hide"></div>
+                <div id="lblImportSuccess" class="alert alert-success hide"></div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDocumentClose" name="UploadDocumentClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" href="#" id="btnDocumentImportSubmit" name="btnDocumentImportSubmit">Submit</button>
+                <a class="btn btn-primary" data-toggle="modal" id="btnDocumentImportFinish" name="btnDocumentImportFinish" data-dismiss="modal" style="margin-left: 80%; margin-top: 3%; width: 14%; height: 18px;">Finish</a>
+
+                <!--<button class="btn btn-primary" href="#" id="btnImportFinish" name="btnImportFinish" style="display:none;">Finish</button>-->
+            </div>
+        </div>
+        <!-- Success popup -->
+        <div id="addchild" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xCreateCustomer" name="xCreateCustomer">x</button>
+                <h3 id="myModalLabel">Add a Child</h3>
+            </div>
+            <div class="modal-body">
+                <label style="margin-left: 15px;">Success. Your child has succesfully been enrolled onto the system.</label>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="createAddCloseBtn" name="createAddCloseBtn" data-dismiss="modal" style="margin-left: 80%; margin-top: 3%; width: 14%; height: 18px;">Close</a>
+            </div>
+        </div>	
+        <!-- Confirmation Box -->
+        <div id="divUploadDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Confirm Delete</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <label> Are you sure you want to delete?</label>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDeleteNo" name="UploadDeleteNo" data-dismiss="modal" >Cancel</a>
+                <a class="btn btn-primary" href="#" data-toggle="modal" id="UploadDeleteYes" name="UploadDeleteYes">Delete</a>		
+            </div>
+        </div>
+        <!-- Documents Update Functionality -->
+        <div id="divUploadUpdate" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Update</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <label style="width: 85px;">Status</label>
+                    <span class="select-wrap" style="display: inline-block;vertical-align: middle;width: 70%;"><select id="ddlDocumentStatus" style="width:100%;"></select></span>
+                    <a class="btn btn-primary " id="btnDocumentSave" name="btnDocumentSave" disabled>Saved</a>
+                </form>       
+                <label>Comments</label>
+                <div style="border: 1px solid #DDD;padding: 10px;">
+                    <div class="container-fluid" style="height:100px; overflow-y: auto;" id="divDocumentComments">
+                    </div>
+                </div>
+                <div style="border: 1px solid #DDD;padding: 10px;">
+                    <div class="control-group form-inline input-append" style="margin-bottom:0px;white-space: normal" >
+                        <textarea id='txaComments' placeholder='Enter text....' style="width: 86%;height:50px ;resize: none;" maxlength="250"></textarea>
+                        <button class="btn btn-primary btn-large" type="button" id="btnSaveComments" disabled style="height:60px;">Post</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">	
+                <label id="btnDocumentUpdateClosestatus" style="margin-left: 0px; float:left; color:red;"></label>
+                <a data-toggle="modal" id="btnDocumentUpdateClose" name="btnDocumentUpdateClose" class="btn"
+                   data-dismiss="modal">Close</a>
+
+                <!--<button class="btn btn-primary" href="#" data-toggle="modal" id="btnDocumentUpdateClose"
+                        name="btnDocumentUpdateClose">Close</button>-->
+            </div>
+        </div>
+        <div id="UploadDeleteIdY" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Deleted</h3>
+            </div>
+            <div class="modal-body">
+                <label> Success. The document has been deleted</label>
+            </div>
+            <div class="modal-footer">			
+                <button class="btn" href="#AddYear" data-dismiss="modal" data-toggle="modal" id="btnNewAddYear"
+                        name="btnNewAddYear">Close</button>
+            </div>	
+        </div>
+        <!-- Confirmation Box -->
+        <div id="divUploadDeleteFail" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Delete</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <label> Only Completed documents can be deleted.</label>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDeleteClose" name="UploadDeleteClose" data-dismiss="modal" >Close</a>
+            </div>
+        </div>
+        <!-- Pupil search for cash Payment -->
+        <div id="divAddPupilPay" data-backdrop="static" data-keyboard="false" class="modal hide fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" id="divheaderpupilsearch" name="xNewCustomerAdmin">x</button>
+                <h3 id="myModalLabel">Pupil Search</h3>
+            </div>
+            <div class="modal-body" style="height:210px;">
+                <form id="frmPupilSearch">
+                    <div id="divPupilSearch">
+                        <div class="control-group">
+                            <label class="span2" style="margin-left:0px;width: 125px;">Pupil ID</label>
+                            <input type="text" class="input-xmedium" name="txtSearchPupilId" id="txtSearchPupilId"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="FirstName" class="span2" style="margin-left:0px;width: 125px;">First Name</label>
+                            <input type="text" class="input-xmedium" name="txtSearchFname" id="txtSearchFname"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="LastName" class="span2" style="margin-left:0px;width: 125px;">Middle Name</label>
+                            <input type="text" class="input-xmedium" name="txtSearchMname" id="txtSearchMname"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="Email" class="span2" style="margin-left:0px;width: 125px;">Last Name</label>
+                            <input type="text" class="input-xmedium" name="txtSearchLname" id="txtSearchLname"/>
+                        </div>
+                    </div>
+                </form>
+                <div id="divPopulatepupils" style="display:none;">
+                    <div class="tab-content" id="AddPupil_pagination">
+                        <div class="tab-pane active" id="tab2">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <form name="pupilData" id="pupilData">
+                                        <table class="table table-hover table-striped table-bordered edfm-bordered-table"
+                                               name="tblPupilSearch" id="tblPupilSearch"
+                                               style="display: none !important;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:16%">Pupil Name</th>
+                                                    <th>Pupil ID</th>
+                                                    <th>Free Meals?</th>
+                                                    <th>School</th>
+                                                    <th>Year</th>
+                                                    <th>Class</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /tab -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <label id="lblpupilsearcherror" class="alert alert-error hide" style="margin-left: 0px; float:left;margin-bottom: -4px;margin-top: -6px;"></label>
+                <a class="btn" data-toggle="modal" id="btnPupilSearchClose" name="btnPupilSearchClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" href="#" data-toggle="modal" id="btnPupilSearch" name="btnPupilSearch">Search</button>
+                <button class="btn btn-primary hide" href="#" data-toggle="modal" id="btnPupilSubmit" name="btnPupilSearch">Submit</button>
+                <button class="btn btn-primary hide" href="#" data-toggle="modal" id="btnPupilRefundSubmit" name="btnPupilRefundSubmit">Submit</button>
+            </div>
+        </div>
+        <!-- Add Temp Pupil - My orders --->
+        <div id="divOrderTempPupil" data-backdrop="static" data-keyboard="false" class="modal hide fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" id="xCloseTempPupil">x</button>
+                <h3 id="myModalLabel">Pupil Search</h3>
+            </div>
+            <div class="modal-body" style="height:210px;">
+                <div id="divTempPupil">
+                    <form id="frmTempPupil">
+                        <div class="control-group">
+                            <label class="span2" style="margin-left:0px;width: 125px;">Pupil ID</label>
+                            <input type="text" class="input-xmedium" name="txtSearchPupilId" id="txtSearchPupilId"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="FirstName" class="span2" style="margin-left:0px;width: 125px;">First Name</label>
+                            <input type="text" class="input-xmedium" name="txtSearchFname" id="txtSearchFname"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="LastName" class="span2" style="margin-left:0px;width: 125px;">Middle Name</label>
+                            <input type="text" class="input-xmedium" name="txtSearchMname" id="txtSearchMname"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="Email" class="span2" style="margin-left:0px;width: 125px;">Last Name</label>
+                            <input type="text" class="input-xmedium" name="txtSearchLname" id="txtSearchLname"/>
+                        </div>
+                    </form>
+                </div>
+                <div id="divPopulateTempPupils" class="hide">
+                    <div class="tab-content" id="tempPupil_Pag">
+                        <form name="tmpPupilData" id="tmpPupilData">
+                            <table class="table table-hover table-striped edfm-bordered-table" name="tbltmpPupilData" id="tbltmpPupilData">
+                                <thead>
+                                    <tr>
+                                        <th style="width:16%">Pupil Name</th>
+                                        <th>Pupil ID</th>
+                                        <th>Free Meals?</th>
+                                        <th>School</th>
+                                        <th>Year</th>
+                                        <th>Class</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <label id="lblTempPupilerr" class="alert alert-error hide" style="margin-left: 0px; float:left;margin-bottom: -4px;margin-top: -6px;"></label>
+                <a class="btn" data-toggle="modal" id="btnTempPupilClose" name="btnTempPupilClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" href="#" data-toggle="modal" id="btnTempPupilSearch" name="btnTempPupilSearch">Search</button>
+                <button class="btn btn-primary hide" href="#" data-toggle="modal" id="btnTempPupilSubmit" name="btnTempPupilSubmit">Submit</button>
+            </div>
+        </div>
+        <!--Invoice orders Pupil Search -->
+        <div id="divAddPPl_IO" data-backdrop="static" data-keyboard="false" class="modal hide fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" id="divhdrPPlClose" name="divhdrPPlClose">x</button>
+                <h3 id="myModalLabel">Pupil Search</h3>
+            </div>
+            <div class="modal-body" style="height:210px;">
+                <form id="frmPPl_IO">
+                    <div id="divPPl_IO">
+                        <div class="control-group">
+                            <label class="span2" style="margin-left:0px;width: 125px;">Pupil ID</label>
+                            <input type="text" class="input-xmedium" name="txtIOPupilId" id="txtIOPupilId"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="FirstName" class="span2" style="margin-left:0px;width: 125px;">First Name</label>
+                            <input type="text" class="input-xmedium" name="txtIOFname" id="txtIOFname"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="LastName" class="span2" style="margin-left:0px;width: 125px;">Middle Name</label>
+                            <input type="text" class="input-xmedium" name="txtIOMname" id="txtIOMname"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="Email" class="span2" style="margin-left:0px;width: 125px;">Last Name</label>
+                            <input type="text" class="input-xmedium" name="txtIOLname" id="txtIOLname"/>
+                        </div>
+                    </div>
+                </form>
+                <div id="divPopulatepupils_IO" style="display:none;">
+                    <div class="tab-content" id="AddPPl_IOpag">
+                        <div class="tab-pane active" id="tab2">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <form name="pupilData" id="pupilData">
+                                        <table class="table table-hover table-striped table-bordered edfm-bordered-table"
+                                               name="tblPupilSearchIO" id="tblPupilSearchIO"
+                                               style="display: none !important;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:16%">Pupil Name</th>
+                                                    <th>Pupil ID</th>
+                                                    <th>Free Meals?</th>
+                                                    <th>School</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /tab -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <label id="lblppl_IOerr" class="alert alert-error hide" style="margin-left: 0px; float:left;margin-bottom: -4px;margin-top: -6px;"></label>
+                <a class="btn" data-toggle="modal" id="btnPupilSearchClose_IO" name="btnPupilSearchClose_IO" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" id="btnPupilSearch_IO" name="btnPupilSearch_IO">Search</button>
+                <button class="btn btn-primary hide" id="btnPupilSubmit_IO" name="btnPupilSubmit_IO">Submit</button>
+            </div>
+        </div>
+		<!--Manage Pupils-->
+		<div id="divAddPPl_MP" data-backdrop="static" data-keyboard="false" class="modal hide fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" id="divhdrPPlMPClose" name="divhdrPPlMPClose">x</button>
+                <h3 id="myModalLabel">Pupil Search</h3>
+            </div>
+            <div class="modal-body" style="height:210px;">
+                <form id="frmPPl_MP" class="form-horizontal">
+                    <div id="divPPl_MP">
+                        <div class="control-group">
+                            <label class="span2" style="margin-left:0px;width: 125px;">Pupil ID</label>
+                            <input type="text" class="input-xmedium" name="txtMPPupilId" id="txtMPPupilId"/>
+							<!-- <hr style="width: 40px;margin-left: 125px;">Or<hr style="width: 40px;margin-left: 125px;"> -->
+                        </div>
+						<hr>
+                        <div class="control-group">
+                            <label for="FirstName" class="span2" style="margin-left:0px;width: 125px;">First Name</label>
+                            <input type="text" class="input-xmedium" name="txtMPFname" id="txtMPFname"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="LastName" class="span2" style="margin-left:0px;width: 125px;">Middle Name</label>
+                            <input type="text" class="input-xmedium" name="txtMPMname" id="txtMPMname"/>
+                        </div>
+                        <div class="control-group">
+                            <label for="Email" class="span2" style="margin-left:0px;width: 125px;">Last Name</label>
+                            <input type="text" class="input-xmedium" name="txtMPLname" id="txtMPLname"/>
+                        </div>
+						<hr>
+						<div class="control-group">
+                             <label for="Year" class="span2" style="margin-left:0px;width: 125px;">Year</label>
+                             <span class='select-wrap'><select id="selectYearMMP"></select></span>
+                        </div>
+						<div class="control-group">
+                           <label for="Class" class="span2" style="margin-left:0px;width: 125px;">Class</label>
+                             <span class='select-wrap'><select id="selectClassMMP"></select></span>
+                        </div>
+						
+                    </div>
+                </form>
+                
+            </div>
+            <div class="modal-footer">
+                <label id="lblppl_MPerr" class="alert alert-error hide" style="margin-left: 0px; float:left;margin-bottom: -4px;margin-top: -6px;"></label>
+                <a class="btn" data-toggle="modal" id="btnPupilSearchClose_MP" name="btnPupilSearchClose_MP" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" id="btnPupilSearch_MP" name="btnPupilSearch_MP">Search</button>
+                
+            </div>
+        </div>
+		<!--End of Manage Pupils-->
+        <!--Batch Order Cancellation -update Message-->
+        <div id="divUpdateMessage" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmUpdateMessage" id="frmUpdateMessage" method="post"> 
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xUpdateMessage" name="xUpdateMessage">x</button>
+                    <h3 id="myModalLabel">
+                        Update Message</h3>
+                </div>
+                <div class="modal-body"> 
+                    <div>						   
+                        <label>User Message:</label> 
+                    </div>               							
+                    <div class="control-group form-horizontal">
+                        <textarea id='txaComments' style="width: 86%;height:60px ;resize: none;" maxlength="250"></textarea>
+                    </div>							 
+                    <label style="margin-right: 15px;"></label> 
+                </div>
+            </form>
+            <div class="modal-footer">
+                <div class="controls"  >
+                    <!-- <p><input type="text" class="alert alert-error" id="inputError" style="text-align:center; display:none;"  disabled><button type="button" class="close" data-dismiss="alert">&times;</button>
+                   </p> -->
+                </div> 
+                <a class="btn" data-toggle="modal" id="btnUpdateClose" name="btnUpdateClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" data-toggle="modal" id="btnUpdateSubmit"
+                        name="btnUpdateSubmit">Submit</button>
+            </div>
+        </div>
+        <!--Batch Order Cancellation -cancel Orders-->
+        <div id="divCancelOrders" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button name="xdivImport" id="xCancelOrders" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                <h3>Cancel Orders</h3>
+            </div>
+            <div class="modal-body">
+                <label style="" id="cancelOrdersLabel" class="radio inline">Are you sure you want to Cancel all these orders?</label>
+            </div>
+            <div class="modal-footer">
+                <button name="orderCancelBtn" id="orderCancelBtn"  class="btn" data-dismiss="modal">Cancel</button>
+                <button name="orderOkBtn" id="orderOkBtn" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <!--Batch Order Cancellation --Email Parents-->
+        <div id="divEmailParents" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmEmailParents" id="frmEmailParents" method="post"> 
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xEmailParents" name="xEmailParents">x</button>
+                    <h3 id="myModalLabel">
+                        Email Parents</h3>
+                </div>
+                <div class="modal-body"> 
+                    <div>						   
+                        <label>Please see below email message </label> 
+                    </div>               							
+                     <div class="control-group form-horizontal" style="border: 1px solid #ccc;">
+
+                        <label>Dear &lt;&lt;First name&gt;&gt; &lt;&lt;Last name&gt;&gt;,</label> <br />
+                        <label>The following orders have been updated by the Eden Team</label> 
+                        <label>- &lt;&lt;First Name&gt;&gt; &lt;&lt;Last Name&gt;&gt;, meal order for &lt;&lt;Fulfillment Date&gt;&gt;</label> 
+
+                        <textarea id='txaEmailMsg' placeholder='Enter text....' style="width: 98%;height:100px ;resize: none;" ></textarea>
+                    </div>							 
+                    <label style="margin-right: 15px;"></label> 
+                </div>
+            </form>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="btnEmailParentsClose" name="btnEmailParentsClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary"  data-toggle="modal" id="btnEmailParentsSubmit"
+                        name="btnEmailParentsSubmit">Submit</button>
+            </div>
+        </div>
+        <div id="divCloseSchl" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivCloseSchl" name="xdivCloseSchl">x</button>
+                <h3 id="myModalLabel">Close School</h3>
+            </div>
+            <div class="modal-body">
+                <div class="alert">
+                    <strong>Warning!</strong> This will prevent orders being taken for this school until after the selected end date, and give the catering manager an opportunity to cancel all orders already placed.
+                </div>
+                <form id="frmCloseSchl" class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label" style="margin-left:0px;width: 125px;">End date</label>
+                        <div class="controls input-append date" style="padding-bottom: 10px;" id="div_SchEnddate"  data-date-format="dd/mm/yyyy" >
+                            <input class="span2" value="" id="dp_SchEnddate" size="16" type="text" required readonly="readonly"/><span class="add-on"><i class="icon-calendar"></i></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" style="margin-left:0px;width: 125px;">Reason</label>
+                        <div class="control-group">
+                            <textarea id="txtReason"  required name="txtReason" class="span4" rows="4" style="resize:none;" maxlength="255"></textarea></div>
+                    </div>
+                </form> 
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="btnCancelSchl" name="btnCancelSchl">Cancel</button>
+                <button class="btn btn-primary" id="btnSubmitSchl" name="btnSubmitSchl">Submit</button>
+            </div>
+        </div>
+        <div id="divOpenSchl" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivOpenSchl" name="xdivOpenSchl">x</button>
+                <h3 id="myModalLabel">Open School</h3>
+            </div>
+            <div class="modal-body">
+                <div class="alert">
+                    <strong>Warning!</strong> This will allow parents to start placing orders for this school.
+                </div>
+                <label>Do you want to continue?</label>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" href="#" id="btnCan_OpenSchl" name="btnCancelSchl">Cancel</button>
+                <button class="btn btn-primary" id="btnSubmit_OpenSchl" name="btnSubmitSchl">Submit</button>
+            </div>
+        </div>
+        <div class="container" id="divcontainer"></div>
+        <!-- /container -->
+
+        <footer class="row-fluid footer" id="userfooter"></footer>
+        <!-- /row -->
+
+        <!-- The javascript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+	<script src="minjs/userpeopleservices.min.js"></script>        
+    </body>
+</html>
+

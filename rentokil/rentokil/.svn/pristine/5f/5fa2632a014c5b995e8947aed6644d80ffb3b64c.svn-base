@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule  ^register(![.html])   ^register/index.html [NC,L]

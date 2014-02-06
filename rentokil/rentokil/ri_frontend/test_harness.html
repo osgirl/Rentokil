@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Asset Tracking - Client</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author"
+	content="Rentokil Initial Facilities Services (UK) Ltd">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" />
+<meta http-equiv="Cache-Control"
+	content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" />
+<meta http-equiv="Cache Control: no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Pragma: no-cache" />
+<!-- Le styles -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/edfm-custom.css" rel="stylesheet">
+<style>
+body {
+	
+}
+</style>
+<!-- 
+                HTML5 shim, for IE6-8 support of HTML5 elements 
+                Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+<!--[if lt IE 9]>
+                  <script src="js/html5shiv.js"></script>
+            <![endif]-->
+<!--[if IE]>
+                <link href="css/edfm-ie.css" rel="stylesheet">
+            <![endif]-->
+</head>
+<body class="guest">
+
+	<div class="container" id="divcontainer">
+		<header class="row-fluid" id="userheader">
+			<div class="span6">
+				<h1 class="logo">
+					<a href="javascript:void(0);" id="lnkHeaderLogo">EDFM</a>
+				</h1>
+			</div>
+			<!-- text is hidden -->
+		</header>
+		<nav id="navLevel2" class="row-fluid tabNav" style="margin-bottom:0px">
+    <!-- secondary nav selects tabs -->
+    <ul id="secondarynav" class="nav nav-tabs">
+    <li class="active"><a href="#secAssets" data-toggle='tab'>Zone/Assets</a></li><li ><a href="#secDigitalPens" data-toggle='tab'>Digital Pens</a></li></ul>
+</nav>
+<div id="tabcontent" class="tab-content">
+<section id="secAssets" class="tab-pane active">
+<div class="row-fluid">
+<div class="span12 widget">
+<div class="row-fluid noBottom">
+<div class="span10">
+<h2 style="margin-top: 0px;">Zone/Assets</h2>
+</div>
+</div>
+ <div class="row-fluid">
+                                    <div class="tab-content" style="margin-top:10px;">
+                                        <div style="" id="divharness" class="row-fluid"> 
+                                    <form method="post" class="form-horizontal" id="frmtestharness" novalidate="novalidate">
+                                        <div style="margin-bottom: 0px;" class="row-fluid">									
+                                            <div class="control-group">
+                                                <label style="width:240px" class="control-label">Environment:</label>
+                                               <label class="radio inline"><input type="radio" name="optionsRadios" id="optionsRadios1" value="qa" checked>QA</label>
+                                               <label class="radio inline"><input type="radio" name="optionsRadios" id="optionsRadios2" value="preprod">Pre-Prod</label>
+                                               <label class="radio inline"><input type="radio" name="optionsRadios" id="optionsRadios3" value="staging">Staging</label>
+                                               <label class="radio inline"><input type="radio" name="optionsRadios" id="optionsRadios4" value="other">Other</label>
+                                               &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" style="width:550px;" readonly id="txtOtherURL" name="txtOtherURL" value="" class="span2"> 							                                              																	
+                                            </div>	
+                                        </div>
+                                        <hr>
+                                        <div style="margin-bottom: 0px;" class="row-fluid">
+                                            <div class="control-group">
+                                                <label style="width:240px" class="control-label">From:</label>										
+												<input type="text" style="width:120px;" maxlength="15" id="txtFromdd" name="txtFromdd" value="" class="span2">/
+												<input type="text" style="width:120px;" maxlength="15" id="txtFromss" name="txtFromss" value="" class="span2">
+												</div>										
+                                        </div>
+                                        <div style="margin-bottom: 0px;" class="row-fluid">
+                                            <div class="control-group">
+                                                <label style="width:240px" class="control-label">User-Agent:</label>										
+												<input type="text" style="width:120px;" maxlength="15" id="txtUserAgentno" name="txtUserAgentno" value="" class="span2">/
+												<input type="text" style="width:120px;" maxlength="15" id="txtUserAgentnn" name="txtUserAgentnn" value="" class="span2">
+												</div>										
+                                        </div>
+                                        <hr>
+                                         <div style="margin-bottom: 0px;" class="row-fluid">									
+                                            <div class="control-group">
+                                                <label style="width:240px" class="control-label">Message Type:</label>
+                                               <label class="radio inline"><input type="radio" name="optMsgType" id="optMsgType1" value="hb" checked>Heartbeat</label>
+                                               <label class="radio inline"><input type="radio" name="optMsgType" id="optMsgType2" value="tr">Tag Read</label>
+                                             </div>	
+                                        </div>
+                                         <div style="margin-bottom: 0px;" class="row-fluid hide" id="divAssets">									
+                                            <div class="control-group">
+                                              <table style="" id="tblAssets"  class="table table-hover table-striped edfm-bordered-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Tag Number<br />(OEMCode + hex of tagnum leadzeros) </th>
+                                                                <th>Battery Status</th>
+                                                                <th>Time</th>
+                                                                <th>Read Point</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody><tr><td><div class="control-group"><input type="text" style="width: 80px;" maxlength="8" id="txttagnumber" class="txttagnumber" name="txttagnumber[]"></div></td>
+                                                        <td><div class="control-group"><select id="ddlbattery" class="ddlbattery" name="ddlbattery[]"><option value='H'>High</option><option value='L'>Low</option></select></div></td>
+                                                        <td><div class="control-group"><input type="text" style="width: 120px;" readonly="readonly" id="txttime" class="txttime" name="txttime[]"></div></td>
+                                                        <td nowrap="nowrap"><div class="control-group"><input type="text" style="width: 80px;" maxlength="4" class="txtreadpoint" id="txtreadpoint" name="txtreadpoint[]"></div></td>
+                                                        <td nowrap="nowrap"><button  value="" type="button" style=" display: block;   margin-left: auto;   margin-right: auto;" class="btn btn-small" id="btnassetadd"><i class="icon-plus"></i> Add</button></td>
+                                                        </tr></tbody>
+                                                    </table>                                               
+                                             </div>	
+                                        </div>
+                                   </form>
+                                    <div style="width: 100%;margin-left: 0px;" class="controls controls-row span12">	
+									    <button style="float:right;margin-left: 20px;" name="btnSubmit" data-toggle="modal" id="btnSubmit" class="btn btn-primary">Submit</button>
+                                     </div>
+                                </div>
+                                    </div>
+                                </div><!-- /row -->
+
+</div>
+
+</div>
+</section>
+<section id="secDigitalPens" class="tab-pane">
+
+<div class="row-fluid">
+<div class="span12 widget">
+<div class="row-fluid noBottom">
+<div class="span10">
+<h2 style="margin-top: 0px;">Digital Pens</h2>
+</div>
+</div>
+ <div class="row-fluid">
+<div class="tab-content" style="margin-top:10px;">
+
+<div class="form-horizontal">
+   <div style="margin-bottom: 0px;" class="row-fluid">									
+  <div class="control-group">
+     <label style="width:240px" class="control-label">Environment:</label>
+    <label class="radio inline"><input type="radio" name="optionsRadiosdp" id="optionsRadiosdp1" value="qa" checked>QA</label>
+    <label class="radio inline"><input type="radio" name="optionsRadiosdp" id="optionsRadiosdp2" value="preprod">Pre-Prod</label>
+    <label class="radio inline"><input type="radio" name="optionsRadiosdp" id="optionsRadiosdp3" value="staging">Staging</label>
+    <label class="radio inline"><input type="radio" name="optionsRadiosdp" id="optionsRadiosdp4" value="other">Other</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" style="width:550px;" readonly id="txtOtherdpURL" name="txtOtherdpURL" value="" class="span2"> 							                                              																	
+   </div>	
+</div>
+ <div class="control-group">
+     <label style="margin-left:0px;width: 125px;" class="control-label">Input XML:</label>
+     <div class="control-group">
+         <textarea style="resize:none;" rows="12" class="span6" name="txtInputXml" id="txtInputXml"></textarea></div>
+ </div>
+</div>
+
+
+ <div style="width: 100%;margin-left: 0px;" class="controls controls-row span12">	
+<button style="float:right;margin-left: 20px;" name="btnSubmitDigitalPens" data-toggle="modal" id="btnSubmitDigitalPens" class="btn btn-primary">Submit</button>
+</div>
+</div>
+ </div>
+</div>
+</div>
+</section>
+</div>
+		<!-- /row -->
+	
+	</div>
+	<!-- /container -->
+<footer class="row-fluid footer" id="userfooter">
+		<div class="container">
+			<div class="span4">
+				<h3 id="lfbt">Useful links</h3>
+				<div class="footercontent">
+					<div id="lfbi1">
+						<span class="footerarrlinks"> &gt; </span><span id="lfbd1"
+							class="footerContentlinks"><a href="http://#">Documentation</a></span>
+					</div>
+					<div id="lfbi2">
+						<span class="footerarrlinks"> &gt; </span><span id="lfbd2"
+							class="footerContentlinks"><a href="http://#">Contact
+								us</a></span>
+					</div>
+					<div id="lfbi3">
+						<span class="footerarrlinks"> &gt; </span><span id="lfbd3"
+							class="footerContentlinks"><a href="http://#">Privacy</a></span>
+					</div>
+					<div id="lfbi4">
+						<span class="footerarrlinks"> &gt; </span><span id="lfbd4"
+							class="footerContentlinks"><a href="http://#">Policy</a></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="span4">
+				<h3 id="rfbt">About Initial</h3>
+				<div class="footercontent">
+					<div id="rfbi1">
+						<span class="footerarrlinks"> &gt; </span><span id="rfbd1"
+							class="footerContentlinks"><a href="http://#">About us</a></span>
+					</div>
+					<div id="rfbi2">
+						<span class="footerarrlinks"> &gt; </span><span id="rfbd2"
+							class="footerContentlinks"><a href="http://#">Contact
+								us</a></span>
+					</div>
+					<div id="rfbi3">
+						<span class="footerarrlinks"> &gt; </span><span id="rfbd3"
+							class="footerContentlinks"><a href="http://#">Careers</a></span>
+					</div>
+					<div id="rfbi4">
+						<span class="footerarrlinks"> &gt; </span><span id="rfbd4"
+							class="footerContentlinks"><a href="http://#">Media</a></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="span4">
+				<div class="copyright" id="fct">©2012 Rentokil Initial plc.
+					Registered in England 5393279.Registered office: 2 City Place,
+					Beehive Ring Road, Gatwick, RH6 0HA.The names Rentokil® and
+					Initial® are registered trade marks.</div>
+			</div>
+		</div>
+		<!-- /container -->
+	</footer>
+	<!-- /row -->
+	<!-- The javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+	<script src="js/jquery/jquery.1.8.2.min.js"></script>
+	<script src="js/jquery/jquery.dirtyFields.packed.js"></script>
+	<script src="js/jquery/jquery.validate.min.js"></script>
+	<script src="js/jquery/jquery.passstrength.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<script src="js/bootstrap/bootstrap-paginator.min.js"></script>
+	<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+	<script src="js/edfm-custom.min.js"></script>
+	<script src="js/bootstrap/bootstrap-datepicker.js"></script>
+	<script src="js/jquery/jquery.ui.widget.js"></script>
+	<script src="js/jquery/jquery.iframe-transport.js"></script>
+	<script src="js/jquery/jquery.fileupload.js"></script>
+	<script>
+	//For todays date;
+	Date.prototype.today = function(){ 
+	    return ((this.getDate() < 10)?"0":"") + this.getDate()+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) + this.getFullYear() 
+	};
+	//For the time now
+	Date.prototype.timeNow = function(){
+	     return ((this.getHours() < 10)?"0":"") + this.getHours() + ((this.getMinutes() < 10)?"0":"") + this.getMinutes() + ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+	};
+	
+	$("input[name=optionsRadios]:radio").change(function () {
+		if ($("#optionsRadios4").attr("checked"))
+			$("#txtOtherURL").removeAttr("readonly").val("");
+		else
+			$("#txtOtherURL").attr("readonly","readonly").val("");
+		
+		if ($("#optionsRadios1").attr("checked"))
+			$("#txtOtherURL").attr("readonly","readonly").val("https://riwebqa.cognizant.com/ri_backend/index.php/executeservice/discovery/");
+			//$("#txtOtherURL").attr("readonly","readonly").val("http://localhost/rentokil/trunk/codebase/ri_backend/index.php/executeservice/discovery/");
+		if ($("#optionsRadios2").attr("checked"))
+			$("#txtOtherURL").attr("readonly","readonly").val("https://preprod6869.fminsight.net/ri_backend/index.php/executeservice/discovery/");
+		if ($("#optionsRadios3").attr("checked"))
+			$("#txtOtherURL").attr("readonly","readonly").val("https://staging6869.fminsight.net/ri_backend/index.php/executeservice/discovery/");
+			
+	});
+	$("input[name=optionsRadiosdp]:radio").change(function () {
+		if ($("#optionsRadiosdp4").attr("checked"))
+			$("#txtOtherdpURL").removeAttr("readonly").val("");
+		else
+			$("#txtOtherdpURL").attr("readonly","readonly").val("");
+		
+		if ($("#optionsRadiosdp1").attr("checked"))
+			$("#txtOtherdpURL").attr("readonly","readonly").val("https://riwebqa.cognizant.com/ri_backend/index.php/executeservice/processform/");
+			//$("#txtOtherdpURL").attr("readonly","readonly").val("http://localhost/rentokil/trunk/codebase/ri_backend/index.php/executeservice/processform/");
+		if ($("#optionsRadiosdp2").attr("checked"))
+			$("#txtOtherdpURL").attr("readonly","readonly").val("https://preprod6869.fminsight.net/ri_backend/index.php/executeservice/processform/");
+		if ($("#optionsRadiosdp3").attr("checked"))
+			$("#txtOtherdpURL").attr("readonly","readonly").val("https://staging6869.fminsight.net/ri_backend/index.php/executeservice/processform/");
+			
+	});
+	
+	$("input[name=optMsgType]:radio").change(function () {
+		if ($("#optMsgType2").attr("checked")){
+			$("#divAssets").show();
+			var currentdate = new Date(); 
+	    	var datetime = currentdate.today() + currentdate.timeNow();
+	    	$("#txttime").val(datetime);
+	    	//var l = $("#tblAssets tr").length;
+	    	$("#tblAssets").find("tr:gt(1)").remove();
+	    	$("#txttagnumber").val("");
+	    	$("#ddlbattery").val("H");
+	    	$("#txtreadpoint").val("");
+	   }
+		else 
+			$("#divAssets").hide();
+	});
+	
+	$(document).ready(function () {
+		$("#optionsRadios1").attr("checked","checked");
+		//$("#txtOtherURL").attr("readonly","readonly").val("https://riwebqa.cognizant.com/ri_backend/index.php/executeservice/discovery/");
+		$("#txtOtherURL").attr("readonly","readonly").val("http://localhost/rentokil/trunk/codebase/ri_backend/index.php/executeservice/discovery/");
+		$("#optionsRadiosdp1").attr("checked","checked");
+		//$("#txtOtherdpURL").attr("readonly","readonly").val("https://riwebqa.cognizant.com/ri_backend/index.php/executeservice/processform/");
+		$("#txtOtherdpURL").attr("readonly","readonly").val("http://localhost/rentokil/trunk/codebase/ri_backend/index.php/executeservice/processform/");
+		$("#optMsgType1").attr("checked","checked");
+		$("#divAssets").hide();
+		
+		$("#btnassetadd").click(function(){
+			var currentdate = new Date(); 
+	    	var datetime = currentdate.today() + currentdate.timeNow();
+	    	$("#tblAssets").append("<tr><td><div class='control-group'><input type='text' style='width: 80px;' maxlength='8' id='txttagnumber' class='txttagnumber' name='txttagnumber[]'></div></td><td><div class='control-group'><select class='ddlbattery' id='ddlbattery' name='ddlbattery[]'><option value='H'>High</option><option value='L'>Low</option></select></div></td><td><div class='control-group'><input type='text' style='width: 120px;' readonly='readonly' value='"+ datetime +"' id='txttime' class='txttime' name='txttime[]'></div></td><td nowrap='nowrap'><div class='control-group'><input type='text' style='width: 80px;' maxlength='4' id='txtreadpoint' class='txtreadpoint' name='txtreadpoint[]'></div></td><td nowrap='nowrap'><button  value='' type='button' style=' display: block;   margin-left: auto;   margin-right: auto;' class='btn btn-small remCF' id='btnassetremove'><i class='icon-trash'></i> Remove</button></td></tr>");
+			$(".remCF").on('click',function(){
+				$(this).parent().parent().remove();
+			});
+		});
+		
+	});
+	$("#btnSubmit").click(function(){
+		var url = $("#txtOtherURL").val();
+	    if(url == ""){
+	    	alert("Please enter valid URL");
+	    	$("#txtOtherURL").focus();
+	    } else  if($("#txtFromdd").val().length<2 || $("#txtFromss").val().length<5) {
+	    	alert("Please enter valid device id and serial number in format DD/SSSSS");
+	    	$("#txtFromdd").focus();
+	    }
+	    else  if($("#txtUserAgentno").val().length<2 || $("#txtUserAgentnn").val().length<4) {
+	    	alert("Please enter valid user agent in format 22/NNNN");
+	    	$("#txtUserAgentno").focus();
+	    } else {
+	    	var currentdate = new Date(); 
+	    	var datetime = currentdate.today() + currentdate.timeNow();
+	    	var msg = "";
+	    	if ($("#optMsgType1").attr("checked"))
+	    		msg = "a=h&s="+ datetime;
+	    	else{
+	    		
+	    		var tagnumberArr = new Array();
+	    		var i = 0,flag = true;
+	    		$(".txttagnumber").each(function(){
+	    			if($(this).val()<8) {
+	    				alert("Please enter valid tag number");
+	    				$(this).focus();
+	    				flag = false;
+	    				return false;
+	    			}
+	    			tagnumberArr[i]= $(this).val();
+	    			i++;
+	    		});
+	    		if(!flag)
+	    			return false;
+	    		
+	    		var batteryArr = new Array();
+	    		i = 0;
+	    		$(".ddlbattery").each(function(){
+	    			batteryArr[i]= $(this).val();
+	    			i++;
+	    		});
+	    		var timeArr = new Array();
+	    		i = 0;
+	    		$(".txttime").each(function(){
+	    			timeArr[i]= $(this).val();
+	    			i++;
+	    		});
+	    		
+	    		var readpointArr = new Array();
+	    		i = 0;
+	    		$(".txtreadpoint").each(function(){
+	    			if($(this).val().length <4){
+	    				alert("Please enter valid read point");
+	    				$(this).focus();
+	    				flag = false;
+	    				return false;
+	    			}
+	    			readpointArr[i]= $(this).val();
+	    			i++;
+	    		});
+	    		
+	    		if(!flag)
+	    			return false;
+	    		
+	    		if(tagnumberArr.length<1)
+	    		{
+	    			alert("Please enter atleast one asset");
+	    			return false;
+	    			}
+	    		for(i =0; i<tagnumberArr.length; i++){
+	    			msg = msg + "a=t&t="+tagnumberArr[i]+batteryArr[i]+"&s="+timeArr[i]+"&r="+readpointArr[i]+",";	
+	    		}
+	    		//alert(msg);
+				//msg = "a=t&t=3700001BH&s=03072013134515&r=0000,a=t&t=3700001BH&s=03072013134515&r=0000,";
+	    	}
+	    		
+	    	
+	    	var from = $("#txtFromdd").val() +"/" + $("#txtFromss").val();
+	    	var useragent = $("#txtUserAgentno").val() +"/"+ $("#txtUserAgentnn").val();
+
+	    	$.support.cors = true; 
+	    	$.ajax({
+                url: url,
+                type: "POST",
+                crossDomain: true,
+                //contentType: "text/plain",
+                //dataType: "text/plain",
+                data: msg,
+                //beforeSend: function(xhr){xhr.setRequestHeader('X-Test-Header', 'test-value');},
+               headers: {"From": from,"User-Agent":useragent,"User-Agent1":useragent},
+                complete: function(xhr){
+                	//console.log(xhr);
+                },
+                success: function (msg) {
+                	//alert("HHERE"+ msg);
+                	if(msg == "done")
+                		alert("Successfully submitted the request!");
+                	else
+                		alert("There is an error. Please try again.");
+                  //console.log(msg);
+                },
+                error: function(xhr, status, error) {
+                	alert("error:" + error);
+                	//console.log("errr" + error); 
+                	console.log(xhr);
+               }
+
+            });
+	    }
+	});
+	
+	$("#btnSubmitDigitalPens").click(function (){
+		
+		if($("#txtInputXml").val() == "") {
+			alert("Please enter Input xml");
+			$("#txtInputXml").focus();
+			return false;
+		} else if($("#txtOtherdpURL").val() == ""){
+			alert("Please enter a valid URL");
+			return false;
+		} else	{
+			$.support.cors = true; 
+	    	$.ajax({
+                url: $("#txtOtherdpURL").val(),
+                type: "POST",
+                crossDomain: true,
+                //contentType: "text/plain",
+                //dataType: "text/plain",
+                data: $("#txtInputXml").val(),
+                complete: function(xhr){
+                	//console.log(xhr);
+                },
+                success: function (msg) {
+                	//alert("HHERE"+ msg);
+                	if(msg == "done")
+                		alert("Successfully submitted the request!");
+                	else
+                		alert("There is an error. Please try again. " + msg);
+                  //console.log(msg);
+                },
+                error: function(xhr, status, error) {
+                	alert("error:" + error);
+                	//console.log("errr" + error); 
+                	console.log(xhr);
+               }
+
+            });
+			}
+	});
+</script>
+</body>
+</html>

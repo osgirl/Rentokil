@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Digital Form AdHoc Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author"
+	content="Rentokil Initial Facilities Services (UK) Ltd">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" />
+<meta http-equiv="Cache-Control"
+	content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" />
+<meta http-equiv="Cache Control: no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Pragma: no-cache" />
+<!-- Le styles -->
+<style>
+body {
+	
+}
+table.equalDivide tr td { width:1%; }
+
+</style>
+<!-- 
+        HTML5 shim, for IE6-8 support of HTML5 elements 
+        Avoid using CDN-based scripts to stop untested updates breaking things!
+-->
+<!--[if lt IE 9]>
+                  <script src="js/html5shiv.js"></script>
+            <![endif]-->
+<!--[if IE]>
+<link href="css/edfm-ie.css" rel="stylesheet">
+            <![endif]-->
+</head>
+<body>
+<form method="post" class="form-horizontal" id="frmDigitalForm">
+<div style="margin-bottom: 0px;" class="row-fluid">
+									 
+                                     <table style="width: 100%;">
+                                     <tr>
+                                     <td valign="top"><img src="Lewisham.Adhoc-1_2.jpg" width="80" height="80"></td>
+									 <td valign="top" align="right"><label class="checkbox inline"><input type="checkbox" id="chk_close_adhoc_form" >Close Form</label></td>
+                                     <td valign="top" align="right" rowspan="2" width="13%"><img src="Lewisham.Adhoc-1_1.jpg" width="80" height="200"></td>
+                                     </tr>
+									 </table>
+									
+									<div style="margin-bottom: 10px;" class="row-fluid">
+										<div style="margin-bottom: 0px; float:left; width: 80%;" class="row-fluid">
+										 <label><strong>Form Completed By:</strong></label>
+										 <table id="FormCompletedBy" class="equalDivide" cellpadding="5" cellspacing="0" width="50%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table>
+										</div>
+										
+										<div style="margin-bottom: 0px;" class="row-fluid">
+										 <label><strong>Date:</strong></label>
+										 <table id="Date" class="equalDivide" cellpadding="5" cellspacing="0" width="12%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table>
+										</div>
+									</div>
+									 
+									<table style="width: 100%;">
+									 <tr>
+                                     <td colspan="4">
+                                     	<table style="width:100%">
+                                     	<tr><td><label class="control-label"><strong>Ward:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Ward1_A5" >A5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Alder" >Alder</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Anderson" >Anderson</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Ash" >Ash</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Aspen" >Aspen</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Beech" >Beech</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward1_Cedar" >Cedar</label></td>	
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Cherry_CCU" >Cherry/CCU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Chestnut_1" >Chestnut 1</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Chestnut_2" >Chestnut 2</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_CMW" >CMW</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Elm" >Elm</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward1_F_Cooksey" >F Cooksey</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_HDU" >HDU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_ITU" >ITU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Juniper" >Juniper</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Larch" >Larch</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Laurel" >Laurel</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward1_Linden" >Linden</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Mat_5" >Mat 5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Mulberyy" >Mulberry</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Oak" >Oak</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_Obs" >Obs</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward1_" ></label></td></tr>
+										
+										<tr><td><label class="control-label"><strong>Cost:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Cost1_Breakfast" >Breakfast</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost1_Meal" >Meal</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost1_Snackbox" >Snackbox</label></td>
+                                     	<td style=" width: 20%; "><label><strong>Description:</strong></label><input id="Description1" type="text" style="width:200px;"  class="span2"></td>
+										<td>
+										<label><strong>Time:</strong></label></td>
+										<td align="left"><table id="Time1" class="equalDivide" cellpadding="5" cellspacing="0" width="8%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table></td>
+										</tr>
+										</table>
+																				
+                                     </td>
+                                     </tr>
+                                     </table>
+									 <hr>
+									 
+									 <table style="width: 100%;">
+                                     <tr>
+                                     <td colspan="2">
+                                     	<table style="width:100%">
+                                     	<tr><td><label class="control-label"><strong>Ward:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Ward2_A5" >A5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Alder" >Alder</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Anderson" >Anderson</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Ash" >Ash</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Aspen" >Aspen</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Beech" >Beech</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward2_Cedar" >Cedar</label></td>	
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Cherry_CCU" >Cherry/CCU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Chestnut_1" >Chestnut 1</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Chestnut_2" >Chestnut 2</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_CMW" >CMW</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Elm" >Elm</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward2_F_Cooksey" >F Cooksey</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_HDU" >HDU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_ITU" >ITU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Juniper" >Juniper</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Larch" >Larch</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Laurel" >Laurel</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward2_Linden" >Linden</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Mat_5" >Mat 5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Mulberyy" >Mulberry</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Oak" >Oak</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_Obs" >Obs</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward2_" ></label></td></tr>
+										
+										<tr><td><label class="control-label"><strong>Cost:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Cost2_Breakfast" >Breakfast</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost2_Meal" >Meal</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost2_Snackbox" >Snackbox</label></td>
+                                     	<td style=" width: 20%; "><label><strong>Description:</strong></label><input id="Description2" type="text" style="width:200px;"  class="span2"></td>
+										<td>
+										<label><strong>Time:</strong></label></td>
+										<td><table id="Time2" class="equalDivide" cellpadding="5" cellspacing="0" width="8%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table></td>
+										</tr>
+										</table>
+                                     </td>
+                                     </tr>
+                                     </table>
+									 <hr>
+			                         <table style="width: 100%;">
+                                     <tr>
+                                     <td colspan="2">
+                                     	<table style="width:100%">
+                                     	<tr><td><label class="control-label"><strong>Ward:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Ward3_A5" >A5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Alder" >Alder</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Anderson" >Anderson</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Ash" >Ash</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Aspen" >Aspen</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Beech" >Beech</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward3_Cedar" >Cedar</label></td>	
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Cherry_CCU" >Cherry/CCU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Chestnut_1" >Chestnut 1</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Chestnut_2" >Chestnut 2</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_CMW" >CMW</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Elm" >Elm</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward3_F_Cooksey" >F Cooksey</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_HDU" >HDU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_ITU" >ITU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Juniper" >Juniper</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Larch" >Larch</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Laurel" >Laurel</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward3_Linden" >Linden</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Mat_5" >Mat 5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Mulberyy" >Mulberry</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Oak" >Oak</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_Obs" >Obs</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward3_" ></label></td></tr>
+										
+										<tr><td><label class="control-label"><strong>Cost:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Cost3_Breakfast" >Breakfast</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost3_Meal" >Meal</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost3_Snackbox" >Snackbox</label></td>
+                                     	<td style=" width: 20%; "><label><strong>Description:</strong></label><input id="Description3" type="text" style="width:200px;"  class="span2"></td>
+										<td>
+										<label><strong>Time:</strong></label></td>
+										<td><table id="Time3" class="equalDivide" cellpadding="5" cellspacing="0" width="8%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table></td>
+										</tr>
+										</table>
+                                     </td>
+                                     </tr>
+                                     </table>
+									 <hr>
+			                         <table style="width: 100%;">
+                                     <tr>
+                                     <td colspan="2">
+                                     	<table style="width:100%">
+                                     	<tr><td><label class="control-label"><strong>Ward:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Ward4_A5" >A5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Alder" >Alder</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Anderson" >Anderson</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Ash" >Ash</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Aspen" >Aspen</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Beech" >Beech</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward4_Cedar" >Cedar</label></td>	
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Cherry_CCU" >Cherry/CCU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Chestnut_1" >Chestnut 1</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Chestnut_2" >Chestnut 2</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_CMW" >CMW</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Elm" >Elm</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward4_F_Cooksey" >F Cooksey</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_HDU" >HDU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_ITU" >ITU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Juniper" >Juniper</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Larch" >Larch</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Laurel" >Laurel</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward4_Linden" >Linden</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Mat_5" >Mat 5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Mulberyy" >Mulberry</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Oak" >Oak</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_Obs" >Obs</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward4_" ></label></td></tr>
+										
+										<tr><td><label class="control-label"><strong>Cost:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Cost4_Breakfast" >Breakfast</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost4_Meal" >Meal</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost4_Snackbox" >Snackbox</label></td>
+                                     	<td style=" width: 20%; "><label><strong>Description:</strong></label><input id="Description4" type="text" style="width:200px;"  class="span2"></td>
+										<td>
+										<label><strong>Time:</strong></label></td>
+										<td><table id="Time4" class="equalDivide" cellpadding="5" cellspacing="0" width="8%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table></td>
+										</tr>
+										</table>
+                                     </td>
+                                     </tr>
+                                     </table>
+									 <hr>
+                                     <table style="width: 100%;">
+                                     <tr>
+                                     <td colspan="2">
+                                    <table style="width:100%">
+                                     	<tr><td><label class="control-label"><strong>Ward:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Ward5_A5" >A5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Alder" >Alder</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Anderson" >Anderson</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Ash" >Ash</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Aspen" >Aspen</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Beech" >Beech</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward5_Cedar" >Cedar</label></td>	
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Cherry_CCU" >Cherry/CCU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Chestnut_1" >Chestnut 1</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Chestnut_2" >Chestnut 2</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_CMW" >CMW</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Elm" >Elm</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward5_F_Cooksey" >F Cooksey</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_HDU" >HDU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_ITU" >ITU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Juniper" >Juniper</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Larch" >Larch</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Laurel" >Laurel</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward5_Linden" >Linden</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Mat_5" >Mat 5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Mulberyy" >Mulberry</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Oak" >Oak</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_Obs" >Obs</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward5_" ></label></td></tr>
+										
+										<tr><td><label class="control-label"><strong>Cost:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Cost5_Breakfast" >Breakfast</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost5_Meal" >Meal</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost5_Snackbox" >Snackbox</label></td>
+                                     	<td style=" width: 20%; "><label><strong>Description:</strong></label><input id="Description5" type="text" style="width:200px;"  class="span2"></td>
+										<td>
+										<label><strong>Time:</strong></label></td>
+										<td><table id="Time5" class="equalDivide" cellpadding="5" cellspacing="0" width="8%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table></td>
+										</tr>
+										</table>
+                                     </td>
+                                     </tr>
+                                     </table>
+									 <hr>
+									 <table style="width: 100%;">
+                                     <tr>
+                                     <td colspan="2">
+                                     	<table style="width:100%">
+                                     	<tr><td><label class="control-label"><strong>Ward:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Ward6_A5" >A5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Alder" >Alder</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Anderson" >Anderson</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Ash" >Ash</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Aspen" >Aspen</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Beech" >Beech</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward6_Cedar" >Cedar</label></td>	
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Cherry_CCU" >Cherry/CCU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Chestnut_1" >Chestnut 1</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Chestnut_2" >Chestnut 2</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_CMW" >CMW</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Elm" >Elm</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward6_F_Cooksey" >F Cooksey</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_HDU" >HDU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_ITU" >ITU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Juniper" >Juniper</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Larch" >Larch</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Laurel" >Laurel</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward6_Linden" >Linden</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Mat_5" >Mat 5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Mulberyy" >Mulberry</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Oak" >Oak</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_Obs" >Obs</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward6_" ></label></td></tr>
+										
+										<tr><td><label class="control-label"><strong>Cost:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Cost6_Breakfast" >Breakfast</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost6_Meal" >Meal</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost6_Snackbox" >Snackbox</label></td>
+                                     	<td style=" width: 20%; "><label><strong>Description:</strong></label><input id="Description6" type="text" style="width:200px;"  class="span2"></td>
+										<td>
+										<label><strong>Time:</strong></label></td>
+										<td><table id="Time6" class="equalDivide" cellpadding="5" cellspacing="0" width="8%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table></td>
+										</tr>
+										</table>
+                                     </td>
+                                     </tr>
+                                     </table>
+									 <hr>
+									 <table style="width: 100%;">
+                                     <tr>
+                                     <td colspan="2">
+                                     	<table style="width:100%">
+                                     	<tr><td><label class="control-label"><strong>Ward:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Ward7_A5" >A5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Alder" >Alder</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Anderson" >Anderson</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Ash" >Ash</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Aspen" >Aspen</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Beech" >Beech</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward7_Cedar" >Cedar</label></td>	
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Cherry_CCU" >Cherry/CCU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Chestnut_1" >Chestnut 1</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Chestnut_2" >Chestnut 2</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_CMW" >CMW</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Elm" >Elm</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward7_F_Cooksey" >F Cooksey</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_HDU" >HDU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_ITU" >ITU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Juniper" >Juniper</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Larch" >Larch</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Laurel" >Laurel</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward7_Linden" >Linden</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Mat_5" >Mat 5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Mulberyy" >Mulberry</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Oak" >Oak</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_Obs" >Obs</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward7_" ></label></td></tr>
+										
+										<tr><td><label class="control-label"><strong>Cost:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Cost7_Breakfast" >Breakfast</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost7_Meal" >Meal</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost7_Snackbox" >Snackbox</label></td>
+                                     	<td style=" width: 20%; "><label><strong>Description:</strong></label><input id="Description7" type="text" style="width:200px;"  class="span2"></td>
+										<td>
+										<label><strong>Time:</strong></label></td>
+										<td><table id="Time7" class="equalDivide" cellpadding="5" cellspacing="0" width="8%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table></td>
+										</tr>
+										</table>
+                                     </td>
+                                     </tr>
+                                     </table>
+									 <hr>
+									 <table style="width: 100%;">
+                                     <tr>
+                                     <td colspan="2">
+                                     	<table style="width:100%">
+                                     	<tr><td><label class="control-label"><strong>Ward:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Ward8_A5" >A5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Alder" >Alder</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Anderson" >Anderson</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Ash" >Ash</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Aspen" >Aspen</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Beech" >Beech</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward8_Cedar" >Cedar</label></td>	
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Cherry_CCU" >Cherry/CCU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Chestnut_1" >Chestnut 1</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Chestnut_2" >Chestnut 2</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_CMW" >CMW</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Elm" >Elm</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward8_F_Cooksey" >F Cooksey</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_HDU" >HDU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_ITU" >ITU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Juniper" >Juniper</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Larch" >Larch</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Laurel" >Laurel</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward8_Linden" >Linden</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Mat_5" >Mat 5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Mulberyy" >Mulberry</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Oak" >Oak</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_Obs" >Obs</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward8_" ></label></td></tr>
+										
+										<tr><td><label class="control-label"><strong>Cost:</strong></label>
+                                     	<label class="checkbox inline"><input type="checkbox" id="Cost8_Breakfast" >Breakfast</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost8_Meal" >Meal</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Cost8_Snackbox" >Snackbox</label></td>
+                                     	<td style=" width: 20%; "><label><strong>Description:</strong></label><input id="Description8" type="text" style="width:200px;"  class="span2"></td>
+										<td>
+										<label><strong>Time:</strong></label></td>
+										<td><table id="Time8" class="equalDivide" cellpadding="5" cellspacing="0" width="8%" border="1" style="border-collapse:collapse;">
+										   <tr>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+										   </tr>
+										</table></td>
+										</tr>
+										</table>
+                                     </td>
+                                     </tr>
+                                     </table>
+                                   </div>
+                                   </form>
+</body>
+</html>
+                                     

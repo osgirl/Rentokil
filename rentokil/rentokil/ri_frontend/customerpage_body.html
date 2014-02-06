@@ -1,0 +1,1489 @@
+		
+<header class="row-fluid" id="caheader"></header>
+<!-- /row -->
+<nav class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="btn btn-navbar collapsed" data-toggle="collapse"
+               data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span>
+            </a> <a class="brand hidden-desktop" href="#" data-toggle="collapse"
+                    data-target=".nav-collapse">Navigation</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="active"><a href="#" id="cHome" name="cHome">Home</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="capeopleservices.html" id="cPeopleSvc" name="cPeopleSvc">People Services</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="cabuildingservices.html" id="cBuildingSvc" name="cBuildingSvc">Building Services</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="caresourcemanagement.html" id="cResourceMgmt" name="cResourceMgmt">Resource
+                            Management</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="caperformancereports.html" id="cPerformanceRpt" name="cPerformanceRpt">Performance
+                            Reports</a></li>
+                </ul>
+            </div>
+            <!-- /nav-collapse -->
+        </div>
+        <!-- /container -->
+    </div>
+</nav>
+<!-- /navbar -->
+<nav class="row-fluid tabNav">
+    <!-- secondary nav selects tabs -->
+    <ul class="nav nav-tabs" id="secondarynav">
+        <li class="active"><a href="#secDashboard" data-toggle="tab">Dashboard</a></li>
+        <li><a href="#secConfContract" data-toggle="tab" id="lnkConfigureContract">Configure Contract</a></li>
+        <li><a href="#secSysAdmin" id="lnkSysAdmin" data-toggle="tab">System Admin</a></li>
+        <li><a href="#secSafety" data-toggle="tab">Safety</a></li>
+    </ul>
+</nav>
+<div id="divNotify" class="alert alert-info hide">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Notification!</strong> Session logging is currently enabled and may result in slow page responsiveness.
+</div>
+<div id="divProfileNotify" class="alert alert-block hide">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Warning!</strong>Current administrator is not permitted to change anything on this screen.
+</div>
+
+
+<div id="tabcontent" class="tab-content">
+    <!-- begin page tabbed content -->
+    <section class="tab-pane active" id="secDashboard">
+        <!-- first tab -->
+        <div class="row-fluid">
+            <!-- left column -->
+            <!-- Row -->
+            <div class="row-fluid">
+                <!-- full width widget -->
+                <div class="span12 widget">
+                    <div class="row-fluid">
+                        <div class="span10">
+                            <h2>Main Dashboard</h2>
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row-fluid">
+                        <div class="tab-content">
+                            <div class="span12">
+                                Welcome to the customer administration panel for <span
+                                    id="spnContractName">HERE</span>.<br />
+                                <br /> Coming soon to your dashboard are: <br />
+                                <br />
+                                <ul>
+                                    <li>Energy feeds and performance</li>
+                                    <li>The latest cleaning audits and scores</li>
+                                    <li>Quick booking of meeting rooms</li>
+                                    <li>Safety performance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /row -->
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /row -->
+    </section>
+    <section class="tab-pane" id="secConfContract">
+        <!-- first tab -->
+        <!-- Row -->
+        <div class="row-fluid">
+            <!-- full width widget -->
+            <div class="span12 widget">
+                <div class="row-fluid noBottom">
+                    <div class="span10">
+                        <h2>Configure Contract</h2>
+                    </div>
+                </div>
+                <!-- /row -->
+                <div class="row-fluid hasTabs">
+                    <div class="span12">
+                        <div class="row-fluid noBottom">
+                            <div class="widgettabs widgetnav" style="width: 99.4%">
+                                <ul class="nav nav-tabs" id="widgetnav" >
+                                    <li class="active"><a href="#divUsers" id ="lnkUsers" data-toggle="tab">Users</a></li>
+                                    <li><a href="#divProfiles" id ="lnkProfiles" data-toggle="tab">Profiles</a></li>
+                                    <li><a href="#divSkins" id ="lnkSkins" data-toggle="tab">Skins</a></li>
+                                    <li><a href="#divAdministrators" id ="lnkAdministrators" data-toggle="tab">Administrators</a></li>
+                                    <li class="dropdown">
+                                        <a name="liInterfaces" id="liInterfaces" data-toggle="dropdown" class="dropdown-toggle" href="#schooloffices">External Interfaces<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a data-toggle="tab" id="lnkDgPens" href="#divDgPens">Digital Pens</a></li>
+                                            <li><a data-toggle="tab" id="tabQA" href="#divQA">Quality Audit</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#divSettings" id ="lnkSettings" data-toggle="tab">Settings</a></li>
+                                </ul>
+
+                            </div>
+                        </div><!-- /row -->
+                    </div>
+                </div>
+                <!-- /row -->
+                <div class="row-fluid">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="divUsers">
+                            <div class="row-fluid">
+                                <!-- Row -->
+                                <div class="row-fluid">
+                                    <div class="row-fluid" style="padding-top: 15px;">
+                                        <div class="span12">
+                                            <a class="btn btn-primary" id="btnNewUser" data-toggle="modal" name="btnNewUser" href="#divNewUser" style="float: right" onclick="NewUserProfile();">Add User</a>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <div class="tab-content">
+                                            <div class="span12" style="width:100%">
+
+                                                <table class="no-more-tables table table-hover table-striped  edfm-bordered-table" id="tblUsers" style="width:100%" name="tblUsers" >
+                                                    <thead style="border: none;">
+                                                        <tr>
+                                                            <th style="border: none;">First Name</th>
+                                                            <th style="border: none;">Last Name</th>
+                                                            <th style="border: none;">Username</th>
+                                                            <th style="border: none;">Profile</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /row -->
+                                </div>
+                                <!-- /row -->
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="divProfiles">
+                            <div id="NewProfile" class="hide">
+                                <div class="row-fluid" align="right">
+                                    <aside class="Manage">
+                                        <table>
+                                            <tr>
+
+                                                <td><button class="btn btn-primary" id="btnCreateProfile" name="btnCreateProfile" href="#divNewProfileUser" data-toggle="modal" style="margin-top: 0px;">Create Profile</button></td>
+                                            </tr>
+                                        </table>
+                                    </aside>
+                                </div>
+                            </div>
+                            <div id="ProfileExist" class="hide">
+                                <div class="row-fluid" align="right">
+                                    <aside class="Manage">
+                                        <table id="tblCreateprofile">
+                                            <tr>
+                                                <!-- US312 item2 profile label alignment -->
+                                                <td><label id="lblProfile" class="control-label" style="margin-bottom: 0px;">Profile:</label></td>
+                                                <td><span id="spnUserprofile" class='select-wrap'><select id="ddlUserProfile"></select></span></td>
+
+                                                <td><button class="btn btn-primary" id="btnCreateProfile" name="btnCreateProfile" href="#divNewProfileUser" data-toggle="modal" style="margin-top: 0px;">Create Profile</button></td>
+                                            </tr>
+                                        </table>
+                                    </aside>
+                                </div>
+                                <div id="divNewProfile">
+                                    <div class="row-fluid form-horizontal" style="margin-bottom: 0px;">									
+                                        <div class="control-group">
+                                            <label class="control-label" id='lblProfilename' style="width:240px">Profile name</label>
+                                            <input type="text"  id='txtProfileName' name='txtProfileName' maxlength="30" style="width:178px;"></input>
+                                            <span id="spnProfileName" class="help-inline" style="display: none; color: #b94a48;">Please enter the profile name</span>
+                                        </div>	
+                                    </div>
+                                    <form id="frmUserprofile" class="form-horizontal">
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px">Skin</label>
+                                                <span class='select-wrap' ><select id='ddlSkinProfiles' name="ddlSkinProfiles"></select></span>	
+                                            </div>    										
+                                        </div>	
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:258px;margin-top: -2px;">Self registration default?</label>																			
+                                                <label class="checkbox" >
+                                                    <input id="chkSelfReg" name="chkSelfReg" type="checkbox" >&nbsp Yes, make default profile
+                                                    <a id="hoverevent_Def" data-toggle="tooltip" data-placement="right"  data-original-title="This is the default profile applied to a user that register themselves on the system"><img src='img/infoicon.png' align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;padding-left: 35px;"></a>
+                                                </label>
+                                            </div>											
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:258px;margin-top: -2px;">Hide main navigation?</label>																			
+                                                <label class="checkbox" >
+                                                    <input id="chkHideMainNav" name="chkHideMainNav" type="checkbox" onclick="chkLevelPermission();">&nbsp Yes, hide level 1 navigation
+                                                    <a id="hoverevent_Hide" data-toggle="tooltip" data-placement="right"  data-original-title="Removes Level 1 navigation (Home, People services, Building Services etc... ) and corresponding subtabs "><img src='img/infoicon.png' align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;padding-left: 20px;"></a>																		
+                                                </label>
+                                            </div>											
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px">Select master module</label>
+                                                <span class='select-wrap' ><select id='ddlMasterModule' name='ddlMasterModule' onclick="ddlChangeModules();"></select></span>	
+                                            </div>    										
+                                        </div>
+
+                                        <!--US312 item2 moving select users above module selection-->
+                                        <!--DE 540 Available user selection positioning-->
+                                        <div class="span12" id="divProfileUserList" style="margin-left: 0px;margin-top:-10px;">
+                                            <div class="span5">
+                                                <div class="row-fluid" style="margin-bottom: 10px;color: black">Available Users</div>
+                                                <div class="row-fluid">
+                                                    <select multiple="multiple" size="10" id='lstProfileAvailableUsr' style="background-image: url('');width:100%;"></select>
+                                                </div>
+                                            </div>
+                                            <div class="span2 aligncenter"> 
+                                                <button class="btn" id="btnProfileAddUsers" name="btnProfileAddUsers">Add<i class="icon-arrow-right" style="float: right; vertical-align: middle; "></i></button><br/>	
+                                                <button class="btn" id="btnProfileRemoveUsers" name="btnProfileRemoveUsers" style="width:110px;"><i class="icon-arrow-left" style=" float: left; vertical-align: middle;"></i> Remove</button>
+                                            </div>
+                                            <div class="span5 pull-right">
+                                                <div class="row-fluid" style="margin-bottom: 10px;color: black">Selected Users</div>
+                                                <div class="row-fluid">
+                                                    <select multiple="multiple" size="10" id='lstProfileSelectedUsr' style="background-image: url('');width:100%;"></select>
+                                                </div>
+                                            </div>		
+                                        </div>
+                                        <div class="row-fluid" style="visibility:hidden;"></div>
+
+                                        <div id="divAccordProfile" class="accordion"></div>
+
+                                    </form>
+                                </div>
+                                <div id='divProfileErrMsg' class='alert alert-error hide'></div>
+
+                                <label id="lblSavealert" style="margin-left: 0px; float:left;"></label>
+                                <div class="pull-right">
+                                    <button class="btn btn-danger" id="btnProfileDelete" name="btnProfileDelete" >Delete</button>
+                                    <button class="btn btn-primary" id="btnProfileSave" name="btnProfileSave" style="margin-top: 0px;" disabled="disabled" >Saved</button>
+                                    <button class="btn btn-primary" id="btnProfileSave_temp" name="btnProfileSave_temp" style="margin-top: 0px;display:none" disabled="disabled" >Saved</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="divSkins">
+                            <div id="NewSkin" class="hide">
+                                <div class="row-fluid" align="right">
+                                    <aside class="Manage">
+                                        <table>
+                                            <tr>
+                                                <td><button class="btn btn-primary" id="btnCreateSkin" name="btnCreateSkin" href="#divNewSkin" data-toggle="modal" style="margin-top: 0px;">Create Skin</button></td>
+                                            </tr>
+                                        </table>
+                                    </aside>
+                                </div>
+                            </div>
+                            <div id="SkinExist" class="hide">
+                                <div class="row-fluid" align="right">
+                                    <aside class="Manage">
+                                        <table id="tblCreateSkin">
+                                            <tr>
+                                                <td><label id="lblSkin" class="control-label" >Skin:</label></td>
+                                                <td><span id="spnUserSkin" class='select-wrap'><select id="ddlUserSkin"></select></span></td>
+                                                <td><button class="btn btn-primary" id="btnCreateSkin" name="btnCreateSkin" href="#divNewSkin" data-toggle="modal" style="margin-top: 0px;">Create Skin</button></td>
+                                            </tr>
+                                        </table>
+                                    </aside>
+                                </div>
+                                <div id="divSkinTheme" >
+                                    <div class="form-horizontal span12">
+                                        <div class="row-fluid" style="margin-bottom: 0px;">									
+                                            <div class="control-group">
+                                                <label class="control-label" id='lblSkinName' style="width:240px">Skin name</label>
+                                                <input type="text" id="txtSkinName" name="txtSkinName" maxlength="30"></input>
+                                                <span id="spnSkinName" style="color:#b94a48; display: none">Please enter the skin name</span>
+                                            </div>	
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group span6" style="margin-bottom: 10px;">
+                                                <label class="control-label" style="width:240px">Desktop/tablet logo</label>
+                                                <table>
+                                                    <tr>
+                                                        <td nowrap='nowrap'>
+                                                            <div class="imageUpld" style='position:relative'>
+                                                                <input id='logo' type='file' name='files[]' accept="image/x-png"  onchange= 'setFileNameFromPath(this, "10", "271", "86", "86");'
+                                                                       style='width:310px;position:relative; -moz-opacity:0; text-align: right;opacity: 0; filter:alpha(opacity: 0);z-index:2'>
+                                                                <div style='position:absolute;top:0px;left:0px;z-index:1'>
+                                                                    <input id='txt_logo' readonly type='text' value='Select Desktop logo...'> &nbsp;<button class='btn btn-primary' style="margin-top:0px;">Choose</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div> 
+                                            <div class="span1 controls pull-left hidden-phone hidden-tablet " style="margin-left:0px;">
+                                                <a id="hoverevent_Desktop" data-toggle="tooltip" data-placement="right"  data-original-title="Logo for desktop and tablet devices.&nbsp; Should not be taller than 86px or wider than 271px."><img src='img/infoicon.png' align="middle" style="margin-top:5px;"></a>	
+                                            </div>
+                                            <div class="span5 controls pull-left" style=" margin-left: -32px;">
+                                                <div id="Errformat_logo" class="alert alert-error hide"></div>
+                                                <div id="Err_logo" class="alert alert-error hide">Desktop logo should not be taller than 86px or wider than 271px.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px;" id="div_logo">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+                                                <img id="img_logo" src="#" width="220" height="86"  style=" background-color: #0271b8; display: block;height:86px!important"/>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+
+                                                <div class="btn-group segment-button" style=" margin-top: 0px;">
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;" id="Dld_logo" onclick='javascript:downloadlogo("logo");'><i class="icon-download"></i> Download</button>
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;width:105px;" id="Rem_logo" onclick="RemoveLogo(this)"><i class="icon-repeat"></i> Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group span6" style="margin-bottom: 10px;">
+                                                <label class="control-label" style="width:240px">Smartphone logo</label>
+                                                <table>
+                                                    <tr>
+                                                        <td nowrap='nowrap'>
+                                                            <div style='position:relative'  class="imageUpld">
+
+                                                                <input id='smartphone' name='files[]' accept="image/x-png" onchange= 'setFileNameFromPath(this, "10", "122", "38", "38");' type='file'
+                                                                       style='width:310px;position:relative; -moz-opacity:0; text-align: right;opacity: 0; filter:alpha(opacity: 0);z-index:2'>
+                                                                <div style='position:absolute;top:0px;left:0px;z-index:1'>
+                                                                    <input id='txt_smartphone' readonly type='text' value='Select Smart Phone logo...'> &nbsp;<button class='btn btn-primary' style="margin-top:0px;">Choose</button>
+
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div> 
+                                            <div class="span1 controls pull-left hidden-phone hidden-tablet" style="margin-left:0px;">
+
+                                                <a id="hoverevent_Tablet" data-toggle="tooltip" data-placement="right"  data-original-title="A smaller logo is used for smartphones.Should not be taller than 38 px or wider than 122 px."><img src='img/infoicon.png' align="middle" style="margin-top:5px;"></a>  
+                                            </div>
+                                            <div class="span5 controls pull-left" style=" margin-left: -32px;">
+                                                <div id="Errformat_smartphone" class="alert alert-error hide"></div>
+                                                <div id="Err_smartphone" class="alert alert-error hide">Smartphone logo should not be taller than 38 px or wider than 122 px.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px;" id="div_smartphone">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+                                                <img id="img_smartphone" src="#" width="122" height="38"  style=" background-color: #0271b8; display: block;height:38px!important"/>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+
+                                                <div class="btn-group segment-button" style=" margin-top: 0px;">
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;" id="Dld_smartphone" onclick='javascript:downloadlogo("smartphone");'><i class="icon-download"></i> Download</button>
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;width:105px;"  id="Rem_smartphone" onclick="RemoveLogo(this)"><i class="icon-repeat"></i> Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group span6" style="margin-bottom: 10px;">
+                                                <label class="control-label" style="width:240px">Header divider</label>
+                                                <table>
+                                                    <tr>
+                                                        <td nowrap='nowrap'>
+                                                            <div style='position:relative'  class="imageUpld">
+
+                                                                <input id='header_div' name='files[]' accept="image/x-png" onchange= 'setFileNameFromPath(this, "217", "217", "2", "2");' type='file'
+                                                                       style='width:310px;position:relative; -moz-opacity:0; text-align: right;opacity: 0; filter:alpha(opacity: 0);z-index:2'>
+                                                                <div style='position:absolute;top:0px;left:0px;z-index:1'>
+                                                                    <input id='txt_header_div' readonly type='text' value='Select Header divider file...'> &nbsp;<button class='btn btn-primary' style="margin-top:0px;">Choose</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div> 
+                                            <div class="span1 controls pull-left hidden-phone hidden-tablet" style="margin-left:0px;">
+                                                <a id="hoverevent_HDivider" data-toggle="tooltip" data-placement="right"  data-original-title="An image used to seperate text in the top right of the screen. Must be 217px wide by 2px tall."><img src='img/infoicon.png' align="middle" style="margin-top:5px;"></a>
+                                            </div>
+                                            <div class="span5 controls pull-left" style=" margin-left: -32px;">
+                                                <div id="Errformat_header_div" class="alert alert-error hide"></div>
+                                                <div id="Err_header_div" class="alert alert-error hide">Head divider should be 217px wide by 2px tall.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px;" id="div_header_div">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+                                                <img id="img_header_div" src="#" width="220" style=" background-color: #0271b8; display: block;height:6px!important"/>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+
+                                                <div class="btn-group segment-button" style=" margin-top: 0px;">
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;" id="Dld_header_div" onclick='javascript:downloadlogo("header_div");'><i class="icon-download"></i> Download</button>
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;width:105px;" id="Rem_header_div" onclick="RemoveLogo(this)"><i class="icon-repeat"></i> Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px">Header link colour</label>
+                                                <input type="text" value="txtHdrLnkColor" name="txtHdrLnkColor" class="pick-a-color"> &nbsp;
+
+                                                <button type="button" class="btn btn-default reset-button" id="btnHdrLnkColor" onclick="btnResetColor(this)"><i class="icon-repeat"></i> Reset</button>
+                                            </div>    										
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px">Header link hover colour</label>
+                                                <input type="text" value="txtHdrLnkHoverColor" name="txtHdrLnkHoverColor" class="pick-a-color"> &nbsp;
+
+                                                <button type="button" class="btn btn-default reset-button" id="btnHdrLnkHoverColor" onclick="btnResetColor(this)"><i class="icon-repeat"></i> Reset</button>
+                                            </div>    										
+                                        </div>
+                                        <hr>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px">Headings colour</label>
+                                                <input type="text" value="txtHeadingsColor" name="txtHeadingsColor" class="pick-a-color"> &nbsp;
+
+                                                <button type="button" class="btn btn-default reset-button" id="btnHeadingsColor" onclick="btnResetColor(this)"><i class="icon-repeat"></i> Reset</button>
+                                            </div>    										
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px">Page link colour</label>
+                                                <input type="text" value="txtPageLnkColor" name="txtPageLnkColor" class="pick-a-color"> &nbsp;
+
+                                                <button type="button" class="btn btn-default reset-button" id="btnPageLnkColor" onclick="btnResetColor(this)"><i class="icon-repeat"></i> Reset</button>
+                                            </div>    										
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px">Page link hover colour</label>
+                                                <input type="text" value="txtPgeLnkHoverColor" name="txtPgeLnkHoverColor" class="pick-a-color"> &nbsp;
+
+                                                <button type="button" class="btn btn-default reset-button" id="btnPgeLnkHoverColor" onclick="btnResetColor(this)"><i class="icon-repeat"></i> Reset</button>
+                                            </div>    										
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px">Page background colour</label>
+                                                <input type="text" value="txtPgeBgdColor" name="txtPgeBgdColor" class="pick-a-color"> &nbsp;
+
+                                                <button type="button" class="btn btn-default reset-button" id="btnPgeBgdColor" onclick="btnResetColor(this)"><i class="icon-repeat"></i> Reset</button>
+                                            </div>    										
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group span6" style="margin-bottom: 10px;">
+                                                <label class="control-label" style="width:240px">Level 1 and 2 background</label>
+                                                <table>
+                                                    <tr>
+                                                        <td nowrap='nowrap'>
+                                                            <div style='position:relative'  class="imageUpld">
+
+                                                                <input id='level12_bg' name='files[]' accept="image/x-png" onchange= 'setFileNameFromPath(this, "1", "1000", "241", "241");' type='file'
+                                                                       style='width:310px;position:relative; -moz-opacity:0; text-align: right;opacity: 0; filter:alpha(opacity: 0);z-index:2'>
+                                                                <div style='position:absolute;top:0px;left:0px;z-index:1'>
+                                                                    <input id='txt_level12_bg' readonly type='text' value='Select background image...'> &nbsp;<button class='btn btn-primary' style="margin-top:0px;">Choose</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="span1 controls pull-left hidden-phone hidden-tablet" style="margin-left:0px;">
+                                                <a id="hoverevent_L12" data-toggle="tooltip" data-placement="right"  data-original-title="Background image used when level 1 and 2 navigation is visible (repeated across the x-axis)."><img src='img/infoicon.png' align="middle" style="margin-top:5px;"></a>
+                                            </div> 
+                                            <div class="span5 controls pull-left" style=" margin-left: -32px;">
+                                                <div id="Errformat_level12_bg" class="alert alert-error hide"></div>
+                                                <div id="Err_level12_bg" class="alert alert-error hide">Level 1 and 2 background should be 1px wide by 241px tall.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px;" id="div_level12_bg">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+                                                <img id="img_level12_bg" src="#" width="220" style=" background-color: #0271b8; display: block; height:86px!important"/>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+
+                                                <div class="btn-group segment-button" style=" margin-top: 0px;">
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;" id="Dld_level12_bg" onclick='javascript:downloadlogo("level12_bg");'><i class="icon-download"></i> Download</button>
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;width:105px;"  id="Rem_level12_bg" onclick="RemoveLogo(this)"><i class="icon-repeat"></i> Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group span6" style="margin-bottom: 10px;">
+                                                <label class="control-label" style="width:240px">Level 2 only background</label>
+                                                <table>
+                                                    <tr>
+                                                        <td nowrap='nowrap'>
+                                                            <div style='position:relative' class="imageUpld">
+
+                                                                <input id='level2_bg' name='files[]' accept="image/x-png" onchange= 'setFileNameFromPath(this, "1", "1000", "241", "241");' type='file'
+                                                                       style='width:310px;position:relative; -moz-opacity:0; text-align: right;opacity: 0; filter:alpha(opacity: 0);z-index:2'>
+                                                                <div style='position:absolute;top:0px;left:0px;z-index:1'>
+                                                                    <input id='txt_level2_bg' readonly type='text' value='Select L2 background image...'> &nbsp;<button class='btn btn-primary' style="margin-top:0px;">Choose</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="span1 controls pull-left hidden-phone hidden-tablet" style="margin-left:0px;">
+                                                <a id="hoverevent_L2" data-toggle="tooltip" data-placement="right"  data-original-title="This is the background image used only level 2 is visible (repeated across the x-axis)."><img src='img/infoicon.png' align="middle" style="margin-top:5px;"></a>
+                                            </div>
+                                            <div class="span5 controls pull-left" style=" margin-left: -32px;">
+                                                <div id="Errformat_level2_bg" class="alert alert-error hide"></div>
+                                                <div id="Err_level2_bg" class="alert alert-error hide">Level 2 background should be 1px wide by 241px tall.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px;" id="div_level2_bg">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+                                                <img id="img_level2_bg" src="#" width="220" style=" background-color: #0271b8; display: block;height:86px!important"/>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+
+                                                <div class="btn-group segment-button" style=" margin-top: 0px;">
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;" id="Dld_level2_bg" onclick='javascript:downloadlogo("level2_bg");'><i class="icon-download"></i> Download</button>
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;width:105px;" id="Rem_level2_bg" onclick="RemoveLogo(this)"><i class="icon-repeat"></i> Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group span6" style="margin-bottom: 10px;">
+                                                <label class="control-label" style="width:240px">No navigation background</label>
+                                                <table>
+                                                    <tr>
+                                                        <td nowrap='nowrap'>
+                                                            <div style='position:relative' class="imageUpld">
+
+                                                                <input id='no_nav' name='files[]' accept="image/x-png" onchange= 'setFileNameFromPath(this, "1", "1000", "140", "140");' type='file'
+                                                                       style='width:310px;position:relative; -moz-opacity:0; text-align: right;opacity: 0; filter:alpha(opacity: 0);z-index:2'>
+                                                                <div style='position:absolute;top:0px;left:0px;z-index:1'>
+                                                                    <input id='txt_no_nav' readonly type='text' value='Select navigation image...'> &nbsp;<button class='btn btn-primary' style="margin-top:0px;">Choose</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="span1 controls pull-left hidden-phone hidden-tablet" style="margin-left:0px;">
+                                                <a id="hoverevent_Nav" data-toggle="tooltip" data-placement="right"  data-original-title="The background used when level1 and 2 navigation is disabled (repeated across the x-axis)."><img src='img/infoicon.png' align="middle" style="margin-top:5px;"></a>
+                                            </div>
+                                            <div class="span5 controls pull-left" style=" margin-left: -32px;">
+                                                <div id="Errformat_no_nav" class="alert alert-error hide"></div>
+                                                <div id="Err_no_nav" class="alert alert-error hide">Navigation image should be 1px wide by 140px tall.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px;" id="div_no_nav">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+                                                <img id="img_no_nav" src="#" width="220" style=" background-color: #0271b8; display: block; height:86px!important"/>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+
+                                                <div class="btn-group segment-button" style=" margin-top: 0px;">
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;" id="Dld_no_nav" onclick='javascript:downloadlogo("no_nav");'><i class="icon-download"></i> Download</button>
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;width:105px;" id="Rem_no_nav" onclick="RemoveLogo(this)"><i class="icon-repeat"></i> Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group span6" style="margin-bottom: 10px;">
+                                                <label class="control-label" style="width:240px">Widget header image</label>
+                                                <table>
+                                                    <tr>
+                                                        <td nowrap='nowrap'>
+                                                            <div style='position:relative' class="imageUpld">
+
+                                                                <input id='widget_header' name='files[]' accept="image/x-png" onchange= 'setFileNameFromPath(this, "5", "5", "42", "42");' type='file'
+                                                                       style='width:310px;position:relative; -moz-opacity:0; text-align: right;opacity: 0; filter:alpha(opacity: 0);z-index:2'>
+                                                                <div style='position:absolute;top:0px;left:0px;z-index:1'>
+                                                                    <input id='txt_widget_header' readonly type='text' value='Select Widget header image...'> &nbsp;<button class='btn btn-primary' style="margin-top:0px;">Choose</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="span1 controls pull-left hidden-phone hidden-tablet" style="margin-left:0px;">
+                                                <a id="hoverevent_Widget" data-toggle="tooltip" data-placement="right"  data-original-title="Background image used for a widget title. Repeated across the x-axis with a max height of 42px."><img src='img/infoicon.png' align="middle" style="margin-top:5px;"></a>
+                                            </div> 
+                                            <div class="span5 controls pull-left" style=" margin-left: -32px;">
+                                                <div id="Errformat_widget_header" class="alert alert-error hide"></div>
+                                                <div id="Err_widget_header" class="alert alert-error hide">Widget Header should be 5px wide by 42px tall.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px;" id="div_widget_header">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+                                                <img id="img_widget_header" src="#" width="220" style=" background-color: #0271b8; display: block;height:86px!important"/>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+
+                                                <div class="btn-group segment-button" style=" margin-top: 0px;">
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;" id="Dld_widget_header" onclick='javascript:downloadlogo("widget_header");'><i class="icon-download"></i> Download</button>
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;width:105px;"  id="Rem_widget_header" onclick="RemoveLogo(this)"><i class="icon-repeat"></i> Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group span6" style="margin-bottom: 10px;">
+                                                <label class="control-label" style="width:240px">Select drop down image</label>
+                                                <table>
+                                                    <tr>
+                                                        <td nowrap='nowrap'>
+                                                            <div style='position:relative' class="imageUpld">
+
+                                                                <input id='select_bg' name='files[]' accept="image/x-png" onchange= 'setFileNameFromPath(this, "764", "764", "24", "24");' type='file'
+                                                                       style='width:310px;position:relative; -moz-opacity:0; text-align: right;opacity: 0; filter:alpha(opacity: 0);z-index:2'>
+                                                                <div style='position:absolute;top:0px;left:0px;z-index:1'>
+                                                                    <input id='txt_select_bg' readonly type='text' value='Select drop down image...'> &nbsp;<button class='btn btn-primary' style="margin-top:0px;">Choose</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="span1 controls pull-left hidden-phone hidden-tablet" style="margin-left:0px;">
+                                                <a id="hoverevent_ddImage" data-toggle="tooltip" data-placement="right"  data-original-title="Background image used for dropdown fields . Dimensions should be 764px wide by 24px tall."><img src='img/infoicon.png' align="middle" style="margin-top:5px;"></a>
+                                            </div> 
+                                            <div class="span5 controls pull-left" style=" margin-left: -32px;">
+                                                <div id="Errformat_select_bg" class="alert alert-error hide"></div>
+                                                <div id="Err_select_bg" class="alert alert-error hide">Dropdown image should be 764px wide by 24px tall.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px;" id="div_select_bg">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+                                                <img id="img_select_bg" src="#" width="220"  style=" background-color: #0271b8; display: block;height:20px!important"/>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:0px">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px"></label>
+
+                                                <div class="btn-group segment-button" style=" margin-top: 0px;">
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;" id="Dld_select_bg" onclick='javascript:downloadlogo("select_bg");'><i class="icon-download"></i> Download</button>
+                                                    <button type="button" class="btn btn-default" style="padding-left: 20px;width:105px;"  id="Rem_select_bg" onclick="RemoveLogo(this)"><i class="icon-repeat"></i> Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <form id="frmSkinTheme" >
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group">
+                                                    <label class="control-label" id='lblLftFtrTitle' style="width:240px">Left footer block title</label>
+
+                                                    <input type="text"  id='txtLftFtrTitle' name='txtLftFtrTitle' maxlength="30" class='input-footer'></input>
+                                                </div>	
+                                            </div>
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group span8">
+                                                    <label class="control-label" id='lblLftFtr1' style="width:240px">Left footer block link 1</label>
+
+                                                    <input type="text"  id='txtLftFtr1' name='txtLftFtr1' maxlength="30" class='input-footer' ></input> &nbsp;
+                                                    <div class="input-prepend input-ftrLnk">
+                                                        <span class="add-on">http://</span><input id="txtLftFtrLnk1" name="txtLftFtrLnk1" type="text" maxlength="300"></input>
+                                                    </div>
+                                                </div>	
+                                                <div class="span4 pull-left" style="margin-left:0px;margin-top:4px;">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="chkLftFtrLnk1" onchange="SelDisable(this);"> Disabled
+                                                        <span id="spnLftFtr1" style="color:#b94a48; display: none; padding-left: 5px;">Please enter the Left footer title 1</span>
+                                                    </label>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group span8">
+                                                    <label class="control-label" id='lblLftFtr2' style="width:240px">Left footer block link 2</label>
+
+                                                    <input type="text"  id='txtLftFtr2' name='txtLftFtr2' maxlength="30" class='input-footer'></input>
+                                                    &nbsp;
+                                                    <div class="input-prepend input-ftrLnk">
+                                                        <span class="add-on">http://</span><input id="txtLftFtrLnk2" name="txtLftFtrLnk2" type="text" maxlength="300"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="span4 pull-left" style="margin-left:0px;margin-top:4px;">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="chkLftFtrLnk2" onchange="SelDisable(this);"> Disabled
+                                                        <span id="spnLftFtr2" style="color:#b94a48; display: none;padding-left: 5px;">Please enter the Left footer title 2</span>
+                                                    </label>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group span8">
+                                                    <label class="control-label" id='lblLftFtr3' style="width:240px">Left footer block link 3</label>
+
+                                                    <input type="text"  id='txtLftFtr3' name='txtLftFtr3' maxlength="30" class='input-footer'></input> &nbsp;
+                                                    <div class="input-prepend input-ftrLnk">
+                                                        <span class="add-on">http://</span><input id="txtLftFtrLnk3" name="txtLftFtrLnk3" type="text" maxlength="300" ></input>
+                                                    </div>
+                                                </div>
+                                                <div class="span4 pull-left" style="margin-left:0px;margin-top:4px;">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="chkLftFtrLnk3" onchange="SelDisable(this);"> Disabled
+                                                        <span id="spnLftFtr3" style="color:#b94a48; display: none;padding-left: 5px;">Please enter the Left footer title 3</span>
+                                                    </label>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group span8">
+                                                    <label class="control-label" id='lblLftFtr4' style="width:240px">Left footer block link 4</label>
+
+                                                    <input type="text"  id='txtLftFtr4' name='txtLftFtr4' maxlength="30" class='input-footer'></input>
+                                                    &nbsp;
+                                                    <div class="input-prepend input-ftrLnk">
+                                                        <span class="add-on">http://</span><input id="txtLftFtrLnk4" name="txtLftFtrLnk4" type="text" maxlength="300"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="span4 pull-left" style="margin-left:0px;margin-top:4px;">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="chkLftFtrLnk4" onchange="SelDisable(this);"> Disabled
+                                                        <span id="spnLftFtr4" style="color:#b94a48; display: none;padding-left: 5px;">Please enter the Left footer title 4</span>
+                                                    </label>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group">
+                                                    <label class="control-label" id='lblRightFtrTitle' style="width:240px">Right footer block title</label>
+
+                                                    <input type="text"  id='txtRightFtrTitle' name='txtRightFtrTitle' maxlength="30" class='input-footer'></input>
+                                                </div>	
+                                            </div>
+                                            <div class="row-fluid" style="margin-bottom: 0px;">									
+                                                <div class="control-group span8">
+                                                    <label class="control-label" id='lblRightFtr1' style="width:240px">Right footer block link 1</label>
+
+                                                    <input type="text"  id='txtRightFtr1' name='txtRightFtr1' maxlength="30" class='input-footer' ></input> &nbsp;
+                                                    <div class="input-prepend input-ftrLnk">
+                                                        <span class="add-on">http://</span><input id="txtRightFtrLnk1" name="txtRightFtrLnk1" type="text" maxlength="300"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="span4 pull-left" style="margin-left:0px;margin-top:4px;">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="chkRightFtrLnk1" onchange="SelDisable(this);"> Disabled
+                                                        <span id="spnRightFtr1" style="color:#b94a48; display: none; padding-left: 5px;">Please enter the Right footer title 1</span>
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group span8">
+                                                    <label class="control-label" id='lblRightFtr2' style="width:240px">Right footer block link 2</label>
+
+                                                    <input type="text"  id='txtRightFtr2' name='txtRightFtr2' maxlength="30" class='input-footer'></input> &nbsp;
+                                                    <div class="input-prepend input-ftrLnk">
+                                                        <span class="add-on">http://</span><input id="txtRightFtrLnk2" name="txtRightFtrLnk2" type="text" maxlength="300"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="span4 pull-left" style="margin-left:0px;margin-top:4px;">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="chkRightFtrLnk2" onchange="SelDisable(this);"> Disabled
+                                                        <span id="spnRightFtr2" style="color:#b94a48; display: none; padding-left: 5px;">Please enter the Right footer title 2</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group span8">
+                                                    <label class="control-label" id='lblRightFtr3' style="width:240px">Right footer block link 3</label>
+
+                                                    <input type="text"  id='txtRightFtr3' name='txtRightFtr3' maxlength="30" class='input-footer'></input> &nbsp;
+                                                    <div class="input-prepend input-ftrLnk">
+                                                        <span class="add-on">http://</span><input id="txtRightFtrLnk3" name="txtRightFtrLnk3" type="text" maxlength="300"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="span4 pull-left" style="margin-left:0px;margin-top:4px;">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="chkRightFtrLnk3" onchange="SelDisable(this);"> Disabled
+                                                        <span id="spnRightFtr3" style="color:#b94a48; display: none; padding-left: 5px;">Please enter the Right footer title 3</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group span8">
+                                                    <label class="control-label" id='lblRightFtr4' style="width:240px">Right footer block link 4</label>
+
+                                                    <input type="text"  id='txtRightFtr4' name='txtRightFtr4' maxlength="30" class='input-footer'></input> &nbsp;
+                                                    <div class="input-prepend input-ftrLnk">
+                                                        <span class="add-on">http://</span><input id="txtRightFtrLnk4" name="txtRightFtrLnk4" type="text" maxlength="300"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="span4 pull-left" style="margin-left:0px;margin-top:4px;">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="chkRightFtrLnk4" onchange="SelDisable(this);"> Disabled
+                                                        <span id="spnRightFtr4" style="color:#b94a48; display: none; padding-left: 5px;">Please enter the Right footer title 4</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid " style="margin-bottom: 0px;">									
+                                                <div class="control-group">
+                                                    <label class="control-label" id='lblFootertxt' style="width:240px">Footer copyright text</label>
+
+                                                    <textarea id="txtfooterCPR" name="txtfooterCPR" class="form-control input-footer" rows="4" style="resize:none;width:43%" maxlength="255"></textarea>
+                                                </div>	
+                                            </div>
+                                        </form></div>
+                                    <label id="lblSaveSkin" style="margin-left: 0px; float:left;"></label>
+                                    <div class="pull-right">
+                                        <button class="btn btn-danger" id="btnSkinDelete" name="btnSkinDelete" >Delete</button>
+                                        <button class="btn btn-primary" id="btnSkinSave" name="btnSkinSave" style="margin-top: 0px;" disabled="disabled">Saved</button>
+                                        <button class="btn btn-primary" id="btnSkinSave_temp" name="btnSkinSave_temp" style="margin-top: 0px;display:none" disabled="disabled" >Saved</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="divAdministrators">
+
+                            <div class="form-horizontal">
+                                <div id='divAdminErrMsg' class='alert alert-error hide'></div>
+                                <div class="span12" style="margin-left: 0px;">
+                                    <div class="span5">
+                                        <div class="row-fluid" style="margin-bottom: 10px;color: black">
+                                            Available Administrators
+                                        </div>
+
+                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+                                            <table class="table" name="lstAvailableAdmin" id="lstAvailableAdmin" style="padding: 10px;border-collapse: separate; border-spacing: 0 5px;">
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <div class="span2 aligncenter" style="margin-top: 45px;"> 
+                                        <button class="btn" id="btnAddAdmin" name="btnAddAdmin" >Add<i class="icon-arrow-right" style="float: right; vertical-align: middle; "></i></button><br/>	
+                                        <button class="btn" id="btnRemoveAdmin" name="btnRemoveAdmin" style="width:110px;"><i class="icon-arrow-left" style=" float: left; vertical-align: middle;"></i> Remove</button>
+                                    </div>
+                                    <div class="span5 pull-right">
+                                        <div class="row-fluid" style="margin-bottom: 10px;color: black">
+                                            Selected Administrators
+                                        </div>
+                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+                                            <table class="table" name="lstSelectedAdmin" id="lstSelectedAdmin" style="padding: 10px; border-collapse: separate; border-spacing: 0 5px;">
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>		
+                                </div>
+
+                                <div>
+                                    <label id="lblAdminError" class="alert alert-error" style="margin-left: 0px; float:left;display:none"></label>  
+                                    <button class="btn btn-primary" id="btnSaveContractAdmin" data-toggle="modal" name="btnSaveContractAdmin" disabled="disabled" style="float:right;margin-top: 10px">Saved</button>	
+                                    <button class="btn btn-primary" id="btnSaveContractAdminTemp" data-toggle="modal" name="btnSaveContractAdminTemp" disabled="disabled" style="float:right;display:none;margin-top: 10px">Saved</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="divDgPens">
+                            <div class="row-fluid" id="divDg_add">
+                                <div class="control-group">
+                                    <div class="btn-group segment-button pull-right" style=" margin-top: 15px!important;">
+                                        <button type="button" class="btn btn-primary" id="btnAddDigitalApp" href="#divNewAddApp" data-toggle="modal">Add App</button>
+                                        <button type="button" class="btn btn-primary" id="btnAddDigitalPen" href="#divNewAddPen" data-toggle="modal">Add Pen</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="divtbl_Apps">
+                                <div id="divpag_Appslist">
+                                    <div id="divtbl_Appslist">
+                                        <table class=" no-more-tables table table-hover table-striped edfm-bordered-table" name="tbldigitalApps" id="tbldigitalApps" style="display:none !important;">
+                                            <thead><tr>
+                                                    <th style=" border: none; ">App Name</th>
+                                                    <th style=" border: none; ">Label</th>
+                                                    <th style=" border: none; ">Description</th>
+                                                    <th style=" border: none; ">Timeout(hrs)</th>
+                                                    <th style=" border: none; "></th>
+                                                </tr></thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+
+                                    <input type="hidden" id="hdnAppid" name="hdnAppid"/>
+                                </div>
+                                <div id="divpag_Penslist">
+                                    <div id="divtbl_Penslist">
+                                        <hr>
+                                        <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tbldigitalPens" id="tbldigitalPens" style="display:none !important;">
+                                            <thead><tr>
+                                                    <th style=" border: none; ">Pen ID</th>
+                                                    <th style=" border: none; ">Label</th>
+                                                    <th style=" border: none; ">Description</th>
+                                                    <th style=" border: none; ">Timeout(hrs)</th>
+                                                    <th style=" border: none; "></th>
+                                                </tr></thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <input type="hidden" id="hdnPenid" name="hdnPenid"/>
+                                </div>
+                            </div>
+                            <div class="row-fluid hide" id="divDgApp_edit">
+                                <div class="form-horizontal" style="margin-left: 10px; margin-top: 20px;">
+                                    <form id="frmEditApp" >
+                                        <div class="control-group">
+                                            <label class="control-label span2">App Name </label>
+                                            <input type="text" name="txtAppName" id="txtAppName" maxlength="30"/>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label span2">Label </label>
+                                            <input type="text" name="txtAppLbl" id="txtAppLbl" maxlength="50"/>
+                                        </div>
+                                        <div class="control-group" id="div_timeout">
+                                            <label class="control-label span2">Timeout </label>
+                                            <div class="input-append">
+                                                <input type="text" name="txtTimeout" id="txtTimeout" maxlength="10"/><span class="add-on">hours</span>
+                                            </div>
+                                            <span class="inline" id="validationerrorplacement" >
+                                                <a id="hoverevent_tout" data-toggle="tooltip" data-placement="right"  data-original-title="Duration to wait without hearing from App before flagging as down"><img src='img/infoicon.png' align="middle" style="vertical-align:text-top;display:inline;padding-left: 15px;"></a>
+                                            </span>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label span2">Description </label>
+                                            <textarea id="txtDesc" name="txtDesc" class="form-control input-footer" rows="4" style="resize:none;" maxlength="255"></textarea>
+                                        </div>
+
+                                        <div class="controls controls-row span12" style="margin-left: 0px;margin-bottom: 20px;">
+                                            <label class="control-label span2">Navigation Location</label>
+
+                                            <span class='select-wrap span1' id="spnNavigation" style='min-height: 26px;margin-left: 0px;'><select id='ddlNavLoc' name="ddlNavLoc"></select></span>
+                                            <span class="inline" id="validationerrorplacement" style="margin-left: 22px;">
+                                                <a id="hoverevent_nloc" data-toggle="tooltip" data-placement="right"  data-original-title="Location in the navigation to make 'Digital Forms' appear as a menu option to show reports below"><img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;"></a>											
+                                            </span>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label span2">Form</label>
+                                            <span id="spnForm" class='select-wrap'><select id='ddlForm' name="ddlForm"></select></span>	
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label span2">Disallow forms?</label>
+                                            <label class="checkbox"><input style="margin-left: 0px!important;" type="checkbox" value="1" id="chkDisallowforms" name="chkDisallowforms" onchange="chkDforms();">&nbsp;Yes, exclude forms sent between the times below</label>	
+                                        </div>
+                                        <div class="control-group form-horizontal">
+                                            <label class="control-label span2">Unexpected Period</label>
+                                            <span class='select-wrap span1' style="width: 65px;min-height:26px; margin-left:-5px;!important;"><select style="width: 90px;min-height: 26px;margin-left: 0px;" id='ddlfromhrs' name="ddlfromhrs" disabled></select></span><span class="span1" style="width: 25px;min-height: 26px;margin-left: 10px;"><label>:</label></span>
+                                            <span class='select-wrap span1' style="width: 65px;min-height:26px; margin-left:-5px;!important;"><select style="width: 90px;min-height: 26px;margin-left: 0px;" id='ddlfrommins' name="ddlfrommins" disabled></select></span><span class="span1" style="width: 25px;min-height: 26px;margin-left: 10px;"><label>to</label></span>
+                                            <span class='select-wrap span1' style="width: 65px;min-height:26px; margin-left:-5px;!important;"><select style="width: 90px;min-height: 26px;margin-left: 0px;" id='ddltohrs' name="ddltohrs" disabled></select></span><span class="span1" style="width: 25px;min-height: 26px;margin-left: 10px;"><label>:</label></span>
+                                            <span class='select-wrap span1' style="width: 65px;min-height:26px; margin-left:-5px;!important;"><select style="width: 90px;min-height: 26px;margin-left: 0px;" id='ddltomins' name="ddltomins" disabled></select></span>
+                                        </div>
+                                        <div class="controls controls-row" style="margin-left: 0px;margin-bottom: 20px;">
+                                            <label class="control-label span2">Template</label>
+                                            <table class="span4" style="margin-left: 0px;">
+                                                <tr>
+                                                    <td nowrap='nowrap'>
+                                                        <div class="imageUpld pull-left" style='position:relative'>
+                                                            <input id='zipUpld' type='file' name='files[]' size="43" style='width:356px;position:relative; -moz-opacity:0; text-align: left;opacity: 0; filter:alpha(opacity: 0);z-index:2'>
+                                                            <div style='position:absolute;top:0px;left:0px;z-index:1;'>
+                                                                <input id='txt_zipUpld' readonly type='text' value='Choose...'> &nbsp;<button class='btn btn-primary' style="margin-top:0px;">Choose</button>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="span1 controls pull-left hidden-phone hidden-tablet " style="margin-left:12px;">
+                                                <a id="hoverevent_zipUpld" data-toggle="tooltip" data-placement="right"  data-original-title="Zip file is validated to ensure it only contains HTML, JPG, JPEG, CSS and PNG files."><img src='img/infoicon.png' align="middle" style="margin-top:5px;"></a>	
+                                            </div>
+                                            <div id="Errt_zipUpld" class="alert alert-error hide pull-left">
+                                            </div>
+
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label span2"></label>
+                                            <div class="btn-group segment-button" style=" margin-top: 0px;">
+                                                <button type="button" class="btn btn-default" style="padding-left: 20px;width:117px;" id="btnPreview" disabled="disabled" onclick="javascript:return window.open(localStorage['prv_url'])"><i class="icon-eye-open pull-left" style="margin-top: 3px;"></i> Preview</button>
+                                                <button type="button" class="btn btn-default" style="padding-left: 20px;width:117px;" id="btnDel" disabled="disabled"><i class="icon-trash pull-left" style="margin-top: 3px;"></i> Delete</button>
+                                                <button type="button" class="btn btn-default" style="padding-left: 20px;width:117px;" id="btnDownload" disabled="disabled"><i class="icon-download-alt pull-left" style="margin-top: 3px;"></i> Download</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <label id="lblDigAppError" class="pull-left alert" style="display:none"></label>  
+                                <div class="pull-right">
+                                    <button class="btn" id="btnClose_DigApp" name="btnClose_DigApp">Close</button>	
+                                    <button class="btn btn-primary" id="btnSave_DigApp" name="btnSave_DigApp" style="margin-top: 0px;">Save</button>
+                                </div>
+                            </div>
+                            <div class="row-fluid hide" id="divDgPen_edit">
+                                <div class="form-horizontal" style="margin-left: 10px; margin-top: 20px;">
+                                    <form id="frmEditPen" >
+                                        <div class="control-group">
+                                            <label class="control-label span2">Pen ID</label>
+                                            <input type="text" name="txtPenId" id="txtPenId" maxlength="30" style="width: 206px!important;" />
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label span2">Label </label>
+                                            <input type="text" name="txtPenLbl" id="txtPenLbl" maxlength="50" style="width: 206px!important;"/>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label span2">Timeout </label>
+                                            <div class="input-append">
+                                                <input type="text" name="txtPenTimeout" id="txtPenTimeout" maxlength="10" style="width: 160px!important;"/><span class="add-on">hours</span>
+                                            </div>
+                                            <span class="inline" id="validationerrorplacementpen" >
+                                                <a id="hoverevent_tout_pen" data-toggle="tooltip" data-placement="right"  data-original-title="Duration to wait without hearing from Pen before flagging as missing"><img src='img/infoicon.png' align="middle" style="vertical-align:text-top;display:inline;padding-left: 15px;"></a>
+                                            </span>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label span2">Description </label>
+                                            <textarea id="txtPenDesc" name="txtPenDesc" class="form-control input-footer" rows="4" style="resize:none;width: 206px!important;" maxlength="255"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <label id="lblDigPenError" class="pull-left alert" style="display:none"></label>  
+                                <div class="pull-right">
+                                    <button class="btn" id="btnClose_DigPen" name="btnClose_DigPen">Close</button>	
+                                    <button class="btn btn-primary" id="btnSave_DigPen" name="btnSave_DigPen" style="margin-top: 0px;">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="divQA" class="tab-pane">
+                            <ul id="bcHome" class="breadcrumb hide">
+                                <li>You are here: Quality Audit</li>
+                            </ul>
+                            <div id="divBtnAddAccount" class="row-fluid">
+                                <div class="control-group">
+                                    <div style=" margin-top: 15px!important;" class="btn-group segment-button pull-right">
+                                        <button id="btnAddAccount" class="btn btn-primary" type="button" onClick="javascript:addEditAccount();">Add Account</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="divBtnAddGroup" class="row-fluid hide">
+
+                            </div>
+                            <div id="divAccountList">
+
+                                <div id="divtblAccountlist">
+                                    <div id="divpag_Accountlist">
+                                        <table class=" no-more-tables table table-hover table-striped edfm-bordered-table" id="tblQAAccounts" name="tblQAAccounts">
+                                            <thead><tr>
+                                                    <th style=" border: none; ">Account Name</th>
+                                                    <th style=" border: none; ">Code</th>
+                                                    <th style=" border: none; ">Description</th>
+                                                    <th style=" border: none; ">Last status</th>
+                                                    <th style=" border: none; ">Custom Groups</th>
+                                                    <th style=" border: none; ">Last Modified</th>
+                                                    <th style=" border: none; width:10% "></th>
+                                                </tr></thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="divtblGroupslist" class="hide">
+                                    <div id="divpag_Grplist">
+                                    <table style="" id="tblGroupslist" name="tblGroupslist" class=" no-more-tables table table-hover table-striped edfm-bordered-table">
+                                        <thead><tr>
+                                                <th style=" border: none; ">Group Name</th>
+                                                <th style=" border: none; ">Point Indicators</th>
+                                                <th style=" border: none; ">Last Modified</th>
+                                                <th style=" border: none; "></th>
+                                            </tr></thead>
+                                        <tbody></tbody>
+                                    </table>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button name="btnClose_Group" id="btnClose_Group" class="btn hide" onClick="javascript:showAccounts();">Close</button>	
+                                    </div>
+
+                                </div>
+                                <label id="lblAccountEmptyError" class="alert" style="display:none"></label>  
+                            </div>
+                            <div id="divAddAccount" class="row-fluid hide">
+                                <div style="margin-left: 10px; margin-top: 20px;" class="form-horizontal">
+                                    <form id="frmEditAccount" novalidate="novalidate">
+                                        <div class="control-group">
+                                            <label class="control-label span2">Account Name </label>
+                                            <input type="text" maxlength="30" id="txtAccName" name="txtAccName">
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label span2">Code</label>
+                                            <input type="text" maxlength="50" id="txtAccCode" name="txtAccCode">
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label span2">Description </label>
+                                            <textarea maxlength="255" style="resize:none;" rows="4" class="form-control input-footer" name="txtAccDesc" id="txtAccDesc"></textarea>
+                                        </div>
+                                        <div  class="control-group hide" id="divSync">
+                                            <label class="control-label span2">Sync</label>
+                                            <label class="checkbox" >
+                                                <input type="checkbox" style="margin-left: 0px!important;" name="chkSync" id="chkSync" onClick="javascript:showSyncDate(this);">  Yes, sync data from One-Connect
+                                            </label>
+											<input class="hide" type="text" maxlength="50" id="txtAddEdit" name="txtAddEdit">
+
+                                        </div>
+                                        <div class="control-group hide" id="divSyncDate">
+                                            <label class="control-label span2">Start Date:</label>
+                                            <div class="controls input-append date" id="divRBEndDate" data-date-format="dd/mm/yyyy">
+                                                <input class="span12" id="txtRBED" style="width: 166px;" size="16" type="text" readonly="readonly"><span class="add-on"><i class="icon-calendar"></i></span>
+                                            </div>
+                                            <a data-original-title="Synchronise up to 6 months of data from One-Connect. This can take up to 24 hours to complete" data-placement="right" data-toggle="tooltip" id="hoversyncStartDate">
+                                                <img align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;padding-left: 5px;" src="img/infoicon.png"></a>
+                                        </div>
+                                        <div class="control-group hide" id="divStatus">
+                                            <label class="control-label span2">Last Status </label>
+                                            <label id="lblLastStatus"></label>
+                                            <input type="hidden" id ="hdnAccountid" name="hdnAccountid" value="">
+                                        </div>
+                                        <div style="margin-left: 0px;" class="span12">
+                                            <div class="accordion" id="divAccordProfile">
+                                                <div class="accordion-group show" id="Accord1">
+                                                    <div class="accordion-heading">
+                                                        <a style="text-decoration: none !important; padding-left: 7px;" data-parent="#divAccordProfile" data-toggle="collapse" class="accordion-toggle"><i class="icon-user icon-white"></i> Users</a>
+                                                    </div>
+                                                    <div class="accordion-body collapse in " id="divMC-">
+                                                        <div class="accordion-inner">
+                                                            <div style="margin-bottom: 0px;" class="accordion">
+                                                                <div id="divpag_UsersList">
+                                                                    <table name="tblUsers_QAct" style="width: 100%;" id="tblUsers_QAct" class="no-more-tables table table-hover table-striped  edfm-bordered-table">
+                                                                        <thead style="border: none;">
+                                                                            <tr>
+                                                                                <th style="border: none;">Name</th>
+                                                                                <th style="border: none;">Username</th>
+                                                                                <th style="border: none;">Create/Modify SLA Reports</th>
+                                                                                <th style="border: none;">Run Ad-hoc Report</th>
+                                                                                <th style="border: none;">View SLA Reports</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody></tbody>
+                                                                    </table>
+                                                                    <div id="lbluserstatus" class="alert alert-danger hide"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="addAcct_status" class="alert alert-error" style="display: inline; margin-left: 10px;"></div>
+                                <div class="pull-right">
+                                    <button name="btnClose_Addacct" id="btnClose_Addacct" class="btn" onClick="javascript:showAccounts();">Close</button>	
+                                    <button style="margin-top: 0px;" name="btnSave_Addacct" id="btnSave_Addacct" class="btn btn-primary" disabled="disabled">Save</button>
+                                </div>
+                            </div>
+                            <div id="divAddGroup" class="row-fluid hide">
+                                <div style="margin-left: 10px; margin-top: 20px;" class="form-horizontal">
+                                    <form id="frmEditGrp" novalidate="novalidate">
+                                    <div class="control-group">
+                                        <label class="control-label">Account Name</label>
+                                        <span class="input-large uneditable-input" id="txtGroupAccName"></span>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">Group Name</label>
+                                        <input type="text" style="width: 210px!important;" maxlength="30" id="txtGroupName" name="txtGroupName">
+                                    </div>
+                                    </form>
+                                   <div id="divPointIndErr" class="alert alert-error hide"></div>
+                                    <div style="margin-left: 0px;" class="span12">
+                                        <div class="span4">
+                                            <div style="margin-bottom: 10px; color: black" class="row-fluid">Available Point Indicators</div>
+
+                                            <div style="border: 2px solid #d3d3d3; height: 180px; overflow: auto;" class="row-fluid">
+                                                <table style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;" id="lstAvailablePointInd" name="lstAvailablePointInd" class="table" data-original-title="">
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                        <div class="span3 aligncenter">
+                                            <button name="btnAddPoint" id="btnAddPoint" class="btn" style="width: 110px;margin-bottom: 10px;margin-top: 70px;">
+                                                Add<i style="float: right; vertical-align: middle;" class="icon-arrow-right"></i>
+                                            </button>
+                                            <br>
+                                            <button style="width: 110px;" name="btnRemovePoint" id="btnRemovePoint" class="btn">
+                                                <i style="float: left; vertical-align: middle;" class="icon-arrow-left"></i> Remove
+                                            </button>
+                                        </div>
+                                        <div class="span4">
+                                            <div style="margin-bottom: 10px; color: black" class="row-fluid">Selected Point Indicators</div>
+                                            <table class="table"><tr><td style="border-top: 0px !important">
+                                                        <div style="border: 2px solid #d3d3d3; margin-left: -4px; height: 180px; overflow: auto;" class="row-fluid">
+                                                            <table style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;" id="lstSelectedPointInd" name="lstSelectedPointInd" class="table">
+                                                                <tbody></tbody>
+                                                            </table>
+
+                                                        </div></td><td style="padding:0px;width:10px; border-top: 0px !important;vertical-align:middle !important;">
+                                                        <a id="btnPointIndicatorUp" class="btn btn-small" style="width:28px;">Up<br><i class="icon-arrow-up"></i></a><br /><br /><a id="btnPointIndicatorDown" class="btn btn-small" style="width:28px;"><i class="icon-arrow-down"></i><br>Down</a></td></tr>
+											</table>
+
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: 0px;" class="span12">
+                                        <div class="accordion" id="divAccordProfile">
+                                            <div class="accordion-group show" id="Accord1">
+                                                <div class="accordion-heading">
+                                                    <a style="text-decoration: none !important; padding-left: 7px;" data-parent="#divAccordProfile" data-toggle="collapse" class="accordion-toggle"><i class="icon-tint icon-white"></i> RAG</a>
+                                                </div>
+                                                <div class="accordion-body collapse in " id="divMC-">
+                                                    <div class="accordion-inner">
+                                                        <div style="margin-bottom: 0px;" class="accordion">
+                                                            <table class="no-more-tables table edfm-bordered-table" name="tblReportList" id="tblReportList">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th style="border: none;"></th>
+                                                                        <th style="border: none;"><label><i class=" icon-tint icon-red"></i>&nbsp;<b>Red </b></label></th>
+                                                                        <th style="border: none;"><label><i class=" icon-tint icon-orange"></i>&nbsp;<b>Amber</b></label></th>
+                                                                        <th style="border: none;"><label><i class=" icon-tint icon-green"></i>&nbsp;<b>Green</b></label></th>
+                                                                        <th style="border: none;"><label><i class=" icon-tint icon-purple"></i>&nbsp;<b>Purple</b></label></th>
+                                                                        <th style="border: none;"><label><i class=" icon-tint icon-blue"></i>&nbsp;<b>Blue</b></label></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+
+                                                                    <tr>
+                                                                        <td nowrap="nowrap" data-title="" style="border-top: 0px !important"><div style="padding-top: 6px"></div></td>
+                                                                        <td nowrap="wrap" data-title="Red" style="border-top: 0px !important">
+                                                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                                                <div class="control-group">
+                                                                                    <label style="width:40px !important;" class="control-label">From:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="0" name="txtRedfrom" id="txtRedfrom" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                                <div class="control-group" >
+                                                                                    <label style="width:40px !important;" class="control-label">To:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="10" name="txtRedto" id="txtRedto" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td nowrap="wrap" data-title="Amber" style="border-top: 0px !important"><div class="row-fluid" style="margin-bottom:0px;">
+                                                                                <div class="control-group" >
+                                                                                    <label style="width:40px !important;" class="control-label">From:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="11" name="txtAmberfrom" id="txtAmberfrom" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                                <div class="control-group" >
+                                                                                    <label style="width:40px !important;" class="control-label">To:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="30" name="txtAmberto" id="txtAmberto" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                            </div></td>
+                                                                        <td nowrap="wrap" data-title="Green" style="border-top: 0px !important"><div class="row-fluid" style="margin-bottom:0px;">
+                                                                                <div class="control-group" >
+                                                                                    <label style="width:40px !important;" class="control-label">From:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="81" name="txtGrnfrom" id="txtGrnfrom" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                                <div class="control-group" >
+                                                                                    <label style="width:40px !important;" class="control-label">To:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="100" name="txtGrnto" id="txtGrnto" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                            </div></td>
+                                                                        <td nowrap="wrap" data-title="Purple" style="border-top: 0px !important"><div class="row-fluid" style="margin-bottom:0px;">
+                                                                                <div class="control-group" >
+                                                                                    <label style="width:40px !important;" class="control-label">From:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="31" name="txtPurplefrom" id="txtPurplefrom" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                                <div class="control-group" >
+                                                                                    <label style="width:40px !important;" class="control-label">To:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="50" name="txtPurpleto" id="txtPurpleto" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                            </div></td>
+                                                                        <td nowrap="wrap" data-title="Blue" style="border-top: 0px !important"><div class="row-fluid" style="margin-bottom:0px;">
+                                                                                <div class="control-group" >
+                                                                                    <label style="width:40px !important;" class="control-label">From:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="51" name="txtbluefrom" id="txtbluefrom" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                                <div class="control-group" >
+                                                                                    <label style="width:40px !important;" class="control-label">To:</label>
+                                                                                    <div class="input-append"><input type="text" class="span10" value="80" name="txtblueto" id="txtblueto" maxlength="3" style="width:40px;">
+                                                                                        <span class="add-on">%</span></div>
+                                                                                </div>
+                                                                            </div></td>
+
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <div class="alert alert-danger hide" id="lblrag_err"></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger hide" id="lblgrps_err" style="display: inline"></div>
+                                <div class="pull-right">
+                                    <button name="btnClose_QAGrp" id="btnClose_QAGrp" class="btn" onClick="javascript:showGroups(0);">Close</button>	
+                                    <button style="margin-top: 0px;" name="btnSave_QAGrp" id="btnSave_QAGrp" class="btn btn-primary" >Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="divSettings">
+                            <form id="frmContractSettings" class="form-horizontal" method="post">
+                                <div class="row-fluid" style="margin-bottom: 0px;">									
+                                    <div class="control-group">
+                                        <label class="control-label" style="width:180px;margin-top: 2px;">Contract ID</label>                                               
+                                        <input class="span10" value="" type="text" name="InputContractID" id="InputContractID" maxlength="80" style="width:180px;" readonly></input>	                                              								                                               																		
+                                    </div>	
+                                </div>
+                                <div class="row-fluid" style="margin-bottom: 0px;">									
+                                    <div class="control-group">
+                                        <label class="control-label" style="width:180px;margin-top: 2px;">Contract Name</label>                                               
+                                        <input class="span10" value="" type="text" name="InputContractName" id="InputContractName" maxlength="80" style="width:180px;"></input>	                                              								                                               																		
+                                    </div>	
+                                </div>
+                            </form>
+
+                            <div>
+                                <label id="idContractError" style="margin-left: 0px; float:left;"></label>  
+                                <button class="btn btn-primary" id="btnSaveContractSettings" data-toggle="modal" name="btnSaveContractSettings" disabled="disabled" style="float:right;">Saved</button>
+                                <button class="btn btn-primary" id="btnSaveContractSettingsTemp" data-toggle="modal" name="btnSaveContractSettingsTemp" disabled="disabled" style="float:right;display:none;">Saved</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /row -->
+    </section>
+    <section class="tab-pane" id="secSysAdmin">
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="row-fluid noBottom">
+                    <div class="span10">
+                        <h2>System Admin</h2>
+                    </div>
+                </div>
+                <div class="row-fluid hasTabs">
+                    <div class="span12">
+                        <div class="row-fluid noBottom">
+                            <div class="widgettabs widgetnav" style="width: 99.4%">
+                                <ul class="nav nav-tabs" id="widgetnav" >
+                                    <li class="active"><a href="#divSessionLogs" id ="lnkSession" data-toggle="tab">Session Logs</a></li>
+                                    <li><a href="#divphpInfo" id="lnkPhpInfo" data-toggle="tab">PHP Info</a></li>
+                                </ul>
+
+                            </div>
+                        </div><!-- /row -->
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="divSessionLogs">
+                            <div class="row-fluid">
+                                <!-- Row -->
+                                <div class="row-fluid" align="right">
+                                    <aside class="Manage">
+                                        <table>
+                                            <tr>
+                                                <td><span id="spnGenPurge" class="hide" style="float:right;margin-top: 1px;margin-right: 18px;"><img src="img/ajax-loader2.gif" /> Purging...... &nbsp;</span><span id="spnGenRefresh" style="float:right;margin-top: 1px;margin-right: 18px;" class="hide"><img src="img/ajax-loader2.gif" /> Refreshing...... &nbsp;</span></td>
+                                                <td><a id="btnSessRefresh" class="btn" name="btnSessRefresh"  href="javascript:void(0);">Refresh Screen</a></td>
+                                                <td><a id="btnSessPurge" class="btn btn-primary" name="btnSessPurge" href="javascript:void(0);" style="margin-top: 0px;">Purge Data</a>
+                                                    <button id="btnSessPurge_temp" class="btn btn-primary" name="btnSessPurge_temp" style="margin-top: 0px;display: none;" disabled="disabled">Purge Data</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </aside>
+                                </div>
+                                <div class="alert" id="divWarningMsg">
+                                    <strong>Warning!</strong> This feature should be used with caution as it will impact system performance.
+                                </div>
+                                <div class="alert alert-success hide" id="divPurgeMsg"></div>
+                                <div class="row-fluid form-inline">
+                                    <label class="control-label">Enable username logging?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class="checkbox"><input type="checkbox" value="1" id="chkEnableSession" name="chkEnableSession" onchange="chkSession();"> Yes, enable session logging for the below usernames</label>
+                                </div>
+                                <div class="form-horizontal">
+                                    <div id='divUserErrMsg' class='alert alert-error hide'></div>
+                                    <div class="span12" style="margin-left: 0px;">
+                                        <div class="span5">
+                                            <div class="row-fluid" style="margin-bottom: 10px;color: black">
+                                                Available Users
+                                            </div>
+                                            <div class="row-fluid">
+                                                <select multiple="multiple" size="10" id='lstAvailableUsr' style="background-image: url('');width:100%;height:150px;">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="span2 aligncenter"> 
+                                            <button class="btn" id="btnSessAddUsers" name="btnSessAddUsers" >Add<i class="icon-arrow-right" style="float: right; vertical-align: middle; "></i></button><br/>	
+                                            <button class="btn" id="btnSessRemoveUsers" name="btnSessRemoveUsers" style="width:110px;"><i class="icon-arrow-left" style=" float: left; vertical-align: middle;"></i> Remove</button>
+                                        </div>
+                                        <div class="span5 pull-right">
+                                            <div class="row-fluid" style="margin-bottom: 10px;color: black">
+                                                Selected Users
+                                            </div>
+                                            <div class="row-fluid">
+                                                <select multiple="multiple" size="10" id='lstSelectedUsr' style="background-image: url('');width:100%;height:150px;">
+                                                </select>
+                                            </div>
+                                        </div>		
+                                    </div>
+                                </div>
+                                <div id="divDataSessionLogs">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <table class="table table-hover table-striped table-bordered edfm-bordered-table" name="tblDataSessionLogs" id="tblDataSessionLogs" style="display: none !important;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Username</th>
+                                                        <th>IP Address</th>
+                                                        <th>Time</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table> </div>
+                                    </div>
+                                    <div id="Sessionlogs_pag"></div>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary" id="btnSessionSave" data-toggle="modal" name="btnSessionSave" style="float: right; display: block;"  disabled >Saved</button>
+                                    <button class="btn btn-primary" id="btnSessionSave_temp" data-toggle="modal" name="btnSessionSave_temp" style="float: right; display: none;"  disabled >Saved</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="divphpInfo"> 
+                            <div id="phpinfo">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="tab-pane" id="secSafety">
+        Safety Screens are coming...
+    </section>
+    <!-- end tab 1 -->
+</div>
+<input type="hidden" id="txthdnacid" value="">
+<input type="hidden" id="txthdngrpid" value="">
+<input type="hidden" id="txthdnacname" value="">
+<input type="hidden" id="txthdngrpcnt" value="">
+
+

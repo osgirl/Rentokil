@@ -1,0 +1,268 @@
+		
+<header class="row-fluid" id="caheader"></header>
+<!-- /row -->
+
+<!-- /navbar -->
+<nav class="row-fluid tabNav">
+    <!-- secondary nav selects tabs -->
+    <ul class="nav nav-tabs" id="secondarynav">
+        <li class="active"><a href="#secAdministrator" data-toggle="tab">Administrators</a></li>
+        <li><a href="#secProfiles" data-toggle="tab" id="lnkProfiles">Profiles</a></li>
+        <li><a href="#secContracts" id="lnkContracts" data-toggle="tab">Contracts</a></li>
+        <li><a href="#secSettings" id="lnkSettings" data-toggle="tab">Settings</a></li>
+
+    </ul>
+</nav>
+
+<div id="tabcontent" class="tab-content">
+    <!-- begin page tabbed content -->
+    <section class="tab-pane active" id="secAdministrator">
+        <!-- first tab -->
+        <div class="row-fluid">
+            <!-- left column -->
+            <!-- Row -->
+            <div class="row-fluid">
+                <!-- full width widget -->
+                <div class="span12 widget">
+                    <div class="row-fluid">
+                        <div class="span10">
+                            <h2 id="hCustomernameadmin">Customer Name Administrators</h2>
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row-fluid" style="margin-bottom:0px;">
+                        <div class="tab-content">
+                            <div class="span12">
+                                <div class="row-fluid" style="margin-bottom:0px;">
+                                    <a class="btn btn-primary" data-toggle="modal"
+                                       href="#divNewCustomerAdmin" id="btnNewCustomerAdmin"
+                                       name="btnNewCustomerAdmin" style="float:right;margin-top: 0px;">New Administrator</a>
+                                </div>
+                                <div class="row-fluid" id="DivAdmin" style="overflow:auto;margin-bottom:0px;">
+
+                                    <form id="frmAdmin">
+                                        <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblAdmin" id="tblAdmin" >
+                                            <thead style="border: none;">
+                                                <tr>
+                                                    <th style="border: none;">First Name</th>
+                                                    <th style="border: none;">Last Name</th>
+                                                    <th style="border: none;">Username</th>
+                                                    <th style="border: none;">Profile</th>
+                                                    <th style="border: none;"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </form>	
+
+                                </div>	 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /row -->
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /row -->
+    </section>
+    <section class="tab-pane" id="secProfiles">
+        <!-- first tab -->
+        <!-- Row -->
+        <div class="row-fluid">
+           
+                <!-- full width widget -->
+                <div class="span12 widget" style="float:left!important">
+                    <div class="row-fluid">
+                        <div class="span10">
+                            <h2 id="hCustomernameprofiles">Customer Name Profiles</h2>
+                        </div>
+                    </div>
+                    <div id="NewProfile" class="hide">
+                        <div class="row-fluid" align="right">
+                            <aside class="Manage">
+                                <table>
+                                    <tr>
+                                        <td><button class="btn btn-primary" id="btnCreateProfile" name="btnCreateProfile" href="#divNewProfileUser" data-toggle="modal" style="margin-top: 0px;">Create Profile</button></td>
+                                    </tr>
+                                </table>
+                            </aside>
+                        </div>
+                    </div>
+                    <div id="ProfileExist" class="hide">
+                        <div class="row-fluid" align="right">
+                            <aside class="Manage">
+                                <table id="tblCreateprofile">
+                                    <tr>
+                                        <td><label id="lblProfile" class="control-label" style="display: block;margin-top: 4px;margin-right: 10px;">Profile</label></td>
+                                        <td><span id="spnUserprofile" class='select-wrap'><select id="ddlUserProfile"></select></span></td>
+                                        <td><button class="btn btn-primary" id="btnCreateProfile" name="btnCreateProfile" href="#divNewProfileUser" data-toggle="modal" style="margin-top: 0px;margin-left: 4px;">Create Profile</button></td>
+                                    </tr>
+                                </table>
+                            </aside>
+                        </div>
+                        <div id="divNewProfile">
+                            <div class="row-fluid form-horizontal" style="margin-bottom: 0px;">									
+                                <div class="control-group">
+                                    <label class="control-label" id='lblProfilename' style="width:240px">Profile name</label>
+                                    <input type="text"  id='txtProfileName' name='txtProfileName' maxlength="30" style="width:178px;"></input>
+                                    <span id="spnProfileName" class="help-inline" style="display: none; color: #b94a48;">Please enter the profile name</span>
+                                </div>	
+                            </div>
+                            <form id="frmUserprofile" class="form-horizontal">
+                                <div class="row-fluid" style="margin-bottom: 0px;">											
+                                    <div class="control-group">
+                                        <label class="control-label" style="width:258px;margin-top: -2px;">Create contracts</label>																			
+                                        <label class="checkbox" >
+                                            <input id="chkCreateContract" name="chkCreateContract" type="checkbox">&nbsp Yes, can create contracts
+                                        </label>
+                                    </div>											
+                                </div>
+                                <div class="row-fluid" style="margin-bottom: 0px;">											
+                                    <div class="control-group">
+                                        <label class="control-label" style="width:258px;margin-top: -2px;">Self registration default?</label>																			
+                                        <label class="checkbox" >
+                                            <input id="chkSelfReg" name="chkSelfReg" type="checkbox" >&nbsp Yes, make default profile
+                                            <a id="hoverevent_Def" data-toggle="tooltip" data-placement="right"  data-original-title="This is the default profile applied to a user that register themselves on the system"><img src='img/infoicon.png' align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;padding-left: 35px;"></a>
+                                        </label>
+                                    </div>			
+								<!-- US 312 item 13 moving select users div-->
+								<div class="span12" id="divProfileUserList" style="margin-left: 0px;">
+                                    <div class="span5">
+									<!-- DE 527 Text change-->
+                                        <div class="row-fluid" style="margin-bottom: 10px;color: black">Available Administrators</div>
+                                        <div class="row-fluid">
+                                            <select multiple="multiple" size="10" id='lstProfileAvailableUsr' style="background-image: url('');width:100%;"></select>
+                                        </div>
+                                    </div>
+                                    <div class="span2 aligncenter"> 
+                                        <button class="btn" id="btnProfileAddUsers" name="btnProfileAddUsers">Add<i class="icon-arrow-right" style="float: right; vertical-align: middle; "></i></button><br/>	
+                                        <button class="btn" id="btnProfileRemoveUsers" name="btnProfileRemoveUsers" style="width:110px;"><i class="icon-arrow-left" style=" float: left; vertical-align: middle;"></i> Remove</button>
+                                    </div>
+                                    <div class="span5 pull-right">
+                                        <!-- DE 527 Text change-->
+										<div class="row-fluid" style="margin-bottom: 10px;color: black">Selected Administrators</div>
+                                        <div class="row-fluid">
+                                            <select multiple="multiple" size="10" id='lstProfileSelectedUsr' style="background-image: url('');width:100%;"></select>
+                                        </div>
+                                    </div>		
+                                </div>
+                                </div>
+                                <div id="divAccordProfile" class="accordion"></div>
+                            </form>
+                        </div>
+                        <div id='divProfileErrMsg' class='alert alert-error hide'></div>
+                        
+                        <label id="lblSavealert" style="margin-left: 0px; float:left;"></label>
+						<!--US 312 item 12 changing delete/save button margin-->
+                        <div class="pull-right" style="margin-bottom:15px;">
+                            <button class="btn btn-danger" id="btnProfileDelete" name="btnProfileDelete" >Delete</button>
+                            <button class="btn btn-primary" id="btnProfileSave" name="btnProfileSave" style="margin-top: 0px;" disabled="disabled" >Saved</button>
+                        </div>
+                    </div>
+
+                </div>
+           
+
+        </div>
+        <!-- /row -->
+    </section>
+    <section class="tab-pane" id="secContracts">
+        <div class="row-fluid">
+            <div class="row-fluid">
+                <!-- full width widget -->
+                <div class="span12 widget" id="divContracts">
+                    <div class="row-fluid">
+                        <div class="span10">
+                            <h2 id="hcustomernameContracts">Customer Name Contracts</h2>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="divSelectcontract">
+                        <form class="form-inline pull-right">
+                            <label class="control-label pull-left" style="margin-right: 16px;margin-top:4px;">Contract</label> 
+                            <span class="select-wrap" style="vertical-align: middle;display: inline-block;margin-top:1px;"><select id="selectSuperContract" name="selectSuperContract"></select></span>
+                        </form>
+                    </div>
+                    <div class="form-horizontal" id="frmContract">
+                        <div id='divCustomerHide' class='alert alert-error hide'></div> 
+                        <div class="span12" style="margin-left: 0px;">
+                            <div class="span5">
+                                <div class="row-fluid" style="margin-bottom: 10px;color: black">
+                                    <label>Available Administrators</label>
+                                </div>
+                                <div class="row-fluid" id="divACustomers">
+                                    <select multiple="multiple" id="ddlAvailableCustomers"  style="background-image: url('');width:100%;height:150px">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="span2 aligncenter"> 
+                                <button class="btn" id="btnAddCustomers" name="btnAddCustomers">Add<i class="icon-arrow-right" style="float: right; vertical-align: middle; "></i></button><br/>	
+                                <button class="btn" id="btnRemoveCustomers" name="btnRemoveCustomers"  style="width:110px;"><i class="icon-arrow-left" style=" float: left; vertical-align: middle;"></i> Remove</button>
+                            </div>
+                            <div class="span5 pull-right">
+                                <div class="row-fluid" style="margin-bottom: 10px;color: black">
+                                    <label>Selected Administrators</label>
+                                </div>
+                                <div class="row-fluid" id="divSelCustomers">
+                                    <select multiple="multiple" id="ddlSelectedCustomers" style="background-image: url('');width:100%;height:150px">
+                                    </select>
+                                </div>
+                            </div>		
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <label id="lblCustomerContractlabel" class="alert alert-error" style="margin-left: 0px; float:left;display:none"></label>  
+                        <button class="btn btn-primary" id="btnSaveCustomerContract" data-toggle="modal" name="btnSaveCustomerContract" disabled="disabled" style="float:right;">Saved</button>	
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="tab-pane" id="secSettings">
+        <div class="row-fluid">
+            <div class="row-fluid">
+                <!-- full width widget -->
+                <div class="span12 widget">
+                    <div class="row-fluid">
+                        <div class="span10">
+                            <h2 id="hcustomernamesettings">Customer Name Settings</h2>
+                        </div>
+                    </div>
+                    <form id="frmCustomerSettings" class="form-horizontal" method="post">
+                        <div class="row-fluid" style="margin-bottom: 0px;">									
+                            <div class="control-group">
+                                <label class="control-label" style="width:180px;margin-top: 2px;">Customer ID</label>                                               
+                                <input class="span10" value="" type="text" name="InputCustomerID" id="InputCustomerID" maxlength="80" style="width:180px;" readonly></input>	                                              								                                               																		
+                            </div>	
+                        </div>
+                        <div class="row-fluid" style="margin-bottom: 0px;">									
+                            <div class="control-group">
+                                <label class="control-label" style="width:180px;margin-top: 2px;">Customer Name</label>                                               
+                                <input class="span10" value="" type="text" name="InputCustomerName" id="InputCustomerName" maxlength="80" style="width:180px;"></input>	                                              								                                               																		
+                            </div>	
+                        </div>
+                    </form>
+                    <div class="row-fluid">
+                        <label id="lblCustomerlabel" style="margin-left: 0px; float:left;"></label>  
+                        <button class="btn btn-primary" id="btnSaveCustomerSettings" data-toggle="modal" name="btnSaveCustomerSettings" disabled="disabled" style="float:right;">Saved</button>	
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- end tab 1 -->
+</div>
+<style>
+    @media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {	
+        #tblAdmin.no-more-tables td:nth-of-type(1):before { content: "First Name"; }
+        #tblAdmin.no-more-tables td:nth-of-type(2):before { content: "Last Name"; }
+        #tblAdmin.no-more-tables td:nth-of-type(3):before { content: "Username"; }
+        #tblAdmin.no-more-tables td:nth-of-type(4):before { content: "Profile"; } 	
+    }
+</style>
+<script type="text/javascript">
+
+</script>

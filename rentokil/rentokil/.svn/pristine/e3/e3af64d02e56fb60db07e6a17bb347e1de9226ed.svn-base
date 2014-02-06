@@ -1,0 +1,2034 @@
+<header class="row-fluid" id="userheader"></header>
+<!-- /row -->
+<nav class="navbar-static-top" id="navLevel1">
+    <div class="navbar-inner">
+        <div class="container">
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="btn btn-navbar" data-toggle="collapse"
+               data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span>
+            </a> <a class="brand hidden-desktop" href="#" data-toggle="collapse"
+                    data-target=".nav-collapse">Navigation</a>
+            <div class="nav-collapse">
+                <ul class="nav" id="l1nav"></ul>
+            </div>
+            <!-- /nav-collapse -->
+        </div>
+        <!-- /container -->
+    </div>
+</nav>
+<!-- /navbar -->
+<nav class="row-fluid tabNav" id="navLevel2">
+    <!-- secondary nav selects tabs -->
+    <ul class="nav nav-tabs" id="secondarynav">
+    </ul>
+</nav>
+<div id="tabcontent" class="tab-content">
+    <!-- begin page tabbed content -->
+    <section class="tab-pane active" id="secCatering">
+        <!-- first tab -->
+        <div class="row-fluid">
+            <!-- left column -->
+            <!-- Row -->
+            <div class="row-fluid">
+                <!-- full width widget -->
+                <div class="span12 widget">
+                    <div class="row-fluid noBottom">
+                        <div class="span10">
+                            <h2 id="headername">Catering Dashboard</h2>
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row-fluid hasTabs" id="navLevel3" style="display:none">
+                        <div class="span12">
+                            <div class="row-fluid noBottom">
+                                <div class="widgettabs widgetnav" style="width: 99.6%">
+                                    <ul class="nav nav-tabs" id="widgetnav">
+                                        
+                                        <li id="lid_dmPupils" class="dropdown" style="display:none;"><a href="#" class="dropdown-toggle" data-toggle="dropdown">My Pupils <b class="caret"></b></a>
+                                         <ul class="dropdown-menu">
+                                                <li id="lid_tabMyPupils" style="display:none;"><a href="#mypupils" data-toggle="tab" id="d_tabMyPupils">My Pupils</a></li>
+                                                <li id="lid_tabMngPupils" style="display:none;"><a href="#managepupils" data-toggle="tab" id="d_tabMngPupils">Manage Pupils</a></li>
+                                         </ul>
+                                        </li>
+                                        
+                                        <li id="li_tabMyPupils" style="display:none;"><a href="#mypupils" data-toggle="tab" id="l_tabMyPupils">My Pupils</a></li>
+                                        <li id="li_tabMngPupils" style="display:none;"><a href="#managepupils" data-toggle="tab" id="l_tabMngPupils">Manage Pupils</a></li>
+                                       
+                                        
+                                        <li id="li_tabMyOrders" style="display:none;"><a href="#divMyOrders" data-toggle="tab" id="l_tabMyOrders">My Orders</a></li>
+                                        
+                                        <li id="lid_dmSchoolOffice" class="dropdown" style="display:none;"><a href="#" class="dropdown-toggle" data-toggle="dropdown">School Office <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li id="lid_tabMySchools" style="display:none;"><a href="#myschools" data-toggle="tab" id="d_tabMySchools">My Schools</a></li>
+                                                <li id="lid_tabMyMenus" style="display:none;"><a href="#mymenus" data-toggle="tab" id="d_tabMyMenus">My Menus</a></li>
+                                                <li id="lid_tabMyInvOrders" style="display:none;"><a href="#divInvoice" data-toggle="tab" id="d_tabMyInvOrders">Invoice Orders</a></li>
+                                                <!--<li id="lid_tabMyHosOrders" style="display:none;"><a href="#myhosorders" data-toggle="tab" id="d_tabMyHosOrders">Hospitality Orders</a></li>
+                                                <li id="lid_tabMyHosOrders" style="display:none;"><a href="#myhoshistory" data-toggle="tab" id="d_tabMyHosOrders">Hospitality History</a></li>-->
+                                                <li id="lid_tabMealOrder" style="display:none;"><a href="#divMealOrders" data-toggle="tab" id="d_tabMealOrder">Meal Order Summary</a></li>
+                                                <li id="lid_tabDailyMeal" style="display:none;"><a href="#mydailymeal" data-toggle="tab" id="d_tabDailyMeal">Daily Meal Collection</a></li>
+                                                <li id="lid_tabCancelOrders" style="display:none;"><a href="#divCancelOrderstab" data-toggle="tab" id="d_tabCancelOrders">Batch Order Cancellation</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="li_tabMySchools" style="display:none;"><a href="#myschools" data-toggle="tab" id="l_tabMySchools">My Schools</a></li>
+                                        <li id="li_tabMyMenus" style="display:none;"><a href="#mymenus" data-toggle="tab" id="l_tabMyMenus">My Menus</a></li>
+                                        <li id="li_tabMyInvOrders" style="display:none;"><a href="#divInvoice" data-toggle="tab" id="l_tabMyInvOrders">My Menus</a></li>
+                                        <!-- <li id="li_tabMyHosOrders" style="display:none;"><a href="#myhosorders" data-toggle="tab" id="l_tabMyHosOrders">Hospitality Orders</a></li>
+                                         <li id="li_tabMyHosOrders" style="display:none;"><a href="#myhoshistory" data-toggle="tab" id="l_tabMyHosOrders">Hospitality History</a></li>-->
+                                        <li id="li_tabMealOrder" style="display:none;"><a href="#divMealOrders" data-toggle="tab" id="l_tabMealOrder">Meal Order Summary</a></li>
+                                        <li id="li_tabDailyMeal" style="display:none;"><a href="#mydailymeal" data-toggle="tab" id="l_tabDailyMeal">Daily Meal Collection</a></li>
+                                        <li id="li_tabCancelOrders" style="display:none;"><a href="#divCancelOrderstab" data-toggle="tab" id="l_tabCancelOrders">Batch Order Cancellation</a></li>
+
+                                        <li id="lid_dmPayments" class="dropdown" style="display:none;"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Payments<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li id="lid_tabCardMakePayment" style="display:none;"><a href="#cardmakePayment" data-toggle="tab" id="d_tabCardMakePayment">Make Card Payment</a></li>
+                                                <li id="lid_tabCardPaymentHistory" style="display:none;"><a href="#cardpaymentHistory" data-toggle="tab" id="d_tabCardPaymentHistory">Parent Payment History</a></li>
+                                                <li id="lid_tabCashMakePayment" style="display:none;"><a href="#cashmakePayment" data-toggle="tab" id="d_tabCashMakePayment">Make Cash Payment</a></li>
+                                                <li id="lid_tabCashPaymentHistory" style="display:none;"><a href="#cashpaymentHistory" data-toggle="tab" id="d_tabCashPaymentHistory">School Payment History</a></li>
+                                                <li id="lid_tabCashMakeRefund" style="display:none;"><a href="#CashMakeRefund" data-toggle="tab" id="d_tabCashMakeRefund">Make Cash Refund</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="li_tabCardMakePayment" style="display:none;"><a href="#cardmakePayment" data-toggle="tab" id="l_tabCardMakePayment">Make Card Payment</a></li>
+                                        <li id="li_tabCardPaymentHistory" style="display:none;"><a href="#cardpaymentHistory" data-toggle="tab" id="l_tabCardPaymentHistory">Parent Payment History</a></li>
+                                        <li id="li_tabCashMakePayment" style="display:none;"><a href="#cashmakePayment" data-toggle="tab" id="l_tabCashMakePayment">Make Cash Payment</a></li>
+                                        <li id="li_tabCashPaymentHistory" style="display:none;"><a href="#cashpaymentHistory" data-toggle="tab" id="l_tabCashPaymentHistory">School Payment History</a></li>
+                                        <li id="li_tabCashMakeRefund" style="display:none;"><a href="#CashMakeRefund" data-toggle="tab" id="l_tabCashMakeRefund">Make Cash Refund</a></li>
+                                        <li id="li_tabDocuments" style="display:none;"><a href="#documents" data-toggle="tab" id="l_tabDocuments">Documents</a></li>
+                                        <li id="li_tabPSCDigital" style="display:none;"><a href="#catDigitalForms" data-toggle="tab" id="l_tabPSCDigital">Digital Forms</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </div>
+                    </div>
+                    <!-- /row -->
+                    <div class="row-fluid">
+                        <div class="tab-content">
+                            <div class="tab-pane" id="mypupils">
+                                <div class="row-fluid" style="padding-top: 15px;">
+                                    <div class="span12">
+                                        <a class="btn btn-primary" href="#divAddPupil"
+                                           id="btnAddPupil" data-toggle="modal" name="btnAddPupil" style="float: right">Add pupil</a>
+                                    </div>
+                                </div>
+                                <div class="row-fluid" id="WelcomeText">To begin setting
+                                    up a pupil for school dinners, start by adding them using the
+                                    button above and entering their unique ID issued from their
+                                    school.</div>
+                                <div class="tab-content" id="pagination">
+                                    <div class="tab-pane active" id="tab2">
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <form name="pupilInfo" id="pupilInfo">
+                                                    <table
+                                                        class="table table-hover table-striped edfm-bordered-table no-more-tables"
+                                                        name="tblPupils" id="tblPupils"
+                                                        style="display: none !important;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>First Name</th>
+                                                                <th>Middle Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Pupil ID</th>
+                                                                <th>Free Meals?</th>
+                                                                <th>School</th>
+                                                                <th>Year</th>
+                                                                <th>Class</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /tab -->
+                                </div>
+                                <div class="row-fluid">
+                                    <button class="btn btn-primary" id="btnPupilSave" name="btnPupilSave" style="float: right;margin-top:15px">Saved</button>	
+                                </div>
+                            </div>
+							 <div class="tab-pane" id="managepupils">                     
+							   <div class="row-fluid" align="right" style="margin-bottom: 0px;">
+                                    <table id="tblManagePupilsDD">
+                                        <tr>
+                                            <td><label id="lblManageMP" style="padding-top: 4px;padding-right: 4px;">Manage:</label></td>
+                                            <td><span class='select-wrap'><select id="ddlManagePupilsDD"></select></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+								<div class="row-fluid form-horizontal">
+                                            <label class="control-label" style="width:118px" for="selectPupils">Select Pupils</label>
+                                            <div class='controls'>
+											<!-- <a class="btn btn-primary print disabled" id="btnAddPupilPayView_IO" name="btnAddPupilPayView_IO" style="width: 90px;margin-top: 0px;display:none;">Add pupil</a> -->
+                                            <a class="btn btn-primary" id="btnAddPupil_MP" href="#divAddPPl_MP" data-toggle="modal" name="btnAddPupil_MP" style="width: 90px;margin-top: 0px;">Add pupil</a>
+                                            </div>
+                                        </div>
+										<div class="row-fluid" id="divManagePupil_pag">
+                                            <div class="span12">
+                                                <form name="frmManagePupil" id="frmManagePupil">
+                                                    <table
+                                                        class="table table-hover table-striped edfm-bordered-table no-more-tables"
+                                                        name="tblManagePupils" id="tblManagePupils"
+                                                        style="display: none !important;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>First Name</th>
+                                                                <th>Middle Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Pupil ID</th>
+                                                                <th>Free Meals?</th>
+                                                                <th>Assigned Parent</th>
+                                                                <th>Year</th>
+                                                                <th>Class</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+										<div class="row-fluid">
+                                    <button class="btn btn-primary" id="btnManagePupilSave" name="btnManagePupilSave" style="float: right;margin-top:15px;display:none">Saved</button>	
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="documents">
+                                <div class="row-fluid" id="divfilter" style="overflow:auto;">
+                                    <div class="row-fluid">
+                                        <form class="form-inline pull-right">
+                                            <label class='checkbox'><input type="checkbox" id="chkHideComplete">Hide Completed</label>
+                                            <span class="select-wrap" style="vertical-align: middle;display: inline-block;"><select id="selectAllSchools"></select></span>
+                                            <button class="btn btn-primary" id="btnUploadNewImport" data-toggle="modal" name="btnUploadNewImport" href="#divUploadNewImport" style="margin-top: 0px;" onClick="javascript:return openDocumentImport();">Upload New Document</button>
+                                        </form>		
+                                    </div>
+                                    <table class="table table-hover" name="tblUploaddashBoard"
+                                           id="tblUploaddashBoard" style="display: none !important;">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row-fluid" id="WelcomeNoteDocuments" style="display:none;">You can
+                                    begin adding documents to this page by choosing "Upload New
+                                    Document" option on the right hand side.
+                                </div>
+                                <div class="row-fluid" id="divUploadNewdocuments"></div>
+                                <div id='lblErrMyDocuments' class='alert alert-error'>User not assigned as school administrator</div>
+                            </div>
+                            <div class="tab-pane" id="catDigitalForms">
+
+                                Digital Form is coming here.....
+
+                            </div>
+                            <div class="tab-pane" id="myschools">
+                                <label id='lblErrMySchools' class='alert alert-error hide'>User not assigned as school administrator</label>
+                                <div class="row-fluid" id="divMySchools">
+                                    <form class="form-inline pull-right">
+                                        <label id="managelabelhide">Manage:&nbsp;</label>
+                                        <span id="selectMyschoolsspanhide" class='select-wrap' style="display: inline-block;vertical-align: middle;"><select id="ddlSchools"></select></span>
+                                        <!--US312 item4 Export pupil id button changed to blue-->
+                                        <button class="btn btn-primary" id="btnUserExportPupilIds" name="btnUserExportPupilIds" style="margin-top:0px">Export Pupil ID's</button>
+                                        <span id="spnGenExport" class="hide">Generating&nbsp;<img src="img/ajax-loader2.gif" /></span>&nbsp;      
+                                        <a class="btn btn-danger hide" href="#divCloseSchl" id="btnAdminCloseSchool" name="btnAdminCloseSchool" data-toggle="modal" style="margin-top:2px">Close School</a>
+                                        <a class="btn btn-success hide" href="#divOpenSchl" id="btnAdminOpenSchool" name="btnAdminOpenSchool" data-toggle="modal" style="margin-top:2px">Open School</a>
+                                    </form>			
+                                </div>
+                                <div id="lblCloseSchoolWarn" class="alert alert-danger hide"></div>
+                                <div id="lblCloseSchoolMail" class="alert alert-danger hide">Unable to send mail</div>
+                                <div id="lblExportUserError" class="alert alert-error hide"></div>
+                                <form id="frmMySchools">
+                                    <div class="accordion" id="accordion_MySchools">
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse"
+                                                   data-parent="#accordion_MySchools" href="#collapseDetails"
+                                                   style="text-decoration: none !important;"><li class="icon-th-list icon-white"></li>&nbsp;School
+                                                    details</a> <input type="hidden" id="hdnSchoolId" name="hdnSchoolId" />
+                                            </div>
+                                            <div id="collapseDetails" class="accordion-body collapse in">
+                                                <div class="accordion-inner">
+                                                    <div class="form-horizontal">
+                                                        <div class="span12">
+                                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="schoolname">School
+                                                                            ID</label>
+                                                                        <div class='controls input-prepend'>
+                                                                            <span class="add-on" id="spnTxtSchoolId"> </span><input class="span9" maxlength="50" name="txtSchoolId" id="txtSchoolId" type="text" disabled style="width:170px;">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="schoolname">School
+                                                                            Name</label>
+                                                                        <div class='controls'>
+                                                                            <input type="text" id="txtSchoolName" maxlength="255"
+                                                                                   value="" readonly style="width:198px;"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="productionschool">Production
+                                                                            School</label>
+                                                                        <div class='controls'>
+                                                                            <input type="text" id="txtProdSchoolName"
+                                                                                   value="" readonly style="width:198px;"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="address1">Address
+                                                                            1</label>
+                                                                        <div class='controls'>
+                                                                            <input type="text" id="txtAddress1" name="txtAddress1" maxlength="255"
+                                                                                   value="" style="width:198px;"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="address2">Address
+                                                                            2</label>
+                                                                        <div class='controls'>
+                                                                            <input type="text" id="txtAddress2" name="txtAddress2" maxlength="255"
+                                                                                   value="" style="width:198px;"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="address3">Address
+                                                                            3</label>
+                                                                        <div class='controls'>
+                                                                            <input type="text" id="txtAddress3" name="txtAddress3" maxlength="255"
+                                                                                   value="" style="width:198px;"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="city">City</label>
+                                                                        <div class='controls'>
+                                                                            <input type="text" id="txtCity" maxlength="150" name="txtCity" value="" style="width:198px;"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="county">County</label>
+                                                                        <div class='controls'>
+                                                                            <input type="text" id="txtCounty" maxlength="150"  name="txtCounty"
+                                                                                   value="" style="width:198px;"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="postcode">Postcode</label>
+                                                                        <div class='controls'>
+                                                                            <input type="text" id="txtPostcode" maxlength="45" name="txtPostcode"
+                                                                                   value=""style="width:198px;"></input>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="offcon1name">Office
+                                                                            Contact 1 Name</label>
+                                                                        <div class='controls'>
+                                                                            <div class="input-prepend">
+                                                                                <span class="add-on"><i class="icon-user"></i></span><input type="text" name="txtOffC1Name" id="txtOffC1Name" maxlength="100" value="" style="width:170px;"></input>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="offcon2name">Office
+                                                                            Contact 2 Name</label>
+                                                                        <div class='controls'>
+                                                                            <div class="input-prepend">
+                                                                                <span class="add-on"><i class="icon-user"></i></span><input type="text" id="txtOffC2Name" name="txtOffC2Name" maxlength="100" value="" style="width:170px;"></input>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="inputError">Office
+                                                                            Contact 1 Email</label>
+                                                                        <div class='controls'>
+                                                                            <div class="input-prepend">
+                                                                                <span class="add-on"><i class="icon-envelope"></i></span><input type="text" id="txtOffC1Email" name="txtOffC1Email" maxlength="255" value="" messages="please " style="width:170px;"></input>																			
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="control-group">
+
+                                                                        <label class="control-label" for="offcon2email">Office
+                                                                            Contact 2 Email</label>
+                                                                        <div class='controls'>
+                                                                            <div class="input-prepend">
+                                                                                <span class="add-on"><i class="icon-envelope"></i></span><input type="text" name="txtOffC2Email" id="txtOffC2Email" maxlength="255" value="" style="width:170px;"></input>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="offcon1tele">Office
+                                                                            Contact 1 Telephone</label>
+                                                                        <div class='controls'>
+                                                                            <div class="input-prepend">
+                                                                                <span class="add-on"><i class="icon-volume-down"></i></span><input type="text" name="txtOffC1Telephone" id="txtOffC1Telephone" maxlength="40" value=" "style="width:170px;"></input>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="offcon2tele">Office
+                                                                            Contact 2 Telephone</label>
+                                                                        <div class='controls'>
+                                                                            <div class="input-prepend">
+                                                                                <span class="add-on"><i class="icon-volume-down"></i></span><input type="text" name="txtOffC2Telephone" id="txtOffC2Telephone" maxlength="40" value="" style="width:170px;"></input>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <!-- US 312 Various UI Tidies item 14 icon-user added-->
+                                                <a class="accordion-toggle" data-toggle="collapse"
+                                                   data-parent="#accordion_MySchools"
+                                                   style="text-decoration: none !important;"
+                                                   href="#collapseSchoolAdmin"><li class="icon-user icon-white"></li>&nbsp;School administrators</a>
+                                            </div>
+                                            <div id="collapseSchoolAdmin" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="form-horizontal">
+                                                        <div id='divSelfUser' class='alert alert-error hide'></div>
+                                                        <div class="span12" style="margin-left: 0px;">
+                                                            <div class="span5">
+                                                                <div class="row-fluid">
+                                                                    <label>Available Users</label>
+                                                                </div>
+                                                                <div class="row-fluid" id="divAUsers">
+                                                                    <select multiple="multiple" class="multiselect" id="ddlAvailableUsers" name="ddlAvailableUsers" size="10" style="background-image: url('');width:100%;height:150px">
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="span2 aligncenter"> 
+                                                                <button class="btn" id="btnAddUsers" name="btnAddUsers" >Add<i class="icon-arrow-right" style="float: right; vertical-align: middle; "></i></button><br/>	
+                                                                <button class="btn" id="btnRemoveUsers" name="btnRemoveUsers"  style="width:100px;"><i class="icon-arrow-left" style=" float: left; vertical-align: middle;"></i> Remove</button>
+                                                            </div>
+                                                            <div class="span5 pull-right">
+                                                                <div class="row-fluid">
+                                                                    <label>Selected Users</label>
+                                                                </div>
+                                                                <div class="row-fluid" id="divSelUsers">
+                                                                    <select multiple="multiple" id="ddlSelectedUsers" name="ddlSelectedUsers" style="background-image: url('');width:100%;height:150px">
+                                                                    </select>
+                                                                </div>
+                                                            </div>		
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse"
+                                                   data-parent="#accordion_MySchools"
+                                                   style="text-decoration: none !important;"
+                                                   href="#collapseReception" id="aY0">Reception</a>
+                                            </div>
+                                            <div id="collapseReception" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="form-horizontal">
+                                                        <div class="span12">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="receptionlabel">Year Label</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY0" name="txtY0" maxlength="150"
+                                                                                           value="Reception"> </input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1" id="chkY0" name="chkY0"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid" >
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="receptionc1">Class 1 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY0C1" name="txtY0C1" maxlength="150"
+                                                                                           value=""></input>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1" id="chkY0C1" name="chkY0C1"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="receptionc4">Class 4 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY0C4" name="txtY0C4" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1" id="chkY0C4" name="chkY0C4"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid" >
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="receptionc2">Class 2 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY0C2" name="txtY0C2" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1" id="chkY0C2" name="chkY0C2"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="receptionc5">Class 5 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY0C5" name="txtY0C5" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY0C5" name="chkY0C5"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="receptionc3">Class 3 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY0C3" name="txtY0C3" maxlength="150" value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1" id="chkY0C3" name="chkY0C3"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="receptionc6">Class 6 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY0C6" name="txtY0C6" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY0C6" name="chkY0C6"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse"
+                                                   data-parent="#accordion_MySchools"
+                                                   style="text-decoration: none !important;" href="#collapseY1" id="aY1">Year
+                                                    1</a>
+                                            </div>
+                                            <div id="collapseY1" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="form-horizontal">
+                                                        <div class="span12">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="YearOneLabel">Year 1 Label</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY1" name="txtY1" maxlength="150"
+                                                                                           value="Year 1"></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1" id="chkY1" name="chkY1"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FirstYearc1">Class 1 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY1C1" name="txtY1C1" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY1C1" name="chkY1C1"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FirstYearc4">Class 4 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY1C4" name="txtY1C4" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY1C4" name="chkY1C4"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FirstYearc2">Class 2 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY1C2" name="txtY1C2" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY1C2" name="chkY1C2">Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FirstYearc5">Class 5 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY1C5" name="txtY1C5" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY1C5" name="chkY1C5"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FirstYearc3">Class 3 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY1C3" name="txtY1C3" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY1C3" name="chkY1C3"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FirstYearc6">Class 6 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY1C6" name="txtY1C6" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY1C6" name="chkY1C6"> Active</label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse"
+                                                   data-parent="#accordion_MySchools"
+                                                   style="text-decoration: none !important;" href="#collapseY2" id="aY2">Year
+                                                    2</a>
+                                            </div>
+                                            <div id="collapseY2" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="form-horizontal">
+                                                        <div class="span12">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="YearTwoLabel">Year 2 Label</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY2" name="txtY2" maxlength="150"
+                                                                                           value=""></input>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY2" name="chkY2"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SecondYearc1">Class 1 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY2C1" name="txtY2C1" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>	
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY2C1" name="chkY2C1"> Active</label>
+                                                                </div>
+                                                                <div class="span4">	
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SecondYearc4">Class 4 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY2C4" name="txtY2C4" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY2C4" name="chkY2C4"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">	
+                                                                <div class="span4">	
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SecondYearc2">Class 2 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY2C2" name="txtY2C2" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>	
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY2C2"  name="chkY2C2">Active</label>
+                                                                </div>
+                                                                <div class="span4">	
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SecondYearc5">Class 5 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY2C5" name="txtY2C5" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>	
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY2C5" name="chkY2C5"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">	
+                                                                <div class="span4">	
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SecondYearc3">Class 3 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY2C3" name="txtY2C3" maxlength="150"
+                                                                                           value=""></input>
+
+                                                                    </div>		
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY2C3" name="chkY2C3"> Active</label>
+                                                                </div>
+                                                                <div class="span4">	
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SecondYearc6">Class 6 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY2C6" name="txtY2C6"  maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY2C6" name="chkY2C6"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse"
+                                                   data-parent="#accordion_MySchools"
+                                                   style="text-decoration: none !important;" href="#collapseY3" id="aY3">Year
+                                                    3</a>
+                                            </div>
+                                            <div id="collapseY3" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="form-horizontal">
+                                                        <div class="span12">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="YearThreeLabel">Year 3 Label</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY3" name="txtY3" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>	
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY3"  name="chkY3"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="ThirdYearc1">Class 1 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY3C1" name="txtY3C1" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY3C1" name="chkY3C1"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="ThirdYearc4">Class 4 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY3C4" name="txtY3C4" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY3C4" name="chkY3C4"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="ThirdYearc2">Class 2 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY3C2" name="txtY3C2" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY3C2" name="chkY3C2">Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="ThirdYearc5">Class 5 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY3C5" name="txtY3C5" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY3C5" name="chkY3C5"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="ThirdYearc3">Class 3 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY3C3" name="txtY3C3" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY3C3" name="chkY3C3"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="ThirdYearc6">Class 6 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY3C6" name="txtY3C6" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY3C6" name="chkY3C6"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse"
+                                                   data-parent="#accordion_MySchools"
+                                                   style="text-decoration: none !important;" href="#collapseY4" id="aY4">Year
+                                                    4</a>
+                                            </div>
+                                            <div id="collapseY4" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="form-horizontal">
+                                                        <div class="span12">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="YearFourLabel">Year 4 Label</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY4" name="txtY4" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY4" name="chkY4"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FourthYearc1">Class 1 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY4C1" name="txtY4C1" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY4C1" name="chkY4C1"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FourthYearc4">Class 4 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY4C4" name="txtY4C4" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY4C4" name="chkY4C4"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FourthYearc2">Class 2 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY4C2" name="txtY4C2" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY4C2" name="chkY4C2">Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FourthYearc5">Class 5 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY4C5" name="txtY4C5" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY4C5" name="chkY4C5"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FourthYearc3">Class 3 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY4C3" name="txtY4C3" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY4C3" name="chkY4C3"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FourthYearc6">Class 6 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY4C6" name="txtY4C6" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY4C6" name="chkY4C6"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse"
+                                                   data-parent="#accordion_MySchools"
+                                                   style="text-decoration: none !important;" href="#collapseY5" id="aY5">Year
+                                                    5</a>
+                                            </div>
+                                            <div id="collapseY5" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="form-horizontal">
+                                                        <div class="span12">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="YearFiveLabel">Year 5 Label</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY5" name="txtY5" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY5" name="chkY5"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FifthYearc1">Class 1 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY5C1" name="txtY5C1" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY5C1" name="chkY5C1"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FifthYearc4">Class 4 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY5C4" name="txtY5C4" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY5C4" name="chkY5C4"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FifthYearc2">Class 2 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY5C2" name="txtY5C2" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY5C2" name="chkY5C2">Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FifthYearc5">Class 5 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY5C5" name="txtY5C5" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY5C5" name="chkY5C5"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FifthYearc3">Class 3 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY5C3" name="txtY5C3" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY5C3" name="chkY5C3"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="FifthYearc6">Class 6 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY5C6" name="txtY5C6" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY5C6" name="chkY5C6"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse"
+                                                   data-parent="#accordion_MySchools"
+                                                   style="text-decoration: none !important;" href="#collapseY6" id="aY6">Year
+                                                    6</a>
+                                            </div>
+                                            <div id="collapseY6" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="form-horizontal">
+                                                        <div class="span12">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="YearSixLabel">Year 6 Label</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY6" name="txtY6" maxlength="150"
+                                                                                           value=""></input>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY6" name="chkY6"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SixthYearc1">Class 1 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY6C1" name="txtY6C1" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY6C1" name="chkY6C1"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SixthYearc4">Class 4 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY6C4" name="txtY6C4" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY6C4" name="chkY6C4"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SixthYearc2">Class 2 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY6C2" name="txtY6C2" maxlength="150"
+                                                                                           value=""></input>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY6C2" name="chkY6C2">Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SixthYearc5">Class 5 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY6C5" name="txtY6C5" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY6C5" name="chkY6C5"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SixthYearc3">Class 3 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY6C3" name="txtY6C3" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY6C3" name="chkY6C3"> Active</label>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <div class="control-group">
+                                                                        <label class="control-label" for="SixthYearc6">Class 6 Name</label>
+                                                                        &nbsp;&nbsp;<input type="text" id="txtY6C6" name="txtY6C6" maxlength="150"
+                                                                                           value=""></input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="span2" style="margin: 5px 5px; ">
+                                                                    <label class="checkbox"><input type="checkbox" value="1"  id="chkY6C6" name="chkY6C6"> Active</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div id="spanhide"><button class="btn btn-primary" id="btnSaveSchool" name="btnSaveSchool" disabled="disabled" style="float:right">Save</button></div>
+                            </div>
+                            <div class="tab-pane" id="divMyOrders">
+                                <div class="row-fluid" id="divOrderSchools">
+                                    <form class="form-inline pull-right">
+                                        <label id="lblSchlOrder" style="margin-bottom: 0px;">School:&nbsp;</label>
+                                        <span id="Spn_OrderSchools" class='select-wrap' style="display: inline-block;vertical-align: middle;"><select id="ddlOrderSchools"></select></span>
+                                        <button class="btn btn-primary" href="#divOrderTempPupil" id="btnAddtempPupil" name="btnAddtempPupil" data-toggle="modal" style="margin-top:2px">Add Temporary Pupil</button>         
+                                    </form>			
+                                </div>
+                                <div id="lblCloseSchlWarn" class="alert alert-danger hide"></div>
+                                <div class="row-fluid" id="divOrderWeekHeading">
+                                    <div class="span3"><ul class="pager">
+                                            <li class="previous" id="myorderPrevious">
+                                                <a href="javascript:void(0);">Previous Week</a>
+                                            </li></ul></div>
+                                    <div class="span6 aligncenter" style="padding-top:20px;"><label id="lblMyOrdersHead"></label></div>
+                                    <div class="span3"><ul class="pager">
+                                            <li class="next" id="myorderNext">
+                                                <a href="javascript:void(0);" >Next Week</a>
+                                            </li></ul></div>
+                                </div>
+                                <input type="hidden" id="hdnStartDate" name="hdnStartDate"/>
+                                <div class="accordion" id="accMainMyorders">
+                                </div>
+                                <div id='lblErrSaveMyOrders' class='alert alert-error'>Order rejected because of insufficient funds.</div>
+                                <button class="btn btn-primary" id="btnSaveMyOrders" name="btnSaveMyOrders" disabled="disabled" style="float:right">Saved</button>
+                            </div><!--Section over-->
+                            <div class="tab-pane" id="mymenus"> 
+                                <div class="row-fluid" align="right" style="margin-bottom: 0px;">
+                                    <table id="tblManage">
+                                        <tr>
+                                            <td><label style="padding-top: 4px;padding-right: 4px;">Manage:</label></td>
+                                            <td><span class='select-wrap'><select id="ddlMenuSchools"></select></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="lblCloseSchlMenuWarn" class="alert alert-danger hide" style="margin-bottom: 5px; margin-top: 10px;"></div>
+                                <form id="frmMenus" method="post">
+                                    <div class="row-fluid">
+                                        <div class="span3"><ul class="pager">
+                                                <li class="previous" id="pgrPrevious">
+                                                    <a href="javascript:void(0);">Previous Week</a>
+                                                </li></ul></div>
+                                        <div class="span6 aligncenter" style="padding-top:18px;"><label id="lblHeading"></label></div>
+                                        <div class="span3"><ul class="pager">
+                                                <li class="next" id="pgrNext">
+                                                    <a href="javascript:void(0);" >Next Week</a>
+                                                </li></ul></div>
+                                    </div>
+                                    <div class="accordion" id="accordionMain">
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionMain" href="#collapse1" style="text-decoration: none !important;">
+                                                    <span class="icon-calendar icon-white"></span> Monday - Week <span id='spnWeekId1'>1</span>
+                                                </a>
+                                            </div>
+                                            <div id="collapse1" class="accordion-body in collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="accordion" id="accordion1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionMain" href="#collapse2" style="text-decoration: none !important;">
+                                                    <span class="icon-calendar icon-white"></span> Tuesday - Week <span id='spnWeekId2'>1</span>
+                                                </a>
+                                            </div>
+                                            <div id="collapse2" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="accordion" id="accordion2"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionMain" href="#collapse3" style="text-decoration: none !important;">
+                                                    <span class="icon-calendar icon-white"></span> Wednesday - Week <span id='spnWeekId3'>1</span>
+                                                </a>
+                                            </div>
+                                            <div id="collapse3" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="accordion" id="accordion3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionMain" href="#collapse4" style="text-decoration: none !important;">
+                                                    <span class="icon-calendar icon-white"></span> Thursday - Week <span id='spnWeekId4'>1</span>
+                                                </a>
+                                            </div>
+                                            <div id="collapse4" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="accordion" id="accordion4"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionMain" href="#collapse5" style="text-decoration: none !important;">
+                                                    <span class="icon-calendar icon-white"></span> Friday - Week <span id='spnWeekId5'>1</span>
+                                                </a>
+                                            </div>
+                                            <div id="collapse5" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                    <div class="accordion" id="accordion5"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" id="btnSaveMenus" name="btnSaveMenus" disabled="disabled" style="float:right">Saved</button>
+                                </form>
+                                <div id='lblErrMyMenus' class='alert alert-error'>User not assigned as school administrator</div>
+                            </div>
+                            <div class="tab-pane" id="divInvoice">
+                                <div class="row-fluid">
+                                    <form id="frmInvoiceOrder" class="form-inline pull-right" style="margin-top: 16px;">
+                                        <label id="lblManageInv">Manage:&nbsp;</label>
+                                        <span class="select-wrap" style="display: inline-block;vertical-align: middle;">
+                                            <select id="ddlHO" onchange="InvoiceHistory()">
+
+                                            </select></span>	
+
+                                        <div id="btngroupNHO_NPMDO" class="btn-group segment-button" style="margin-top: 2px !important;">
+                                            <button type="button" class="btn btn-primary" id="btnNHO" href="#btnNHO"  style="margin-top: 0px;">New Hospitality Order</button>
+                                            <button type="button" class="btn btn-primary" id="btnNPMDO" onclick="newPupilMealDebtOrder();" style="margin-top: 0px;">New Pupil Meal Debt Order</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id='divErrInvoice' class='alert alert-error hide'>The current user isn’t a school administrator for any schools</div>
+                                <div id="lbl_stsIVords" class="alert alert-success hide"></div>
+                                <div id="divInvoiceOrders">
+                                    <div class="row-fluid span12">
+                                        <!-- US 312 item 8 removed table borders-->
+                                        <table class="no-more-tables table edfm-bordered-table hide" name="tblInvoiceOrders" id="tblInvoiceOrders" style="">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order ID</th>                                                                  
+                                                    <th>Last Updated On</th>
+                                                    <th>Last Updated By</th>
+                                                    <th>Invoice Date</th>
+                                                    <th>Total</th>
+                                                    <th>Reference</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                        <div id="InvOrds_pag"></div>
+                                    </div>
+                                </div>
+
+                                <div id="divNewHospOrder" class="form-horizontal hide">
+                                    <div class="row-fluid" style="margin-bottom: 0px;">									
+                                        <div class="control-group">
+                                            <label class="control-label" style="width:240px">School</label>
+
+                                            <div id="divSchool"><span class="select-wrap" style="display: inline-block;vertical-align: middle;">
+                                                    <select id="ddlIVSchools"></select></span></div>	
+
+                                        </div>	
+                                    </div>
+                                    <div class="row-fluid" style="margin-bottom: 0px;">
+                                        <div class="control-group">
+
+                                            <label class="control-label" style="width:240px">Event Date</label>
+                                            <div class="controls input-append date" style="padding-bottom: 10px;" id="div_EventDate"  data-date-format="dd/mm/yyyy" >
+                                                <input class="span12" value="" id="dp_EventDate" size="16" type="text" required readonly="readonly"/><span class="add-on"><i class="icon-calendar"></i></span>
+                                            </div>
+                                        </div>										
+                                    </div>
+                                    <form id="frmNewHospOrder" method="post" novalidate="novalidate">
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+
+                                                <label class="control-label" style="width:240px">Reference</label>											
+                                                <textarea id="txtNHOReference" name="txtNHOReference" class="form-control input-footer" rows="4" style="resize:none;width:16%" maxlength="120"></textarea>
+
+                                            </div>																						
+                                        </div>                                                                                                                         
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group" id="controlgroupcheck">
+                                                <label class="control-label" style="width:240px">Amount</label>											
+                                                <div class="input-prepend" style="margin-left: 0px;">
+                                                    <span class="add-on">£</span><input value="" class="span10" type="text" name="txtinvAmt" id="txtinvAmt" maxlength="10" style="width:166px;">																			
+                                                </div>                                               
+                                            </div>																																		
+                                        </div>
+                                    </form>
+                                    <div class="row-fluid" style="margin-bottom: 0px;">											
+                                        <div class="control-group" id="controlgroupcheck">
+                                            <label class="control-label" style="width:240px">VAT</label>											
+                                            <div class="input-prepend" style="margin-left: 0px;">
+                                                <span class="add-on">£</span><input value="" class="span10" type="text" name="txtinvVat" id="txtinvVat" maxlength="50" disabled="disabled" style="width:166px;">																			
+                                            </div>                                               
+                                        </div>																																		
+                                    </div>
+                                    <div class="row-fluid" style="margin-bottom: 0px;">											
+                                        <div class="control-group" id="controlgroupcheck">
+                                            <label class="control-label" style="width:240px">Total</label>											
+                                            <div class="input-prepend" style="margin-left: 0px;">
+                                                <span class="add-on">£</span><input value="" class="span10" type="text" name="txtinvTot" id="txtinvTot" maxlength="50" disabled="disabled" style="width:166px;">																			
+                                            </div>                                               
+                                        </div>																																		
+                                    </div>
+                                    <input type="hidden" id="txthdnIVid" value="">
+                                    <input type="hidden" id="txthdnPgid" value="">
+                                    <div id="lbl_stsIVordsErr" class="alert hide"></div>
+                                    <div class="controls controls-row span12" style="width: 100%;margin-left: 0px;">	
+                                        <!--  <div id="divZonedashBackendErrMsg" class="alert alert-error hide pull-left" style="display: none;"></div>
+                                         <div id="divZonedashSuccessMsg" class="alert alert-success hide pull-left">Zone Dashboard has been saved.</div> -->
+                                        <button class="btn btn-primary" id="btnPlaceOrder" name="btnPlaceOrder" disabled="disabled" style="float:right;margin-left: 5px;">Place Order</button>
+                                        <button class="btn" id="btnCloseNewHospOrder" name="btnCloseNewHospOrder" style="float:right;">Close</button>	
+                                    </div>
+                                </div>
+                                <div id="divNewPupilMealDebtOrder" class="hide">
+								<div class="printTextHeader" style="color: black;margin-bottom:40px;font-size: 18px;display:none;">
+                                            <span>Pupil Meal Debt Order</span>
+                                        </div><br/>
+                                    <form id="frmNewMealDebt" class="form-horizontal" method="post" novalidate="novalidate">
+                                        <div class="row-fluid" style="margin-bottom: 0px;">									
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:240px">School</label>
+
+                                                <div id="divMealDebtSchools"><span class="select-wrap" style="display: inline-block;vertical-align: middle;width: 180px;">
+                                                        <select id="ddlMealDebtSchools" onchange="javascript:chng_MDO(); return false;"></select></span></div>	
+
+                                            </div>	
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+
+                                                <label class="control-label" style="width:240px">Invoice Date</label>										
+                                                <div class="controls input-append date" style="padding-bottom: 10px;" id="div_InvoiceDate"  data-date="02/01/2013" data-date-format="dd/mm/yyyy" >
+                                                    <input class="span11" size="16" type="text" value="" id="dp_InvoiceDate"  name="dp_InvoiceDate"required readonly="readonly"><span class="add-on"><i class="icon-calendar"></i></span>						
+                                                </div>
+                                                <span class="inline print">
+                                                    <a id="hoverInvoice" data-toggle="tooltip" data-width="500px" data-placement="right" data-original-title="Invoice date can't be more that 30 days after order was originally created"><img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:-5px; padding-left: 34px;"></a>											
+                                                </span>
+
+                                            </div>										
+                                        </div>
+                                        <div class="row-fluid print">
+                                            <label class="control-label" style="width:240px" for="selectPupils">Select Pupils</label>
+                                            <div class='controls'>
+											<a class="btn btn-primary print disabled" id="btnAddPupilPayView_IO" name="btnAddPupilPayView_IO" style="width: 90px;margin-top: 0px;display:none;">Add pupil</a>
+                                            <a class="btn btn-primary print" id="btnAddPupilPay_IO" href="#divAddPPl_IO" data-toggle="modal" name="btnAddPupilPay_IO" style="width: 90px;margin-top: 0px;">Add pupil</a>
+                                            </div>
+                                        </div>
+                                        <!--<ul class="thumbnails"><li class="span3"><div class="thumbnail"><div><div class="span2">hhhhh</div><div class="span1">fffff</div></div></li><li class="span3"><div class="thumbnail"><h3 class="aligncenter">Option Two </h3><p id="txt_menu"><textarea id="txtO_56162" name="txtO_56162" class="txt_menu" maxlength="200">Chickpea Wellington and Gravy with Oven Roast Potatoes, Creamy Mashed Potatoes and Broccoli Florets/ Oven Roast Vegetables/ Seasonal Salads </textarea></p><div class="form-horizontal"><div class="control-group" style="margin-bottom:-15px;"><label class="control-label span3">Net Cost</label><div class="controls" style="padding-bottom: 10px;margin-bottom:15px;">&nbsp;<div class="input-prepend txt_prepend " id="test"><span class="add-on" style="height:16px;">£</span><input maxlength="10" class="txt_netcost" name="txtOVal_56162" id="txtOVal_56162" type="text" value="20.00"></div><div class="control-group pull-right"><input type="hidden" name="hdnOSt_56162" id="hdnOSt_56162" value="1"><button class="btn btn-success btn-small" style="margin-top:0px;" id="btnOSt_1_56162" onclick="javascript:return changeMenuOptionStatus(this,0);"><i class="icon-ok-circle icon-white"></i> Enabled</button><button class="btn btn-danger btn-small hide " style="margin-top:0px;" onclick="javascript:return changeMenuOptionStatus(this,1);" id="btnOSt_0_56162"><i class="icon-ban-circle icon-white"></i> Disabled</button></div></div><div class="alert alert-error err_menu" id="MenuErr56162"></div></div></div></div></li><li class="span3"><div class="thumbnail"><h3 class="aligncenter">Option Three </h3><p id="txt_menu"><textarea id="txtO_56163" name="txtO_56163" class="txt_menu" maxlength="200">Chickpea Wellington and Gravy with Oven Roast Potatoes, Creamy Mashed Potatoes and Broccoli Florets/ Oven Roast Vegetables/ Seasonal Salads </textarea></p><div class="form-horizontal"><div class="control-group" style="margin-bottom:-15px;"><label class="control-label span3">Net Cost</label><div class="controls" style="padding-bottom: 10px;margin-bottom:15px;">&nbsp;<div class="input-prepend txt_prepend " id="test"><span class="add-on" style="height:16px;">£</span><input maxlength="10" class="txt_netcost" name="txtOVal_56163" id="txtOVal_56163" type="text" value="30.00"></div><div class="control-group pull-right"><input type="hidden" name="hdnOSt_56163" id="hdnOSt_56163" value="1"><button class="btn btn-success btn-small" style="margin-top:0px;" id="btnOSt_1_56163" onclick="javascript:return changeMenuOptionStatus(this,0);"><i class="icon-ok-circle icon-white"></i> Enabled</button><button class="btn btn-danger btn-small hide " style="margin-top:0px;" onclick="javascript:return changeMenuOptionStatus(this,1);" id="btnOSt_0_56163"><i class="icon-ban-circle icon-white"></i> Disabled</button></div></div><div class="alert alert-error err_menu" id="MenuErr56163"></div></div></div></div></li><li class="span3"><div class="thumbnail"><h3 class="aligncenter">Option Four </h3><p id="txt_menu"><textarea id="txtO_56164" name="txtO_56164" class="txt_menu" maxlength="200">sdsd;l;l</textarea></p><div class="form-horizontal"><div class="control-group" style="margin-bottom:-15px;"><label class="control-label span3">Net Cost</label><div class="controls" style="padding-bottom: 10px;margin-bottom:15px;">&nbsp;<div class="input-prepend txt_prepend " id="test"><span class="add-on" style="height:16px;">£</span><input maxlength="10" class="txt_netcost" name="txtOVal_56164" id="txtOVal_56164" type="text" value="0.00"></div><div class="control-group pull-right"><input type="hidden" name="hdnOSt_56164" id="hdnOSt_56164" value="0"><button class="btn btn-success btn-small hide " style="margin-top:0px;" id="btnOSt_1_56164" onclick="javascript:return changeMenuOptionStatus(this,0);"><i class="icon-ok-circle icon-white"></i> Enabled</button><button class="btn btn-danger btn-small" style="margin-top:0px;" onclick="javascript:return changeMenuOptionStatus(this,1);" id="btnOSt_0_56164"><i class="icon-ban-circle icon-white"></i> Disabled</button></div></div><div class="alert alert-error err_menu" id="MenuErr56164"></div></div></div></div></li></ul>
+                                        <div class="media" style="margin-top:15px;"><a class="pull-left" href="#"><img class="media-object" src="img/photo-placeholder.png"></a><div class="media-body"><input type="hidden" id="hdnMCSD-CA370yklv" value="CA3/70yklv_CA3/OM/00000000240_0"><h4 class="media-heading" style="display: inline;">c  Smith1</h4>&nbsp;<i class=""></i>&nbsp;<a class="btn btn-success btn-small" id="btn_1_collstsCA370yklv" onclick="javascript:return changeMealCollectionStatus(this,0);">Collect</a><a class="btn btn-danger btn-small hide " id="btn_0_collstsCA370yklv" onclick="javascript:return changeMealCollectionStatus(this,1);">Un-Collect</a><p><b>Main Meal: </b>1 nov 1 (Desert Included) .<br><b>Snack Option: </b></p></div></div>-->
+                                        
+                                        <div class="row-fluid" id="divAddPupilInvoice"></div>
+					<div id="divPupilInvoice_pg"></div>					
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group" id="controlgroupcheck">
+                                                <label class="control-label" style="width:240px">Amount</label>											
+                                                <div class="input-prepend" style="margin-left: 0px;">
+                                                    <span class="add-on">£</span><input value="" class="span10" type="text" name="txtMealDebtAmt" id="txtMealDebtAmt" disabled="disabled" maxlength="50" style="width:154px;">																			
+                                                </div>
+                                                <span class="inline print">
+                                                    <a id="hoverAmt" data-toggle="tooltip" data-width="500px" data-placement="right" data-original-title="This figure is calculated by multiplying the unspecified meal cost by the number of pupils selected above"><img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;padding-left: 20px;"></a>											
+                                                </span>
+                                            </div>																																		
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group" id="controlgroupcheck">
+                                                <label class="control-label" style="width:240px">VAT</label>											
+                                                <div class="input-prepend" style="margin-left: 0px;">
+                                                    <span class="add-on">£</span><input value="" class="span10" type="text" name="txtMealDebtVat" id="txtMealDebtVat" disabled="disabled" maxlength="50" style="width:154px;">																			
+                                                </div> 
+                                                <span class="inline print">
+                                                    <a id="hoverVat" data-toggle="tooltip" data-width="500px" data-placement="right" data-original-title="VAT is automatically added for adults only"><img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;padding-left: 20px;"></a>											
+                                                </span>
+                                            </div>																																		
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group" id="controlgroupcheck">
+                                                <label class="control-label" style="width:240px">Total</label>											
+                                                <div class="input-prepend" style="margin-left: 0px;">
+                                                    <span class="add-on">£</span><input value="" class="span10" type="text" name="txtMealDebT" id="txtMealDebT" disabled="disabled" maxlength="50" style="width:154px;">																			
+                                                </div>                                               
+                                            </div>																																		
+                                        </div>
+
+
+                                    </form>
+                                    <div class="controls controls-row span12" style="width: 100%;margin-left: 0px;">	
+                                        <!--  <div id="divZonedashBackendErrMsg" class="alert alert-error hide pull-left" style="display: none;"></div>
+                                         <div id="divZonedashSuccessMsg" class="alert alert-success hide pull-left">Zone Dashboard has been saved.</div> -->
+                                        <button class="btn btn-primary print" id="btnPlaceNewMealDebtOdr" data-toggle="modal" name="btnPlaceNewMealDebtOdr" onclick="javascript:srv_savePupilMealOrd(); return false;" style="float:right;margin-left: 20px;">Place/Update Order</button>
+                                        <button class="btn btn-inverse print" id="btnPrintDebtOrder" data-toggle="modal" style="float:right;margin-left: 20px;">Print</button>
+                                        <button class="btn print" id="btnCloseNewMealDebt" data-toggle="modal" name="btnCloseNewMealDebt" style="float:right;">Close</button>	
+                                    </div>
+                                    <div id="divPupilNtAddedErr" class="alert alert-error hide" style="margin-top:60px" ></div>
+                                </div>        
+                            </div>
+                            <div class="tab-pane" id="divMealOrders">
+                                <div class="alert alert-error" id="NoUserSChoolMsg" style="display:none">User not assigned as school administrator</div>
+                                <div class="row-fluid print" id="divUserMealOrder">
+                                    <form class="form-inline pull-right">
+                                        <div class="row-fluid">
+                                            <label style="width: 85px;">Select Week</label>
+                                            <div style="width: 199px;margin-top: 4px;" class="controls input-append date">											
+                                                <input data-weekpicker="weekpicker" value="05/06/2013-05/13/2013" readonly="readonly" type="text" class="input-medium" id="txtWeekPicker"/><span class="add-on"><i class="icon-calendar"></i></span>
+                                            </div> 		
+                                            <!-- US 312 item 16 space correction-->
+                                            <label style="width:50px;">School</label>										
+                                            <span class='select-wrap' style="display:inline-block;vertical-align: middle;width: 193px;margin-top: 4px;" ><select id="ddlMealOrderSchools"></select></span>
+                                            <button class="btn btn-primary" id="btnOrderSmryGo" style="margin-top:5px">Go</button>	
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="lblStatusSchlSumryWarn" class="alert alert-danger hide"></div>
+                                <div class="alert alert-error hide" id="divMOMsg"></div>
+                                <div class="row-fluid hide" id="divMealOrderSmry">
+                                    <div id="divOrderReportMsg"></div>
+                                    <div class="span12" style="text-align:center;width:95%"><p class="text-center"><small><strong>Key:</strong></small>&nbsp;<span class="label label-info">Number of orders for current week selected</span>&nbsp;<span class="label">Number of orders from previous menu cycle</span></p></div>
+                                </div>
+                                <div id="divMealSummaryData"></div>
+
+                                <div id="MealordersummaryPrint"><button href='#' class='pull-right btn btn-primary print' id='btnMealorderPrint' name='btnMealorderPrint' style='margin-top: 15px;width: 180px;' onclick="javascript:window.print();"> Print Order Summary </button></div>
+
+                            </div>
+                            <!-- CASH PAYMENT UI -->
+                            <div class="tab-pane" id="cashmakePayment">
+
+                                <div class="row-fluid">
+                                    <div id="divPrgBar"class="progress">
+                                        <div id="divProgresBar" class="bar" style="width:4%;height:25px"></div>
+                                    </div>
+                                    <div class="span12 hidden-phone" style="margin-top:-5px;margin: 0px;">
+                                        <span id="spnAssignPay" class="span4 alignleft hidden-phone" style="font-weight:bold;color: black">Assign Payment</span>
+                                        <span id="spnConfirmPay"class="span4 aligncenter hidden-phone">Confirm Payment</span>
+                                        <span id="spnFinished" class="span4 alignright hidden-phone">Finished!</span>
+                                    </div>
+                                    <div class="span12 visible-phone" style="margin-top:-5px;margin: 0px;">
+                                        <span id="spnAssignPayPhone" class="span4 aligncenter visible-phone" style="font-weight:bold;color: black">Assign Payment <span style="font-weight:normal;color: black">(Step 1 of 3)</span></span>
+                                        <span id="spnConfirmPayPhone"class="span4 aligncenter hidden-phone">Confirm Payment <span style="font-weight:normal;color: black">(Step 2 of 3)</span></span>
+                                        <span id="spnFinishedPhone" class="span4 aligncenter hidden-phone">Finished! <span style="font-weight:normal;color: black">(Step 3 of 3)</span></span>
+                                    </div>
+                                    <div id="divAddpupilspayment" style="margin-top: 60px;">
+                                        <div class="form-horizontal span11" style="margin-left: 0px;">
+                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                <div class="span6 control-group">
+                                                    <label class="control-label" for="selectPupils">Select pupils</label>
+                                                    <div class='controls'>
+                                                        <a class="btn btn-primary" href="#divAddPupilPay" id="btnAddPupilPay" data-toggle="modal" name="btnAddPupilPay" style="width: 90px;margin-top: 0px;">Add pupil</a>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal span11" style="margin-left: 0px;">
+                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                <div class="control-group" id="spntxtPaymentAmt">
+                                                    <label class="control-label" id="lblPayamount">Payment amount</label>
+                                                    <div class='controls'>
+                                                        <div class="input-prepend" > <span class="add-on" id="spnPaymentAmt">£</span><input class="input-small" maxlength="10" name="txtPaymentAmt" id="txtPaymentAmt" type="text" style="width:80px;">&nbsp;<span id="errmsg" style="color: red;"></span></div>
+                                                        <span style="color:#b94a48" id="lblcashPayerror"></span>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div> 
+                                    </div> 
+                                    <!-- US 312 item 19 space alignment-->
+                                    <div id="divPayPopulatepupils" style="margin-bottom:-30px">
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <form name="frmpaypupilData" id="frmpaypupilData" style="overflow: auto;">
+                                                    <!-- US312 Various UI tidies item 8 table border removed-->
+                                                    <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblpayPupilSearch" id="tblPayPupilSearch" style="display: none !important;margin-bottom: 0px;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Pupil Name</th>
+                                                                <th>Pupil ID</th>
+                                                                <th>Free Meals?</th>
+                                                                <th>School</th>
+                                                                <th>Current Balance</th>
+                                                                <th>Allocation</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="divPayConfirmpupils" style='display: none'>
+                                        <div class="form-horizontal span11" style="margin-left: 0px;">
+                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                <div class="span6 control-group">
+                                                    <label class="control-label" for="Description" style="font-weight: bold;">Description:</label>
+                                                    <div class='controls'>
+                                                        <label class="control-label" id="lblDescriptionPay"></label>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div> 
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <form name="frmpayconfirmData" id="frmpayconfirmData" style="overflow: auto;">
+                                                    <!-- US312 Various UI tidies item 8 table border removed-->
+                                                    <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblpayConfirmSearch" id="tblpayConfirmSearch" style="display: none !important;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Pupil Name</th>
+                                                                <th>Pupil ID</th>
+                                                                <th>Free Meals?</th>
+                                                                <th>School</th>
+                                                                <th>User Name</th>
+                                                                <th>Amount</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal span11" style="margin-left: 0px;margin-top: -20px;">
+                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                <div class="span6 control-group">
+                                                    <label class="control-label" for="Description" style="font-weight: bold;">Total:</label>
+                                                    <div class='controls'>
+                                                        <label class="control-label" id="lblTotal_Pay"></label>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div id="divPayConfirmation" style='display: none'>
+                                        <!--<div class='controls' style="padding-bottom: 10px;padding-top: 40px">
+                                            <label class="control-label" id="lblConfirmationMessage"></label>
+                                        </div>-->
+                                        <div class="alert alert-success" id="lblConfirmationMessage" style="margin-top: 50px;"></div>
+                                        <div id="divPayConfirmationData">
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <form name="frmPayConfirmationData" id="frmPayConfirmationData" style="overflow: auto;">
+                                                        <!-- US312 Various UI tidies item 8 table border removed-->
+                                                        <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblPayConfirmationData" id="tblPayConfirmationData" style="display: none !important;">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Transaction ID</th>
+                                                                    <th>Date</th>
+                                                                    <th>Pupil Name</th>
+                                                                    <th>Pupil ID</th>
+                                                                    <th>Free Meals?</th>
+                                                                    <th>School</th>
+                                                                    <th>User Name</th>
+                                                                    <th>Amount</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="divbtnPaymentHistory" class="pull-right">
+                                            <button class="btn btn-primary" id="btnPaymentHistory" name="btnpaymentHistory" onclick="PaymentHistoryNav();" >Full Payment History</button>
+                                        </div> 
+                                    </div>
+                                    <div id="diverrormessage" class="pull-left">
+                                        <label id="lblerror" class="alert alert-error hide" style="margin-top: -20px; margin-bottom: 0px;"> Total allocation across all pupils must be 100% </label>
+                                    </div>
+                                    <div id="divbtncontrolsforpay" class="pull-right">
+                                        <button class="btn hide" href="#" id="btnPayCancel" name="btnPayCancel" data-dismiss="modal" onclick="PaymentCancel();">Cancel</button>
+                                        <button class="btn btn-primary hide" id="btnConfirmPay" name="btnConfirmPay" style="margin-top: 0px;" onclick="ConfirmPayProcess();">Pay</button>
+                                        <button class="btn btn-primary" id="btnPayContinue" name="btnPayContinue" disabled="disabled" onclick='PayContinue();'>Continue</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="cashpaymentHistory">
+                                <div class="row-fluid" id="divhistorySchools">
+                                    <form class="form-inline pull-right">
+                                        <label style="margin-top: 5px;">School:</label>
+                                        <span class='select-wrap' style="display: inline-block;vertical-align: middle;"><select id="ddlPaymentHistorySchools"></select></span>
+                                    </form>
+                                </div>
+                                <div id="divPaymentHistory">
+                                    <div id="divPaymentHistErr" class="alert alert-error hide">No payment history found</div>
+                                    <form name="frmPaymentHistory" id="frmPaymentHistory">
+                                        <!-- US312 Various UI tidies item 8 table border removed-->
+                                        <table class="table edfm-bordered-table" name="tblPaymentHistory" id="tblPaymentHistory" style="display: none !important;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Transaction ID</th>
+                                                    <th>Date</th>
+                                                    <th>Pupil Name</th>
+                                                    <th>Pupil ID</th>
+                                                    <th>Free Meals?</th>
+                                                    <th>School</th>
+                                                    <th>User Name</th>
+                                                    <th>Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </form>
+
+                                    <label id="lblpaymentHistory" class="alert alert-error hide" style="text-align: center;"></label>
+
+                                </div>
+                                <div id="CashPayHistory_pag"></div>
+                            </div>
+                            <div class="tab-pane" id="CashMakeRefund">
+                                <div class="row-fluid">
+                                    <div id="divPrgBar_Refund"class="progress">
+                                        <div id="divProgresBar_Refund" class="bar" style="width:4%;height:25px"></div>
+                                    </div>
+                                    <div class="span12 hidden-phone" style="margin-top:-5px;margin: 0px;">
+                                        <span id="spnAssignRefund" class="span4 alignleft hidden-phone" style="font-weight:bold;color: black">Assign Refund</span>
+                                        <span id="spnConfirmRefund" class="span4 aligncenter hidden-phone">Confirm Refund</span>
+                                        <span id="spnFinishedRefund" class="span4 alignright hidden-phone">Finished!</span>
+                                    </div>
+                                    <div class="span12 visible-phone" style="margin-top:-5px;margin: 0px;">
+                                        <span id="spnAssignRefundPhone" class="span4 aligncenter visible-phone" style="font-weight:bold;color: black">Assign Refund <span style="font-weight:normal;color: black">(Step 1 of 3)</span></span>
+                                        <span id="spnConfirmRefundPhone" class="span4 aligncenter hidden-phone">Confirm Refund <span style="font-weight:normal;color: black">(Step 2 of 3)</span></span>
+                                        <span id="spnFinishedRefundPhone" class="span4 aligncenter hidden-phone">Finished! <span style="font-weight:normal;color: black">(Step 3 of 3)</span></span>
+                                    </div>
+                                    <div id="divAddpupilsRefund" style="margin-top: 60px;">
+                                        <div class="form-horizontal span11" style="margin-left: 0px;">
+                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                <div class="span6 control-group">
+                                                    <label class="control-label" for="selectPupils">Select pupils</label>
+                                                    <div class='controls'>
+                                                        <a class="btn btn-primary" href="#divAddPupilPay" id="btnAddPupilRefund" data-toggle="modal" name="btnAddPupilRefund" style="width: 80px;margin-top: 0px;">Add pupil</a>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal span11" style="margin-left: 0px;">
+                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                <div class="span6 control-group">
+                                                    <label class="control-label" for="Payment amount">Total Refund</label>
+                                                    <div class='controls'>
+                                                        <div class="input-prepend"> 
+                                                            <span class="add-on" id="spnRefundAmt">£</span>
+                                                            <input class="span9" maxlength="10" name="txtRefundAmt" id="txtRefundAmt" type="text" disabled="disabled" style="width:80px;">
+                                                            <a id="hoverevent" data-toggle="tooltip" data-placement="right"  data-original-title="Total balance originally paid by Cash only." >
+                                                                <img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:-10px;margin-left: 10px;">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <!-- US 312 item 19 space alignment-->
+                                    <div id="divRefundPopulatepupils" style="margin-bottom:-30px;">
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <form name="frmpaypupilData" id="frmpaypupilData" style="overflow: auto;">
+                                                    <!-- US312 Various UI tidies item 8 table border removed-->
+                                                    <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblRefundPupilSearch" id="tblRefundPupilSearch" style="display: none !important;margin-bottom: 0px;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Pupil Name</th>
+                                                                <th>Pupil ID</th>
+                                                                <th>Free Meals?</th>
+                                                                <th>School</th>
+                                                                <th>Username</th>
+                                                                <th>Current Balance</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="diverrormessageRefund" class="pull-left">
+                                        <label id="lblerrorRefund" style="color: #b94a48"></label>
+                                    </div>
+                                    <div id="divRefundConfirmpupils" style='display: none'>
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <form name="frmRefundconfirmData" id="frmRefundconfirmData" style="overflow: auto;">
+                                                    <!-- US312 Various UI tidies item 8 table border removed-->
+                                                    <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblRefundConfirmSearch" id="tblRefundConfirmSearch" style="display: none !important;margin-top: 15px;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Pupil Name</th>
+                                                                <th>Pupil ID</th>
+                                                                <th>Free Meals?</th>
+                                                                <th>School</th>
+                                                                <th>User Name</th>
+                                                                <th>Amount</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal span11" style="margin-left: 0px;margin-top: -20px;">
+                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                <div class="span6 control-group">
+                                                    <label class="control-label" for="Description" style="font-weight: bold;">Total Refund:</label>
+                                                    <div class='controls'>
+                                                        <label class="control-label" id="lblTotal_Refund"></label>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div id="divbtncontrolsforRefund" class="pull-right">
+                                        <button class="btn hide" href="#" id="btnRefundCancel" name="btnRefundCancel" data-dismiss="modal" onclick="RefundCancel();">Cancel</button>
+                                        <button class="btn btn-primary hide" id="btnConfirmRefund" name="btnConfirmRefund" style="margin-top: 0px;" onclick="ConfirmRefundProcess();">Refund</button>
+                                        <button class="btn btn-primary" id="btnRefundContinue" name="btnRefundContinue" disabled="disabled" onclick='RefundContinue();'>Continue</button>
+                                    </div>
+                                    <div id="divRefundConfirmation" style='display: none'>
+                                        <!--<div class='controls' style="padding-bottom: 10px;padding-top: 40px">
+                                            <label class="control-label" id="lblRefundConfirmationMessage"></label>
+                                        </div>-->
+                                        <div class="alert alert-success" id="lblRefundConfirmationMessage" style="margin-top: 50px;"></div>
+                                        <div id="divRefundConfirmationData">
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <form name="frmRefundConfirmationData" id="frmRefundConfirmationData" style="overflow: auto;">
+                                                        <!-- US312 Various UI tidies item 8 table border removed-->
+                                                        <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblRefundConfirmationData" id="tblRefundConfirmationData" style="display: none !important;">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Transaction ID</th>
+                                                                    <th>Date</th>
+                                                                    <th>Pupil Name</th>
+                                                                    <th>Pupil ID</th>
+                                                                    <th>Free Meals?</th>
+                                                                    <th>School</th>
+                                                                    <th>User Name</th>
+                                                                    <th>Amount</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal span11" style="margin-left: 0px;margin-top: -20px;">
+                                            <div class="row-fluid" style="margin-bottom:0px;">
+                                                <div class="span6 control-group">
+                                                    <label class="control-label" for="Description" style="font-weight: bold;">Total Refund:</label>
+                                                    <div class='controls'>
+                                                        <label class="control-label" id="lblconfirm_Refund"></label>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div> 
+                                        <div id="divbtnRefundHistory" class="pull-right">
+                                            <button class="btn btn-primary" id="btnPaymentHistory" name="btnpaymentHistory" onclick="RefundHistoryNav();" >Full Refund History</button>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="cardmakePayment">
+                                <div class="alert alert-error" id="NoPupilMsg" style="display:none">No pupils have been assigned to this account</div>
+                                <div class="row-fluid" id="divCardMakePayment">
+                                    <div id="divPrgBar_PayCard"class="progress">
+                                        <div id="divProgresBar_Card" class="bar" style="width:4%;height:25px"></div>
+                                    </div>
+                                    <div class="span12 hidden-phone" style="margin-top:-5px;margin: 0px;">
+                                        <span id="spnAssignPayCard" class="span4 alignleft hidden-phone" style="font-weight:bold;color: black">Assign Payment</span>
+                                        <span id="spnConfirmPayCard"class="span4 aligncenter hidden-phone">Confirm Payment</span>
+                                        <span id="spnFinishedPayCard" class="span4 alignright hidden-phone">Finished!</span>
+                                    </div>
+                                    <div class="span12 visible-phone" style="margin-top:-5px;margin: 0px;">
+                                        <span id="spnAssignPayCardPhone" class="span4 aligncenter visible-phone" style="font-weight:bold;color: black">Assign Payment <span style="font-weight:normal;color: black">(Step 1 of 3)</span></span>
+                                        <span id="spnConfirmPayCardPhone"class="span4 aligncenter hidden-phone">Confirm Payment <span style="font-weight:normal;color: black">(Step 2 of 3)</span></span>
+                                        <span id="spnFinishedPayCardPhone" class="span4 aligncenter hidden-phone">Finished! <span style="font-weight:normal;color: black">(Step 3 of 3)</span></span>
+                                    </div>
+                                    <div id="divCardPayment" style="margin-top: 60px;">
+                                        <div class="span12">
+                                            <div class="form-horizontal span11" id="divcardType" style="margin-left: 0px;">
+                                                <div class="row-fluid" style="margin-bottom:0px;">
+                                                    <div class="span6 control-group">
+                                                        <label class="control-label" for="Payment amount">Card Type</label>
+                                                        <div class="form-inline" style="margin-top: 7px;" id="CardpaymentOptions">
+                                                            <label class="radio" style="margin-right: 20px;">
+                                                                <input type="radio" name="paymentOptions" id="payOptionDebit" value="dc" checked>Debit
+                                                            </label>
+                                                            <label class="radio">
+                                                                <input type="radio" name="paymentOptions" id="payOptionCredit" value="cc">Credit
+                                                            </label>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal span11" style="margin-left: 0px;">
+                                                <div class="row-fluid" style="margin-bottom:0px;">
+                                                    <div class="control-group" id="spnCardPaymentAmt">
+                                                        <label class="control-label" for="Payment amount">Payment amount</label>
+                                                        <div class='controls'>
+                                                            <div class="input-prepend"> <span class="add-on" id="spnPaymentAmt">£</span><input maxlength="10" name="txtCardPaymentAmt" id="txtCardPaymentAmt" type="text">&nbsp;<span id="errmsg" style="color: red;"></span></div>
+                                                            <span style="color:#b94a48" id="lblcardPayerror"></span>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal span11" id="divcardFee"  style="margin-left: 0px;">
+                                                <div class="row-fluid" style="margin-bottom:0px;">
+                                                    <div class="control-group" id="spnCardTransFee">
+                                                        <label class="control-label" for="Payment amount">Transaction fee</label>
+                                                        <div class='controls'>
+                                                            <div class="input-prepend"> <span class="add-on" id="spnTransFee">£</span><input maxlength="10" name="txtCardTransFee" id="txtCardTransFee" type="text" disabled="disabled">&nbsp;</div>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div id="divcardPopulatedetails" style='display: inline'>
+                                                <div class="row-fluid span12">
+
+                                                    <!-- US 312 item 8 removed table borders-->
+                                                    <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblCardpaypupilData" id="tblCardpaypupilData" style="display: none !important;" >
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Pupil Name</th>                                                                  
+                                                                <th>Pupil ID</th>
+                                                                <th>Free Meals?</th>
+                                                                <th>School</th>
+                                                                <th>Current Balance</th>
+                                                                <th>Allocation</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="divCardPayConfirmpupils" class="span11 aligncenter" style='display: none'>
+                                        <img id="loaderIcon_Card" src="img/ajax-loading.gif" style="display:inline;margin-top:100px"/>
+                                    </div>
+                                    <div id="divCardPayConfirmationData">
+                                        <div class='controls' style="padding-bottom: 10px;padding-top: 40px">
+                                            <label class="control-label hide" id="lblCardConfmMessage"></label>
+                                        </div>
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <form name="frmCardPayConfirmationData" id="frmCardPayConfirmationData" style="overflow: auto;">
+                                                    <table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblCardPayConfirmationData" id="tblCardPayConfirmationData" style="display: none !important;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Transaction ID</th>
+                                                                <th>Status</th>
+                                                                <th>Date</th>
+                                                                <th>Pupil Name</th>                                                                    
+                                                                <th>Pupil ID</th>
+                                                                <th>Free Meals?</th>
+                                                                <th>School</th>
+                                                                <th>Username</th>
+                                                                <th>Amount</th>
+                                                                <th>Fee</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div id="divbtncardPaymentHistory" class="pull-right hide">
+                                            <button class="btn btn-primary " id="btnCardPaymentHistory" name="btnCardPaymentHistory" onclick="PaymentCardHistoryNav();" >Full Payment History</button>
+                                        </div>
+                                    </div>
+                                    <div id="divCardPayConfirmation" style='display: none'>
+                                    </div>
+                                    <div id="diverrormessage" class="pull-left">
+                                        <label id="lblCarderror" class="alert alert-error hide" style="margin-top: -20px; margin-bottom: 0px;">Total allocation across all pupils must be 100%.</label>
+                                    </div>
+                                    <div id="divbtncontrolsforCardPay" class="pull-right">
+                                        <!--<button class="btn hide" href="#" id="btnPayCardCancel" name="btnPayCardCancel" data-dismiss="modal" onclick="CardPaymentCancel(true);">Cancel</button>
+                                        <button class="btn btn-primary hide" id="btnPayCardConfirm" name="btnPayCardConfirm" style="margin-top: 0px;" onclick="PaymentCardDetails();" >Pay</button> -->
+                                        <button class="btn btn-primary hide" id="btnPaymentDetails" name="btnPaymentDetails" onclick="CardPaymentProcess();">Continue</button>
+                                        <!--<button class="btn btn-primary" id="btnPayCardContinue" name="btnPayCardContinue" disabled="disabled" onclick="ctncardPayment();" >Continue</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="cardpaymentHistory">
+                                <div id="divCardPaymentHistory">
+                                    <div class="tab-content">
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <form name="frmCardPaymentHistory" id="frmCardPaymentHistory">
+                                                    <!-- US 312 item 8 removed table borders-->
+                                                    <!-- DE 526 Removing striped class of the table-->
+                                                    <table class="no-more-tables table edfm-bordered-table" name="tblCardPaymentHistory" id="tblCardPaymentHistory" style="display: none !important;margin-bottom:0px;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Transaction ID</th>
+                                                                <th>Status</th>
+                                                                <th>Payment ID</th>
+                                                                <th>Date</th>
+                                                                <th>Pupil Name</th>                                                             
+                                                                <th>Pupil ID</th>
+                                                                <th>Free Meals?</th>
+                                                                <th>School</th>
+                                                                <th>User Name</th>
+                                                                <th>Amount</th>
+                                                                <th>Fee</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </form>
+                                                <label id="lblCardpayHistory" style="text-align: center; color: red; font-weight: bold;"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="PaymentHistory_pag"></div>
+                            </div>
+                            <!-- Daily Meals collection -->
+                            <div class="tab-pane" id="mydailymeal">
+                                <div id="validdailyMeal" class="hide">
+                                    <div class="row-fluid" style="margin-top: 15px">
+                                        <div class="form-inline print pull-right" id="dailymeal">
+                                            <label class='checkbox' style="margin-top: -1px;"><input type="checkbox" id="chkShowCollected">Show only Collected</label>&nbsp;&nbsp;
+                                            <label id="lblSchool" style="margin-top: 12px;">School:</label>
+                                            <span class="select-wrap" style="vertical-align: middle;display: inline-block;margin-top: 2px;"><select id="ddlSchoolsMealcoll"></select></span>
+                                            <label id="lblSchool" style="margin-top: 12px;">Date:</label>
+                                            <div class="controls input-append date" id="div_DMCdate" style="margin-top: 2px;" data-date-format="dd/mm/yyyy" >
+                                                <input value="" id="dp_DMCdate" size="16" type="text" required readonly="readonly" class="span10"/><span class="add-on"><i class="icon-calendar"></i></span>
+                                            </div>
+                                            <button class="btn btn-primary" style="margin-top:4px;" id="btnDMCGo">Go</button>
+                                        </div>	
+
+                                    </div>
+                                    <div id="lblCloseSchlDMCWarn" class="alert alert-danger hide"></div>
+                                    <div class="row-fluid" style="margin-bottom: 5px;">
+                                        <div class="pull-left printTextHeader" style="color: black;font-size: 18px;">
+                                            <span>Kitchen Daily Meal Collection for <span id="lblfulfillmentdate"> </span> at <span id="lblmealorderSchool"></span> as of <span id="lblDMC_rt"></span> on <span id="lblDMC_rd"></span> 
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <div id="divAccordMealOrderColl" class="accordion"></div>										
+                                        <div class="row"><span id="spnGenPrint" style="float:left;margin-top: 20px;" class="hide offset10"><img src="img/ajax-loader2.gif" /></span><button href='#' class="pull-right btn btn-primary print" id="btnDailyMealPrint" name="btnDailyMealPrint" style="margin-top: 15px;width: 100px;"> Print </button></div> 
+                                    </div>
+                                </div>
+                                <div id="InvaliddailyMeal" class='alert alert-error hide'> No orders were placed for this day / school </div>
+                            </div>
+                            <!-- /row -->
+                            <div class="tab-pane" id="divCancelOrderstab">	
+                                <div align="right" id="divCancelOrdersSchools" class="row-fluid hide" style="display: block;">
+                                    <table>
+                                        <tbody><tr>
+                                                <td><label  style="margin-top:5px;" class="checkbox"><input type="checkbox" id="chkShowCleared">Show Cleared</label></td>
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <!-- US 312 item 15 label alignment-->
+                                                <td><label style="margin-bottom: 0px;">School:</label></td>
+                                                <td><span class="select-wrap"><select id="ddlCancelOrders"></select></span></td>
+
+                                            </tr>
+                                        </tbody></table>
+                                </div>									
+                                <div class="accordion" id="accMainBatchordersCancel">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a class="accordion-toggle" data-toggle=""
+                                               data-parent="#accMainBatchordersCancel" href="javascript:void(0);"
+                                               style="text-decoration: none !important;">Batch Order Cancellation</a>
+                                        </div>
+                                        <div id="divaccMyOrders1"
+                                             class="accordion-body collapse in ">
+                                            <div class="accordion-inner">
+                                                <div class="accordion" id="divPupMyOrders1">
+                                                    <div id="divErrRecords" class="alert alert-error">No records found</div>
+                                                    <table class="no-more-tables table table-hover" style="width:100%;" id="tblBoc" >
+                                                        <thead style="border: none;">
+                                                            <tr>
+                                                                <th style="border: none;">System Message</th>
+                                                                <th style="border: none;">User Message</th>
+                                                                <th style="border: none;">Impacted Orders (past)</th>
+                                                                <th style="border: none;">Impacted Orders (today & future)</th>
+                                                                <th style="border: none; width:15%">&nbsp;</th>
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+
+                                                        </tbody>
+                                                    </table>
+                                                    <div id="divBOCH" class="row-fluid" style="height: 110px;"></div>
+                                                    <div id="divBOC_pag"></div>
+                                                    <div class="alert alert-error hide" id="divBOCErr"></div>
+                                                    <div id="diverrormessage" class="pull-left hide">
+                                                        <br />
+                                                        <label id="lblCarderror" class="alert alert-error" style="margin-top: -20px; margin-bottom: 0px;">There are <b>800</b> Order items have significant impact due to changes in menu items or menu settings. Please click on Export Order Items button to view the orders or click on "Cancel Order Items" button to cancel these orders.</label>
+                                                        <br />
+                                                        <table align="center"><tr><td><a class="btn" href="javascript:void(0);"
+                                                                                         id="btnExport" data-toggle="modal" name="btnAddPupil" style="float: right">Export Order Items</a></td>
+                                                                <td><a class="btn btn-primary" href="#divCancelOrders"
+                                                                       id="btnCancel" data-toggle="modal" name="btnAddPupil" style="float: right;margin-top:2px;">Notify Parents</a></td><td><a class="btn btn-primary" href="#divCancelOrders"
+                                                                                                                                                                                         id="btnCancel" data-toggle="modal" name="btnAddPupil" style="float: right;margin-top:2px;">Cancel Order Items</a></td></tr></table>
+                                                    </div>
+                                                    <div> </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="lblErrBOC" class="alert alert-danger">There are no schools available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+        </div>
+    </section>
+</div>
+<!-- end tab 1 -->

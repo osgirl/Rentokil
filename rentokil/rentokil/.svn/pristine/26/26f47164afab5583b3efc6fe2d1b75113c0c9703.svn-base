@@ -1,0 +1,412 @@
+<header class="row-fluid" id="caheader"></header>
+<!-- /row -->
+<nav class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container"> 
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a> 
+            <a class="brand hidden-desktop" href="#" data-toggle="collapse" data-target=".nav-collapse">Navigation</a>
+            <div class="nav-collapse">            
+                <ul class="nav">
+                    <li><a href="customerpage.html">Home</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="capeopleservices.html">People Services</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="cabuildingservices.html">Building Services</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="active"><a href="#">Resource Management</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="caperformancereports.html">Performance Reports</a></li>
+                </ul>
+            </div><!-- /nav-collapse -->
+        </div><!-- /container -->
+    </div>
+</nav><!-- /navbar -->
+<nav class="row-fluid tabNav" ><!-- secondary nav selects tabs -->
+    <ul class="nav nav-tabs" id="secondarynav">
+
+        <li class="active"><a href="#tab3" data-toggle="tab">Asset Tracking</a></li>
+    </ul>
+</nav>
+<div id="divNotify" class="alert alert-info">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Notification!</strong> Session logging is currently enabled and may result in slow page responsiveness.
+</div>
+<div id="tabcontent" class="tab-content"><!-- begin page tabbed content -->
+    <section class="tab-pane active" id="tab3"><!-- Third tab -->
+        <div class="row-fluid">
+            <!-- left column -->
+            <!-- Row -->
+            <div class="row-fluid">
+                <!-- full width widget -->
+                <div class="span12 widget">
+                    <div class="row-fluid noBottom">
+                        <div class="span12"><h2>Asset Tracking</h2>
+							<div class="pull-right widgetheaderbutton" style=" margin-top: -20px; ">
+                                <a href="#" id="btnZoneRefresh" name="btnZoneRefresh" style="float: right;margin-left:14px;width:200px;"> <i class="icon-refresh"></i> Refresh</a>	
+                            </div>
+							<div class="pull-right">
+							<span id="spnZoneRefresh" style="float:right;margin-top: -20px;margin-right: 8px;" class="hide"><img src="img/ajax-loader2.gif" /> Refreshing... &nbsp;</span>
+							<span id="spnAssetRefresh" style="float:right;margin-top: -20px;margin-right: 8px;" class="hide"><img src="img/ajax-loader2.gif" /> Refreshing... &nbsp;</span>								
+							</div>
+                        </div>
+                    </div><!-- /row -->
+                    <div class="row-fluid hasTabs">
+                        <div class="span12">
+                            <div class="row-fluid noBottom">
+                                <div class="widgettabs widgetnav" style="width: 99.4%">											 
+                                    <ul class="nav nav-tabs" id="widgetnav" >
+                                        <li class="dropdown active" id="li_ResourceZoneDashboard"><a href="#ZoneDashboard" id="ResourceZoneDashboard"  data-toggle="tab">Zone Dashboard</a></li>
+                                        <li id="li_ResourceAssetDashboard"><a href="#AssetDashboard" id="ResourceAssetDashboard"  data-toggle="tab">Asset Dashboard</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="tab-content">
+                            <!--ZoneDashboard tab content-->
+                            <div class="tab-pane active" id="ZoneDashboard">							
+								<div id='divZonedashErrMsg' class="hero-unit hide" style="margin-top: 5px;">
+								  <h1 style="color: #000000;">No Zones Exist!</h1>
+								  <p style="color: #000000;">Before you can start tracking assets in their locations, you must firstly set up one or more zones.  A zone is a short name given to a location that will automatically count the number of assets inside it.  Assigning high and low stock levels to a zone will dynamically alter the visual feedback and trends you need in order to make better informed decisions about your assets.</p>
+								  <p>
+									<a class="btn btn-primary btn-large" id="btnAddZoneNew" onClick="javascript:return SrvNewZoneSubmit();">
+									  Add a Zone
+									</a> You will need your zone's device and serial number to hand.
+								  </p>
+								</div>
+                                <div id="divNewZoneButton" class="row-fluid" style="margin-bottom: 20px;margin-top:10px;">											
+                                    <div class="control-group pull-right">                                               																		
+                                        <label id="lblAutoRefresh" class="checkbox pull-left" style="margin-bottom: 0px;margin-top:4px;">
+                                            <input id="ctfcheckbox" type="checkbox" >&nbsp Automatic Refresh
+											<div class="counter hide pull-right" id="countdown">&nbsp(<span id="count_minutes">00:00</span>)</div>
+                                        </label>
+                                        <a class="btn btn-primary" id="btnNewZone" data-toggle="modal" name="btnNewZone" href="#divNewZone" style="float: right;margin-left:14px;">New Zone</a>													
+                                    </div>
+                                </div>
+                                <div class="row-fluid" id="divZonefirst"> 
+                                </div>
+                                <div id="DivZoneFirst_pag"></div>
+                                <div class="row-fluid" id="divZoneSecond" style="display:none"> 
+                                    <form id="frmNewZone" class="form-horizontal" method="post">
+                                        <div class="row-fluid" style="margin-bottom: 0px;">									
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Zone Name:</label>
+                                                <input class="span2" value="" type="text" name="txtZoneName" id="txtZoneName" maxlength="7" style="width:194px;"></input>									                                              																	
+                                            </div>	
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Zone Description:</label>										
+                                                <textarea id="txtZoneDesc" name="txtZoneDesc" class="form-control input-footer" rows="4" style="resize:none;width:16%" maxlength="120"></textarea>                                            </div>										
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Device ID:</label>											
+                                                <input class="span2" value="" type="text" name="txtDeviceID" id="txtDeviceID" minlength="1" maxlength="5" style="width:194px;"></input>                                                                                           </div>																						
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Serial Number:</label>											
+                                                <input class="span2" value="" type="text" name="txtSerialNo" id="txtSerialNo" minlength="1" maxlength="6" style="width:194px;"></input>                                              
+                                            </div>																						
+                                        </div> 
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">High Threshold:</label>											
+                                                <input class="span2" value="" type="text" name="txtHighThreshold" id="txtHighThreshold" maxlength="11" style="width:194px;margin-right: 26px;"></input>
+                                                <span class="inline" id="validationerrorplacement">                                               
+                                                    <a id="spnHighThreshold" data-toggle="tooltip" data-width="500px" data-placement="right"  data-original-title="Max assets in zone before flagging zone as 'Stock Levels High'"><img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;"></a>											
+                                                </span>
+                                            </div>																						
+                                        </div> 
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Low Threshold:</label>											
+                                                <input class="span2" value="" type="text" name="txtLowThreshold" id="txtLowThreshold" maxlength="11" style="width:194px;margin-right: 26px;"></input>
+                                                <span class="inline" id="validationerrorplacement">
+                                                    <a id="spnLowThreshold" data-toggle="tooltip" data-width="500px" data-placement="right"  data-original-title="Min assets in zone before flagging zone as 'Stock Levels Low'"><img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;"></a>											
+                                                </span>
+                                            </div>																						
+                                        </div> 
+                                        <!--  <div class="row-fluid" style="margin-bottom: 14px;">											
+                                             <div class="controls controls-row span12">
+                                                 <label class="control-label span1" style="width:210px">Network:</label>											                                                 
+                                                                                                 <span class='select-wrap span1'  style='width: 194px;min-height: 24px;'><select id='sltNetwork'></select></span>
+                                                                                                 <label class="control-label span2" style="width:40px">Other:</label>											
+                                                 <input class="span4" value="" type="text" name="txtOther" id="txtOther" maxlength="50" style="width:194px;" disabled></input>												   
+                                                                                         </div>
+                                                                                 </div> -->
+											
+                                        <div class="row-fluid" style="margin-bottom: 14px;">									
+                                             <div class="controls controls-row span12">
+                                                <label class="control-label span1" style="width: 155px;">Network:</label>	
+                                                <span class='select-wrap span1'style='width: 194px;min-height: 26px;margin-left: 0px;'><select id='sltNetwork'></select></span>												                                                                                                                                                                                                                                               
+                                                <label class="control-label span1" style="width:40px">Other:</label>	
+                                                <input class="span2" value="" type="text" name="txtOther" id="txtOther" maxlength="45" style="width:194px;" disabled></input>
+                                           </div>
+                                        </div> 
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Zone Timeout:</label>											
+                                                <div class="input-append" style="margin-right: 26px;">											 
+                                                    <input class="span10" value="" type="text" name="txtTimeout" id="txtTimeout" maxlength="11" style="width:132px;"></input><span class="add-on">minutes</span>
+                                                </div>
+                                                <span class="inline" id="validationerrorplacement">
+                                                    <a id="spnTimeout" data-toggle="tooltip" data-width="500px" data-placement="right"  data-original-title="Duration to wait without hearing from reader before flagging zone as 'Reader Not Responding'"><img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;"></a>											
+                                                </span>
+                                            </div>																						
+                                        </div>
+                                          <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Tag Read Timeout:</label>											
+                                                <div class="input-append" style="margin-right: 26px;">											 
+                                                    <input class="span10" value="" type="text" name="txtTagTimeout" id="txtTagTimeout" maxlength="11" style="width:132px;"></input><span class="add-on">minutes</span>
+                                                </div>
+                                                <span class="inline" id="validationerrorplacement">
+                                                    <a id="spnTimeout" data-toggle="tooltip" data-width="500px" data-placement="right"  data-original-title="Time period to wait without receiving tag read message from zone before flagging all assets in zone as 'Removed From Zone'"><img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;"></a>											
+                                                </span>
+                                            </div>																						
+                                        </div> 
+                                        <hr/>                                      
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Date/time Last Seen:</label>											
+                                                <input class="span2" value="" type="text" name="txtDateTime" id="txtDateTime" maxlength="50" style="width:194px;" disabled></input>
+                                            </div>																						
+                                        </div> 
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Number Of Assets</label>											
+                                                <input class="span2" value="" type="text" name="txtNoassets" id="txtNoassets" maxlength="50" style="width:194px;" disabled></input>
+                                            </div>																						
+                                        </div> 
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" style="width:155px">Firmware:</label>											
+                                                <input class="span2" value="" type="text" name="txtFirmWare" id="txtFirmWare" maxlength="50" style="width:194px;" disabled></input>                                               
+                                            </div>																						
+                                        </div> 
+                                        <input class="span10" value="" type="text" name="txtZoneid" id="txtZoneid" maxlength="50" style="width:166px;display:none;" readonly></input>										
+
+                                    </form>
+                                    <div class="controls controls-row span12" style="width: 100%;margin-left: 0px;">	
+                                        <div id='divZonedashBackendErrMsg' class='alert alert-error hide pull-left'></div>
+                                        <div id='divZonedashSuccessMsg' class='alert alert-success hide pull-left'>Zone Dashboard has been saved.</div>
+                                        <button class="btn btn-primary" id="btnSaveZoneDashboard" data-toggle="modal" name="btnSaveZoneDashboard" disabled="disabled" style="float:right;margin-left: 20px;">Saved</button>
+                                        <button class="btn" id="btnCloseZoneDashboard" data-toggle="modal" name="btnCloseZoneDashboard" style="float:right;">Close</button>	
+                                    </div>
+                                </div>
+                            </div><!-- ZoneDashboard tab content end -->
+
+
+
+                            <!-- Asset DashBoard -->
+                            <div class="tab-pane" id="AssetDashboard">
+                                <!--Asset details division-->
+								<div id='divAssetdashErrMsg' class="hero-unit hide" style="margin-top: 5px;">
+								  <h1 style="color: #000000;">No Assets Exist!</h1>
+								  <p style="color: #000000;">Once you have configured your zones, you will need to start tagging your assets so that they can be tracked inside of them.  For each asset you wish to track you must attach a tag to it.  Once this is done, you finally need to add the tag including a description of the asset to the system so that you can search for and locate the asset when in use at a later date.</p>
+								  <p>
+									<a class="btn btn-primary btn-large" id="btnAddAssetNew" onClick="javascript:return SrvNewAssetSubmit();">
+									  Add an Asset
+									</a> You will need your asset's OEM and tag number to hand.
+								  </p>
+								</div>
+                                <div id="divAssetRefreshAddControls" class="row-fluid">											
+                                    <div class="control-group pull-right">                                               																		
+                                        <label id="divAssetCheckbox" class="checkbox pull-left" style="margin-bottom: 0px;margin-top:4px;">
+                                            <input id="ctfcheckboxasset" type="checkbox" >&nbsp Automatic Refresh
+											<div class="counter hide pull-right" id="countdown_asset">&nbsp(<span id="count_minutes">00:00</span>)</div>
+                                        </label>
+                                        <a class="btn btn-primary" id="btnNewAsset" data-toggle="modal" name="btnNewAsset" href="#divNewAsset" style="float: right;margin-left:14px;">New Asset</a>													
+                                    </div>
+                                </div>
+                                <div class="row-fluid" id="divAssetDetails"> 
+
+                                    <div class="span12" style="margin-top: 10px;margin-left: 0px;">
+                                        <label id="assetZoneLabel">Search and filter assets by their properties across <span id="assetZoneName"><strong>All Zones</strong></span></label>
+                                    </div>
+									<input id="search" name="search" class="input-block-level" type="text" onkeyup="tableSearch()" placeholder="Enter search criteria...">
+                                    <div id="divAssetDashboardTable">
+                                        <table class='table table-hover table-striped' name="tblAssetDashBrd" id="tblAssetDashBrd" style="margin-bottom:10px;">
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="span12" id="divCloseAssetButton" style="margin-left: 0px;">
+                                        <a href="#ZoneDashboard"><button class="btn btn-primary" id="btnCloseAssetDetailsDashboard" data-toggle="modal" name="btnCloseAssetDetailsDashboard" style="float:right;">Close</button></a>
+                                    </div>
+                                </div>
+                                <!-- Register new asset division-->
+                                <div class="row-fluid" id="divAssetNew" style="display:none"> 
+                                    <form id="frmNewAsset" class="form-horizontal" method="post">
+                                        <div class="row-fluid" style="margin-bottom: 0px;">									
+                                            <div class="control-group">
+                                                <label class="control-label">Tag Number:</label>
+                                                <input class="span2" value="" type="text" name="txtAssetTagNumber" id="txtAssetTagNumber" maxlength="4" minlength="1" style="width:194px;"></input>									                                              																	
+                                            </div>	
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">
+                                            <div class="control-group">
+                                                <label class="control-label">Description:</label>										
+                                                <textarea id="txtAssetDesc" name="txtAssetDesc" class="form-control input-footer" rows="4" style="resize:none;width:16%" maxlength="120"></textarea>
+                                            </div>										
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 14px;">											
+                                            <div class="controls controls-row span12">
+                                                <label class="control-label span1"  style="width:100px;" >Type:</label>											                                                 
+                                                <span class='select-wrap span1'  style='width: 194px;min-height: 26px; margin-left: 20px;'><select id='sltAssetType'></select></span>
+                                                <label class="control-label span1" >Other:</label>											
+                                                <input class="span4" value="" type="text" name="txtAssetOther" id="txtAssetOther" maxlength="50" style="width:194px; " disabled></input>												   
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" >OEM Code:</label>											
+                                                <input class="span2" value="" type="text" name="txtAssetOEMCode" id="txtAssetOEMCode" minlength="2" maxlength="2" style="width:194px;"></input>
+                                            </div>																						
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 0px;">											
+                                            <div class="control-group">
+                                                <label class="control-label" >Timeout:</label>											
+                                                <div class="input-append">											 
+                                                    <input class="span10" value="" type="text" name="txtAssetTimeout" id="txtAssetTimeout" maxlength="50" style="width:166px;"></input><span class="add-on">hours</span>
+                                                </div>
+                                                <span class="inline" id="validationerrorplacementasset">
+                                                    <a id="hoverevent5" data-toggle="tooltip" data-width="500px" data-placement="right"  data-original-title="Duration to wait without hearing from asset before flagging as not responding"><img src="img/infoicon.png" align="middle" style="vertical-align:text-top;display:inline;margin-top:0px;"></a>											
+                                                </span>
+                                            </div>																						
+                                        </div> 
+                                        <hr/>                                      
+                                        <div class="row-fluid" style="margin-bottom:20px;">
+                                            <div class="span4">
+                                                <div class="control-group" style="margin-bottom:0px;">
+                                                    <label class="control-label" >Latest Reading: </label>
+                                                        <input maxlength="50" name="assetLatestReading" id="assetLatestReading" type="text" style="width:180px" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="span4" style=" margin-left: 0px; width: 25%; ">
+                                                <div class="control-group" style="margin-bottom:0px;">
+                                                    <label class="control-label" style=" width: 50px; " >Zone: </label>
+                                                        <input maxlength="50" name="assetZone" id="assetZone" type="text" style="width:120px" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="span4" style=" margin-left: 0px; width: 25%; ">
+                                                <div class="control-group" style="margin-bottom:0px;">
+                                                    <label class="control-label" style=" width: 80px; " >ReadPoint: </label>
+                                                        <input maxlength="50" name="assetReadPoint" id="assetReadPoint" type="text" style="width:120px" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom:20px;">
+                                            <div class="span4">
+                                                <div class="control-group" style="margin-bottom:0px;">
+                                                    <label class="control-label" >Previous Reading: </label>
+                                                        <input maxlength="50" name="assetPreviousReading" id="assetPreviousReading" type="text" style="width:180px" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="span4" style=" margin-left: 0px; width: 25%; ">
+                                                <div class="control-group" style="margin-bottom:0px;">
+                                                    <label class="control-label" style=" width: 50px; " >Zone: </label>
+                                                        <input maxlength="50" name="assetZonePrevious" id="assetZonePrevious" type="text" style="width:120px" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="span4" style=" margin-left: 0px; width: 25%;  ">
+                                                <div class="control-group" style="margin-bottom:0px;">
+                                                    <label class="control-label" style=" width: 80px; " >ReadPoint: </label>
+                                                        <input maxlength="50" name="assetReadPointPrevious" id="assetReadPointPrevious" type="text" style="width:120px" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid" style="margin-bottom: 10px;">											
+                                            <div class="span4">
+                                                <div class="control-group" style="margin-bottom:0px;">
+                                                    <label class="control-label" >Battery Status: </label>
+                                                        <input maxlength="50" name="assetBatteryStatus" id="assetBatteryStatus" type="text" style="width:180px" readonly>
+                                                </div>
+                                            </div>																						
+                                        </div>
+                                        <input class="span10" value="" type="text" name="txtAssetid" id="txtAssetid" maxlength="50" style="width:166px;display:none;" readonly></input>	
+                                    </form>
+                                    <div class="controls controls-row span12" style="width: 100%; margin-left: 0px;">				
+                                        <div id='divAssetdashBackendErrMsg' class='alert alert-error hide pull-left'></div>
+                                        <div id='divAssetdashSuccessMsg' class='alert alert-success hide pull-left'>Asset Dashboard has been saved.</div>									
+                                        <button class="btn btn-primary" id="btnSaveAssetDashboard" data-toggle="modal" name="btnSaveAssetDashboard" disabled="disabled" style="float:right;margin-left: 20px;">Saved</button>
+                                        <button class="btn" id="btnCloseAssetDashboard" data-toggle="modal" name="btnCloseAssetDashboard" style="float:right;">Close</button>	
+                                    </div>
+                                </div>
+                            </div><!--Asset Dashboard tab end-->
+
+                            <!-- Grap Section -->
+                            <div class="row-fluid hide"id="divZoneGraph">
+                                <!-- <div class="tab-pane active" id="summaryMonthly"> -->
+                                <div class="row-fluid control-group">
+                                    <div class="span4" style="margin-bottom: 15px;">
+                                        <div id="centerMonth1" class="pull-left">
+                                            <table align="center">
+                                                <tbody><tr>
+                                                        <td><div>
+                                                                <button class="btn btn-small" id="idZoneGraphPrevMon"><i class="icon-backward"></i> Prev
+                                                                    Month</button>
+                                                            </div></td>
+                                                    </tr>
+                                                </tbody></table>
+                                        </div>
+                                    </div>
+                                    <div id="centerMonth2" class="span4 form-horizontal center-in-span">
+                                        <div class="control-group center-in-span">
+                                            <table align="center">
+                                                <tbody><tr>
+                                                        <td><label class="control-label" style="width: 70px;" for="inputenddate">End Date</label></td>
+                                                        <td><div class="controls input-append date" id="idZoneGraphDate" data-date="02/2012" data-date-format="m/yyyy" data-date-viewmode="years" data-date-minviewmode="months">
+                                                                <input class="span8" size="10" type="text" value="" name="zoneGraphEndDate" id="idZoneGraphEndDate" readonly><span class="add-on"><i class="icon-th"></i></span>
+                                                            </div></td>
+                                                        <td><button class="btn btn-primary" href="#" id="btnZoneGraphEndDateGo" name="zoneGraphDateGo" style="margin-top: 0px; margin-left: -6px; ">Go</button></td>
+                                                    </tr>
+                                                </tbody></table>
+                                        </div>
+                                    </div>
+                                    <div class="span4">
+                                        <div id="centerMonth3" class="pull-right">
+                                            <table align="center">
+                                                <tbody><tr>
+                                                        <td><div>
+                                                                <button class="btn btn-small" id="idZoneGraphNextMon"; disabled="disabled">Next Month <i class="icon-forward"></i>
+                                                                </button>
+                                                            </div></td>
+                                                    </tr>
+                                                </tbody></table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid" id="divZoneMonthChart"></div>
+                                <div class="controls controls-row span12" style="width: 97%;">																
+                                    <button class="btn" id="btnCloseZoneGraph" data-toggle="modal" name="btnCloseZoneGraph" style="float:right;">Close</button>	
+                                </div>									
+                            </div>                         			
+                        </div>
+                    </div>
+                </div><!-- /row -->
+            </div>
+        </div><!-- /row -->
+    </section><!-- end tab 1 -->
+</div>
+<script>
+                                                                    if (localStorage["Session_logs"] == 0)
+                                                                    {
+                                                                        $("#divNotify").addClass("hide");
+                                                                    }
+                                                                    $("#spnTimeout,#spnHighThreshold,#spnLowThreshold,#hoverevent5").tooltip({
+                                                                        'selector': '',
+                                                                        'placement': 'right',
+                                                                        'width': '400px'
+                                                                    });
+
+
+</script>

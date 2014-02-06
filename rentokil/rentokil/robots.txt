@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /
+Allow: /ri_frontend/register.html
+Allow: /ri_frontend/index.html
+Allow: /ri_frontend/login.html

@@ -1,0 +1,17 @@
+<div class="span6">
+    <h1 class="logo">
+        <a href="javascript:void(0);" id="lnkHeaderLogo">EDFM</a>
+    </h1>
+</div>
+<!-- text is hidden -->
+<div class="span6 alignright userlogininfo">
+    <div class="username" id="divWelcome" ></div>
+    <br class="clear noSmall" />
+    <div class="accountlinks">
+        <a href="#divProfileEdit" id="btnProfileEdit" data-toggle="modal"
+           name="btnProfileEdit">My Profile</a> | <a href="#" id="btnLogout"
+           name="btnLogout">Logout</a>
+    </div>
+    <div id="header-divider"><img src="" class="logininfodivider"></div>                   
+    <div class="location" id="divLoggedAs"></div>
+</div>

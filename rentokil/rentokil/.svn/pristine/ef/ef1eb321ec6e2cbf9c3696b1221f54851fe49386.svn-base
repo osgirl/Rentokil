@@ -1,0 +1,57 @@
+<form Formid="Formid">
+  <header>
+    <appname>3416_Lunch_Lewisham</appname>
+    <formkey devicereceived="2013-10-03T08:52:00" devicesent="2013-10-03T08:52:06" serverreceived="2013-10-03T09:53:09.18">142124</formkey>
+    <pens firstpenstroke="2013-10-03T09:51:32.782">
+      <pen penid="AJX-AAZ-5YM-D5" forename="Destiny" surname="Test" lastpenstroke="2013-10-03T09:52:02.837" firstpenstroke="2013-10-03T09:51:32.782" />
+    </pens>
+    <forminfo actionby="AC" actiondate="2013-10-03T09:54:35.8869467+01:00" />
+  </header>
+  <data>
+    <page pageid="formSide1Main" pagenumber="1">
+      <FormCompletedBy>TEST</FormCompletedBy>
+      <Qty1>2</Qty1>
+      <Qty2>2</Qty2>
+      <Qty3>3</Qty3>
+      <Qty4>3</Qty4>
+      <Qty5>4</Qty5>
+      <Qty6>4</Qty6>
+      <Qty7>5</Qty7>
+      <Qty8>5</Qty8>
+      <Qty9>6</Qty9>
+      <Qty10>6</Qty10>
+      <Qty15>9</Qty15>
+      <Qty16>9</Qty16>
+      <Qty17>1</Qty17>
+      <Qty18>2</Qty18>
+      <Qty19>3</Qty19>
+      <Qty20>4</Qty20>
+      <Qty11>7</Qty11>
+      <Qty12>7</Qty12>
+      <Qty13>8</Qty13>
+      <Qty14>0</Qty14>
+      <MenuOption15>A</MenuOption15>
+      <MenuOption16>B</MenuOption16>
+      <MenuOption17>C</MenuOption17>
+      <MenuOption18>D</MenuOption18>
+      <MenuOption19>E</MenuOption19>
+      <MenuOption20>F</MenuOption20>
+      <Ward>Alder</Ward>
+      <Day>Thursday</Day>
+      <MenuOption1 />
+      <MenuOption3 />
+      <MenuOption2 />
+      <MenuOption4 />
+      <MenuOption5 />
+      <MenuOption6 />
+      <MenuOption7 />
+      <MenuOption8 />
+      <MenuOption9 />
+      <MenuOption10 />
+      <MenuOption11 />
+      <MenuOption12 />
+      <MenuOption13 />
+      <MenuOption14 />
+    </page>
+  </data>
+</form>

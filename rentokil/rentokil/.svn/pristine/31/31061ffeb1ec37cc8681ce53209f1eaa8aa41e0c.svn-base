@@ -1,0 +1,71 @@
+<header class="row-fluid" id="caheader"></header>
+<!-- /row -->
+<nav class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container"> 
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a> 
+            <a class="brand hidden-desktop" href="#" data-toggle="collapse" data-target=".nav-collapse">Navigation</a>
+            <div class="nav-collapse">            
+                <ul class="nav">
+                    <li><a href="customerpage.html">Home</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="capeopleservices.html">People Services</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="cabuildingservices.html">Building Services</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="caresourcemanagement.html">Resource Management</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="active"><a href="#">Performance Reports</a></li>
+                </ul>
+            </div><!-- /nav-collapse -->
+        </div><!-- /container -->
+    </div>
+</nav><!-- /navbar -->
+<nav class="row-fluid tabNav" ><!-- secondary nav selects tabs -->
+    <ul class="nav nav-tabs" id="secondarynav">
+        <li class="active"><a href="#tab1" data-toggle="tab">Service SLAs</a></li>
+        <li><a href="#tab2" data-toggle="tab">Safety Performance</a></li>
+    </ul>
+</nav>
+<div id="divNotify" class="alert alert-info">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Notification!</strong> Session logging is currently enabled and may result in slow page responsiveness.
+</div>
+<div id="divProfileNotify" class="alert alert-block hide">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Warning!</strong>Current administrator is not permitted to change anything on this screen.
+</div>
+<div id="tabcontent" class="tab-content"><!-- begin page tabbed content -->
+    <section class="tab-pane active" id="tab1"><!-- first tab -->
+        <div class="row-fluid">
+            <!-- left column -->
+            <!-- Row -->
+            <div class="row-fluid">
+                <!-- full width widget -->
+                <div class="span12 widget">
+                    <div class="row-fluid">
+                        <div class="span10"><h2>Service SLAs Dashboard</h2></div>
+                    </div><!-- /row -->
+                    <div class="row-fluid">
+                        <div class="tab-content">
+                            <div class="span12">
+                                Performance reports coming soon.
+                            </div>
+                        </div>
+                    </div><!-- /row -->
+                </div>
+            </div><!-- /row -->
+        </div> <!-- /row -->
+    </section><!-- end tab 1 -->
+</div>
+<script>
+    if (localStorage["Session_logs"] == 0)
+    {
+        $("#divNotify").addClass("hide");
+    }
+</script>

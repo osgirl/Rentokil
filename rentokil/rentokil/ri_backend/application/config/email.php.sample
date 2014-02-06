@@ -1,0 +1,25 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+$config['useragent'] = "CodeIgniter";
+$config['mailpath'] = "/usr/sbin/sendmail";
+$config['protocol'] = "smtp";
+$config['smtp_host'] = "##smtp_host##";
+$config['smtp_port'] = "##smtp_port##";
+$config['mailtype'] = "html";
+$config['charset']  = "iso-8859-1";
+$config['newline']  = "\r\n";
+$config['wordwrap'] = TRUE;
+
+/*$config['protocol'] = 'sendmail';
+$config['mailpath'] = '/usr/sbin/sendmail';
+$config['charset'] = 'iso-8859-1';
+$config['wordwrap'] = TRUE;*/
+//$config['mailtype'] = "html";
+
+define('ADMIN_EMAIL','##from_email##');
+define('SCHOOL_ADMIN_EMAIL', '##from_school_email##');
+define('ADMIN_EMAIL_TITLE','FM insight');
+define('ADMIN_REGISTER_EMAIL_TITLE','Eden Team');
+
+//For cookie secure....
+$config['cookie_secure']	= TRUE;

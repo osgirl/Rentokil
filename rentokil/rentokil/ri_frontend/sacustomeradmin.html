@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Customer page Account Screen (logged in)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <link href="css/phpinfo.css" rel="stylesheet">
+        <script type="text/javascript">
+            var loadFileName = 'sacustomeradmin_body.html';
+        </script>
+        <style>		
+		#btnAddCustomers{
+		width: 110px;
+		margin-bottom: 10px;
+		margin-top: 70px;
+		}
+        @media (max-width: 767px) {
+        body {
+                padding-left: 20px;
+                padding-right: 20px;
+                background-size: 1.5px 312.5px;/*added this for the size of the background to be big in phones*/
+                }
+		#btnAddCustomers{
+		margin-top:0px;
+				}
+				}
+            </style>
+        </head>
+        <body class="guest">
+            <!--  Models Start -->
+
+            <div id="selectCustomers" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+                 role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            </div>
+            <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            </div>
+            <div id="divNewCustomerAdmin" class="modal hide fade" tabindex="-1"
+                 role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true" id="xNewCustomerAdmin" name="xNewCustomerAdmin">x</button>
+                    <h3 id="myModalLabel">Create a new administrator</h3>
+                </div>
+                <div class="modal-body control-group">
+                    <form name="frmCreateAdmin" id="frmCreateAdmin" class="form-horizontal" method="post" >  
+                        <div class="control-group">
+                            <label class="control-label" style="margin-right: 15px;" >First name:</label>
+                            <input type="text" name="txtCustomerAdminFName" id="txtCustomerAdminFName" maxlength="50"/>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="margin-right: 15px;">Last name:</label>
+                            <input type="text" name="txtCustomerAdminLName" id="txtCustomerAdminLName" maxlength="50"/>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="margin-right: 15px;">Email address:</label>
+                            <input type="text" name="txtCustomerAdminemail" id="txtCustomerAdminemail" maxlength="80"/>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="margin-right: 15px;">Confirm email:</label>
+                            <input type="text" name="txtCustomerAdminCemail" id="txtCustomerAdminCemail" maxlength="80"/>
+                        </div>
+                    </form>				
+                </div>
+                <div class="modal-footer">
+                    <label id="CustomerAdminerror" style="margin-left: 0px; float:left;"> </label>
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button class="btn btn-primary" id="btnNewCustomerAdminSubmit"
+                            name="btnNewCustomerAdminSubmit">Submit</button>
+                </div>
+            </div>
+            <div id="BtnToggleModal" data-backdrop="static" data-toggle="modal" data-keyboard="false" class="modal hide fade" 
+                 tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                    <h3>Customer</h3>
+                </div>
+                <div class="modal-body">
+                    <label class="radio inline"  id="ToggleBtnLabel" style=""></label>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" href="#" id="ToggleCancelBtn" name="ToggleCancelBtn">Close</button>
+                    <button class="btn btn-primary" href="#" id="ToggleOkBtn" name="ToggleOkBtn" >Submit</button>
+                </div>
+            </div>
+            <div id="divSAProfileDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xAlertDelete" name="xAlertDelete">x</button>
+                    <h3 id="myAlertLabel">Confirm Delete</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="control-group">				  
+                        <label id="lblConfirmation" style="margin-left:0px;">Are you sure you want to delete the selected Profile?</label>                                                     						  
+                    </div>                            
+
+                </div>
+                <div class="modal-footer">                                                                               
+                    <a class="btn" data-toggle="modal" id="btnNoAlert" name="btnNewAddPupilAdminClose" data-dismiss="modal" >Cancel</a>
+                    <button class="btn btn-primary" href="#" data-toggle="modal" id="btnSAProfileDelete"
+                            name="btnSAProfileDelete">Delete</button>
+                </div>
+            </div>
+            <div id="DivSADeleteProfile" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+                 role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xDeleteprofile" name="xDeleteprofile">x</button>
+                    <h3 id="myModalLabel">Deleted</h3>
+                </div>
+                <div class="modal-body">
+                    <label> Success! The Profile has been deleted.</label>
+                </div>
+                <div class="modal-footer">			
+                    <button class="btn" href="#AddYear" data-dismiss="modal" data-toggle="modal" >Close</button>
+                </div>	
+            </div>
+            <div id="divNewProfileUser" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <form name="frmCreateform" id="frmCreateform" method="post" >  
+                    <div class="modal-header">
+                        <button type="button" id="btnclearprofile" class="close" data-dismiss="modal" aria-hidden="true" id="xNewUser" name="xNewUser" onclick="clearProfile()">x</button>
+                        <h3 id="myModalLabel">Create new Profile</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row-fluid" style="margin-bottom: 0px;">									
+                            <div class="control-group form-horizontal">
+                                <label class="control-label" for="name">Profile name :</label>
+                                <input type="text" name="txtnewProfileName" id="txtnewProfileName" maxlength="30" />
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <label id="Profilenameerror" style="margin-left: 0px; float:left;"> </label>
+                    <button class="btn" id="btncancelprofile" data-dismiss="modal" aria-hidden="true" onclick="clearProfile()">Cancel</button>					
+                    <button class="btn btn-primary" id="btnNewProfileUserSubmit" name="btnNewProfileUserSubmit">Submit</button>
+                </div>
+
+            </div>
+            <!--  Models End -->
+            <div class="container" id="divcontainer">
+            </div>
+            <!-- /container -->
+            <footer class="row-fluid footer" id="cafooter"></footer>
+            <!-- /row -->
+
+
+            <!-- The javascript
+        ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="minjs/sacustomeradmin.min.js"></script>
+        </body>
+    </html>

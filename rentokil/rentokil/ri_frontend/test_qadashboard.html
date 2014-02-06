@@ -1,0 +1,1843 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>User Account Screen (logged in)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" />
+<meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" />
+<meta http-equiv="Cache Control: no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Pragma: no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Le styles -->
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/edfm-custom.css" rel="stylesheet">
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print">
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="css/bootstrapweek.css" rel="stylesheet">
+<link rel="stylesheet" href="css/pick-a-color-1.1.5.css">
+<!-- 
+                HTML5 shim, for IE6-8 support of HTML5 elements 
+                Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+<!--[if lt IE 9]>
+                  <script src="js/html5shiv.js"></script>
+            <![endif]-->
+<!--[if IE]>
+                <link href="css/edfm-ie.css" rel="stylesheet">
+            <![endif]-->
+            
+<style>
+.highcharts-container{
+/** Rules it should follow **/
+}
+</style>
+
+<script>
+var windowURL = window.location.toString().split('/').reverse();
+windowURL[0] = 'index.php/';
+windowURL[1] = 'ri_backend';
+var BACKENDURL = windowURL.reverse().join('/');
+</script>
+</head>
+<body>
+	<!--  Models Start -->
+	<div id="divRBDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade" data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xAlertDelete" name="xAlertDelete">x</button>
+			<h3 id="myAlertLabel">Confirm Delete</h3>
+		</div>
+		<div class="modal-body">
+			<div class="control-group">
+				<label id="lblConfirmation" style="margin-left: 0px;">Are you sure you want to delete?</label>
+			</div>
+
+		</div>
+		<div class="modal-footer">
+			<a class="btn" data-toggle="modal" id="btnNoAlert" name="btnNewAddPupilAdminClose" data-dismiss="modal">Cancel</a>
+			<button class="btn btn-primary" href="#" data-toggle="modal" id="btnconfirmDelete" name="btnconfirmDelete">Delete</button>
+		</div>
+	</div>
+	<div id="divProfileEdit" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 625px"></div>
+	<div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+	<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" data-toggle="modal" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divExcludeForm" style="display: block;">
+		<form method="post" id="frmUpdateMessage" name="frmUpdateMessage">
+			<div class="modal-header">
+				<button name="xUpdateMessage" id="xUpdateMessage" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+				<h3 id="myModalLabel">Manage Exception</h3>
+			</div>
+			<div class="modal-body">
+				<div style="margin-bottom: 0px;" class="row-fluid">
+					<div class="span12 control-group">
+						<div id="CardpaymentOptions" style="margin-top: 7px;" class="form-inline">
+							<label style="margin-right: 20px;" class="radio"> <input type="radio" checked="checked" value="dc" id="rdoExpType" name="rdoExpType">Exclude Data
+							</label> <label style="margin-right: 20px;" class="radio"> <input type="radio" value="ic" id="rdoExpType" name="rdoExpType">Include Data
+							</label> <label class="radio"> <input type="radio" value="cc" id="rdoExpType" name="rdoExpType">Approve Exception
+							</label>
+						</div>
+					</div>
+				</div>
+				<div>
+					<label>Reason:</label>
+				</div>
+				<div class="control-group form-horizontal">
+					<textarea maxlength="250" style="width: 86%; height: 60px; resize: none;" id="txaComments"></textarea>
+				</div>
+				<label style="margin-right: 15px;"></label>
+			</div>
+		</form>
+		<div class="modal-footer">
+			<div class="controls">
+				<!-- <p><input type="text" class="alert alert-error" id="inputError" style="text-align:center; display:none;"  disabled><button type="button" class="close" data-dismiss="alert">&times;</button>
+             </p> -->
+			</div>
+			<a data-dismiss="modal" name="btnUpdateClose" id="btnUpdateClose" data-toggle="modal" class="btn">Close</a>
+			<button name="btnUpdateSubmit" id="btnUpdateSubmit" data-toggle="modal" class="btn btn-primary">Submit</button>
+		</div>
+	</div>
+	<div id="divIncludeForm" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+			<h3 id="myModalLabel">Confirm Include</h3>
+			<input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+		</div>
+		<div class="modal-body">
+			<label> Are you sure you want to Include this form?</label>
+		</div>
+		<div class="modal-footer">
+			<a class="btn" data-toggle="modal" id="UploadDeleteNo" name="UploadDeleteNo" data-dismiss="modal">Cancel</a> <a class="btn btn-primary" href="#" data-toggle="modal" id="UploadDeleteYes" name="UploadDeleteYes">Submit</a>
+		</div>
+	</div>
+	<div id="divcontainer" class="container">
+		<header id="userheader" class="row-fluid">
+			<div class="span6">
+				<h1 class="logo">
+					<a id="lnkHeaderLogo" href="userpage.html">EDFM</a>
+				</h1>
+			</div>
+			<!-- text is hidden -->
+			<div class="span6 alignright userlogininfo">
+				<div id="divWelcome" class="username">Welcome User</div>
+				<br class="clear noSmall">
+				<div class="accountlinks">
+					<a name="btnProfileEdit" data-toggle="modal" id="btnProfileEdit" href="#divProfileEdit">My Profile</a> | <a name="btnLogout" id="btnLogout" href="#">Logout</a>
+				</div>
+				<div id="header-divider">
+					<img class="logininfodivider" src="img/header-logininfo-divider.png">
+				</div>
+				<div id="divLoggedAs" class="location">sample</div>
+			</div>
+		</header>
+		<!-- /row -->
+		<nav id="navLevel1" class="navbar-static-top navbar">
+			<div class="navbar-inner">
+				<div class="container">
+					<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+					<a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+					</a> <a data-target=".nav-collapse" data-toggle="collapse" href="#" class="brand hidden-desktop">Navigation</a>
+					<div class="nav-collapse">
+						<ul id="l1nav" class="nav">
+							<li class=""><a name="UHome" id="UHome" href="userpage.html">Home</a></li>
+							<li class="divider-vertical"></li>
+							<li class=""><a name="UPeople Services" id="UPeople Services" href="userpeopleservices.html">People Services</a></li>
+							<li class="divider-vertical"></li>
+							<li class=""><a name="UBuilding Services" id="UBuilding Services" href="userbuildingservices.html">Building Services</a></li>
+							<li class="divider-vertical"></li>
+							<li class=""><a name="UResource Management" id="UResource Management" href="userresourcemanagement.html">Resource Management</a></li>
+							<li class="divider-vertical"></li>
+							<li class="active"><a name="UPerformance Reports" id="UPerformance Reports" href="userperformancereports.html">Performance Reports</a></li>
+						</ul>
+					</div>
+					<!-- /nav-collapse -->
+				</div>
+				<!-- /container -->
+			</div>
+		</nav>
+		<!-- /navbar -->
+		<nav id="navLevel2" class="row-fluid tabNav" style="margin-bottom: 0px">
+			<!-- secondary nav selects tabs -->
+			<ul id="secondarynav" class="nav nav-tabs">
+				<li class="active"><a href="javascript:void(0);">Quality Audit</a></li>
+				<li class=""><a href="userperformancereports.html">Service SLAs</a></li>
+				<li class=""><a href="userperformancereportssafety.html">Safety Performance</a></li>
+			</ul>
+		</nav>
+		<div class="tab-content" id="tabcontent">
+			<!-- begin page tabbed content -->
+			<section id="secPatCatering" class="tab-pane active">
+				<div class="row-fluid">
+					<!-- left column -->
+					<!-- Row -->
+					<div class="row-fluid">
+						<!-- full width widget -->
+						<div class="span12 widget">
+							<div class="row-fluid noBottom">
+								<div class="span10">
+									<h2 style="margin-top: 0px;">Quality Audit Dashboard</h2>
+								</div>
+							</div>
+							<!-- /row -->
+							<!-- /row -->
+							<div style="" id="navLevel3" class="row-fluid hasTabs">
+								<div class="span12">
+									<div class="row-fluid noBottom">
+										<div style="width: 99.6%" class="widgettabs widgetnav">
+											<ul id="widgetnav" class="nav nav-tabs">
+												<li style="display: inline" id="li_divReportBuilder" class="active"><a id="divreportBuild" data-toggle="tab" href="#divReportBuilder">Report Builder</a></li>
+												<li style="display: inline" id="li_divFilterAudits"><a id="divfilterAudits" data-toggle="tab" href="#divFilterAudits">Audit Report</a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- /row -->
+								</div>
+							</div>
+							<!-- /row -->
+
+							<div class="row-fluid">
+								<div class="tab-content">
+									<div id="divReportBuilder" class="tab-pane active">
+										<div id="divtbl_ReportList">
+											<div id="divqa_add" class="row-fluid">
+												<div class="control-group">
+													<div style="margin-top: 15px !important;" class="btn-group segment-button pull-right">
+														<button type="button" class="btn btn-primary" id="btnCreateAdhoc" href="#btnCreateAdhoc" onclick="javascript:return createAdhoc();return false;">Run Ad-hoc Report</button>
+														<button type="button" class="btn btn-primary" id="btnCreateReport" href="#btnCreateReport" onclick="javascript:return createreport();return false;">Create SLA Report</button>
+													</div>
+												</div>
+											</div>
+											<table style="" id="tblReportList" name="tblReportList" class="no-more-tables table table-hover table-striped edfm-bordered-table">
+												<thead>
+													<tr>
+														<th style="border: none;">Report Name</th>
+														<th style="border: none;">Account</th>
+														<th style="border: none;">Last Modified</th>
+														<th style="border: none;"></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td data-title="Report Name" nowrap="nowrap"><div style="padding-top: 6px">R1</div></td>
+														<td data-title="Account" nowrap="wrap"><div style="padding-top: 6px">A1</div></td>
+														<td data-title="Last Modified" nowrap="wrap"><div style="padding-top: 6px">03/12/2013 13:12</div></td>
+														<td nowrap="wrap" style="text-align: right;"><button style="margin-right: 10px;" data-toggle="modal" href="#divRBDelete" id="btnapp_del4" class="btn btn-danger btn-small">
+																<i class="icon-white icon-trash"></i> Delete
+															</button>
+															<button style="margin-right: 10px;" onclick="javascript:return createreport();return false;" id="btnapp_edit4" class="btn btn-small">
+																<i class="icon-pencil"></i> Edit
+															</button>
+															<button onclick="javascript:return ViewRB();return false;" id="btnapp_edit4" class="btn btn-small btn-success">
+																<i class="icon-play-circle icon-white"></i> View
+															</button></td>
+													</tr>
+													<tr>
+														<td data-title="Report Name" nowrap="nowrap"><div style="padding-top: 6px">R2</div></td>
+														<td data-title="Account" nowrap="wrap"><div style="padding-top: 6px">A2</div></td>
+														<td data-title="Last Modified" nowrap="wrap"><div style="padding-top: 6px">02/12/2013 10:12</div></td>
+														<td nowrap="wrap" style="text-align: right;"><button style="margin-right: 10px;" data-toggle="modal" href="#divRBDelete" id="btnapp_del2" class="btn btn-danger btn-small">
+																<i class="icon-white icon-trash"></i> Delete
+															</button>
+															<button style="margin-right: 10px;" onclick="javascript:return createreport();return false;" id="btnapp_edit2" class="btn btn-small">
+																<i class="icon-pencil"></i> Edit
+															</button>
+															<button onclick="javascript:return ViewRB();return false;" id="btnapp_edit2" class="btn btn-small btn-success">
+																<i class="icon-play-circle icon-white"></i> View
+															</button></td>
+													</tr>
+													<tr>
+														<td data-title="Report Name" nowrap="nowrap"><div style="padding-top: 6px">R3</div></td>
+														<td data-title="Account" nowrap="wrap"><div style="padding-top: 6px">A3</div></td>
+														<td data-title="Last Modified" nowrap="wrap"><div style="padding-top: 6px">02/12/2013 08:12</div></td>
+														<td nowrap="wrap" style="text-align: right;"><button style="margin-right: 10px;" data-toggle="modal" href="#divRBDelete" id="btnapp_del1" class="btn btn-danger btn-small">
+																<i class="icon-white icon-trash"></i> Delete
+															</button>
+															<button style="margin-right: 10px;" onclick="javascript:return createreport();return false;" id="btnapp_edit1" class="btn btn-small">
+																<i class="icon-pencil"></i> Edit
+															</button>
+															<button onclick="javascript:return ViewRB();return false;" id="btnapp_edit1" class="btn btn-small btn-success">
+																<i class="icon-play-circle icon-white"></i> View
+															</button></td>
+													</tr>
+													<tr>
+														<td data-title="Report Name" nowrap="nowrap"><div style="padding-top: 6px">R4</div></td>
+														<td data-title="Account" nowrap="wrap"><div style="padding-top: 6px">A4</div></td>
+														<td data-title="Last Modified" nowrap="wrap"><div style="padding-top: 6px">01/12/2013 09:22</div></td>
+														<td nowrap="wrap" style="text-align: right;"><button style="margin-right: 10px;" data-toggle="modal" href="#divRBDelete" id="btnapp_del5" class="btn btn-danger btn-small">
+																<i class="icon-white icon-trash"></i> Delete
+															</button>
+															<button style="margin-right: 10px;" onclick="javascript:return createreport();return false;" id="btnapp_edit1" class="btn btn-small">
+																<i class="icon-pencil"></i> Edit
+															</button>
+															<button onclick="javascript:return ViewRB();return false;" id="btnapp_edit5" class="btn btn-small btn-success">
+																<i class="icon-play-circle icon-white"></i> View
+															</button></td>
+													</tr>
+													<tr>
+														<td data-title="Report Name" nowrap="nowrap"><div style="padding-top: 6px">R5</div></td>
+														<td data-title="Account" nowrap="wrap"><div style="padding-top: 6px">A5</div></td>
+														<td data-title="Last Modified" nowrap="wrap"><div style="padding-top: 6px">30/11/2013 10:57</div></td>
+														<td nowrap="wrap" style="text-align: right;"><button style="margin-right: 10px;" data-toggle="modal" href="#divRBDelete" id="btnapp_del3" class="btn btn-danger btn-small">
+																<i class="icon-white icon-trash"></i> Delete
+															</button>
+															<button style="margin-right: 10px;" onclick="javascript:return createreport();return false;" id="btnapp_edit3" class="btn btn-small">
+																<i class="icon-pencil"></i> Edit
+															</button>
+															<button onclick="javascript:return ViewRB();return false;" id="btnapp_edit3" class="btn btn-small btn-success">
+																<i class="icon-play-circle icon-white"></i> View
+															</button></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div id="divreportBuilderAccordion" class="hide">
+										<div style="margin-left: 10px; margin-top: 20px;" class="form-horizontal" id="divReportName">
+										<div class="control-group" >
+										<label class="control-label">Report Name</label> <input class="span12" id="txtReportName" style="width: 350px;" size="16" type="text">
+										</div>
+										</div>
+											<div class="accordion" id="accordion_Properties">
+												<div class="accordion-group" id="accoRBFilter">
+													<div class="accordion-heading">
+														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_Properties" href="#accAccountFilter" style="text-decoration: none !important;"><li class="icon-search icon-white"></li>&nbsp;Filter Audits</a>
+													</div>
+													<div id="accAccountFilter" class="accordion-body collapse in">
+														<div class="accordion-inner">
+															<div class="form-horizontal">
+																<div class="span12">
+																	<div class="tabbable tabs-left">
+																		<ul class="nav nav-tabs">
+																			<li class="active"><a data-toggle="tab" href="#divAccDates">Dates</a></li>
+																			<li><a data-toggle="tab" href="#divAccAccounts"><i class="icon-ok"></i>&nbsp;Account</a></li>
+																			<li><a data-toggle="tab" href="#divAccSite"><i class="icon-ok"></i>&nbsp;Site</a></li>
+																			<li><a data-toggle="tab" href="#divAccArea"><i class="icon-ok"></i>&nbsp;Area</a></li>
+																			<li><a data-toggle="tab" href="#divAccSubArea"><i class="icon-ok"></i>&nbsp;Sub-Area</a></li>
+																			<li><a data-toggle="tab" href="#divAccPoint"><i class="icon-ok"></i>&nbsp;Point</a></li>
+																			<li><a data-toggle="tab" href="#divAccAuditor"><i class="icon-ok"></i>&nbsp;Auditor</a></li>
+																		</ul>
+																		<div class="tab-content">
+																			<div id="divAccDates" class="tab-pane active">
+																			<div class="form-horizontal span12">
+																					<div style="margin-bottom: 0px;" class="row-fluid">
+																						<div class="control-group">
+																							<label class="control-label">Start Date</label>
+																								<div class="input-prepend" id="divSelStartDate">
+																									<div id='tminusappend'>
+																								<span class='select-wrap' style='width: 190px;'> <select id="ddlRBStartDate">
+																										<option value="1" selected="Selected">Fixed start date</option>
+																										<option value="2">1st day of the month</option>
+																										<option value="3">1st day of the year</option>
+																										<option value="4">'n' days before end date</option>
+																								</select>
+																								</span>
+																							</div>
+																						</div>
+																						<div class="input-append date" style="margin-left: 20px" id="divRBStartDate" >
+																					<input class="span12" data-format="dd/MM/yyyy hh:mm:ss" id="txtRBStartDate" style="width: 166px;" size="16" type="text" readonly="readonly"><span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+																				</div>
+																						<div class="input-append date" id="txtRBdates" style="margin-left: 20px">
+																							<input type="text" style="width:90px;" maxlength="50" id="vatinputvalue" name="vatinputvalue" value="" class="span10"><span class="add-on">days</span>
+																						</div>
+																						</div>
+																					</div>
+																				
+																				<div class="row-fluid" style="margin-bottom: 0px;">
+																		<div class="control-group">
+																	<label class="control-label">End Date</label>
+																	<div class="input-prepend" id="divSelEndDate">
+																		<div id='tminusappend'>
+																			<span class='select-wrap' style='width: 190px;'> <select id="ddlRBEndDate">
+																					<option value="1" selected="Selected">Fixed end date</option>
+																					<option value="2">Today minus 'n' days</option>
+																					<option value="3">'n' days after start date</option>
+																					</select>
+																			</span>
+																		</div></div>
+																	<div class="input-append date" style="margin-left: 20px" id="divRBEndDate">
+																		<input class="span12" data-format="dd/MM/yyyy hh:mm:ss" id="txtRBEndDate" style="width: 166px;" size="16" type="text" readonly="readonly"><span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+																	</div>
+																	<div class="input-append" id="txtRBEd" style="margin-left: 20px"><input type="text" style="width:90px;" maxlength="50" id="vatinputvalue" name="vatinputvalue" value="" class="span10"><span class="add-on">days</span></div>
+																</div>
+																				
+																				</div>
+																				</div>
+																		
+																			</div>
+																			<div id="divAccAccounts" class="tab-pane">
+																				<div class="span12" style="margin-left: 0px;">
+										  
+										                                        <div class="row-fluid" style="margin-bottom: 10px;color: black">
+										                                            <div class="control-group">
+                                                                        <label class="control-label" for="schoolname">Available Accounts</label>
+                                                                        <span class="select-wrap" style="display: inline-block;vertical-align: middle;">
+                                       									 <select id="ddlApps2"><option selected="selected" value="1">Account 1</option><option value="2">Account 2</option><option value="3">Account 3</option><option value="4">Account 4</option></select></span>
+                                                                    </div>
+										                                        </div>
+										                                  </div>
+																			</div>
+																			<div id="divAccSite" class="tab-pane">
+																				<div class="span12" style="margin-left: 0px;">
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Available Sites</div>
+
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; height: 180px; overflow: auto;">
+																							<table data-original-title="" class="table" name="lstAvailableAdmin" id="lstAvailableAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																								</tbody>
+																							</table>
+																						</div>
+
+																					</div>
+																					<div class="span3 aligncenter">
+																						<button onclick="return false;" class="btn" id="btnAddAdmin" name="btnAddAdmin">
+																							Add<i class="icon-arrow-right" style="float: right; vertical-align: middle;"></i>
+																						</button>
+																						<br>
+																						<button onclick="return false;" class="btn" id="btnRemoveAdmin" name="btnRemoveAdmin" style="width: 110px;">
+																							<i class="icon-arrow-left" style="float: left; vertical-align: middle;"></i> Remove
+																						</button>
+																					</div>
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Selected Sites</div>
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; margin-left: -4px; height: 180px; overflow: auto;">
+																							<table class="table" name="lstSelectedAdmin" id="lstSelectedAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Site 1</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Site 2</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Site 3</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Site 4</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Site 5</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Site 6</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Site 7</td>
+																									</tr>
+
+																								</tbody>
+																							</table>
+																						</div>
+
+																					</div>
+																				</div>
+																			</div>
+																			<div id="divAccArea" class="tab-pane">
+																				<div class="span12" style="margin-left: 0px;">
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Available Areas</div>
+
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; height: 180px; overflow: auto;">
+																							<table data-original-title="" class="table" name="lstAvailableAdmin" id="lstAvailableAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																								</tbody>
+																							</table>
+																						</div>
+
+																					</div>
+																					<div class="span3 aligncenter">
+																						<button onclick="return false;" class="btn" id="btnAddAdmin" name="btnAddAdmin">
+																							Add<i class="icon-arrow-right" style="float: right; vertical-align: middle;"></i>
+																						</button>
+																						<br>
+																						<button onclick="return false;" class="btn" id="btnRemoveAdmin" name="btnRemoveAdmin" style="width: 110px;">
+																							<i class="icon-arrow-left" style="float: left; vertical-align: middle;"></i> Remove
+																						</button>
+																					</div>
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Selected Areas</div>
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; margin-left: -4px; height: 180px; overflow: auto;">
+																							<table class="table" name="lstSelectedAdmin" id="lstSelectedAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Area 1 (Site 1)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Area 2 (Site 1)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Area 1 (Site 2)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Area 2 (Site 2)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Area 3 (Site 2)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Area 1 (Site 3)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Area 2 (Site 3)</td>
+																									</tr>
+
+																								</tbody>
+																							</table>
+																						</div>
+
+																					</div>
+																				</div>
+																			</div>
+																			<div id="divAccSubArea" class="tab-pane">
+																				<div class="span12" style="margin-left: 0px;">
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Available Sub-Areas</div>
+
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; height: 180px; overflow: auto;">
+																							<table data-original-title="" class="table" name="lstAvailableAdmin" id="lstAvailableAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																								</tbody>
+																							</table>
+																						</div>
+
+																					</div>
+																					<div class="span3 aligncenter">
+																						<button onclick="return false;" class="btn" id="btnAddAdmin" name="btnAddAdmin">
+																							Add<i class="icon-arrow-right" style="float: right; vertical-align: middle;"></i>
+																						</button>
+																						<br>
+																						<button onclick="return false;" class="btn" id="btnRemoveAdmin" name="btnRemoveAdmin" style="width: 110px;">
+																							<i class="icon-arrow-left" style="float: left; vertical-align: middle;"></i> Remove
+																						</button>
+																					</div>
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Selected Sub-Areas</div>
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; margin-left: -4px; height: 180px; overflow: auto;">
+																							<table class="table" name="lstSelectedAdmin" id="lstSelectedAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																									<tr><td style="border: 1px solid #d3d3d3">Subarea 1 (Site 1, Area 1) </td></tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Subarea 2 (Site 1, Area 1)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Subarea 1 (Site 1, Area 2)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Subarea 2 (Site 1, Area 2) </td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Subarea 1 (Site 2, Area 1)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Subarea 2 (Site 2, Area 1)</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Subarea 1 (Site 2, Area 2)</td>
+																									</tr>
+
+																								</tbody>
+																							</table>
+																						</div>
+
+																					</div>
+																				</div>
+																			</div>
+																			<div id="divAccPoint" class="tab-pane">
+																				<div class="span12" style="margin-left: 0px;">
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Available Points</div>
+
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; height: 180px; overflow: auto;">
+																							<table data-original-title="" class="table" name="lstAvailableAdmin" id="lstAvailableAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																								</tbody>
+																							</table>
+																						</div>
+
+																					</div>
+																					<div class="span3 aligncenter">
+																						<button onclick="return false;" class="btn" id="btnAddAdmin" name="btnAddAdmin">
+																							Add<i class="icon-arrow-right" style="float: right; vertical-align: middle;"></i>
+																						</button>
+																						<br>
+																						<button onclick="return false;" class="btn" id="btnRemoveAdmin" name="btnRemoveAdmin" style="width: 110px;">
+																							<i class="icon-arrow-left" style="float: left; vertical-align: middle;"></i> Remove
+																						</button>
+																					</div>
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Selected Points</div>
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; margin-left: -4px; height: 180px; overflow: auto;">
+																							<table class="table" name="lstSelectedAdmin" id="lstSelectedAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Point 1</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Point 2</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Point 3</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Point 4</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Point 5</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Point 6</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Point 7</td>
+																									</tr>
+																								</tbody>
+																							</table>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div id="divAccAuditor" class="tab-pane">
+																				<div class="span12" style="margin-left: 0px;">
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Available Auditors</div>
+
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; height: 180px; overflow: auto;">
+																							<table data-original-title="" class="table" name="lstAvailableAdmin" id="lstAvailableAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																								</tbody>
+																							</table>
+																						</div>
+
+																					</div>
+																					<div class="span3 aligncenter">
+																						<button onclick="return false;" class="btn" id="btnAddAdmin" name="btnAddAdmin">
+																							Add<i class="icon-arrow-right" style="float: right; vertical-align: middle;"></i>
+																						</button>
+																						<br>
+																						<button onclick="return false;" class="btn" id="btnRemoveAdmin" name="btnRemoveAdmin" style="width: 110px;">
+																							<i class="icon-arrow-left" style="float: left; vertical-align: middle;"></i> Remove
+																						</button>
+																					</div>
+																					<div class="span4">
+																						<div class="row-fluid" style="margin-bottom: 10px; color: black">Selected Auditors</div>
+																						<div class="row-fluid" style="border: 2px solid #d3d3d3; margin-left: -4px; height: 180px; overflow: auto;">
+																							<table class="table" name="lstSelectedAdmin" id="lstSelectedAdmin" style="margin: 12px; width: 95% !important; border-collapse: separate; border-spacing: 0 5px;">
+																								<tbody>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Auditor 1</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Auditor 2</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Auditor 3</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Auditor 4</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Auditor 5</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Auditor 6</td>
+																									</tr>
+																									<tr>
+																										<td style="border: 1px solid #d3d3d3">Auditor 7</td>
+																									</tr>
+																								</tbody>
+																							</table>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+
+																		</div>
+																	</div>
+
+																	<div class="row-fluid">
+																		<hr />
+																		<div class="form-inline print pull-right">
+																			<button style="margin-top: 0px;" onclick="return false;" class="btn">Reset All</button>
+																			&nbsp;&nbsp;
+																			<button onclick="javascript:showPropGraph();return false;" class="btn btn-primary">Filter</button>
+																			&nbsp;&nbsp;
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="accordion-group" id="accoRBProp">
+													<div class="accordion-heading">
+														<!-- US 312 Various UI Tidies item 14 icon-user added-->
+														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_Properties" style="text-decoration: none !important;" href="#accProperties"><i class="icon-tint icon-white"></i>&nbsp;RAG Settings</a>
+													</div>
+													<div id="accProperties" class="accordion-body collapse">
+														<div class="accordion-inner">
+															<form id="frmProperties" class="form-horizontal">
+															<table class="no-more-tables table edfm-bordered-table table-hover table-striped" name="tblReportList" id="tblReportList">
+																	<thead>
+																		<tr>
+																			<th style="border: none;">Group Name</th>
+																			<th style="border: none;">Visible?</th>
+																			<th style="border: none;"><label><i class=" icon-tint icon-red"></i>&nbsp;<b>Red </b></label></th>
+																			<th style="border: none;"><label><i class=" icon-tint icon-orange"></i>&nbsp;<b>Amber</b></label></th>
+																			<th style="border: none;"><label><i class=" icon-tint icon-green"></i>&nbsp;<b>Green</b></label></th>
+																			<th style="border: none;"><label><i class=" icon-tint icon-purple"></i>&nbsp;<b>Purple</b></label></th>
+																			<th style="border: none;"><label><i class=" icon-tint icon-blue"></i>&nbsp;<b>Blue</b></label></th>
+																			
+																		</tr>
+																	</thead>
+																	<tbody>
+																		
+																		<tr>
+																			<td nowrap="nowrap" data-title="Group Name" style="vertical-align:middle;" ><div style="padding-top: 6px"><label>Group 1</label></div></td>
+																			<td nowrap="nowrap" data-title="Visible?" style="vertical-align:middle;"><div style="padding-top: 6px"><label class="checkbox"><input type="checkbox" value="4" id="chkVisible" name="chkVisible"></label></div></td>
+																			<td nowrap="wrap" data-title="Red" >
+																			<div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="0" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="10" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div>
+                                                                			</td>
+																			<td nowrap="wrap" data-title="Amber" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="11" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="30" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+                                                                 <td nowrap="wrap" data-title="Green" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="81" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="100" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+																			<td nowrap="wrap" data-title="Purple" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="31" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="50" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+																			<td nowrap="wrap" data-title="Blue" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="51" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="80" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+                                                               
+																			</tr>
+																			<tr>
+																			<td nowrap="nowrap" data-title="Group Name"  style="vertical-align:middle;"><div style="padding-top: 6px"><label>Group 2</label></div></td>
+																			<td nowrap="nowrap" data-title="Visible?" style="vertical-align:middle;"><div style="padding-top: 6px"><label class="checkbox"><input type="checkbox" value="4" id="chkVisible" name="chkVisible"></label></div></td>
+																			<td nowrap="wrap" data-title="Red" >
+																			<div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="0" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="10" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div>
+                                                                			</td>
+																			<td nowrap="wrap" data-title="Amber" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="11" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="30" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+                                                                 <td nowrap="wrap" data-title="Green" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="81" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="100" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+																			<td nowrap="wrap" data-title="Purple" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="31" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="50" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+																			<td nowrap="wrap" data-title="Blue" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="51" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="80" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+                                                               			</tr>
+																			<tr>
+																			<td nowrap="nowrap" data-title="Group Name"  style="vertical-align:middle;"><div style="padding-top: 6px"><label>Group 3</label></div></td>
+																			<td nowrap="nowrap" data-title="Visible?" style="vertical-align:middle;"><div style="padding-top: 6px"><label class="checkbox"><input type="checkbox" value="4" id="chkVisible" name="chkVisible"></label></div></td>
+																			<td nowrap="wrap" data-title="Red" >
+																			<div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="0" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="10" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div>
+                                                                			</td>
+																			<td nowrap="wrap" data-title="Amber" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="11" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="30" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+                                                                 <td nowrap="wrap" data-title="Green" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="81" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="100" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+																			<td nowrap="wrap" data-title="Purple" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="31" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="50" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+																			<td nowrap="wrap" data-title="Blue" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="51" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="80" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+                                                            				</tr>
+																			<tr>
+																			<td nowrap="nowrap" data-title="Group Name" style="vertical-align:middle;"><div style="padding-top: 6px"><label>Group 4</label></div></td>
+																			<td nowrap="nowrap" data-title="Visible?" style="vertical-align:middle;"><div style="padding-top: 6px"><label class="checkbox"><input type="checkbox" value="4" id="chkVisible" name="chkVisible"></label></div></td>
+																			<td nowrap="wrap" data-title="Red" >
+																			<div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="0" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="10" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div>
+                                                                			</td>
+																			<td nowrap="wrap" data-title="Amber" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="11" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="30" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+                                                                 <td nowrap="wrap" data-title="Green" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="81" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="100" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+																			<td nowrap="wrap" data-title="Purple" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="31" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="50" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+																			<td nowrap="wrap" data-title="Blue" ><div class="row-fluid" >
+                                                                       <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">From:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="51" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                     <div class="control-group" >
+                                                                            <label style="width:40px !important;" class="control-label">To:</label>
+                                                                           <div class="input-append"><input type="text" class="span10" value="80" name="vatinputvalue" id="vatinputvalue" maxlength="50" style="width:40px;">
+																				<span class="add-on">%</span></div>
+                                                                        </div>
+                                                                </div></td>
+                                                               			</tr>
+																	</tbody>
+																</table>
+																</form>
+																
+																<div class="row-fluid">
+																		<hr />
+																		<div class="form-inline print pull-right">
+																			<button onclick="javascript:showAlerts();return false;" class="btn btn-primary">Alerts</button>
+																			&nbsp;&nbsp;
+																		</div>
+																	</div>
+														</div>
+													</div>
+												</div>
+												<div class="accordion-group" id="accoRBAlerts">
+													<div class="accordion-heading">
+														<!-- US 312 Various UI Tidies item 14 icon-user added-->
+														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_Alerts" style="text-decoration: none !important;" href="#accAlerts"><i class="icon-envelope icon-white"></i>&nbsp;RAG Alerts</a>
+													</div>
+													<div id="accAlerts" class="accordion-body collapse">
+														<div class="accordion-inner">
+															<form id="frmAlerts" class="form-horizontal">
+														
+															
+															<table name="tblUsers" style="width: 100%;" id="tblUsers" class="no-more-tables table table-hover table-striped  edfm-bordered-table">
+                                                    <thead style="border: none;">
+                                                        <tr>
+                                                            <th style="border: none;">Name</th>
+                                                            <th style="border: none;">Username</th>
+	                                                        <th style="border: none;"><label><i class=" icon-tint icon-red"></i>&nbsp;<b>Red </b></label></th>
+															<th style="border: none;"><label><i class=" icon-tint icon-orange"></i>&nbsp;<b>Amber</b></label></th>
+															<th style="border: none;"><label><i class=" icon-tint icon-green"></i>&nbsp;<b>Green</b></label></th>
+															<th style="border: none;"><label><i class=" icon-tint icon-purple"></i>&nbsp;<b>Purple</b></label></th>
+															<th style="border: none;"><label><i class=" icon-tint icon-blue"></i>&nbsp;<b>Blue</b></label></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr><td data-title="Name" >Bob Smith</td>
+                                                    <td data-title="User Name">bob@test.com</td>
+                                                    <td data-title="Red"><label class="checkbox"><input type="checkbox" value="R" id="chkRed" ></label></td>
+                                                    <td data-title="Amber"><label class="checkbox"><input type="checkbox" value="A" id="chkAmber" ></label></td>
+                                                    <td data-title="Green"><label class="checkbox"><input type="checkbox" value="G" id="chkGreen" ></label></td>
+                                                    <td data-title="Purple"><label class="checkbox"><input type="checkbox" value="P" id="chkPurple" ></label></td>
+                                                    <td data-title="Blue"><label class="checkbox"><input type="checkbox" value="B" id="chkBlue" ></label></td>
+                                                    </tr>
+                                                    <tr><td data-title="Name" >Bob Smith</td>
+                                                    <td data-title="User Name">bob@test.com</td>
+                                                    <td data-title="Red"><label class="checkbox"><input type="checkbox" value="R" id="chkRed" ></label></td>
+                                                    <td data-title="Amber"><label class="checkbox"><input type="checkbox" value="A" id="chkAmber" ></label></td>
+                                                    <td data-title="Green"><label class="checkbox"><input type="checkbox" value="G" id="chkGreen" ></label></td>
+                                                    <td data-title="Purple"><label class="checkbox"><input type="checkbox" value="P" id="chkPurple" ></label></td>
+                                                    <td data-title="Blue"><label class="checkbox"><input type="checkbox" value="B" id="chkBlue" ></label></td>
+                                                    </tr>
+                                                    <tr><td data-title="Name" >Bob Smith</td>
+                                                    <td data-title="User Name">bob@test.com</td>
+                                                    <td data-title="Red"><label class="checkbox"><input type="checkbox" value="R" id="chkRed" ></label></td>
+                                                    <td data-title="Amber"><label class="checkbox"><input type="checkbox" value="A" id="chkAmber" ></label></td>
+                                                    <td data-title="Green"><label class="checkbox"><input type="checkbox" value="G" id="chkGreen" ></label></td>
+                                                    <td data-title="Purple"><label class="checkbox"><input type="checkbox" value="P" id="chkPurple" ></label></td>
+                                                    <td data-title="Blue"><label class="checkbox"><input type="checkbox" value="B" id="chkBlue" ></label></td>
+                                                    </tr>
+                                                    <tr><td data-title="Name" >Bob Smith</td>
+                                                    <td data-title="User Name">bob@test.com</td>
+                                                    <td data-title="Red"><label class="checkbox"><input type="checkbox" value="R" id="chkRed" ></label></td>
+                                                    <td data-title="Amber"><label class="checkbox"><input type="checkbox" value="A" id="chkAmber" ></label></td>
+                                                    <td data-title="Green"><label class="checkbox"><input type="checkbox" value="G" id="chkGreen" ></label></td>
+                                                    <td data-title="Purple"><label class="checkbox"><input type="checkbox" value="P" id="chkPurple" ></label></td>
+                                                    <td data-title="Blue"><label class="checkbox"><input type="checkbox" value="B" id="chkBlue" ></label></td>
+                                                    </tr>
+                                                    <tr><td data-title="Name" >Bob Smith</td>
+                                                    <td data-title="User Name">bob@test.com</td>
+                                                    <td data-title="Red"><label class="checkbox"><input type="checkbox" value="R" id="chkRed" ></label></td>
+                                                    <td data-title="Amber"><label class="checkbox"><input type="checkbox" value="A" id="chkAmber" ></label></td>
+                                                    <td data-title="Green"><label class="checkbox"><input type="checkbox" value="G" id="chkGreen" ></label></td>
+                                                    <td data-title="Purple"><label class="checkbox"><input type="checkbox" value="P" id="chkPurple" ></label></td>
+                                                    <td data-title="Blue"><label class="checkbox"><input type="checkbox" value="B" id="chkBlue" ></label></td>
+                                                    </tr>
+                                                    <tr><td data-title="Name" >Bob Smith</td>
+                                                    <td data-title="User Name">bob@test.com</td>
+                                                    <td data-title="Red"><label class="checkbox"><input type="checkbox" value="R" id="chkRed" ></label></td>
+                                                    <td data-title="Amber"><label class="checkbox"><input type="checkbox" value="A" id="chkAmber" ></label></td>
+                                                    <td data-title="Green"><label class="checkbox"><input type="checkbox" value="G" id="chkGreen" ></label></td>
+                                                    <td data-title="Purple"><label class="checkbox"><input type="checkbox" value="P" id="chkPurple" ></label></td>
+                                                    <td data-title="Blue"><label class="checkbox"><input type="checkbox" value="B" id="chkBlue" ></label></td>
+                                                    </tr>
+                                                    <tr><td data-title="Name" >Bob Smith</td>
+                                                    <td data-title="User Name">bob@test.com</td>
+                                                    <td data-title="Red"><label class="checkbox"><input type="checkbox" value="R" id="chkRed" ></label></td>
+                                                    <td data-title="Amber"><label class="checkbox"><input type="checkbox" value="A" id="chkAmber" ></label></td>
+                                                    <td data-title="Green"><label class="checkbox"><input type="checkbox" value="G" id="chkGreen" ></label></td>
+                                                    <td data-title="Purple"><label class="checkbox"><input type="checkbox" value="P" id="chkPurple" ></label></td>
+                                                    <td data-title="Blue"><label class="checkbox"><input type="checkbox" value="B" id="chkBlue" ></label></td>
+                                                    </tr>
+                                                    <tr><td data-title="Name" >Bob Smith</td>
+                                                    <td data-title="User Name">bob@test.com</td>
+                                                    <td data-title="Red"><label class="checkbox"><input type="checkbox" value="R" id="chkRed" ></label></td>
+                                                    <td data-title="Amber"><label class="checkbox"><input type="checkbox" value="A" id="chkAmber" ></label></td>
+                                                    <td data-title="Green"><label class="checkbox"><input type="checkbox" value="G" id="chkGreen" ></label></td>
+                                                    <td data-title="Purple"><label class="checkbox"><input type="checkbox" value="P" id="chkPurple" ></label></td>
+                                                    <td data-title="Blue"><label class="checkbox"><input type="checkbox" value="B" id="chkBlue" ></label></td>
+                                                    </tr>
+                                                    <tr><td data-title="Name" >Bob Smith</td>
+                                                    <td data-title="User Name">bob@test.com</td>
+                                                    <td data-title="Red"><label class="checkbox"><input type="checkbox" value="R" id="chkRed" ></label></td>
+                                                    <td data-title="Amber"><label class="checkbox"><input type="checkbox" value="A" id="chkAmber" ></label></td>
+                                                    <td data-title="Green"><label class="checkbox"><input type="checkbox" value="G" id="chkGreen" ></label></td>
+                                                    <td data-title="Purple"><label class="checkbox"><input type="checkbox" value="P" id="chkPurple" ></label></td>
+                                                    <td data-title="Blue"><label class="checkbox"><input type="checkbox" value="B" id="chkBlue" ></label></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                	</form>
+																
+																<div class="row-fluid">
+																		<hr />
+																		<div class="form-inline print pull-right">
+																			<button onclick="javascript:showGraph();return false;" class="btn btn-primary">Preview</button>
+																			&nbsp;&nbsp;
+																		</div>
+																	</div>
+														</div>
+													</div>
+												</div>
+												<div class="accordion-group" id="accoRBGraph">
+													<div class="accordion-heading">
+														<!-- US 312 Various UI Tidies item 14 icon-user added-->
+														<a class="accordion-toggle" id="accoRBtoggle" data-toggle="collapse" data-parent="#accordion_Properties" style="text-decoration: none !important;" href="#accCharts"><li class="icon-signal icon-white"></li>&nbsp;Graph</a>
+													</div>
+													<div id="accCharts" class="accordion-body collapse">
+														<div class="accordion-inner">
+															<div class="row-fluid">
+																<form id="frmRBGraph" class="form-inline pull-right">
+																	<label>View Dashboard by:</label> <span style="vertical-align: middle; display: inline-block;" class="select-wrap"> <select id="ddlRBdashboard">
+																			<option value="Site" selected="selected">Site</option>
+																			<option value="Area">Area</option>
+																			<option value="Subarea">Subarea</option>
+																			<option value="Point">Point</option>
+																	</select></span>
+																	<div class="btn-group" data-toggle="buttons-radio">
+																		<button class="btn btn-primary" id="btnCount" onclick="javascript:return viewRBDashboard('c');return false;">Count</button>
+																		<button class="btn btn-primary" id="btnAverage" onclick="javascript:return viewRBDashboard('a');return false;">Average</button>
+																		<button class="btn btn-primary" id="btnPercentage" onclick="javascript:return viewRBDashboard('p');return false;">Percentage</button>
+																	</div>
+																</form>
+															</div>
+
+															<div class="row-fluid control-group" id="divNextPrevWeek">
+																<div style="margin-bottom: 15px;" class="span4">
+																	<div id="centerMonth1" class="pull-left">
+																		<table style="align: center">
+																			<tbody>
+																				<tr>
+																					<td><div>
+																							<a id="SumMonfastPrev" href="javascript:void(0);" class="btn btn-small  btn-inverse"><i class="icon-fast-backward icon-white"></i> -30 days</a>
+																						</div></td>
+																					<td><div>
+																							<a id="SumMonPrev" href="javascript:void(0);" class="btn btn-small"><i class="icon-backward"></i> -7 days</a>
+																						</div></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																</div>
+																<div class="span4 form-horizontal center-in-span" id="centerMonth2">
+																	<div class="control-group center-in-span">&nbsp;</div>
+																</div>
+																<div class="span4">
+																	<div id="centerMonth3" class="pull-right">
+																		<table align="center">
+																			<tbody>
+																				<tr>
+																					<td><div>
+																							<a id="SumMonNext" href="javascript:void(0);" class="btn btn-small">+7 days <i class="icon-forward"></i>
+																							</a>
+																						</div></td>
+																					<td><div>
+																							<a id="SumMonfastNext" href="javascript:void(0);" class="btn btn-small  btn-inverse">+30 days <i class="icon-fast-forward icon-white"></i>
+																							</a>
+																						</div></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+
+															<div class="row-fluid">
+															<div id="divChart" class="row-fluid" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+															</div>
+															<div class="row-fluid" id="divTDMButtons">
+																<button onclick="window.open('Export_qualityaudit.xlsx');return false;" class="btn btn-primary" id="btnRBExport" name="btnRBExport" style="float: right; margin-right: 10px; margin-top: 15px;">Export to Excel</button>
+																&nbsp;&nbsp;
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="pull-right">
+                                    <button onclick="javascript:return closeRBDashboard();" class="btn" id="btnCloseRBGraph" name="btnClose_DigApp">Close</button>	
+                                    <button class="btn btn-primary" id="btnSaveRBGraph" name="btnSaveRBGraph" style="margin-top: 0px;">Save</button>
+                                </div>
+										</div>
+										<div id="divrunslareports" class="hide">
+											<div class="row-fluid">
+											<div id="divChart2" class="row-fluid" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+											</div>
+											<div class="pull-right">
+                                    <button onclick="javascript:return closeRBDashboard();" class="btn" id="btnCloseRBGraph" name="btnClose_DigApp">Close</button>	
+                                    <button onclick="window.open('Export_qualityaudit.xlsx');return false;" class="btn btn-primary" id="btnRBExport" name="btnRBExport" style="margin-top: 0px;">Export to Excel</button>
+                                </div>
+										</div>
+									</div>
+									<div id="divFilterAudits" class="tab-pane">
+									<div id="divFilterCriteria" class="row-fluid">
+                                    <div class="form-inline pull-right">
+                                    <div class="row-fluid">
+                                            <label style="margin-bottom: 0px;" id="lblAccount">Account:&nbsp;</label>
+                                            
+                                            <div class="controls input-append date" style="width: 199px;margin-top: 4px;">											
+                                                <span style="display: inline-block;vertical-align: middle;" class="select-wrap" id="Spn_filterAccounts"><select id="ddlFilterAccounts"><option selected="selected" value="1">Account 1</option><option value="2">Account 2</option><option value="3">Account 3</option><option value="4">Account 4</option></select></span>
+                                            </div> 		
+                                            <!-- US 312 item 16 space correction-->
+                                            <label style="width:80px;">From Date:</label>										
+                                            <div data-date-format="dd/mm/yyyy" data-date="01/01/2013" id="dtSumDaily" class="controls input-append date">
+										<input type="text" readonly="" id="txtSumDailyEndDate" name="txtSumDailyEndDate" size="10" class="span8" value="17/11/2013"><span class="add-on"><i class="icon-th"></i></span>
+															</div>
+															
+                                            <label style="width:80px;">End Date:</label>
+                                            <div data-date-format="dd/mm/yyyy" data-date="01/01/2013" id="dtSumDaily" class="controls input-append date">
+																<input type="text" readonly="" id="txtSumDailyEndDate" name="txtSumDailyEndDate" size="10" class="span8" value="17/12/2013"><span class="add-on"><i class="icon-th"></i></span>
+															</div>
+                                            <button style="margin-top:5px" id="btnOrderSmryGo" class="btn btn-primary" onClick="javascript:showFilterAudits();">Go</button>	
+                                        </div>
+                                    </div>			
+                                </div>
+                                	<div class="accordion hide" id="accordion_filterAudits">
+                                	<div class="accordion-group" id="accoFAFilter">
+                                	<div class="accordion-heading">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_filterAudits" href="#divFAFilter" style="text-decoration: none !important;"><li class="icon-search icon-white"></li>&nbsp;Filter Audits</a>
+									</div>
+										<div id="divFAFilter" class="accordion-body collapse in">
+										<div class="accordion-inner">
+														<table class="no-more-tables table table-hover table-striped edfm-bordered-table" name="tblReportList" id="tblReportList" style="">
+												<thead>
+													<tr>
+														<th style="border: none;">Site</th>
+														<th style="border: none;">Auditor</th>
+														<th style="border: none;">Submitted Date/Time</th>
+														<th style="border: none;">Overall score</th>
+														<th style="border: none;">Colour Status</th>
+														<th style="border: none;">Selected / Not Selected</th>
+														<th style="border: none;"></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">81.6</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Blue</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">68.9</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Red</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+														<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+														<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+														<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap" data-title="Site"><div style="padding-top: 6px">Site 1</div></td>
+														<td nowrap="nowrap" data-title="Auditor"><div style="padding-top: 6px">Auditor 1</div></td>
+														<td nowrap="nowrap" data-title="Submitted Date/Time"><div style="padding-top: 6px">03/12/2013 13:12 - 14:32</div></td>
+														<td nowrap="nowrap" data-title="Overall score"><div style="padding-top: 6px">93.27</div></td>
+														<td nowrap="nowrap" data-title="Colour Status"><div style="padding-top: 6px">Green</div></td>
+														<td nowrap="nowrap" data-title="Selected / Not Selected"><button id="btnFAPick" class="btn btn-small" onClick="return changePick(this);"><i class="icon-remove"></i> Not Selected</button></td>
+														<td nowrap="nowrap"><button id="btnFASig" class="btn btn-small" onClick="return viewSignature(this);"><i class="icon-play-circle"></i> View Signature</button></td>
+													</tr>
+													
+												</tbody>
+											</table>
+											<hr />
+											<div class="row-fluid">
+											<div class="form-inline pull-right">
+												<button class="btn btn-primary" onclick="javascript:showFilterGraph();return false;">Filter</button>
+												</div>
+											</div>
+											</div>
+											</div>			
+                                	</div>
+									<div class="accordion-group" id="accoFAGraph">
+										<div class="accordion-heading">
+											<!-- US 312 Various UI Tidies item 14 icon-user added-->
+											<a class="accordion-toggle" id="accoFAtoggle" data-toggle="collapse" data-parent="#accordion_filterAudits" style="text-decoration: none !important;" href="#divFAChart"><li class="icon-signal icon-white"></li>&nbsp;Graph</a>
+										</div>
+										<div id="divFAChart" class="accordion-body collapse">
+											<div class="accordion-inner">
+												<div class="row-fluid">
+													<form id="frmRBGraph" class="form-inline pull-right">
+														<label>View Dashboard by:</label> <span style="vertical-align: middle; display: inline-block;" class="select-wrap"> <select id="ddlFAdashboard">
+																<option value="Site" selected="selected">Site</option>
+																<option value="Area">Area</option>
+																<option value="Subarea">Subarea</option>
+																<option value="Point">Point</option>
+														</select></span>
+														<div class="btn-group" data-toggle="buttons-radio">
+															<button class="btn btn-primary" id="btnFACount" onclick="javascript:return viewFADashboard('c');return false;">Count</button>
+															<button class="btn btn-primary" id="btnFAAverage" onclick="javascript:return viewFADashboard('a');return false;">Average</button>
+															<button class="btn btn-primary" id="btnFAPercentage" onclick="javascript:return viewFADashboard('p');return false;">Percentage</button>
+														</div>
+													</form>
+												</div>
+												<div class="row-fluid">
+												<div id="divChart_FA" class="row-fluid" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									</div>
+								<div class="pull-right hide" id="divFAExport">
+                                    <button onclick="window.open('Export_qualityaudit.xlsx');return false;" class="btn btn-primary" id="btnFAExport" name="btnFAExport" style="float: right; margin-right: 10px; margin-top: 15px;">Export to Excel</button>
+                                </div>
+                                </div>
+								</div>
+							</div>
+							<!-- /row -->
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /row -->
+			</section>
+		</div>
+		<!-- end tab 1 -->
+	</div>
+	<!-- /container -->
+
+	<footer class="row-fluid footer" id="userfooter"><div class="container"><div class="span4">
+		<h3>Useful links</h3>
+		<div class="footercontent">
+			<div id="lfbi1"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="lfbd1"><a href="#"> Documentation</a></span></div>
+			<div id="lfbi2"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="lfbd2"><a href="#"> Contact us </a></span></div>
+			<div id="lfbi3"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="lfbd3"><a href="#">Privacy </a></span></div> 
+			<div id="lfbi4"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="lfbd4"><a href="#"> Policy </a></span></div> 			
+		</div>
+	</div>
+	<div class="span4">
+		<h3>About Initial</h3>
+		<div class="footercontent">
+			<div id="rfbi1"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="rfbd1"><a href="#"> About us </a></span></div> 
+			<div id="rfbi2"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="rfbd2"><a href="#"> Contact us </a></span></div>
+			<div id="rfbi3"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="rfbd3"><a href="#">Careers </a></span></div> 
+			<div id="rfbi4"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="rfbd4"><a href="#"> Media </a></span></div>			
+		</div>
+	</div>
+	<div class="span4">
+		<div class="copyright">
+			<p>&copy;2012 Rentokil Initial plc. Registered in England
+				5393279.</p>
+			<p>Registered office: 2 City Place, Beehive Ring Road, Gatwick,
+				RH6 0HA.</p>
+			<p>The names Rentokil&reg; and Initial&reg; are registered trade
+				marks.</p>
+		</div>
+	</div>
+</div></footer>
+	<!-- /row -->
+
+	<!-- The javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+	<script src="js/jquery/jquery.1.8.2.min.js"></script>
+	<script src="js/jquery/jquery.dirtyFields.packed.js"></script>
+	<script src="js/jquery/jquery.validate.min.js"></script>
+	<script src="js/jquery/jquery.passstrength.min.js"></script>
+	<script src="js/bootstrap/pick-a-color-1.1.5.min.js"></script>
+	<script src="js/bootstrap/tinycolor-0.9.15.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<script src="js/bootstrap/bootstrap-paginator.min.js"></script>
+	<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+	<script src="js/edfm-custom.min.js"></script>
+	<script src="js/jquery/jquery.ui.widget.js"></script>
+	<script src="js/highcharts/highcharts.js"></script>
+	<script src="js/highcharts/modules/exporting.js"></script>
+	<script src="js/bootstrap/bootstrap-datetimepicker.min.js"></script>
+	<script>
+	//For todays date;
+	Date.prototype.today = function(){ 
+	    return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear() 
+	};
+	//For the time now
+	Date.prototype.timeNow = function(){
+	     return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+	};
+	
+	var adhoc_report = false;
+	function createAdhoc(){
+		$("#divtbl_ReportList").hide();
+		$("#divreportBuilderAccordion").show();
+		$("#accoRBFilter").show();
+		$("#accoRBProp").hide();
+		$("#accoRBAlerts").hide();
+		$("#frmRBGraph").show();
+		$("#btnSaveRBGraph").hide();
+        $("#divNextPrevWeek").show();
+        $("#btnCount").click();
+        $("#divReportName").hide();
+        $("#divSelStartDate").hide();
+        $("#divSelEndDate").hide();
+        $("#txtRBdates").hide();
+    	$("#txtRBEd").hide();
+    	$('#divRBStartDate').show();
+    	$('#divRBEndDate').show();
+    	$("#ddlRBStartDate").val("1");
+    	$("#ddlRBEndDate").val("1");
+        showFilter();
+        adhoc_report = true;
+        viewRBDashboard('c');
+        
+	}
+	function closeRBDashboard(){
+		$("#divreportBuilderAccordion").hide();
+		$("#divtbl_ReportList").show();
+		$("#divrunslareports").hide();
+		adhoc_report = false;
+	}
+	
+	function createreport(){
+		$("#divtbl_ReportList").hide();
+		$("#divreportBuilderAccordion").show();
+		$("#accoRBFilter").show();
+		$("#accoRBProp").show();
+		$("#accoRBAlerts").show();
+		$("#frmRBGraph").show();
+		$("#btnSaveRBGraph").show();
+        $("#divNextPrevWeek").hide();
+        $("#btnCount").click();
+        $("#divReportName").show();
+        $("#divSelStartDate").show();
+        $("#divSelEndDate").show();
+    	$("#txtRBdates").hide();
+    	$("#txtRBEd").hide();
+    	$('#divRBStartDate').show();
+    	$('#divRBEndDate').show();
+    	$("#ddlRBStartDate").val("1"); 
+    	$("#ddlRBEndDate").val("1");
+        showFilter();
+        adhoc_report = false;
+        viewRBDashboard('c');
+    }
+
+	function ViewRB(){
+		$("#divtbl_ReportList").hide();
+		$("#divreportBuilderAccordion").hide();
+		$("#divrunslareports").show();
+		var regarray = new Array(5);
+		for (var i = 0; i < 4; i++) {
+			regarray[i] = new Array(3);
+			regarray[i]['yes'] ='<i class="icon-remove-sign icon-red"></i>';
+			regarray[i]['pass'] ='<i class="icon-ok-sign icon-green"></i>';
+			regarray[i]['num'] ='<i class="icon-exclamation-sign icon-orange"></i>';
+		}
+		regarray[4] = new Array(3);
+		regarray[4]['yes'] ='<i class="icon-remove-sign icon-red"></i>';
+		regarray[4]['pass'] ='<i class="icon-info-sign icon-blue"></i>';
+		regarray[4]['num'] ='<i class="icon-question-sign icon-purple"></i>';
+	
+		
+		$('#divChart2').highcharts({
+            chart: {type: 'column'},
+            title: {text: 'Quality Auditor Dashboard. site Level Counts',x:-20},
+            subtitle: {text: 'From 1st Jan 2013 to 11th Nov 2013. ' ,x: -20},
+            xAxis: {categories: ['Site 1', 'Site 2', 'Site 3', 'Site 4', 'Site 5'],
+          	labels:{formatter: function(){ return this.value;}, useHTML:true}},
+          	  yAxis: {allowDecimals: false,min: 0,title: {text: 'Count of scores'}, stackLabels: {enabled:true,useHTML: true,formatter: function() {
+                    if(this.total > 0 && !adhoc_report) return  regarray[this.x][this.stack];else return "";}}},
+                credits: {enabled: false},
+                  tooltip: {formatter: function() {return '<b>'+ this.x +'</b><br/>'+this.series.name +': '+ this.y +'<br/>'+'Total: '+ this.point.stackTotal+'<br/>'+'RAG (%): 80 ';}},
+            plotOptions: {column: {stacking: 'normal'}},
+            series: [{name: 'N/A',data: [10, 14, 14, 12, 15],stack: 'yes'}, 
+                     {name: 'No',data: [50, 42, 44, 12, 25],stack: 'yes'},
+                     {name: 'Yes',data: [210, 245, 189, 246, 310],stack: 'yes'},
+                     {name: 'Pass',data: [120, 0, 136, 298, 134],stack: 'pass'},
+                     {name: 'fail',data: [25, 0, 22, 12, 0],stack: 'pass'},
+                     {name: '5', data: [120, 60, 0, 0, 27],stack: 'num'},
+                     {name: '4',data: [53, 0, 45, 64, 33],stack: 'num'},
+                     {name: '3',data: [43, 33, 74, 84, 35],stack: 'num'}, 
+                     {name: '2',data: [30, 180, 44, 46, 37],stack: 'num'}, 
+                     {name: '1',data: [31, 26, 84, 64, 32],stack: 'num'}
+                     ]
+        });
+		adhoc_report = false;
+     }
+$(document).ready(function () {
+	$("#txtRBdates").hide();
+	$("#txtRBEd").hide();
+var currentdate = new Date(); 
+var datetime = currentdate.today() + " "  + currentdate.timeNow();
+		 $('#divRBStartDate').datetimepicker({
+		      language: 'pt-BR',
+		      startDate: datetime
+		    });
+		 $('#divRBEndDate').datetimepicker({
+		      language: 'pt-BR'
+		    });
+		
+		$("#txtRBStartDate").val(datetime);
+		$("#txtRBEndDate").val(datetime);
+		$("#ddlRBdashboard").val('Site');
+		$("#ddlFAdashboard").val('site');
+		$("#btnFACount").addClass("active");
+		
+       	$("#ddlRBdashboard").change(function (){
+       		var chart_type= 'p';
+       		if($("#btnCount").hasClass("active"))
+       			chart_type= 'c';
+       		else if ($("#btnAverage").hasClass("active"))
+       			chart_type= 'a';		
+       		populateRBAccount_count(chart_type,$(this).val());
+        	});
+       	
+       	$("#ddlFAdashboard").change(function (){
+       		var chart_type= 'p';
+       		if($("#btnFACount").hasClass("active"))
+       			chart_type= 'c';
+       		else if ($("#btnFAAverage").hasClass("active"))
+       			chart_type= 'a';		
+       		populateFAAccount_count(chart_type,$(this).val());
+        	});
+       	
+			$("#ddlRBStartDate").change(function (){
+			if($(this).val()=="1")
+        		$("#divRBStartDate").show();
+			else
+				$("#divRBStartDate").hide();
+			if($(this).val()=="4")
+				$("#txtRBdates").show();
+				else
+				$("#txtRBdates").hide();
+        		
+        	});
+			$("#ddlRBEndDate").change(function (){
+				if($(this).val()=="1"){
+					$("#divRBEndDate").show();
+					$("#txtRBEd").hide();
+				}else {
+					$("#divRBEndDate").hide();
+					$("#txtRBEd").show();
+				} 
+	        	});
+	   });
+       
+       function showFilter(){
+    		$("#accProperties").collapse('hide');
+    		$("#accAlerts").collapse('hide');
+    		$("#accCharts").collapse('hide');
+            setTimeout(function() {
+                $("#accAccountFilter").collapse('show');
+            }, 500);
+           
+       }
+	   
+        function showPropGraph(){
+        	$("#accAccountFilter").collapse('hide');
+        	$("#accAlerts").collapse('hide');
+        	var divId = "#accCharts";
+        	if($("#accoRBProp").is(":visible")) 
+        		divId = "#accProperties";
+        		setTimeout(function() {
+                    $(divId).collapse('show');
+                }, 500);
+		}
+        function showGraph(){
+        	
+        	$("#accAccountFilter").collapse('hide');
+        	$("#accProperties").collapse('hide');
+        	$("#accAlerts").collapse('hide');
+            setTimeout(function() {
+                $("#accCharts").collapse('show');
+            }, 500);
+        }
+        function showAlerts(){
+        	
+        	$("#accAccountFilter").collapse('hide');
+    	    	$("#accProperties").collapse('hide');
+        	$("#accCharts").collapse('hide');
+            setTimeout(function() {
+            	$("#accAlerts").collapse('show');    
+            }, 500);
+            
+        }
+	function viewRBDashboard(chart_type){
+        	 populateRBAccount_count(chart_type,$("#ddlRBdashboard").val());
+        	return false;
+        }
+	
+	function viewFADashboard(chart_type){
+		populateFAAccount_count(chart_type,$("#ddlFAdashboard").val());
+    	return false;
+	}
+	function navigateRBChart(chart_type){
+    	  var dashboard_type = $("#ddlRBdashboard").val();
+    	  var dashboard_type_up = (dashboard_type == "Account") ? "Site": ((dashboard_type == "Site") ? "Area" : ((dashboard_type == "Area") ? "Subarea" : ((dashboard_type == "Subarea") ? "Point" : "")));
+        	$("#ddlRBdashboard").val(dashboard_type_up);
+    	   populateRBAccount_count(chart_type,dashboard_type_up);
+       	    	   
+       }
+	
+	function navigateFAChart(chart_type){
+  	  var dashboard_type = $("#ddlFAdashboard").val();
+  	  var dashboard_type_up = (dashboard_type == "Account") ? "Site": ((dashboard_type == "Site") ? "Area" : ((dashboard_type == "Area") ? "Subarea" : ((dashboard_type == "Subarea") ? "Point" : "")));
+      	$("#ddlFAdashboard").val(dashboard_type_up);
+  	   populateFAAccount_count(chart_type,dashboard_type_up);
+     	    	   
+     }
+
+		function populateRBAccount_count(chart_type, dashboard_type){
+			var regarray = new Array(5);
+			for (var i = 0; i < 4; i++) {
+				regarray[i] = new Array(3);
+				regarray[i]['yes'] ='<i class="icon-remove-sign icon-red"></i>';
+				regarray[i]['pass'] ='<i class="icon-ok-sign icon-green"></i>';
+				regarray[i]['num'] ='<i class="icon-exclamation-sign icon-orange"></i>';
+			}
+			regarray[4] = new Array(3);
+			regarray[4]['yes'] ='<i class="icon-remove-sign icon-red"></i>';
+			regarray[4]['pass'] ='<i class="icon-info-sign icon-blue"></i>';
+			regarray[4]['num'] ='<i class="icon-question-sign icon-purple"></i>';
+			//alert(items[0][0]); // 1
+			
+			var ragValue = (adhoc_report) ? "":  '<br/>'+'RAG (%): 80 ';
+			
+        	if(chart_type == "c"){
+        	$('#divChart').highcharts({
+                chart: {type: 'column'},
+                title: {text: 'Quality Auditor Dashboard. ' + dashboard_type + ' Level Counts',x:-20},
+                subtitle: {text: 'From 1st Jan 2013 to 11th Nov 2013. ' ,x: -20},
+                xAxis: {categories: [dashboard_type + ' 1', dashboard_type + ' 2', dashboard_type + ' 3', dashboard_type + ' 4', dashboard_type + ' 5'],
+                	labels:{formatter: function(){if(dashboard_type == "Point" ) return this.value; return "<a href=\"javascript:navigateRBChart('c');\">" + this.value +  "</a>"}, useHTML:true}},
+                yAxis: {allowDecimals: false,min: 0,title: {text: 'Count of scores'}, stackLabels: {enabled:true,useHTML: true,formatter: function() {
+                    if(this.total > 0 && !adhoc_report) return  regarray[this.x][this.stack];else return "";}}},
+                credits: {enabled: false},
+                tooltip: {formatter: function() {return '<b>'+ this.x +'</b><br/>'+this.series.name +': '+ this.y +'<br/>'+'Total: '+ this.point.stackTotal+ragValue;}},
+                plotOptions: {column: {stacking: 'normal'}},
+                series: [{name: 'N/A',data: [10, 14, 14, 12, 15],stack: 'yes'}, 
+                         {name: 'No',data: [50, 42, 44, 12, 25],stack: 'yes'},
+                         {name: 'Yes',data: [210, 245, 189, 246, 310],stack: 'yes'},
+                         {name: 'Pass',data: [120, 0, 136, 298, 134],stack: 'pass'},
+                         {name: 'fail',data: [25, 0, 22, 12, 0],stack: 'pass'},
+                         {name: '5', data: [120, 60, 0, 0, 27],stack: 'num'},
+                         {name: '4',data: [53, 0, 45, 64, 33],stack: 'num'},
+                         {name: '3',data: [43, 33, 74, 84, 35],stack: 'num'}, 
+                         {name: '2',data: [30, 180, 44, 46, 37],stack: 'num'}, 
+                         {name: '1',data: [31, 26, 84, 64, 32],stack: 'num'}
+                         ]
+            });
+        	} else if (chart_type == "a"){
+        		$('#divChart').highcharts({
+        			chart: {type: 'column'},
+                    title: {text: 'Quality Auditor Dashboard. ' + dashboard_type + ' Level Averages',x:-20},
+                    subtitle: {text: 'From 1st Jan 2013 to 11th Nov 2013. ' ,x: -20},
+                    xAxis: {categories: [dashboard_type + ' 1', dashboard_type + ' 2', dashboard_type + ' 3', dashboard_type + ' 4', dashboard_type + ' 5'],
+                    	labels:{formatter: function(){if(dashboard_type == "Point" ) return this.value;return "<a href=\"javascript:navigateRBChart('a');\">" + this.value +  "</a>"}, useHTML:true}},
+                    yAxis: {min: 0,title: {text: 'Average of scores'},
+                    			stackLabels: {enabled: true,useHTML: true,formatter: function() {
+                                    if(this.total > 0) return  "<i class='icon-ok-sign icon-green'></i>";else return "";}}
+                    		},
+                    credits: {enabled: false},
+                    tooltip: {formatter: function() {return '<b>'+ this.x +'</b><br/>'+this.series.name +': '+ this.y+ragValue}},
+                    plotOptions: {column: {stacking: 'normal'}, dataLabels: {enabled: true,color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'}},
+                    series: [{name: 'Average',data: [1.6, 3.4, 4.8, 7.2, 2.1]}]
+                });
+        	}
+        	else {
+        		
+        		$('#divChart').highcharts({
+        			chart: {type: 'column'},
+                    title: {text: 'Quality Auditor Dashboard. ' + dashboard_type + ' Level Percentages',x:-20},
+                    subtitle: {text: 'From 1st Jan 2013 to 11th Nov 2013. ' ,x: -20},
+                    xAxis: {categories: [dashboard_type + ' 1', dashboard_type + ' 2', dashboard_type + ' 3', dashboard_type + ' 4', dashboard_type + ' 5'],
+                    	labels:{formatter: function(){if(dashboard_type == "Point" ) return this.value;return "<a href=\"javascript:navigateRBChart('p');\">" + this.value +  "</a>"}, useHTML:true}},
+                    yAxis: {min: 0,title: {text: 'Percentage split of scores'}, stackLabels: {enabled:true,useHTML: true,formatter: function() {
+                        if(this.total > 0) return regarray[this.x][this.stack];else return "";}}},
+                    credits: {enabled: false},
+                    tooltip: {formatter: function() {return '<b>'+ this.x +'</b><br/>'+this.series.name +': '+ this.y +'<br/>'+'Total: '+ this.point.stackTotal+ ragValue;}},
+                    plotOptions: {column: {stacking: 'percent'}},
+                    series: [{name: 'N/A',data: [10, 14, 14, 12, 15],stack: 'yes'}, 
+                             {name: 'No',data: [50, 42, 44, 12, 25],stack: 'yes'},
+                             {name: 'Yes',data: [210, 245, 189, 246, 310],stack: 'yes'},
+                             {name: 'Pass',data: [120, 0, 136, 298, 134],stack: 'pass'},
+                             {name: 'fail',data: [25, 0, 22, 12, 0],stack: 'pass'},
+                             {name: '5', data: [120, 60, 0, 0, 27],stack: 'num'},
+                             {name: '4',data: [53, 0, 45, 64, 33],stack: 'num'},
+                             {name: '3',data: [43, 33, 74, 84, 35],stack: 'num'}, 
+                             {name: '2',data: [30, 180, 44, 46, 37],stack: 'num'}, 
+                             {name: '1',data: [31, 26, 84, 64, 32],stack: 'num'}
+                             ]
+                });
+        		
+        	}
+        	
+     }    
+		
+	function populateFAAccount_count(chart_type, dashboard_type){
+	    	if(chart_type == "c"){
+        	$('#divChart_FA').highcharts({
+                chart: {type: 'column'},
+                title: {text: 'Quality Auditor Dashboard. ' + dashboard_type + ' Level Counts',x:-20},
+                subtitle: {text: 'From 1st Jan 2013 to 11th Nov 2013. ' ,x: -20},
+                xAxis: {categories: [dashboard_type + ' 1', dashboard_type + ' 2', dashboard_type + ' 3', dashboard_type + ' 4', dashboard_type + ' 5'],
+                	labels:{formatter: function(){if(dashboard_type == "Point" ) return this.value; return "<a href=\"javascript:navigateFAChart('c');\">" + this.value +  "</a>"}, useHTML:true}},
+                yAxis: {allowDecimals: false,min: 0,title: {text: 'Count of scores'}},
+                credits: {enabled: false},
+                tooltip: {formatter: function() {return '<b>'+ this.x +'</b><br/>'+this.series.name +': '+ this.y +'<br/>'+'Total: '+ this.point.stackTotal;}},
+                plotOptions: {column: {stacking: 'normal'}},
+                series: [{name: 'N/A',data: [10, 14, 14, 12, 15],stack: 'yes'}, 
+                         {name: 'No',data: [50, 42, 44, 12, 25],stack: 'yes'},
+                         {name: 'Yes',data: [210, 245, 189, 246, 310],stack: 'yes'},
+                         {name: 'Pass',data: [120, 0, 136, 298, 134],stack: 'pass'},
+                         {name: 'fail',data: [25, 0, 22, 12, 0],stack: 'pass'},
+                         {name: '5', data: [120, 60, 0, 0, 27],stack: 'num'},
+                         {name: '4',data: [53, 0, 45, 64, 33],stack: 'num'},
+                         {name: '3',data: [43, 33, 74, 84, 35],stack: 'num'}, 
+                         {name: '2',data: [30, 180, 44, 46, 37],stack: 'num'}, 
+                         {name: '1',data: [31, 26, 84, 64, 32],stack: 'num'}
+                         ]
+            });
+        	} else if (chart_type == "a"){
+        		$('#divChart_FA').highcharts({
+        			chart: {type: 'column'},
+                    title: {text: 'Quality Auditor Dashboard. ' + dashboard_type + ' Level Averages',x:-20},
+                    subtitle: {text: 'From 1st Jan 2013 to 11th Nov 2013. ' ,x: -20},
+                    xAxis: {categories: [dashboard_type + ' 1', dashboard_type + ' 2', dashboard_type + ' 3', dashboard_type + ' 4', dashboard_type + ' 5'],
+                    	labels:{formatter: function(){if(dashboard_type == "Point" ) return this.value;return "<a href=\"javascript:navigateFAChart('a');\">" + this.value +  "</a>"}, useHTML:true}},
+                    yAxis: {min: 0,title: {text: 'Average of scores'}},
+                    credits: {enabled: false},
+                    tooltip: {formatter: function() {return '<b>'+ this.x +'</b><br/>'+this.series.name +': '+ this.y}},
+                    plotOptions: {column: {stacking: 'normal'}, dataLabels: {enabled: true,color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'}},
+                    series: [{name: 'Average',data: [1.6, 3.4, 4.8, 7.2, 2.1]}]
+                });
+        	}
+        	else {
+        		
+        		$('#divChart_FA').highcharts({
+        			chart: {type: 'column'},
+                    title: {text: 'Quality Auditor Dashboard. ' + dashboard_type + ' Level Percentages',x:-20},
+                    subtitle: {text: 'From 1st Jan 2013 to 11th Nov 2013. ' ,x: -20},
+                    xAxis: {categories: [dashboard_type + ' 1', dashboard_type + ' 2', dashboard_type + ' 3', dashboard_type + ' 4', dashboard_type + ' 5'],
+                    	labels:{formatter: function(){if(dashboard_type == "Point" ) return this.value;return "<a href=\"javascript:navigateFAChart('p');\">" + this.value +  "</a>"}, useHTML:true}},
+                    yAxis: {min: 0,title: {text: 'Percentage split of scores'}},
+                    credits: {enabled: false},
+                    tooltip: {formatter: function() {return '<b>'+ this.x +'</b><br/>'+this.series.name +': '+ this.y +'<br/>'+'Total: '+ this.point.stackTotal;}},
+                    plotOptions: {column: {stacking: 'percent'}},
+                    series: [{name: 'N/A',data: [10, 14, 14, 12, 15],stack: 'yes'}, 
+                             {name: 'No',data: [50, 42, 44, 12, 25],stack: 'yes'},
+                             {name: 'Yes',data: [210, 245, 189, 246, 310],stack: 'yes'},
+                             {name: 'Pass',data: [120, 0, 136, 298, 134],stack: 'pass'},
+                             {name: 'fail',data: [25, 0, 22, 12, 0],stack: 'pass'},
+                             {name: '5', data: [120, 60, 0, 0, 27],stack: 'num'},
+                             {name: '4',data: [53, 0, 45, 64, 33],stack: 'num'},
+                             {name: '3',data: [43, 33, 74, 84, 35],stack: 'num'}, 
+                             {name: '2',data: [30, 180, 44, 46, 37],stack: 'num'}, 
+                             {name: '1',data: [31, 26, 84, 64, 32],stack: 'num'}
+                             ]
+                });
+        		
+        	}
+        	
+     } 
+
+	function showFilterAudits(){
+		$("#accordion_filterAudits").show();
+		$("#divFAExport").show();
+		$("#btnFACount").click();
+		$("#divFAChart").collapse('hide');
+		setTimeout(function() {
+	    	$("#divFAFilter").collapse('show');    
+	    }, 500);
+	}
+	function showFilterGraph(){
+		$("#divFAFilter").collapse('hide');
+		setTimeout(function() {
+    	$("#divFAChart").collapse('show');    
+    }, 500);
+	}
+	function changePick(f){
+		if($(f).hasClass("btn-success"))
+			$(f).removeClass("btn-success").html("<i class='icon-remove'></i> Not Selected");
+		else 
+			$(f).addClass("btn-success").html("<i class='icon-white icon-ok'></i> Selected");
+	
+	}
+	function viewSignature(){
+		
+	}
+</script>
+</body>
+</html>
+

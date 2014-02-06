@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Customer page Account Screen (logged in)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <link href="css/bootstrap.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/pick-a-color-1.1.5.css">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <link href="css/phpinfo.css" rel="stylesheet">
+        <link href="css/datepicker.css" rel="stylesheet">
+        <style>
+
+            @media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {
+                #tblUsers.no-more-tables td:nth-of-type(1):before { content: "First Name"; }
+                #tblUsers.no-more-tables td:nth-of-type(2):before { content: "Last Name"; }
+                #tblUsers.no-more-tables td:nth-of-type(3):before { content: "Username"; }
+                #tblUsers.no-more-tables td:nth-of-type(4):before { content: "Profile"; }
+                #tblUsers.no-more-tables tr{
+                    display: block;
+                }
+            }
+			 @media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {
+                #tbldigitalApps.no-more-tables td:nth-of-type(1):before { content: "App Name"; }
+                #tbldigitalApps.no-more-tables td:nth-of-type(2):before { content: "Label"; }
+                #tbldigitalApps.no-more-tables td:nth-of-type(3):before { content: "Description"; }
+                #tbldigitalApps.no-more-tables td:nth-of-type(4):before { content: "Timeout(hrs)"; }				 
+                #tbldigitalApps.no-more-tables tr{
+                    display: block;
+                }				
+				button[id^=btnapp_edit] {
+				margin-top: 10px;
+				margin-right: 24px;
+				}	
+							
+            }
+			@media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {
+                #tbldigitalPens.no-more-tables td:nth-of-type(1):before { content: "Pen ID"; }
+                #tbldigitalPens.no-more-tables td:nth-of-type(2):before { content: "Label"; }
+                #tbldigitalPens.no-more-tables td:nth-of-type(3):before { content: "Description"; }
+                #tbldigitalPens.no-more-tables td:nth-of-type(4):before { content: "Timeout(hrs)"; }				 
+                #tbldigitalPens.no-more-tables tr{
+                    display: block;
+                }				
+				button[id^=btnpen_edit] {
+				margin-top: 10px;
+				margin-right: 24px;
+				}	
+							
+            }
+			@media (min-width: 768px) and (max-width: 979px) {
+			#Errt_zipUpld{
+				margin-top:-2px  !important;
+				margin-left:74px  !important;
+				}	
+			}
+			#Errt_zipUpld{
+			margin-left: -24px;
+			margin-top: -4px;
+			}
+			@media (max-width: 767px) {
+			#Errt_zipUpld{
+			margin-left: 0px !important;
+			margin-top: 4px !important;
+			}
+			}
+@media (max-width: 767px) {
+			#txtAppName{width:168px!important;}
+			#txtAppLbl{width:168px!important;}
+			#txtTimeout{width:122px!important;}
+			#txtDesc{width:168px!important;}
+			#ddlNavLoc{width:210px!important;}
+			#spnNavigation{width:184px!important;}
+			#spnForm{width:184px!important;}
+			#ddlForm{width:210px!important;}
+			#txt_zipUpld{width:155px!important;}
+			#Errt_zipUpld{
+			margin-left: 0px !important;
+			margin-top: 4px !important;
+			}
+			}
+			#txtAppName{width:335px;}
+			#txtAppLbl{width:335px;}
+			#txtTimeout{width:288px;}
+			#txtDesc{width:340px;}
+			#ddlNavLoc{width:378px;}
+			#spnNavigation{width:353px;}
+			#spnForm{width:353px;}
+			#ddlForm{width:378px;}
+			#txt_zipUpld{width:250px;}
+        </style>
+        <script type="text/javascript">
+            var loadFileName = 'customerpage_body.html';
+        </script>
+    </head>
+    <body>
+        <!--  Models Start -->
+        <div id="divProfileEdit" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:625px">
+        </div>
+        <div id="selectCreate" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+        <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+
+        <div id="divNewUser" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xNewUser" name="xNewUser">x</button>
+                <h3 id="myModalLabel">Create a new user</h3>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label style="margin-right: 15px;">
+                                    First name:</label></td>
+                            <td><input type="text" name="txtUserFName" id="txtUserFName" maxlength="80" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label style="margin-right: 15px;">
+                                    Last name:</label></td>
+                            <td><input type="text" name="txtUserLName" id="txtUserLName" maxlength="80"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label style="margin-right: 15px;">
+                                    Email address:</label></td>
+                            <td><input type="text" name="txtUseremail" id="txtUseremail" maxlength="100"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label style="margin-right: 15px;">Confirm
+                                    email:</label></td>
+                            <td><input type="text" name="txtUserCemail"
+                                       id="txtUserCemail" maxlength="100" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <label id="NewUserLabelBtn" style="margin-left: 0px; float:left; color:red;"> </label>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>					
+                <button class="btn btn-primary" id="btnNewUserSubmit" name="btnNewUserSubmit">Submit</button>
+
+            </div>
+        </div>
+        <a class="btn" data-toggle="modal" href="#divSuccess" id="btnSuccess" name="btnSuccess" style="display:none;">HERE</a>
+        <div id="divSuccess" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xNewCustomer" name="xNewCustomer">x</button>
+                <h3 id="lblSuccessHeading" name="lblSuccessHeading">Success</h3>
+            </div>
+            <div class="modal-body">
+                <label class="radio inline" style="margin-right: 15px;" id="lblSuccessMessage">Success</label>
+            </div>
+            <div class="modal-footer">
+                <button class="btn"  id="btnNewUserClose" name="btnNewUserClose" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
+        <div id="divNewProfileUser" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmCreateform" id="frmCreateform" method="post" >  
+                <div class="modal-header">
+                    <button type="button" id="btnclearprofile" class="close" data-dismiss="modal" aria-hidden="true" id="xNewUser" name="xNewUser" onclick="clearProfile()">x</button>
+                    <h3 id="myModalLabel">Create new Profile</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row-fluid" style="margin-bottom: 0px;">									
+                        <div class="control-group form-horizontal">
+                            <label class="control-label" for="name">Profile name :</label>
+                            <input type="text" name="txtnewProfileName" id="txtnewProfileName" maxlength="30" />
+                        </div>
+                        <!--  <label class="alert alert-error hide" id="errorProfileName" style="margin-bottom: 0px;">Please enter valid Profile Name</label> -->
+                    </div>
+
+                </div>
+            </form>
+            <div class="modal-footer">
+                <label id="Profilenameerror" style="margin-left: 0px; float:left;"> </label>
+                <button class="btn" id="btncancelprofile" data-dismiss="modal" aria-hidden="true" onclick="clearProfile()">Cancel</button>					
+                <button class="btn btn-primary" id="btnNewProfileUserSubmit" name="btnNewProfileUserSubmit">Submit</button>
+            </div>
+
+        </div>
+        <div id="divNewSkin" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmCreateSkin" id="frmCreateSkin" method="post" >  
+                <div class="modal-header">
+                    <button type="button" id="btnclearSkin" class="close" data-dismiss="modal" aria-hidden="true" id="xNewUser" name="xNewUser" onclick="clearSkin()">x</button>
+                    <h3 id="myModalLabel">Create new Skin</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row-fluid" style="margin-bottom: 0px;">									
+                        <div class="control-group form-horizontal">
+                            <label class="control-label" for="name">Skin name :</label>
+                            <input type="text" name="txtnewSkinName" id="txtnewSkinName" maxlength="30" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <label id="Skinerror" class="alert alert-error" style="margin-left: 0px; float:left; display: none"> </label>
+                <button class="btn" id="btncancelSkin" data-dismiss="modal" aria-hidden="true" onclick="clearSkin()">Cancel</button>					
+                <button class="btn btn-primary" id="btnNewSkinSubmit" name="btnNewSkinSubmit">Submit</button>
+            </div>
+
+        </div>
+        <div id="BtnToggleModal" data-backdrop="static" data-toggle="modal" data-keyboard="false" class="modal hide fade" 
+             tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                <h3>User</h3>
+            </div>
+            <div class="modal-body">
+                <label class="radio inline"  id="ToggleBtnLabel" style=""></label>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" href="#" id="ToggleCancelBtn" name="ToggleCancelBtn">Cancel</button>
+                <button class="btn btn-primary" href="#" id="ToggleOkBtn" name="ToggleOkBtn" >Submit</button>
+            </div>
+        </div>
+        <div id="divAlertDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmAlertDelete" id="frmAlertDelete" method="post" style="height:144px;">  
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xAlertDelete" name="xAlertDelete">x</button>
+                    <h3 id="myAlertLabel">Confirm Delete</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="control-group">				  
+                        <label id="lblConfirmation" for="Username" class="span1" style="margin-left:0px;width: 284px;">Are you sure you want to delete the selected profile?</label>                                                     						  
+                    </div>                            
+
+                </div>
+                <div class="modal-footer">                                                                               
+                    <a class="btn" data-toggle="modal" id="btnNoAlert" name="btnNewAddPupilAdminClose" data-dismiss="modal" >Cancel</a>
+                    <button class="btn btn-primary" href="#" data-toggle="modal" id="btnYesAlert"
+                            name="btnYesAlert">Delete</button>
+                </div>
+            </form>
+        </div>
+        <div id="divSkinDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xAlertDelete" name="xAlertDelete">x</button>
+                <h3 id="myAlertLabel">Confirm Delete</h3>
+            </div>
+            <div class="modal-body">
+                <div class="control-group">				  
+                    <label id="lblConfirmation" style="margin-left:0px;">Are you sure you want to delete the selected skin?</label>                                                     						  
+                </div>                            
+
+            </div>
+            <div class="modal-footer">                                                                               
+                <a class="btn" data-toggle="modal" id="btnNoAlert" name="btnNewAddPupilAdminClose" data-dismiss="modal" >Cancel</a>
+                <button class="btn btn-primary" href="#" data-toggle="modal" id="btnconfirmDelete"
+                        name="btnconfirmDelete">Delete</button>
+            </div>
+        </div>
+        <div id="DivDeleteProfile" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xDeleteprofile" name="xDeleteprofile">x</button>
+                <h3 id="myModalLabel">Deleted</h3>
+            </div>
+            <div class="modal-body">
+                <label> Success. The profile has been deleted</label>
+            </div>
+            <div class="modal-footer">			
+                <button class="btn" href="#AddYear" data-dismiss="modal" data-toggle="modal" id="btnDeleteprofile"
+                        name="btnDeleteprofile">Close</button>
+            </div>	
+        </div>
+        <!--  Models End -->
+        <!-- Add App & Add Pen -->
+        <div id="divNewAddApp" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" id="btnclearApp" class="close" data-dismiss="modal" aria-hidden="true" name="btnclearApp">x</button>
+                <h3 id="myModalLabel">Add a new App</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid" style="margin-bottom: 0px;">
+                    <form id="frmNewAddApp" >
+                        <div class="control-group form-horizontal">
+                            <label class="control-label" for="name">App Name </label>
+                            <input type="text" name="txtnewAppName" id="txtnewAppName" maxlength="30" />
+                        </div>
+                        <div class="control-group form-horizontal">
+                            <label class="control-label" for="name">Label </label>
+                            <input type="text" name="txtnewAppLbl" id="txtnewAppLbl" maxlength="50" />
+                        </div>
+                    </form>    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="btncancelApp" data-dismiss="modal" aria-hidden="true" >Cancel</button>					
+                <button class="btn btn-primary" id="btnNewAppSubmit" name="btnNewAppubmit">Submit</button>
+            </div>
+        </div>
+        <div id="divNewAddPen" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" id="btnclearPen" class="close" data-dismiss="modal" aria-hidden="true" name="btnclearPen">x</button>
+                <h3 id="myModalLabel">Add a new Pen</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid" style="margin-bottom: 0px;">
+                    <form id="frmNewAddPen" >
+                        <div class="control-group form-horizontal">
+                            <label class="control-label" for="name">Pen ID </label>
+                            <input type="text" name="txtnewPenName" id="txtnewPenName" maxlength="30" />
+                        </div>
+                        <div class="control-group form-horizontal">
+                            <label class="control-label" for="name">Label </label>
+                            <input type="text" name="txtnewPenLbl" id="txtnewPenLbl" maxlength="50" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="btncancelPen" data-dismiss="modal" aria-hidden="true" >Cancel</button>					
+                <button class="btn btn-primary" id="btnNewPenSubmit" name="btnNewPenubmit">Submit</button>
+            </div>
+        </div>
+        <div class="container" id="divcontainer">
+        </div>
+        <!-- /container -->
+        <footer class="row-fluid footer" id="cafooter"></footer>
+        <!-- /row -->
+
+
+        <!-- The javascript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="minjs/customerpage.min.js"></script>  
+        <script>
+            if ((localStorage['SESSIONID'] == '') || (localStorage['SESSIONID'] == undefined)) {
+                localStorage.clear();
+                location.href = 'index.html';
+            }
+        </script>
+    </body>
+</html>

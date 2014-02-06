@@ -1,0 +1,10 @@
+ <div class="span6"><h1 class="logo"><a href="sacustomeradmin.html">EDFM</a></h1></div><!-- text is hidden -->
+ <div class="span6 alignright userlogininfo">
+ <div class="username" id="divSuperWelcome">Welcome</div>
+ <br/>
+ <div class="accountlinks" ><a href="#selectCustomers" id="btnManageCustomers" data-toggle="modal" name="btnManageCustomers">Manage Customers</a> | <a href="#" id="btnLogout" name="btnLogout">Logout</a></div>
+ <div id="header-divider"><img src="img/header-logininfo-divider.png" class="logininfodivider"></div>
+ <div class="location"  id="divSuperLoggedAs">
+ You are administering 
+ </div>
+ </div>

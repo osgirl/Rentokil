@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Digital Form Lunch Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author"
+	content="Rentokil Initial Facilities Services (UK) Ltd">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" />
+<meta http-equiv="Cache-Control"
+	content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" />
+<meta http-equiv="Cache Control: no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Pragma: no-cache" />
+<!-- Le styles -->
+<style>
+body {
+	
+}
+table.equalDivide tr td { width:1%; }
+</style>
+<!-- 
+        HTML5 shim, for IE6-8 support of HTML5 elements 
+        Avoid using CDN-based scripts to stop untested updates breaking things!
+-->
+<!--[if lt IE 9]>
+                  <script src="js/html5shiv.js"></script>
+            <![endif]-->
+<!--[if IE]>
+<link href="css/edfm-ie.css" rel="stylesheet">
+            <![endif]-->
+</head>
+<body>
+<form method="post" class="form-horizontal" id="frmDigitalForm">
+<div style="margin-bottom: 0px;" class="row-fluid">
+                                     <table style="width: 100%;">
+                                     <tr>
+                                     <td valign="top"><img src="Lewisham.Adhoc-1_2.jpg" width="80" height="80"></td>
+                                     <td valign="middle"><div class="control-group"><label class="control-label">Day of The Week:</label><input type="text" style="width:300px;"  id="Day" class="span2"> </div></td>
+                                     <td rowspan="2" align="right"><img src="Lewisham.Adhoc-1_1.jpg" width="80" height="200"></td>
+                                     </tr>
+                                     
+                                     <tr>
+                                     <td colspan="2">
+                                     	<table style="width:100%">
+                                     	<tr><td colspan=6><label class="control-label"><strong>Ward:</strong></label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward_A5" >A5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Alder" >Alder</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Anderson" >Anderson</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Ash" >Ash</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Aspen" >Aspen</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Beech" >Beech</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward_Cedar" >Cedar</label></td>	
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Cherry_CCU" >Cherry/CCU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Chestnut_1" >Chestnut 1</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Chestnut_2" >Chestnut 2</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_CMW" >CMW</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Elm" >Elm</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward_F_Cooksey" >F Cooksey</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_HDU" >HDU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_ITU" >ITU</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Juniper" >Juniper</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Larch" >Larch</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Laurel" >Laurel</label></td></tr>
+                                     	<tr><td><label class="checkbox inline"><input type="checkbox" id="Ward_Linden" >Linden</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Mat_5" >Mat 5</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Mulberyy" >Mulberry</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Oak" >Oak</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_Obs" >Obs</label></td>
+                                     	<td><label class="checkbox inline"><input type="checkbox" id="Ward_" ></label></td></tr>
+                                     	</table>
+                                     </td>
+                                     </tr>
+                                     </table>
+                                   </div>
+                                   <div style="margin-top: 20px;" class="row-fluid">
+                                     <table style="width: 100%;border-collapse:collapse;" cellpadding="5" cellspacing="5" border="1" >
+                                     <tr style="background-color:black; color:white;height:20px;"><td align="center" style="width:10%"><strong>QTY</strong></td>
+                                     <td colspan="2" style="width:90%" align="center"><strong>LUNCH</strong></td>
+                                     </tr>
+									 <tr style="background-color:gray; color:white;height:20px;"><td colspan="3">&nbsp;</td></tr>
+                                     <tr><td align="center" ><label id="Qty1"></label>
+
+									 </td>
+                                     	<td style="width:5%" align="center"><label >1</label></td>
+                                     	<td style="width:85%"><label id="MenuOption1"></label></td></tr>
+                                    <tr><td align="center"><label id="Qty2"></label>
+
+									</td>
+                                     	<td style="width:5%" align="center"><label >2</label></td>
+                                     	<td style="width:85%"><label id="MenuOption2"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty3"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >3</label></td>
+                                     	<td style="width:85%"><label id="MenuOption3"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty4"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >4</label></td>
+                                     	<td style="width:85%"><label id="MenuOption4"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty5"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >5</label></td>
+                                     	<td style="width:85%"><label id="MenuOption5"></label></td></tr>
+
+                                       <tr><td align="center"><label id="Qty6"></label>
+
+									   </td>
+                                     	<td style="width:5%" align="center"><label >6</label></td>
+                                     	<td style="width:85%"><label id="MenuOption6"></label></td></tr>
+                                    <tr><td align="center"><label id="Qty7"></label>
+
+									</td>
+                                     	<td style="width:5%" align="center"><label >7</label></td>
+                                     	<td style="width:85%"><label id="MenuOption7"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty8"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >8</label></td>
+                                     	<td style="width:85%"><label id="MenuOption8"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty9"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >9</label></td>
+                                     	<td style="width:85%"><label id="MenuOption9"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty10"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >10</label></td>
+                                     	<td style="width:85%"><label id="MenuOption10"></label></td></tr>
+
+                                      <tr><td align="center"><label id="Qty11"></label>
+
+									  </td>
+                                     	<td style="width:5%" align="center"><label >11</label></td>
+                                     	<td style="width:85%"><label id="MenuOption11"></label></td></tr>
+                                    <tr><td align="center"><label id="Qty12"></label>
+
+									</td>
+                                     	<td style="width:5%" align="center"><label >12</label></td>
+                                     	<td style="width:85%"><label id="MenuOption12"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty13"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >13</label></td>
+                                     	<td style="width:85%"><label id="MenuOption13"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty14"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >14</label></td>
+                                     	<td style="width:85%"><label id="MenuOption14"></label></td></tr>
+
+                                     <tr><td align="center"><label id="Qty15"></label>
+
+									 </td>
+                                     	<td style="width:5%" align="center"><label >15</label></td>
+                                     	<td style="width:85%"><label id="MenuOption15"></label></td></tr>
+                                    <tr><td align="center"><label id="Qty16"></label>
+
+									</td>
+                                     	<td style="width:5%" align="center"><label >16</label></td>
+                                     	<td style="width:85%"><label id="MenuOption16"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty17"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >17</label></td>
+                                     	<td style="width:85%"><label id="MenuOption17"></label></td></tr>
+                                     	<tr><td align="center"><label id="Qty18"></label>
+
+										</td>
+                                     	<td style="width:5%" align="center"><label >18</label></td>
+                                     	<td style="width:85%"><label id="MenuOption18"></label></td></tr>
+                                     <tr><td align="center"><label id="Qty19"></label>
+
+									 </td>
+                                     	<td style="width:5%" align="center"><label >19</label></td>
+                                     	<td style="width:85%"><label id="MenuOption19"></label></td></tr>
+									<tr style="background-color:black; color:white;height:20px;"><td colspan="3">&nbsp;</td></tr>
+                                    <tr style="background-color:gray; color:white;height:20px;"><td colspan="3">&nbsp;</td></tr>                                     	<tr><td align="center"><label id="Qty20"></label></td>
+                                     	<td style="width:5%" align="center"><label >20</label></td>
+                                     	<td>
+										<table id="MenuOption20" class="equalDivide" cellpadding="5" cellspacing="0" width="100%" border="1" style="border-collapse:collapse;">
+									   <tr>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+									   </tr>
+									</table>
+										</td>
+										</tr>
+										<tr><td align="center"><label id="Qty21"></label></td>
+                                     	<td style="width:5%" align="center"><label >21</label></td>
+                                     	<td>
+										<table id="MenuOption21" class="equalDivide" cellpadding="5" cellspacing="0" width="100%" border="1" style="border-collapse:collapse;">
+									   <tr>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+									   </tr>
+									</table>
+										</td>
+										</tr>
+										
+										<tr><td align="center"><label id="Qty22"></label></td>
+                                     	<td style="width:5%" align="center"><label >22</label></td>
+                                     	<td>
+										<table id="MenuOption22" class="equalDivide" cellpadding="5" cellspacing="0" width="100%" border="1" style="border-collapse:collapse;">
+									   <tr>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+									   </tr>
+									</table>
+										</td>
+										</tr>
+									
+									<tr><td align="center"><label id="Qty23"></label></td>
+                                     	<td style="width:5%" align="center"><label >23</label></td>
+                                     	<td>
+										<table id="MenuOption23" class="equalDivide" cellpadding="5" cellspacing="0" width="100%" border="1" style="border-collapse:collapse;">
+									   <tr>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+									   </tr>
+									</table>
+										</td>
+										</tr>
+										
+									<tr><td align="center"><label id="Qty24"></label></td>
+                                     	<td style="width:5%" align="center"><label >24</label></td>
+                                     	<td>
+										<table id="MenuOption24" class="equalDivide" cellpadding="5" cellspacing="0" width="100%" border="1" style="border-collapse:collapse;">
+									   <tr>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+									   </tr>
+									</table>
+										</td>
+										</tr>
+									
+									</table>
+                                    </div>
+                                    
+									<div style="margin-top: 20px;" class="row-fluid">
+									<label><strong>Form Completed By:</strong></label>
+									 <table id="FormCompletedBy" class="equalDivide" cellpadding="5" cellspacing="0" width="50%" border="1" style="border-collapse:collapse;">
+									   <tr>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+										  <td>&nbsp;</td>
+									   </tr>
+									</table>
+                                    </div>
+                                    </form>
+</body>
+</html>
+                                     

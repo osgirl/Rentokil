@@ -1,0 +1,1 @@
+*/5 * * * * wget -O - -q -t l https://##env_url##/ri_backend/index.php/jobs/execute_jobs

@@ -1,0 +1,376 @@
+/* 
+    Document   : edfm-custom
+    Created on : 14-Mar-2013, 14:27:36
+    Author     : Adam Maltpress
+    Description:
+        Custom (i.e. non-bootstrap) styles for EDFM
+*/
+
+/* General typography and layout ~ overwrites bootstrap */
+
+a {text-decoration: underline}
+a.btn, nav a, .nav a, .widgetheaderbutton a, footer a, div.accountlinks a {text-decoration: none;}
+h3 {color: #004976; font-weight: normal; font-size:19px; font-family: 'helveticaneuelt_std_ltregular', arial; line-height: normal;}
+h5 {font-weight: bold; color: #004976; font-size: 13px; margin-bottom: 0px;}
+table thead tr th {color: #454545;}
+table.edfm-table-bordered tr td { font-family: 'helveticaneuelt_std_medRg', arial; color: #868686; border-top: 0px;}
+table.edfm-table-bordered tr td:last-child {min-width: 22px;}
+.table th {font-size: 12px;}
+.table td {font-size: 13px;}
+.accordion-heading .accordion-toggle {
+  background-color: #004d7c;
+  background-image: -moz-linear-gradient(top, #0271b8, #004d7c);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0271b8), to(#004d7c));
+  background-image: -webkit-linear-gradient(top, #0271b8, #004d7c);
+  background-image: -o-linear-gradient(top, #0271b8, #004d7c);
+  background-image: linear-gradient(to bottom, #0271b8, #004d7c);
+  background-repeat: repeat-x;
+  color: #ffffff; padding-top:10px;padding-bottom: 10px;}
+table.edfm-hover-table tbody tr td {font-family: 'helveticaneuelt_std_medRg', arial; color: #004875; font-size: 14px;}
+table.edfm-hover-table tbody tr:first-child td {border-top: none;}
+table.edfm-hover-table tbody tr td span {font-size: 10px; color: #646464;}
+/* forms */
+select {background-image: url(../img/selectbg.png);background-position: right;background-repeat: no-repeat;height: 26px;font-size: 12px;border-color: #a4a4a4;width: 190px; -webkit-appearance: none;}
+/*US 312 Item 1 
+.btn-primary {margin-top: -10px;}*/
+span.formField {float: left; margin-right: 10px;}
+span.formField label {font-weight: bold; color: #8E8E8E;}
+form#booking-1 button {margin-left: -5px;float: left; margin-top: 22px;}
+span.select-wrap {width: 190px; height: 24px; background: url("../img/selectbg.png") no-repeat right 0px; overflow: hidden;display: block; border-radius: 3px;border: 1px solid #a4a4a4;width: 190px; -webkit-appearance: none;}
+span.select-wrap select {background: transparent; width: 215px; border: none;}
+span.select-wrap {position: relative;}    
+span.select-wrap select, span.select-wrap .uneditable-input {padding-top: 0px; top: -3px; position: absolute; -webkit-appearance: none;}
+/* Header area */
+h1.logo a {display: block; width: 271px; height: 86px; background: transparent url('../img/logo.png') no-repeat; text-indent: -10000px; line-height: 0; font-size: 0;margin-top: 15px; margin-bottom: 18px;}
+img.logininfodivider {height: 2px;}
+.navbar .nav, .navbar .divider-vertical {margin: 0px;}
+.navbar-inner {padding: 0px;}
+.userlogininfo {margin-top: 15px;}
+.userlogininfo .location {margin-top: 5px;font-family: 'helveticaneuelt_std_ltregular', arial;font-size: 17px; color: #ffffff;}
+.userlogininfo .accountlinks {margin-top: 5px;	font-family: 'helveticaneuelt_std_ltregular', arial;font-size: 15px; color: #77caff;}
+.userlogininfo .accountlinks a {color: #77caff;}
+.userlogininfo .accountlinks a:hover {text-decoration: none;color: #000000;}
+.userlogininfo .username {font-family: 'helveticaneuelt_std_ltregular', arial;font-size: 24px; 	color: #ffffff; float: right;}
+/* main navigation */
+.navbar .nav > li > a {padding: 10px 55px;}
+.navbar .nav > li {border: 1px;}
+.navbar .nav > li.divider-vertical {border-left: 1px solid #ccc;} 
+/* footer */
+footer {
+  background-color: #ebebeb;
+  background-image: -moz-linear-gradient(top, #cdcdcd, #ebebeb);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#cdcdcd), to(#ebebeb));
+  background-image: -webkit-linear-gradient(top, #cdcdcd, #ebebeb);
+  background-image: -o-linear-gradient(top, #cdcdcd, #ebebeb);
+  background-image: linear-gradient(to bottom, #cdcdcd, #ebebeb);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cdcdcd', endColorstr='#ebebeb', GradientType=0);
+  border-top: 1px solid #a8a8a8;
+  margin-top: 50px;
+}
+footer .container {margin: 20px auto;}
+footer h3 {font-family: 'helveticaneuelt_std_ltregular', arial; color:#004976;font-size: 20px; margin:0px; padding:0px; line-height: 20px;
+  font-weight: normal; border-bottom: 1px solid #aaaaaa; padding: 0px 0px 10px 5px;}
+.footer .footercontent {border-top: 1px solid #eeeeee; padding: 10px;}
+.footer .copyright {font-family: 'helveticaneuelt_std_ltregular', arial; padding-top: 10px; font-size: 13px; color: #666768; padding: 10px;line-height:30px;}
+footer div.footercontent p span {color: #004976;}
+.footerarrlinks {color: #004976;}  
+/* modal overlays */
+.modal-header h3 {font-family: 'helveticaneuelt_std_ltregular', arial; color:#004976; font-size: 22px; font-weight: normal;}
+div.modal .btn-primary {margin-top: 0px;}
+div#exportformatdiv, div#emailsendto {margin-top: 30px;display: none;}
+div.modal strong span {color:#BC1718; font-weight: bold;}
+div.modal strong span label {color:#BC1718; font-weight: bold;}
+/* secondary navigation */
+nav.tabNav {margin-top:15px;}
+.nav-tabs#secondarynav {border:0px;}
+.nav-tabs#secondarynav > li > a {-webkit-border-radius: 8px 8px 0px 0px;-moz-border-radius: 8px 8px 0px 0px;border-radius: 8px 8px 0px 0px;
+	border: 1px solid #c3c3c3; background-color: #ebebec;
+        background-image: -moz-linear-gradient(top, #fefefe, #ebebec);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#ebebec));
+        background-image: -webkit-linear-gradient(top, #fefefe, #ebebec);
+        background-image: -o-linear-gradient(top, #fefefe, #ebebec);
+        background-image: linear-gradient(to bottom, #fefefe, #ebebec);
+        background-repeat: repeat-x; 
+        padding: 8px 17px;
+        margin-right: 8px;
+        -webkit-box-shadow: 2px 0px 2px rgba(50, 50, 50, 0.3);
+        -moz-box-shadow:    2px 0px 2px rgba(50, 50, 50, 0.3);
+        box-shadow:         2px 0px 2px rgba(50, 50, 50, 0.3);
+	font-family: 'helveticaneuelt_std_medRg', arial; font-size: 14px; color: #6f6f6f;
+}
+.nav-tabs#secondarynav > li.active > a {
+  background-color: #daf0ff;  background-image: -moz-linear-gradient(top, #fefeff, #daf0ff); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fefeff), to(#daf0ff));
+  background-image: -webkit-linear-gradient(top, #fefeff, #daf0ff); background-image: -o-linear-gradient(top, #fefeff, #daf0ff);
+  background-image: linear-gradient(to bottom, #fefeff, #daf0ff);  background-repeat: repeat-x; color: #004875;}
+.nav-tabs#secondarynav > li > a:hover {  background-color: #daf0ff;  background-image: -moz-linear-gradient(top, #fefeff, #daf0ff);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fefeff), to(#daf0ff));  background-image: -webkit-linear-gradient(top, #fefeff, #daf0ff);
+  background-image: -o-linear-gradient(top, #fefeff, #daf0ff);  background-image: linear-gradient(to bottom, #fefeff, #daf0ff);
+  background-repeat: repeat-x; color: #004875;}
+/* widgets ~ note the @media overwrites for screen sizes below! */
+.widget {border: 1px solid #8e8e8e; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;padding: 12px 15px 0px 15px; background: #fff url(../img/widgetbg.png) repeat-x top; margin-bottom: 30px;}
+/*reduced margin for US 312 Various UI Tidies-Item1-reflects on many screens-from margin-bottom: 20px;*/
+.widget .row-fluid {margin-bottom: 10px;}
+.widget h2 {font-family: 'helveticaneuelt_std_ltregular', arial;  font-size: 19px; /* overwritten for smaller screens */ color:#FFF;  margin:0px;  padding:0px; line-height: 19px; font-weight: normal;}
+.widget .widgetheaderbutton {
+    background-color: #ebebeb;
+    background-image: -moz-linear-gradient(top, #f4f4f4, #bdbdbd);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#bdbdbd));
+    background-image: -webkit-linear-gradient(top, #f4f4f4, #bdbdbd);
+    background-image: -o-linear-gradient(top, #f4f4f4, #bdbdbd);
+    background-image: linear-gradient(to bottom, #f4f4f4, #bdbdbd);
+    background-repeat: repeat-x;
+    border-radius: 10px;
+    min-height: 0px; padding: 1px; font-size: 10px; font-family: arial; font-weight: bold;  text-align: center;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+    margin-top: -3px; /* adjust vertical position */
+    background-clip:border-box;
+}
+.widget .widgetheaderbutton:hover {
+  background-color: #bdbdbd;
+  background-image: -moz-linear-gradient(top, #bdbdbd, #f4f4f4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bdbdbd), to(#f4f4f4));
+  background-image: -webkit-linear-gradient(top, #bdbdbd, #f4f4f4);
+  background-image: -o-linear-gradient(top, #bdbdbd, #f4f4f4);
+  background-image: linear-gradient(to bottom, #bdbdbd, #f4f4f4);
+  background-repeat: repeat-x;
+}
+.widget .widgetheaderbutton a {display: block;  padding-left: 3px;  padding-right: 3px;  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); border-radius: 10px;}
+.row-fluid [class*="span"]:first-child div.widgetnav {margin-left:-15px; padding-left: 15px; padding-right: 20px; width: 104%;} /* make sure widget tab background fills width */
+.widgetnav {background-color: #ebebec; background-image: -moz-linear-gradient(top, #f7f7f7, #ebebec); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f7), to(#ebebec)); background-image: -webkit-linear-gradient(top, #f7f7f7, #ebebec);
+  background-image: -o-linear-gradient(top, #f7f7f7, #ebebec); background-image: linear-gradient(to bottom, #f7f7f7, #ebebec); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#ebebec', GradientType=0);
+  border-bottom: 1px solid #8e8e8e; padding-top: 10px; padding-left: 5px; color: #bd1719; font-size: 14px; font-family: 'helveticaneuelt_std_medRg', arial;}
+.widgettabs {background-color: #ffffff; border-bottom: 1px solid #8e8e8e; padding-top: 10px; color: #bd1719; font-size: 14px; font-family: 'helveticaneuelt_std_medRg', arial;}
+.boxgradient {background-color: #ebebec; background-image: -moz-linear-gradient(top, #fefefe, #ebebec); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#ebebec)); background-image: -webkit-linear-gradient(top, #fefefe, #ebebec); background-image: -o-linear-gradient(top, #fefefe, #ebebec);
+  background-image: linear-gradient(to bottom, #fefefe, #ebebec); background-repeat: repeat-x;}
+.nav-tabs#widgetnav {border:0px;margin-bottom: 0px;}
+.nav-tabs#widgetnav > li > a {padding-left: 17px; padding-right: 17px; margin-right: 8px;font-size: 14px; color: #000000;}
+.nav-tabs#widgetnav > li.active > a {color: #004875; border-color:#004875; border-bottom-color: transparent;}
+.nav-tabs#widgetnav > li > a:hover {color: #004875;}
+#widget.nav-tabs > li > a:hover {border: 1px solid; border-color: #eee #eee #ddd;}
+/* guest */
+body.guest .tabNav {margin-top: 7px;}
+/* media queries for responsiveness */
+@media (min-width: 980px) and (max-width: 1199px) { 
+    /* small desktop screens */
+    /* navigation */
+    .navbar .nav > li > a {padding: 10px 32px;}
+    .navbar .nav > li:last-child > a {padding: 10px 33px 10px 32px;}
+    .row-fluid [class*="span"]:first-child div.widgetnav {width: 105%;}
+    .row-fluid [class*="span"]:first-child div.widgetnav .nav-tabs#widgetnav > li > a {padding-left: 5px; padding-right: 5px; margin-right: 3px; font-size: 12px;}
+    /* widgets */
+    /* other */
+    .btn-primary {margin-top: 0px;}
+}
+
+@media (max-width: 979px) {    
+    /* tablets landscape, very small desktop (see below for true orientation = landscape rules) */
+    /* navigation */
+    .nav-collapse .nav > li {float: none;}
+    .nav-collapse .nav > li > a {margin-bottom: 2px;}
+    .nav-collapse .nav > .divider-vertical {display: none;}
+    .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {border-radius: 3px 3px 3px 3px;color: #777777;font-weight: bold;padding: 9px 15px;color: #777777;}
+    .navbar-static-top {margin-bottom: 0; /*position:absolute; /* allows nav to roll over content */ width: 722px;} 
+    /*nav.tabNav {margin-top:57px;}*/
+    /* widgets */
+    .widget h2 {font-size: 16px;}
+    .widget .widgetheaderbutton {/*width: 40px;top: -29px;*/float: right;position: relative;}
+    .row-fluid [class*="span"]:first-child div.widgetnav .nav-tabs#widgetnav > li > a {padding-left: 5px; padding-right: 5px; margin-right: 3px; font-size: 12px;}
+    .hasTabs {
+        background-color: #ebebec;
+        background-image: -moz-linear-gradient(top, #f7f7f7, #ebebec);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f7), to(#ebebec));
+        background-image: -webkit-linear-gradient(top, #f7f7f7, #ebebec);
+        background-image: -o-linear-gradient(top, #f7f7f7, #ebebec);
+        background-image: linear-gradient(to bottom, #f7f7f7, #ebebec);
+        background-repeat: repeat-x;
+        padding-right: 15px;
+        border-bottom: 1px solid #8E8E8E;
+        height: 47px;
+    } /* for widgets with tabs, make sure background fills */
+    /* other */
+    input, textarea, .uneditable-input {width: auto; margin-bottom: 10px; display: block;}
+    .btn-primary {margin-top: 0px;}
+}
+
+@media (max-width: 767px) {
+    /* phones, small tablets - see below for iPhone rules */
+    /* header */
+    h1.logo a {margin-top: 19px; background: transparent url('../img/logo-small.png') no-repeat; width: 122px; height: 38px;margin-bottom: 0px;} /* mini logo buys room for nav etc */
+    .userlogininfo {margin-top: 0px;}
+    .userlogininfo .location {font-size: 11px;font-family: arial;clear: both;float: left;font-weight: bold;margin-bottom: 10px;}
+    .userlogininfo .logininfodivider {display: none;}
+    .userlogininfo .username {font-size: 17px; float: left;}
+    /* navigation */
+    .navbar-static-top {margin-bottom: 10px; position:relative; width: 100%; margin: 0px; float: left;}
+    .navbar-static-top .container {/*position: absolute;*/ width: 100%;  
+        box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 10px rgba(0, 0, 0, 0.1);
+        background-color: #EBEBEC;
+        background-image: linear-gradient(to bottom, #FEFEFE, #EBEBEC);
+        background-repeat: repeat-x;
+        border: 1px solid #BBBBBB;
+        border-radius: 4px 4px 4px 4px;
+        top: -1px; left: -1px;
+    }
+    nav.tabNav {margin-top: 49px;}
+    #secondarynav.nav-tabs > li > a, #secondarynav.nav-tabs > li.active > a, #secondarynav.nav-tabs > li > a:hover {margin: 0px;padding: 0px 5px; border: none; background: none; box-shadow: none;}
+    /* widgets */
+    .widget .widgetheaderbutton {margin-top: 15px;}
+    .row-fluid [class*="span"]:first-child div.widgetnav .nav-tabs#widgetnav > li > a {padding-left: 5px; padding-right: 5px; margin-right: 3px; font-size: 12px;}
+    .widget img {display: block; margin: 0 auto 15px;} /* center images in small boxes */
+    .widget h2 {font-size: 16px;} /* stop overflow to second row - see also js */
+    .widget .widgetheaderbutton {top: 0px; width: auto; float: none; position: relative;}
+    .row-fluid [class*="span"]:first-child div.widgetnav {margin-bottom: -1px;}
+    .row-fluid [class*="span"]:first-child div.widgetnav .nav-tabs#widgetnav > li > a {padding: 5px; margin-right: 5px;font-size: 12px; border-radius: 0px; border: none;}
+    .row-fluid [class*="span"]:first-child div.widgetnav .nav-tabs#widgetnav > li > a:hover, .row-fluid [class*="span"]:first-child div.widgetnav .nav-tabs#widgetnav > li.active > a { border: none;background: none;}   
+    .hasTabs {background-color: #ebebec;
+        background-image: -moz-linear-gradient(top, #f7f7f7, #ebebec);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f7), to(#ebebec));
+        background-image: -webkit-linear-gradient(top, #f7f7f7, #ebebec);
+        background-image: -o-linear-gradient(top, #f7f7f7, #ebebec);
+        background-image: linear-gradient(to bottom, #f7f7f7, #ebebec);
+        background-repeat: repeat-x;
+        padding-right: 15px;
+        border-bottom: 1px solid #8E8E8E;
+        height: auto;
+    }
+    /* other */
+    footer {margin-left: -20px;padding: 0px 20px;}
+    .btn-primary {margin-top: -10px;}
+    .noSmall {display: none;}
+    .verticalline
+    {
+    padding-right:18px;
+    border-right: 0px solid #ccc;
+    }
+}
+
+/* iOS specific */
+/*iPhone < 5*/
+@media screen and (device-aspect-ratio: 2/3) {
+    
+}
+/*iPhone 5*/
+@media screen and (device-aspect-ratio: 40/71) {
+    span.select-wrap {position: relative}
+    span.select-wrap select, span.select-wrap .uneditable-input {padding-top: 0px;top: -3px;position: absolute;}
+}
+/*iPad:*/
+@media screen and (device-aspect-ratio: 3/4) {
+    span.select-wrap {position: relative}
+    span.select-wrap select, span.select-wrap .uneditable-input {padding-top: 0px;top: -1px;position: absolute;}
+}
+/* iPad landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    .navbar .nav > li > a {padding: 10px 31px;}
+    .navbar .nav > li > a:last-child {padding: 10px 31px 10px 32px;}
+}
+
+/* useful classes ~ apply as necessary for alignment etc */
+.alignleft {text-align: left;}
+.aligncenter {text-align: center;}
+.alignright {text-align: right;}
+a.small-link {font-weight: normal; color: #878787; text-decoration: underline;font-size: 0.85em;} /* use for small informational links */
+.border-top {border-top: 1px solid #cccccc; padding-top: 15px;}
+.noBottom, .widget .noBottom {margin-bottom: 0px;}
+.top20 {margin-top: 20px;}
+.right15 {margin-right: 15px;}
+a.moreinfo {display: block; width: 21px; height: 21px; float: right; padding-top: 10px; text-indent: -10000px; line-height: 0px; font-size: 0; background: transparent url('../img/infoicon.png') no-repeat bottom;}
+a.centreinfo {padding-top: 0px;float: none;margin: 0 auto;}
+div.pseudotable > div {border-top: 1px solid #eeeeee; padding-top: 15px;} /* "pseudo" table with bordered "cells" */
+div.pseudotable > div:first-child {border-top: none; padding-top: 0px;}
+.center {text-align: center;}
+.clear{clear:both;}
+/* unfortunate FF-only styles */
+@-moz-document url-prefix() {
+    span.select-wrap select, span.select-wrap .uneditable-input {top: 3px;}
+}
+
+#btnAddAdmin{
+width:110px;
+margin-bottom: 10px;
+margin-top: 70px;
+}
+#btnProfileAddUsers{
+width:110px;
+margin-bottom: 10px;
+margin-top: 70px; 
+}
+#btnSessAddUsers{
+width:110px;
+margin-bottom: 10px;
+margin-top: 70px;
+}
+#btnAddUsers{
+width:100px;
+margin-bottom: 10px;
+margin-top: 70px;
+}
+@media (max-width: 767px) {
+       
+#btnAddAdmin{
+margin-top:0px;
+}
+#btnProfileAddUsers{
+margin-top:0px;
+}
+#btnSessAddUsers{
+margin-top:0px;
+}
+#btnAddUsers{
+margin-top:0px;
+}
+.input-footer{
+ margin-bottom:15px !important;
+ width:199px !important;   
+}
+
+.reset-button{
+    margin-top: 10px !important;
+    margin-left: 0px !important;
+}
+
+.segment-button{
+    margin-top: -30px !important;
+}
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px), (min-width: 768px) and (max-width: 1024px){
+#div_zone_dash{
+width:100%;
+}
+
+#zone_heading_panel{
+width:40%;
+}
+
+}
+div.footercontent span.footerContentlinks a, div.footercontent span.footerContentlinks a:visited {
+		color: #8e8e8e;
+		text-decoration: none;
+}
+div.footercontent span.footerContentlinks a:hover {
+		text-decoration: underline;
+		}
+                
+.rotateText{
+    text-align: center;
+    vertical-align: middle;
+    margin: 0px;
+    padding: 25px 0px 25px 0px;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+    -moz-transform: rotate(-90deg); /* Firefox */
+    -o-transform: rotate(-90deg); /* Opera */
+    /* IE8 */
+     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); 
+
+    /* IE7 or less */
+    *zoom: 1;
+    *writing-mode: tb-rl;
+    *filter: flipv fliph;
+}

@@ -1,0 +1,900 @@
+<header class="row-fluid" id="userheader"></header>
+<!-- /row -->
+<nav class="navbar-static-top" id="navLevel1">
+	<div class="navbar-inner">
+		<div class="container">
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse"
+				data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+				class="icon-bar"></span> <span class="icon-bar"></span>
+			</a> <a class="brand hidden-desktop" href="#" data-toggle="collapse"
+				data-target=".nav-collapse">Navigation</a>
+			<div class="nav-collapse">
+				<ul class="nav" id="l1nav"></ul>
+			</div>
+			<!-- /nav-collapse -->
+		</div>
+		<!-- /container -->
+	</div>
+</nav>
+<!-- /navbar -->
+<nav class="row-fluid tabNav" id="navLevel2">
+	<!-- secondary nav selects tabs -->
+	<ul class="nav nav-tabs" id="secondarynav">
+	</ul>
+</nav>
+<div id="tabcontent" class="tab-content">
+	<!-- begin page tabbed content -->
+	<section class="tab-pane active" id="secEnergy">
+		<!-- first tab -->
+		<div class="row-fluid">
+			<div class="span12">
+				<!-- left column -->
+				<!-- Row -->
+				<div class="row-fluid">
+					<!-- wide widget -->
+					<div class="span12 widget">
+						<div class="row-fluid  noBottom">
+							<div class="span10">
+								<h2>Energy Dashboard</h2>
+							</div>
+						</div>
+						<!-- /row -->
+						<div class="row-fluid hasTabs" id="navLevel3" style="display:none">
+							<div class="span12">
+								<div class="row-fluid noBottom">
+									<div class="widgettabs widgetnav" style="width: 99.6%">
+										<ul class="nav nav-tabs" id="widgetnav">
+										 <li id="lid_dmSummary" class="dropdown" style="display:none;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" id="UserSummary" name="UserSummary">Summary <b class="caret"></b></a>
+	                                     <ul class="dropdown-menu">
+										    <li id="lid_divSumMonthly" style="display:none;"><a href="#summaryMonthly" data-toggle="tab" id="d_divSumMonthly">Annual</a></li>
+										    <li id="lid_divSumDaily" style="display:none;"><a href="#summaryDaily" data-toggle="tab" id="d_divSumDaily">Monthly</a></li>
+										    <li id="lid_divSumHH" style="display:none;"><a href="#summaryHalfHourly" data-toggle="tab" id="d_divSumHH">Half Hourly</a></li>
+										    </ul>
+	                                         </li>
+	                                         <li id="li_divSumMonthly" style="display:none;"><a href="#summaryMonthly" data-toggle="tab" id="l_divSumMonthly">Annual</a></li>
+										    <li id="li_divSumDaily" style="display:none;"><a href="#summaryDaily" data-toggle="tab" id="l_divSumDaily">Monthly</a></li>
+										    <li id="li_divSumHH" style="display:none;"><a href="#summaryHalfHourly" data-toggle="tab" id="l_divSumHH">Half Hourly</a></li>
+										    
+	                                         <li id="lid_dmElectricity" class="dropdown" style="display:none;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" id="UserElectricity" name="UserElectricity">Electricity <b class="caret"></b></a>
+		                                         <ul class="dropdown-menu">
+											    <li id="lid_divEleMonthly" style="display:none;"><a href="#eleMonthly" data-toggle="tab" id="d_divEleMonthly">Annual</a></li>
+											    <li id="lid_divEleDaily" style="display:none;"><a href="#eleDaily" data-toggle="tab" id="d_divEleDaily">Monthly</a></li>
+											    <li id="lid_divEleHH" style="display:none;"><a href="#eleHalfHourly" data-toggle="tab" id="d_divEleHH">Half Hourly</a></li>
+											    </ul>
+	                                         </li>
+	                                         <li id="li_divEleMonthly" style="display:none;"><a href="#eleMonthly" data-toggle="tab" id="l_divEleMonthly">Annual</a></li>
+											 <li id="li_divEleDaily" style="display:none;"><a href="#eleDaily" data-toggle="tab" id="l_divEleDaily">Monthly</a></li>
+											 <li id="li_divEleHH" style="display:none;"><a href="#eleHalfHourly" data-toggle="tab" id="l_divEleHH">Half Hourly</a></li>
+											    
+	                                         <li id="lid_dmGas" class="dropdown" style="display:none;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" id="UserGas" name="UserGas">Gas <b class="caret"></b></a>
+	                                        <ul class="dropdown-menu">
+										    <li id="lid_divGasMonthly" style="display:none;"><a href="#gasMonthly" data-toggle="tab" id="d_divGasMonthly">Annual</a></li>
+										    <li id="lid_divGasDaily" style="display:none;"><a href="#gasDaily" data-toggle="tab" id="d_divGasDaily">Monthly</a></li>
+										    <!--<li><a href="#gasHalfHourly" data-toggle="tab"id="divGasHH">Half Hourly</a></li>-->
+										    </ul>
+	                                         </li>
+	                                         <li id="li_divGasMonthly" style="display:none;"><a href="#gasMonthly" data-toggle="tab" id="l_divGasMonthly">Annual</a></li>
+										    <li id="li_divGasDaily" style="display:none;"><a href="#gasDaily" data-toggle="tab" id="l_divGasDaily">Monthly</a></li>
+	                                        <li id="li_energyDocumentTab" style="display:none;"><a href="#documents" id="l_energyDocumentTab" data-toggle="tab">Documents</a></li>
+	                                        <li id="li_tabEnergyDigitalForms" style="display:none;"><a href="#eDigitalForms" id="l_tabEnergyDigitalForms" data-toggle="tab">Digital Forms</a></li>
+										</ul>
+									</div>
+								</div>
+								<!-- /row -->
+							</div>
+						</div>
+						<div class="row-fluid">
+							<div class="tab-content">
+								<div class="tab-pane" id="summaryMonthly">
+									<div class="row-fluid control-group">
+										<div class="span4" style="margin-bottom: 15px;">
+											<div id="centerMonth1">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small  btn-inverse"
+																	href="javascript:void(0);" id="SumMonfastPrev"><i
+																	class="icon-fast-backward icon-white"></i> Prev Year</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small" href="javascript:void(0);"
+																	id="SumMonPrev"><i class="icon-backward"></i> Prev
+																	Month</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div id="centerMonth2"
+											class="span4 form-horizontal center-in-span">
+											<div class="control-group center-in-span">
+												<table align="center">
+													<tr>
+														<td><label class="control-label" style="width: 70px;"
+															for="inputenddate">End Date</label></td>
+														<td><div class="controls input-append date"
+																id="dtSumMonthly" data-date="02/2012"
+																data-date-format="mm/yyyy" data-date-viewmode="years"
+																data-date-minviewmode="months">
+																<input class="span8" size="10" type="text" value=""
+																	name="txtSumMonthEndDate" id="txtSumMonthEndDate"
+																	readonly><span class="add-on"><i
+																	class="icon-th"></i></span>
+															</div></td>
+														<td><button class="btn btn-primary" href="#"
+																id="btndtSumMonthly" name="btndtSumMonthly"
+																style="margin-top: 0px;">Go</button></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="span4">
+											<div id="centerMonth3">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small" href="javascript:void(0);"
+																	id="SumMonNext">Next Month <i class="icon-forward"></i>
+																</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small  btn-inverse"
+																	href="javascript:void(0);" id="SumMonfastNext">Next
+																	Year <i class="icon-fast-forward icon-white"></i>
+																</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row-fluid" id="divSumMonthChart"></div>
+									<div id="divSumMonthChartMissing"></div>
+									<div
+										style="border-top: 1px solid #cccccc; padding-top: 15px; margin-left: -12px; color: #004976;"></div>
+									<div class="row-fluid">
+										<table align="center">
+											<tr>
+												<td colspan="2" align="center"
+													style="color: #004976; padding-bottom: 15px;"><strong
+													style="margin-left: -10px;">Savings</strong></td>
+											</tr>
+											<tr>
+												<td align="right">
+													<div
+														style="border-right: 1px solid #cccccc; padding-right: 25px;">
+														<label id="lblSumMonGBP"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignright">GBP</p>
+													</div>
+												</td>
+												<td align="left">
+													<div style="padding-left: 25px;">
+														<label id="lblSumMonkWh"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignleft">kWh</p>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<!-- /tab -->
+								<!-- /tab Summary Monthly-->
+								<div class="tab-pane" id="summaryDaily">
+									<div class="row-fluid">
+										<div class="span4" style="margin-bottom: 15px;">
+											<div id="centerMonth4">
+												<table>
+													<tr>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="SumDayFastPrev"><i
+																	class="icon-fast-backward icon-white"></i> Prev Month</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="SumDayPrev"><i class="icon-backward"></i> Prev
+																	7 Days</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div id="centerMonth5" class="span4 form-horizontal">
+											<div class="control-group">
+												<table align="center">
+													<tr>
+														<td><label class="control-label" style="width: 70px;"
+															for="inputenddate">End Date</label></td>
+														<td><div class="controls input-append date"
+																id="dtSumDaily" data-date="01/01/2013"
+																data-date-format="dd/mm/yyyy">
+																<input class="span8" size="10" type="text" value=""
+																	name="txtSumDailyEndDate" id="txtSumDailyEndDate"
+																	readonly><span class="add-on"><i
+																	class="icon-th"></i></span>
+															</div></td>
+														<td><button class="btn btn-primary" href="#"
+																id="btndtSumDaily" name="btndtSumDaily"
+																style="margin-top: 0px;">Go</button></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="span4">
+											<div id="centerMonth6">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="SumDayNext">Next 7 Days <i class="icon-forward"></i>
+																</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="SumDayFastNext">Next
+																	Month <i class="icon-fast-forward icon-white"></i>
+																</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row-fluid" id="divSumDailyChart"></div>
+									<div class="alert hide" id="divSumDailyChartMissing"></div>
+									<div
+										style="border-top: 1px solid #cccccc; padding-top: 15px; margin-left: -12px; color: #004976;"></div>
+									<div class="row-fluid">
+										<table align="center">
+											<tr>
+												<td colspan="2" align="center"
+													style="color: #004976; padding-bottom: 15px;"><strong
+													style="margin-left: -10px;">Savings</strong></td>
+											</tr>
+											<tr>
+												<td align="right">
+													<div
+														style="border-right: 1px solid #cccccc; padding-right: 25px;">
+														<label id="lblSumDailyGBP"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignright">GBP</p>
+													</div>
+												</td>
+												<td align="left">
+													<div style="padding-left: 25px;">
+														<label id="lblSumDailykWh"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignleft">kWh</p>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<!-- /tab Summary Daily-->
+								<div class="tab-pane" id="summaryHalfHourly">
+									<div class="row-fluid">
+										<div class="span4" style="margin-bottom: 15px;">
+											<div id="centerMonth7">
+												<table>
+													<tr>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="SumHHPrev2Weeks"><i
+																	class="icon-fast-backward icon-white"></i> Prev 2 Weeks</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small" href="javascript:void(0);"
+																	id="SumHHPrev"><i class="icon-backward"></i> Prev
+																	Day</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div id="centerMonth8" class="span4 form-horizontal">
+											<div class="control-group">
+												<table align="center">
+													<tr>
+														<td><label class="control-label" style="width: 70px;"
+															for="inputenddate">End Date</label></td>
+														<td><div class="controls input-append date"
+																id="dtSumHH" data-date="01/01/2013"
+																data-date-format="dd/mm/yyyy">
+																<input class="span8" size="10" type="text" value=""
+																	name="txtSumHHEndDate" id="txtSumHHEndDate" readonly><span
+																	class="add-on"><i class="icon-th"></i></span>
+															</div></td>
+														<td><button class="btn btn-primary" href="#"
+																id="btndtSumHH" name="btndtSumHH"
+																style="margin-top: 0px;">Go</button></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="span4">
+											<div id="centerMonth9">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small" href="javascript:void(0);"
+																	id="SumHHNext">Next Day <i class="icon-forward"></i>
+																</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="SumHHNext2Weeks">Next
+																	2 Weeks <i class="icon-fast-forward icon-white"></i>
+																</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row-fluid" id="divSumHHChart"></div>
+									<div class="alert hide" id="divSumHHChartMissing"></div>
+								</div>
+								<!-- /tab Summary Half yearly-->
+								<div class="tab-pane" id="eleMonthly">
+									<div class="row-fluid">
+										<div class="span4" style="margin-bottom: 15px;">
+											<div id="centerMonth10">
+												<table>
+													<tr>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="eleMonfastPrev"><i
+																	class="icon-fast-backward icon-white"></i> Prev Year</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small" href="javascript:void(0);"
+																	id="eleMonPrev"><i class="icon-backward"></i> Prev
+																	Month</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div id="centerMonth11" class="span4 form-horizontal">
+											<div class="control-group">
+												<table align="center">
+													<tr>
+														<td><label class="control-label" style="width: 70px;"
+															for="inputenddate">End Date</label></td>
+														<td><div class="controls input-append date"
+																id="dtEleMonthly" data-date="02/2012"
+																data-date-format="mm/yyyy" data-date-viewmode="years"
+																data-date-minviewmode="months">
+																<input class="span8" size="10" type="text" value=""
+																	name="txtEleMonthEndDate" id="txtEleMonthEndDate"
+																	readonly><span class="add-on"><i
+																	class="icon-th"></i></span>
+															</div></td>
+														<td>
+															<button class="btn btn-primary" href="#"
+																id="btndtEleMonthly" name="btndtEleMonthly"
+																style="margin-top: 0px;">Go</button>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="span4">
+											<div id="centerMonth12">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="eleMonNext">Next Month <i class="icon-forward"></i>
+																</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small btn-inverse" id="eleMonfastNext"
+																	href="javascript:void(0);">Next Year <i
+																	class="icon-fast-forward icon-white"></i></a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row-fluid" id="divEleMonthChart"></div>
+									<div id="divEleMonthChartMissing"></div>
+									<div
+										style="border-top: 1px solid #cccccc; padding-top: 15px; margin-left: -12px; color: #004976;"></div>
+									<div class="row-fluid">
+										<table align="center">
+											<tr>
+												<td colspan="2" align="center"
+													style="color: #004976; padding-bottom: 15px;"><strong
+													style="margin-left: -10px;">Savings</strong></td>
+											</tr>
+											<tr>
+												<td align="right">
+													<div
+														style="border-right: 1px solid #cccccc; padding-right: 25px;">
+														<label id="lblEleMonGBP"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignright">GBP</p>
+													</div>
+												</td>
+												<td align="left">
+													<div style="padding-left: 25px;">
+														<label id="lblEleMonkWh"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignleft">kWh</p>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+								</div>
+								<!-- Electricity Monthly/tab -->
+								<div class="tab-pane" id="eleDaily">
+									<div class="row-fluid">
+										<div class="span4" style="margin-bottom: 15px;">
+											<div id="centerMonth13">
+												<table>
+													<tr>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="eleDayFastPrev"><i
+																	class="icon-fast-backward icon-white"></i> Prev Month</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small" href="javascript:void(0);"
+																	id="eleDayPrev"><i class="icon-backward"></i> Prev
+																	7 Days</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div id="centerMonth14" class="span4 form-horizontal">
+											<div class="control-group">
+												<table align="center">
+													<tr>
+														<td><label class="control-label" style="width: 70px;"
+															for="inputenddate">End Date</label></td>
+														<td><div class="controls input-append date"
+																id="dtEleDaily" data-date="01/01/2013"
+																data-date-format="dd/mm/yyyy">
+																<input class="span8" size="10" type="text" value=""
+																	name="txtEleDailyEndDate" id="txtEleDailyEndDate"
+																	readonly><span class="add-on"><i
+																	class="icon-th"></i></span>
+															</div></td>
+														<td>
+															<button class="btn btn-primary" href="#"
+																id="btndtEleDaily" name="btndtEleDaily"
+																style="margin-top: 0px;">Go</button>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="span4">
+											<div id="centerMonth15">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="eleDayNext">Next 7 Days <i class="icon-forward"></i>
+																</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="eleDayFastNext">Next
+																	Month <i class="icon-fast-forward icon-white"></i>
+																</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row-fluid" id="divEleDailyChart"></div>
+									<div class="alert hide" id="divEleDailyChartMissing"></div>
+									<div
+										style="border-top: 1px solid #cccccc; padding-top: 15px; margin-left: -12px; color: #004976;"></div>
+									<div class="row-fluid">
+										<table align="center">
+											<tr>
+												<td colspan="2" align="center"
+													style="color: #004976; padding-bottom: 15px;"><strong
+													style="margin-left: -10px;">Savings</strong></td>
+											</tr>
+											<tr>
+												<td align="right">
+													<div
+														style="border-right: 1px solid #cccccc; padding-right: 25px;">
+														<label id="lblEleDailyGBP"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignright">GBP</p>
+													</div>
+												</td>
+												<td align="left">
+													<div style="padding-left: 25px;">
+														<label id="lblEleDailykWh"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignleft">kWh</p>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+								</div>
+								<!-- /tab -->
+								<div class="tab-pane" id="eleHalfHourly">
+									<div class="row-fluid">
+										<div class="span4" style="margin-bottom: 15px;">
+											<div id="centerMonth16">
+												<table>
+													<tr>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="eleHHPrev2Weeks"><i
+																	class="icon-fast-backward icon-white"></i> Prev 2 Weeks</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="eleHHPrev"><i class="icon-backward"></i> Prev
+																	Day</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div id="centerMonth17" class="span4 form-horizontal">
+											<div class="control-group">
+												<table align="center">
+													<tr>
+														<td><label class="control-label" style="width: 70px;"
+															for="inputenddate">End Date</label></td>
+														<td><div class="controls input-append date"
+																id="dtEleHH" data-date="01/01/2013"
+																data-date-format="dd/mm/yyyy">
+																<input class="span8" size="10" type="text" value=""
+																	name="txtEleHHEndDate" id="txtEleHHEndDate" readonly><span
+																	class="add-on"><i class="icon-th"></i></span>
+															</div></td>
+														<td>
+															<button class="btn btn-primary" href="#" id="btndtEleHH"
+																name="btndtEleHH" style="margin-top: 0px;">Go</button>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="span4">
+											<div id="centerMonth18">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="eleHHNext">Next Day <i class="icon-forward"></i>
+																</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="eleHHNext2Weeks">Next
+																	2 Weeks <i class="icon-fast-forward icon-white"></i>
+																</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row-fluid" id="divEleHHChart"></div>
+									<div class="alert hide" id="divEleHHChartMissing"></div>
+								</div>
+								<!-- /tab -->
+								<div class="tab-pane" id="gasMonthly">
+									<div class="row-fluid">
+										<div class="span4" style="margin-bottom: 15px;">
+											<div id="centerMonth19">
+												<table>
+													<tr>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="GasMonfastPrev"><i
+																	class="icon-fast-backward icon-white"></i> Prev Year</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small" href="javascript:void(0);"
+																	id="GasMonPrev"><i class="icon-backward"></i> Prev
+																	Month</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div id="centerMonth20" class="span4 form-horizontal">
+											<div class="control-group">
+												<table align="center">
+													<tr>
+														<td><label class="control-label" style="width: 70px;"
+															for="inputenddate">End Date</label></td>
+														<td><div class="controls input-append date"
+																id="dtGasMonthly" data-date="02/2012"
+																data-date-format="mm/yyyy" data-date-viewmode="years"
+																data-date-minviewmode="months">
+																<input class="span8" size="10" type="text" value=""
+																	name="txtGasMonthEndDate" id="txtGasMonthEndDate"
+																	readonly><span class="add-on"><i
+																	class="icon-th"></i></span>
+															</div></td>
+														<td>
+															<button class="btn btn-primary" href="#"
+																id="btndtGasMonthly" name="btndtGasMonthly"
+																style="margin-top: 0px;">Go</button>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="span4">
+											<div id="centerMonth21">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="GasMonNext">Next Month <i class="icon-forward"></i>
+																</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="GasMonfastNext">Next
+																	Year <i class="icon-fast-forward icon-white"></i>
+																</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row-fluid" id="divGasMonthChart"></div>
+									<div id="divGasMonthChartMissing"></div>
+									<div
+										style="border-top: 1px solid #cccccc; padding-top: 15px; margin-left: -12px; color: #004976;"></div>
+									<div class="row-fluid">
+										<table align="center">
+											<tr>
+												<td colspan="2" align="center"
+													style="color: #004976; padding-bottom: 15px;"><strong
+													style="margin-left: -10px;">Savings</strong></td>
+											</tr>
+											<tr>
+												<td align="right">
+													<div
+														style="border-right: 1px solid #cccccc; padding-right: 25px;">
+														<label id="lblGasMonGBP"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignright">GBP</p>
+													</div>
+												</td>
+												<td align="left">
+													<div style="padding-left: 25px;">
+														<label id="lblGasMonkWh"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignleft">kWh</p>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+								</div>
+								<!-- /tab -->
+								<div class="tab-pane" id="gasDaily">
+									<div class="row-fluid">
+										<div class="span4" style="margin-bottom: 15px;">
+											<div id="centerMonth22">
+												<table>
+													<tr>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="GasDayFastPrev"><i
+																	class="icon-fast-backward icon-white"></i> Prev Month</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="GasDayPrev"><i class="icon-backward"></i> Prev
+																	7 Days</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div id="centerMonth23" class="span4 form-horizontal">
+											<div class="control-group">
+												<table align="center">
+													<tr>
+														<td><label class="control-label" style="width: 70px;"
+															for="inputenddate">End Date</label></td>
+														<td><div class="controls input-append date"
+																id="dtGasDaily" data-date="01/01/2013"
+																data-date-format="dd/mm/yyyy">
+																<input class="span8" size="10" type="text" value=""
+																	name="txtGasDailyEndDate" id="txtGasDailyEndDate"
+																	readonly><span class="add-on"><i
+																	class="icon-th"></i></span>
+															</div></td>
+														<td>
+															<button class="btn btn-primary" href="#"
+																id="btndtGasDaily" name="btndtGasDaily"
+																style="margin-top: 0px;">Go</button>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="span4">
+											<div id="centerMonth24">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small" href="javascript:void(0);"
+																	id="GasDayNext">Next 7 Days <i class="icon-forward"></i>
+																</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="GasDayFastNext">Next
+																	Month <i class="icon-fast-forward icon-white"></i>
+																</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row-fluid" id="divGasDailyChart"></div>
+									<div class="alert hide" id="divGasDailyChartMissing"></div>
+									<div
+										style="border-top: 1px solid #cccccc; padding-top: 15px; margin-left: -12px; color: #004976;"></div>
+									<div class="row-fluid">
+										<table align="center">
+											<tr>
+												<td colspan="2" align="center"
+													style="color: #004976; padding-bottom: 15px;"><strong
+													style="margin-left: -10px;">Savings</strong></td>
+											</tr>
+											<tr>
+												<td align="right">
+													<div
+														style="border-right: 1px solid #cccccc; padding-right: 25px;">
+														<label id="lblGasDailyGBP"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignright">GBP</p>
+													</div>
+												</td>
+												<td align="left">
+													<div style="padding-left: 25px;">
+														<label id="lblGasDailykWh"
+															style="font-family: 'helveticaneuelt_std_thinRg', arial; font-weight: normal; color: #004976; font-size: 32px; margin: 0px; line-height: 32px; padding-bottom: 10px;">3000</label>
+														<p class="alignleft">kWh</p>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+
+								</div>
+								<!-- /tab -->
+								<div class="tab-pane" id="gasHalfHourly">
+									<div class="row-fluid">
+										<div class="span4" style="margin-bottom: 15px;">
+											<div id="centerMonth25">
+												<table>
+													<tr>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="GasHHPrev2Weeks"><i
+																	class="icon-fast-backward icon-white"></i> Prev 2 Weeks</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="GasHHPrev"><i class="icon-backward"></i> Prev
+																	Day</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div id="centerMonth26" class="span4 form-horizontal">
+											<div class="control-group">
+												<table align="center">
+													<tr>
+														<td><label class="control-label" style="width: 70px;"
+															for="inputenddate">End Date</label></td>
+														<td><div class="controls input-append date"
+																id="dtGasHH" data-date="01/01/2013"
+																data-date-format="dd/mm/yyyy">
+																<input class="span8" size="10" type="text" value=""
+																	name="txtGasHHEndDate" id="txtGasHHEndDate" readonly><span
+																	class="add-on"><i class="icon-th"></i></span>
+															</div></td>
+														<td>
+															<button class="btn btn-primary" href="#" id="btndtGasHH"
+																name="btndtGasHH" style="margin-top: 0px;">Go</button>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="span4">
+											<div id="centerMonth27">
+												<table align="center">
+													<tr>
+														<td><div>
+																<a class="btn btn-small " href="javascript:void(0);"
+																	id="GasHHNext">Next Day <i class="icon-forward"></i>
+																</a>
+															</div></td>
+														<td><div>
+																<a class="btn btn-small btn-inverse"
+																	href="javascript:void(0);" id="GasHHNext2Weeks">Next
+																	2 Weeks <i class="icon-fast-forward icon-white"></i>
+																</a>
+															</div></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row-fluid" id="divGasHHChart"></div>
+									<div class="alert hide" id="divGasHHChartMissing"></div>
+								</div>
+								<!-- /tab -->
+								<div class="tab-pane" id="documents">
+									<td style="border-top: 0px !important;"><button
+											class="btn btn-primary"
+											style="float: right; margin-top: 0.5%;" id="btnImport"
+											data-toggle="modal" name="btnImport"
+											onClick="javascript:return openImportEnergyUser();">Upload
+											New Document</button></td>
+									<div class="row-fluid" align="right">
+										<table class="table" align="right"
+											style="width: 12%; margin-bottom: 0px;">
+											<tr style="border-top: 0px;">
+												<td style="border-top: 0px !important;"><div
+														class="input-append" style="margin-top: 2px;">
+														<label class='checkbox'><input type="checkbox"
+															id="chkHideComplete">Hide Completed</label>
+													</div></td>
+
+											</tr>
+										</table>
+									</div>
+									<div class="row-fluid" id="divfilter">
+
+										<table class="table table-hover" name="tblUploaddashBoard"
+											id="tblUploaddashBoard" style="display: none !important;">
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+									<div class="row-fluid" id="WelcomeNoteDocuments">You can
+										begin adding documents to this page by choosing "Upload New
+										Document" option on the right hand side</div>
+								</div>
+								<div class="tab-pane" id="eDigitalForms">Digital Forms are coming soon...</div>
+							</div>
+						</div>
+						<!-- /tab -->
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+		</div>
+		<!-- /row -->
+	</section>
+</div>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Legal Statement - myRentokil</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <!-- Le styles -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <style type="text/css">
+            OL { counter-reset: item; padding-left: 5px; margin-left: -2px; }
+            LI { display: block ; text-align: justify;left: -10px; }
+	    LI:before { content: counters(item, ".") " "; counter-increment: item }
+            ola {list-style-type: none;}
+            lia:before {content: "(" counter(section, lower-alpha) ") ";}
+            lia { counter-increment: section; margin-left: 25px; text-align: justify;float: left;}
+	   .text-justify{text-align: justify;}
+           .footerarrlinks{color: #154401;}                        
+        </style>
+
+        <!-- 
+               HTML5 shim, for IE6-8 support of HTML5 elements 
+               Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+        <!--[if lt IE 9]>
+              <script src="js/html5shiv.js"></script>
+        <![endif]-->
+        <!--[if IE]>
+            <link href="css/edfm-ie.css" rel="stylesheet">
+        <![endif]-->
+    </head>
+    <body class="dashboard">
+        <div class="container">
+            <header class="row-fluid">
+                <div class="span6"><h1 class="logo"><a href="#">EDFM</a></h1></div><!-- text is hidden -->
+                <div class="span6 alignright userlogininfo">
+                    <div class="username">Welcome Guest</div>
+                    <br class="clear noSmall" />
+
+                    <div class="accountlinks"><a href="#">Legal Statement</a></div>
+                    <div id="header-divider"><img src="" class="logininfodivider"></div>                    
+                </div>
+            </header> <!-- /row -->
+            <div class="row-fluid" style="margin-top:60px;">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="row-fluid">
+                            <div class="span12 widget" style="float:none;margin:0 auto;">
+                                <div class="row-fluid">
+                                    <div class="span10"><h2>Legal Statement</h2></div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="tab-content">
+                                        <div>
+                                            <strong class="text-center"><center>LEGAL STATEMENT</center></strong></br>                                           
+                                            <p class="text-justify">The following terms apply to you while accessing material on this site and we encourage you to read this policy before using this site as your use of the site signifies that you agree with all the terms of this policy. You are responsible for bringing these terms to the attention of anyone who may access such material as a result of you.
+											</p></br>  
+											<p class="text-justify">This site is protected by copyright. This site is published by Rentokil Initial plc or one of its subsidiaries and may not be reproduced other than by downloading and viewing on a single cpu for private internal business use only. Content, imagery or artwork may not be otherwise reproduced or transmitted or made available on a network without prior written permission of Rentokil Initial plc.	</p></br> 	
+											<p class="text-justify">The names 'Rentokil', 'Initial', 'Ambius' and 'City Link' are registered trade marks	</p></br> 										
+											<p class="text-justify">Any infringement of Rentokil Initial plc's rights will result in appropriate legal action.	</p></br> 										
+											<p class="text-justify">This site is for information only. Rentokil Initial plc has used reasonable care and skill in compiling the content of this site but makes no warranty as to the accuracy of any information on this site and cannot accept liability for any particular statement or the result of any use made of it.	</p></br> 										
+											<p class="text-justify">Nothing on this site shall constitute an offer or an invitation to sell or the solicitation of an offer to purchase any of the shares in Rentokil Initial plc, nor is anything on this site to be taken as any recommendation to purchase shares in Rentokil Initial plc. If you are considering investing, you should make your own independent assessment and seek your own professional, legal and financial advice.	</p></br> 										
+											<p class="text-justify">If you require any further information please address your enquiry to mailto:<a href="mailto:dpofficer@rentokil-initial.com">dpofficer@rentokil-initial.com</p></br> 										
+									
+                </div>
+            </div>
+        </div><!-- /row -->
+
+    </div>
+</div><!-- /row -->
+
+</div>  
+</div>
+
+
+
+</div> <!-- /row -->
+</div><!-- /container -->
+<footer class="row-fluid footer">
+            <div class="container" id="divContainerFooter">
+                
+            </div> <!-- /container -->
+        </footer> <!-- /row -->
+<!-- The javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery/jquery.1.8.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+		 $("#divContainerFooter").load("index_fmfooter.html");
+		 });
+ </script>
+</body>
+</html>

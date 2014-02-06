@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Customer page Account Screen (logged in)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <link href="css/phpinfo.css" rel="stylesheet">
+        <script type="text/javascript">
+            var loadFileName = 'customerpage_body.html';
+        </script>
+    </head>
+    <body>
+        <!--  Models Start -->
+        <div id="divProfileEdit" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+        <div id="selectCreate" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+        <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+
+        <div id="divNewUser" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xNewUser" name="xNewUser">x</button>
+                <h3 id="myModalLabel">Create a new user</h3>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label style="margin-right: 15px;">
+                                    First name:</label></td>
+                            <td><input type="text" name="txtUserFName" id="txtUserFName" maxlength="80" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label style="margin-right: 15px;">
+                                    Last name:</label></td>
+                            <td><input type="text" name="txtUserLName" id="txtUserLName" maxlength="80"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label style="margin-right: 15px;">
+                                    Email address:</label></td>
+                            <td><input type="text" name="txtUseremail" id="txtUseremail" maxlength="100"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label style="margin-right: 15px;">Confirm
+                                    email:</label></td>
+                            <td><input type="text" name="txtUserCemail"
+                                       id="txtUserCemail" maxlength="100" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <label id="NewUserLabelBtn" style="margin-left: 0px; float:left; color:red;"> </label>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>					
+                <button class="btn btn-primary" id="btnNewUserSubmit" name="btnNewUserSubmit">Submit</button>
+
+            </div>
+        </div>
+        <a class="btn" data-toggle="modal" href="#divSuccess" id="btnSuccess" name="btnSuccess" style="display:none;">HERE</a>
+        <div id="divSuccess" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xNewCustomer" name="xNewCustomer">x</button>
+                <h3 id="lblSuccessHeading" name="lblSuccessHeading">Success</h3>
+            </div>
+            <div class="modal-body">
+                <label class="radio inline" style="margin-right: 15px;" id="lblSuccessMessage">Success</label>
+            </div>
+            <div class="modal-footer">
+                <button class="btn"  id="btnNewUserClose" name="btnNewUserClose" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
+        <div id="divNewProfileUser" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmCreateform" id="frmCreateform" method="post" >  
+                <div class="modal-header">
+                    <button type="button" id="btnclearprofile" class="close" data-dismiss="modal" aria-hidden="true" id="xNewUser" name="xNewUser" onclick="clearProfile()">x</button>
+                    <h3 id="myModalLabel">Create new Profile</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row-fluid" style="margin-bottom: 0px;">									
+                        <div class="control-group form-horizontal">
+                            <label class="control-label" for="name">Profile name :</label>
+                            <input type="text" name="txtnewProfileName" id="txtnewProfileName" maxlength="30" />
+                        </div>
+                        <!--  <label class="alert alert-error hide" id="errorProfileName" style="margin-bottom: 0px;">Please enter valid Profile Name</label> -->
+                    </div>
+
+                </div>
+            </form>
+            <div class="modal-footer">
+                <label id="Profilenameerror" style="margin-left: 0px; float:left;"> </label>
+                <button class="btn" id="btncancelprofile" data-dismiss="modal" aria-hidden="true" onclick="clearProfile()">Cancel</button>					
+                <button class="btn btn-primary" id="btnNewProfileUserSubmit" name="btnNewProfileUserSubmit">Submit</button>
+            </div>
+
+        </div>
+        <div id="BtnToggleModal" data-backdrop="static" data-toggle="modal" data-keyboard="false" class="modal hide fade" 
+             tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xdivImport" name="xdivImport">x</button>
+                <h3>User</h3>
+            </div>
+            <div class="modal-body">
+                <label class="radio inline"  id="ToggleBtnLabel" style=""></label>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" href="#" id="ToggleCancelBtn" name="ToggleCancelBtn">Cancel</button>
+                <button class="btn btn-primary" href="#" id="ToggleOkBtn" name="ToggleOkBtn" >Submit</button>
+            </div>
+        </div>
+        <div id="divAlertDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmAlertDelete" id="frmAlertDelete" method="post" style="height:144px;">  
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xAlertDelete" name="xAlertDelete">x</button>
+                    <h3 id="myAlertLabel">Confirm Delete</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="control-group">				  
+                        <label id="lblConfirmation" for="Username" class="span1" style="margin-left:0px;width: 284px;">Are you sure you want to delete?</label>                                                     						  
+                    </div>                            
+
+                </div>
+                <div class="modal-footer">                                                                               
+                    <a class="btn" data-toggle="modal" id="btnNoAlert" name="btnNewAddPupilAdminClose" data-dismiss="modal" >Cancel</a>
+                    <button class="btn btn-primary" href="#" data-toggle="modal" id="btnYesAlert"
+                            name="btnYesAlert">Delete</button>
+                </div>
+            </form>
+        </div>
+        <div id="DivDeleteProfile" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xDeleteprofile" name="xDeleteprofile">x</button>
+                <h3 id="myModalLabel">Deleted</h3>
+            </div>
+            <div class="modal-body">
+                <label> Success! The profile has been deleted.</label>
+            </div>
+            <div class="modal-footer">			
+                <button class="btn" href="#AddYear" data-dismiss="modal" data-toggle="modal" id="btnDeleteprofile"
+                        name="btnDeleteprofile">Close</button>
+            </div>	
+        </div>
+        <!--  Models End -->
+        <div class="container" id="divcontainer">
+        </div>
+        <!-- /container -->
+        <footer class="row-fluid footer" id="cafooter"></footer>
+        <!-- /row -->
+
+
+        <!-- The javascript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery/jquery.1.8.2.min.js"></script>
+        <script src="js/jquery/jquery.dirtyFields.packed.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/bootstrap/bootstrap-paginator.min.js"></script>
+        <script src="js/jquery/jquery.validate.min.js"></script>
+        <script src="js/jquery/jquery.passstrength.min.js"></script>
+        <script src="js/edfm-custom.min.js"></script>
+        <script src="js/jquery/jquery.tablePagination.0.5.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/cacommon.js"></script>
+        <script src="js/schooladmin.js"></script>
+        <script src="js/cacontract.js"></script>
+        <script src="js/customeradmin.js"></script>
+        <script type="text/javascript">
+            function LoadPageData() {
+                formDirtyCheck();
+                $('input[id="txtProfileName"]', "#divNewProfile").bind("keyup", function() {
+                    $("#lblSavealert").removeClass('alert alert-success').text('');
+                    $("#spnProfileName").css('display', 'none');
+                    $("#txtProfileName").css('border-color', '#cccccc');
+                    $("#lblProfilename").css('color', '#333333');
+                    $("#btnProfileSave").text('Save').attr("disabled", false);
+                });
+                $("#spnContractName").html(localStorage["contractname"]);
+                $("#lnkConfigureContract").bind("click", loadUsers);
+                $("#lnkSysAdmin").bind("click", ServiceSessLogUsers);
+                $("#lnkPhpInfo").bind("click", phpinfo);
+                $("#lnkProfiles").bind("click", SrvUserProfile);
+                $("#btnSessRefresh", "#divSessionLogs").bind("click", SessRefresh);
+                $("#btnSessPurge", "#divSessionLogs").bind("click", ServiceSessPurge);
+                $("#btnSessAddUsers", "#divSessionLogs").bind("click", SessAddUsers);
+                $("#btnSessRemoveUsers", "#divSessionLogs").bind("click", SessRemoveUsers);
+                $("#btnSessionSave", "#divSessionLogs").bind("click", ServiceSessSave);
+                $("#btnProfileAddUsers", "#divProfileUserList").bind("click", ProfileAddUsers);
+                $("#btnProfileRemoveUsers", "#divProfileUserList").bind("click", ProfileRemoveUsers);
+                $("#btnProfileDelete", "#divProfiles").bind("click", modalalert);
+                $("#btnYesAlert", "#divAlertDelete").bind("click", SrvProfileDelete);
+                $("#btnProfileSave", "#divProfiles").bind("click", SrvProfileSave);
+                $('#ddlMasterModule', "#divNewProfile").on('change', function() {
+                    ddlChangeModules();
+                });
+                $('#ddlUserProfile', "#ProfileExist").on('change', function() {
+                    ddlChangeProfile(0);
+                });
+            }
+        </script>
+    </body>
+</html>

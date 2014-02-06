@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>User Account Screen (logged in)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <!-- Le styles -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <link href="css/print.css" rel="stylesheet" type="text/css" media="print">
+        <link href="css/datepicker.css" rel="stylesheet">
+        <link href="css/bootstrapweek.css" rel="stylesheet">
+		<link href="css/960.css" rel="stylesheet" media="screen" />
+        <link href="css/defaultTheme.css" rel="stylesheet" media="screen" />
+        <link href="css/myTheme.css" rel="stylesheet" media="screen" />
+        <style>
+            body {}
+            <!--.dirtyForm {background-color:#ffffcc;}-->
+            .dirtyChoice {font-style:italic;font-weight:bold;}
+            .floatingHeader {
+                position: fixed;
+                top: 0;
+                visibility: hidden;
+            }
+			.persist-header th { 
+			  background-color: white; 
+			  padding: 10px;
+			  margin : 5px;			  		  
+			}
+			.persist-header tr:nth-child(odd) {
+			  background: white;
+			}
+			.persist-header td { 
+			  padding: 10px; 
+			  width: 200px; 
+			}
+			
+        </style>
+        <!-- 
+                HTML5 shim, for IE6-8 support of HTML5 elements 
+                Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+        <!--[if lt IE 9]>
+                  <script src="js/html5shiv.js"></script>
+            <![endif]-->
+        <!--[if IE]>
+                <link href="css/edfm-ie.css" rel="stylesheet">
+            <![endif]-->
+
+        <script type="text/javascript">var loadFileName = 'userpeopleservicespc_body.html', module_code = 'L1PSS';</script>
+    </head>
+    <body>
+        <!--  Models Start -->
+        <div id="divProfileEdit" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:625px"></div>
+        <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+        <div id="divIncludeForm" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddSchoolCustomer" name="xAddSchoolCustomer">x</button>
+                <h3 id="myModalLabel">Confirm Include</h3><input type="hidden" name="hdnDocumentId" id="hdnDocumentId" />
+            </div>
+            <div class="modal-body">
+                <label> Are you sure you want to Include this form?</label>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-toggle="modal" id="UploadDeleteNo" name="UploadDeleteNo" data-dismiss="modal" >Cancel</a>
+                <a class="btn btn-primary" href="#" data-toggle="modal" id="UploadDeleteYes" name="UploadDeleteYes">Submit</a>		
+            </div>
+        </div>
+        <div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" data-toggle="modal" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divLateNumbers">
+            <form method="post" id="frmLateNumbers" name="frmLateNumbers"> 
+                <div class="modal-header">
+                    <button name="xLateNumbers" id="xLateNumbers" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                    <h3 id="myModalLabel">Late Numbers</h3>
+                </div>
+                <div class="modal-body"> 
+                    <div class="row-fluid" style="margin-bottom: 10px;color: black">
+                        <div class="form-inline ">
+                            <label style="margin-bottom: 0px;" id="lblWard">Ward:&nbsp;</label>
+                            <span style="display: inline-block;vertical-align: middle;" class="select-wrap" >
+                                <select id="ddlWardNames"></select></span>
+                        </div>
+                    </div>
+                    <div style="border:2px solid #d3d3d3;height: 180px;overflow: auto;" class="row-fluid">
+                        <table style="width: 95%!important; " id="tblLateNums" class="no-more-tables table table-hover table-striped">
+                            <thead style="border: none;">
+                                <tr>
+                                    <th style="border: none;">Menu Description</th>
+                                    <th style="border: none;">Original</th>
+                                    <th style="border: none;">New</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>  
+                </div>
+            </form>
+            <div class="modal-footer">
+                <div id="divLateNumErr" class="alert alert-error pull-left"></div> 
+                <a data-dismiss="modal" name="btnUpdateClose" id="btnUpdateClose" data-toggle="modal" class="btn">Close</a>
+                <button name="btnLateNumSubmit" id="btnLateNumSubmit" data-toggle="modal" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"  class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divManageException">
+            <div class="modal-header">
+                <button name="xManageException" id="xManageException" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                <h3 id="myModalLabel">Manage Exception</h3>
+            </div>
+            <div class="modal-body"> 
+                <div style="margin-bottom:0px;" class="row-fluid">
+                    <div class="span12 control-group">
+                        <label style="margin-right: 20px;" class="radio inline">
+                            <input type="radio" id="rdoExcludeData" name="rdoManageException" value="1" checked>Exclude Data</label>
+                        <label style="margin-right: 20px;" class="radio inline">
+                            <input type="radio" id="rdoIncludeData" name="rdoManageException" value="0">Include Data</label>
+                        <label class="radio inline">
+                            <input type="radio"  id="rdoApproveException" name="rdoManageException" value="2">Approve Exception</label>
+                    </div>
+                </div>
+                <div>						   
+                    <label>Reason:</label> 
+                </div>               							
+                <div class="control-group form-horizontal">
+                    <textarea maxlength="250" style="width: 86%;height:60px ;resize: none;" id="txaReason"></textarea>
+                </div>							 
+                <label style="margin-right: 15px;"></label> 
+            </div>
+            <div class="modal-footer">
+                <div id="ManageExpErr" class="alert alert-error pull-left hide"></div> 
+                <a data-dismiss="modal" name="btnManageExceptionClose" id="btnManageExceptionClose" data-toggle="modal" class="btn">Close</a>
+                <button name="btnManageExceptionSubmit" id="btnManageExceptionSubmit" data-toggle="modal" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <div class="container" id="divcontainer"></div>
+        <!-- /container -->
+
+        <footer class="row-fluid footer" id="userfooter"></footer>
+        <!-- /row -->
+
+        <!-- The javascript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="minjs/userpeopleservicespc.min.js"></script> 
+		
+		
+    </body>
+</html>
+

@@ -1,0 +1,14 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-hidden="true" id="xNewCustomer" name="xNewCustomer">x</button>
+	<h3 id="myModalLabel">Registration success!</h3>
+</div>
+<div class="modal-body">
+	<tr>
+		<td>
+		<label>Success! Your password is on it's way to your registered email address.</label>
+		</td>
+		<a href="index.html"class="btn btn-primary" style="margin-left: 80%; margin-top: 3%; width: 14%; height: 18px;">Login</a>
+		</td>
+	</tr>			
+</div>

@@ -1,0 +1,15 @@
+/* 
+    Document   : edfm-ie
+    Created on : 16-Mar-2013, 14:09:32
+    Author     : Adam Maltpress
+    Description:
+        IE-specific styles
+*/
+.navbar .nav > li > a {padding: 10px 54px}
+.navbar .nav > li > a:last-child {padding: 10px 54px 10px 55px;}
+
+@media (min-width: 980px) and (max-width: 1199px) { 
+    .navbar .nav > li > a {padding: 10px 31px !important;}
+    .navbar .nav > li > a:last-child {padding: 10px 31px 10px 32px   !important;}
+}
+    span.select-wrap select, span.select-wrap .uneditable-input {top: 3px;}

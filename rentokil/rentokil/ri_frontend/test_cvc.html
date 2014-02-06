@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Customer Performancereports (logged in)</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Rentokil Initial Facilities Services (UK) Ltd" name="author">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta content="Tue, 04 Dec 1993 21:29:02 GMT" http-equiv="Expires"> 
+<meta content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" http-equiv="Cache-Control"> 
+<meta http-equiv="Cache Control: no-cache">
+<meta content="no-cache" http-equiv="Pragma"> 
+<meta http-equiv="Pragma: no-cache">
+<!-- Le styles -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/edfm-custom.css">
+ <!-- 
+        HTML5 shim, for IE6-8 support of HTML5 elements 
+        Avoid using CDN-based scripts to stop untested updates breaking things!
+    -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if IE]>
+        <link href="css/edfm-ie.css" rel="stylesheet">
+    <![endif]-->
+<script type="text/javascript">
+	var loadFileName = 'caperformancereports_body.html'
+</script>
+</head>
+<body>
+<!--  Models Start -->
+	<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divNewDivison">
+		<div class="modal-header">
+			<button name="xNewSelectCreate" id="xNewSelectCreate" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+			<h3 id="myModalLabel">Add Division</h3>
+		</div>
+		<div class="modal-body">	
+		<div style="margin-bottom: 0px;" class="row-fluid">									
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Division name :</label>
+                            <input type="text" maxlength="30" id="txtDivisionName" name="txtDivisionName">
+                        </div>
+                        </div>
+		</div>
+		<div class="modal-footer">
+		<button class="btn" aria-hidden="true" data-dismiss="modal">Close</button>
+		<button id="btnNewDivisionubmit" class="btn btn-primary" name="btnNewDivisionubmit">Submit</button>
+		</div>
+	</div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divEditDivison">
+		<div class="modal-header">
+			<button name="xNewSelectCreate" id="xNewSelectCreate" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+			<h3 id="myModalLabel">Edit Division</h3>
+		</div>
+		<div class="modal-body">	
+		<div style="margin-bottom: 0px;" class="row-fluid">									
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Division name :</label>
+                            <input type="text" maxlength="30" id="txtDivisionName" name="txtDivisionName" value="Technical">
+                        </div>
+                        </div>
+		</div>
+		<div class="modal-footer">
+		<button class="btn" aria-hidden="true" data-dismiss="modal">Close</button>
+		<button id="btnEditDivisonSubmit" class="btn btn-primary" name="btnEditDivisonSubmit">Submit</button>
+		</div>
+	</div>
+		<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divNewBranch">
+		<div class="modal-header">
+			<button name="xNewSelectCreate" id="xNewSelectCreate" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+			<h3 id="myModalLabel">Add Branch</h3>
+		</div>
+		<div class="modal-body">	
+		<div style="margin-bottom: 0px;" class="row-fluid">									
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Branch name :</label>
+                            <input type="text" maxlength="30" id="txtBranchName" name="txtBranchName">
+                        </div>
+                        </div>
+		</div>
+		<div class="modal-footer">
+		<button class="btn" aria-hidden="true" data-dismiss="modal">Close</button>
+		<button id="btnNewBranchSubmit" class="btn btn-primary" name="btnNewBranchSubmit">Submit</button>
+		</div>
+	</div>
+	<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divEditBranch">
+		<div class="modal-header">
+			<button name="xNewSelectCreate" id="xNewSelectCreate" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+			<h3 id="myModalLabel">Edit Branch</h3>
+		</div>
+		<div class="modal-body">	
+		<div style="margin-bottom: 0px;" class="row-fluid">									
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Division name :</label>
+                            <input type="text" maxlength="30" id="txtBranchName" name="txtBranchName" value="Pembroke">
+                        </div>
+                        </div>
+		</div>
+		<div class="modal-footer">
+		<button class="btn" aria-hidden="true" data-dismiss="modal">Close</button>
+		<button id="btnEditBranchSubmit" class="btn btn-primary" name="btnEditBranchSubmit">Submit</button>
+		</div>
+	</div>
+	<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divNewSurvey">
+		<div class="modal-header">
+			<button name="xNewSelectCreate" id="xNewSelectCreate" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+			<h3 id="myModalLabel">Add Survey</h3>
+		</div>
+		<div class="modal-body">	
+		<div style="margin-bottom: 0px;" class="row-fluid">									
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Survey Name:</label>
+                            <input type="text" maxlength="30" id="txtSurvey" name="txtSurvey">
+                        </div>
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Start Date :</label>
+                            <div data-date-format="dd/mm/yyyy" data-date="01/01/2013" id="divFStartdate" class="controls input-append date" style="width:180px;margin-top: 4px;">
+                               <input type="text" class="input-small" readonly="readonly" size="16" id="txtFStart" value="01/01/2013"><span class="add-on"><i class="icon-calendar"></i></span>
+                                                </div>
+                                                </div>
+                        </div>
+		</div>
+		<div class="modal-footer">
+		<button class="btn" aria-hidden="true" data-dismiss="modal">Close</button>
+		<button id="btnNewSurvey" class="btn btn-primary" name="btnNewSurvey">Submit</button>
+		</div>
+	</div>
+	<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divEditSurvey">
+		<div class="modal-header">
+			<button name="xNewSelectCreate" id="xNewSelectCreate" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+			<h3 id="myModalLabel">Edit Survey</h3>
+		</div>
+		<div class="modal-body">	
+		<div style="margin-bottom: 0px;" class="row-fluid">									
+               <div class="control-group form-horizontal">
+                   <label for="name" class="control-label">Survey Name:</label>
+                   <input type="text" maxlength="30" id="txtSurvey" name="txtSurvey" value="Quarter 1 2013">
+               </div>
+               <div class="control-group form-horizontal">
+                   <label for="name" class="control-label">Start Date:</label>
+                  <div data-date-format="dd/mm/yyyy" data-date="01/01/2013" id="divFStartdate" class="controls input-append date" style="width:180px;margin-top: 4px;">
+                          <input type="text" class="input-small" readonly="readonly" size="16" id="txtFStart" value="01/01/2013"><span class="add-on"><i class="icon-calendar"></i></span>
+                      </div></div>
+              </div>
+		</div>
+		<div class="modal-footer">
+		<button class="btn" aria-hidden="true" data-dismiss="modal">Close</button>
+		<button id="btnEditSurvey" class="btn btn-primary" name="btnEditSurvey">Submit</button>
+		</div>
+	</div>
+	
+	<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divNewCategory">
+		<div class="modal-header">
+			<button name="xNewSelectCreate" id="xNewSelectCreate" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+			<h3 id="myModalLabel">Add Category</h3>
+		</div>
+		<div class="modal-body">	
+		<div style="margin-bottom: 0px;" class="row-fluid">									
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Category name :</label>
+                            <input type="text" maxlength="30" id="txtCategoryName" name="txtCategoryName">
+                        </div>
+                        </div>
+		</div>
+		<div class="modal-footer">
+		<button class="btn" aria-hidden="true" data-dismiss="modal">Close</button>
+		<button id="btnNewCategorySubmit" class="btn btn-primary" name="btnNewCategorySubmit">Submit</button>
+		</div>
+	</div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade" data-keyboard="false" data-backdrop="static" id="divEditCategory">
+		<div class="modal-header">
+			<button name="xNewSelectCreate" id="xNewSelectCreate" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+			<h3 id="myModalLabel">Edit Category</h3>
+		</div>
+		<div class="modal-body">	
+		<div style="margin-bottom: 0px;" class="row-fluid">									
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Category name :</label>
+                            <input type="text" maxlength="30" id="txtCategoryName" name="txtCategoryName" value="Standards">
+                        </div>
+                        </div>
+		</div>
+		<div class="modal-footer">
+		<button class="btn" aria-hidden="true" data-dismiss="modal">Close</button>
+		<button id="btnEditCategorySubmit" class="btn btn-primary" name="btnEditCategorySubmit">Submit</button>
+		</div>
+	</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade in" data-keyboard="false" data-toggle="modal" data-backdrop="static" id="divDisableDivision" style="display: none;">
+            <div class="modal-header">
+                <button name="xdivImport" id="xdivImport" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                <h3>Disable</h3>
+            </div>
+            <div class="modal-body">
+                <label style="" id="ToggleBtnLabel" class="inline">Are you sure you want to disable this division?  Doing so will also disable dependent business units and stop new surveys being added to them.</label>
+            </div>
+            <div class="modal-footer">
+                <button name="ToggleCancelBtn" id="ToggleCancelBtn" href="#" data-dismiss="modal" class="btn">Cancel</button>
+                <button name="ToggleOkBtn" id="ToggleOkBtn" href="#" class="btn btn-primary">Submit</button>
+            </div>
+        </div>	
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade in" data-keyboard="false" data-toggle="modal" data-backdrop="static" id="divDisableBranch" style="display: none;">
+            <div class="modal-header">
+                <button name="xdivImport" id="xdivImport" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                <h3>Disable</h3>
+            </div>
+            <div class="modal-body">
+                <label style="" id="ToggleBtnLabel" class="inline">Are you sure you want to disable this branch?  Doing so will stop new surveys being added to it.</label>
+            </div>
+            <div class="modal-footer">
+                <button name="ToggleCancelBtn" id="ToggleCancelBtn" href="#" data-dismiss="modal" class="btn">Cancel</button>
+                <button name="ToggleOkBtn" id="ToggleOkBtn" href="#" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade in" data-keyboard="false" data-toggle="modal" data-backdrop="static" id="divDisableBusinessUnit" style="display: none;">
+            <div class="modal-header">
+                <button name="xdivImport" id="xdivImport" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                <h3>Disable</h3>
+            </div>
+            <div class="modal-body">
+                <label style="" id="ToggleBtnLabel" class="inline">Are you sure you want to disable this business unit?  Doing so will stop new surveys being added to it.</label>
+            </div>
+            <div class="modal-footer">
+                <button name="ToggleCancelBtn" id="ToggleCancelBtn" href="#" data-dismiss="modal" class="btn">Cancel</button>
+                <button name="ToggleOkBtn" id="ToggleOkBtn" href="#" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade in" data-keyboard="false" data-toggle="modal" data-backdrop="static" id="divDisableSurvey" style="display: none;">
+            <div class="modal-header">
+                <button name="xdivImport" id="xdivImport" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                <h3>Disable</h3>
+            </div>
+            <div class="modal-body">
+                <label style="" id="ToggleBtnLabel" class="inline">Are you sure you want to disable this survey?  Doing so will stop new surveys being added to it.</label>
+            </div>
+            <div class="modal-footer">
+                <button name="ToggleCancelBtn" id="ToggleCancelBtn" href="#" data-dismiss="modal" class="btn">Cancel</button>
+                <button name="ToggleOkBtn" id="ToggleOkBtn" href="#" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+         <div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade in" data-keyboard="false" data-toggle="modal" data-backdrop="static" id="divDisableCategory" style="display: none;">
+            <div class="modal-header">
+                <button name="xdivImport" id="xdivImport" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                <h3>Disable</h3>
+            </div>
+            <div class="modal-body">
+                <label style="" id="ToggleBtnLabel" class="inline">Are you sure you want to disable this category?  Doing so will stop the ability to associate any surveys with it.</label>
+            </div>
+            <div class="modal-footer">
+                <button name="ToggleCancelBtn" id="ToggleCancelBtn" href="#" data-dismiss="modal" class="btn">Cancel</button>
+                <button name="ToggleOkBtn" id="ToggleOkBtn" href="#" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade in" data-keyboard="false" data-toggle="modal" data-backdrop="static" id="divEnable" style="display: none;">
+            <div class="modal-header">
+                <button name="xdivImport" id="xdivImport" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                <h3>Enable</h3>
+            </div>
+            <div class="modal-body">
+                <label style="" id="ToggleBtnLabel" class="inline">Are you sure you want to Enable?</label>
+            </div>
+            <div class="modal-footer">
+                <button name="ToggleCancelBtn" id="ToggleCancelBtn" href="#" data-dismiss="modal" class="btn">Cancel</button>
+                <button name="ToggleOkBtn" id="ToggleOkBtn" href="#" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+<!--  Models End -->
+ <div id="divcontainer" class="container"><header id="caheader" class="row-fluid"><div class="span6"><h1 class="logo"><a href="customerpage.html">EDFM</a></h1></div><!-- text is hidden -->
+<div class="span6 alignright userlogininfo">
+    <div id="divWelcome" class="username">Welcome Customer  Admin</div>
+    <br>
+    <div class="accountlinks"><a name="btnManageContract" data-toggle="modal" id="btnManageContract" href="#selectCreate">Manage Contracts</a> | <a name="btnProfileEdit" data-toggle="modal" id="btnProfileEdit" href="#divProfileEdit">My Profile</a> | <a name="btnLogout" id="btnLogout" href="#">Logout</a></div>
+	<div id="header-divider"><img class="logininfodivider" src="img/header-logininfo-divider.png"></div>
+    <div id="divLoggedAs" class="location"> You are administering sample</div>
+</div></header>
+<!-- /row -->
+<nav class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container"> 
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a> 
+            <a data-target=".nav-collapse" data-toggle="collapse" href="#" class="brand hidden-desktop">Navigation</a>
+            <div class="nav-collapse">            
+                <ul class="nav">
+                    <li><a href="customerpage.html">Home</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="capeopleservices.html">People Services</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="cabuildingservices.html">Building Services</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="caresourcemanagement.html">Resource Management</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="active"><a href="#">Performance Reports</a></li>
+                </ul>
+            </div><!-- /nav-collapse -->
+        </div><!-- /container -->
+    </div>
+</nav><!-- /navbar -->
+<nav class="row-fluid tabNav"><!-- secondary nav selects tabs -->
+    <ul id="secondarynav" class="nav nav-tabs">
+    	<li class="active"><a data-toggle="tab" href="#tab1">Customer Voice Counts</a></li>
+        <li><a data-toggle="tab" href="#tab2">Service SLAs</a></li>
+        <li><a data-toggle="tab" href="#tab3">Safety Performance</a></li>
+    </ul>
+</nav>
+
+<div class="alert alert-block hide" id="divProfileNotify">
+    <button data-dismiss="alert" class="close" type="button">×</button>
+    <strong>Warning!</strong>Current administrator is not permitted to change anything on this screen.
+</div>
+<div class="tab-content" id="tabcontent"><!-- begin page tabbed content -->
+  <section id="tab1" class="tab-pane active"><!-- first tab -->
+        <div class="row-fluid">
+            <div class="span12"><!-- left column -->
+                <!-- Row -->
+                <div class="row-fluid">
+                    <!-- wide widget -->
+                    <div class="span12 widget">
+                        <div class="row-fluid  noBottom">
+                            <div class="span10"><h2 style="margin-top: 0px;">Customer Voice Counts Administration</h2></div>
+                        </div><!-- /row -->
+                        <div class="row-fluid hasTabs">
+                            <div class="span12">
+                                <div class="row-fluid noBottom">
+                                    <div style="width:102.6%" class="widgettabs widgetnav span12">
+                                        <ul id="widgetnav" class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#Divisons">1) Divisons</a></li>
+                                            <li><a data-toggle="tab" href="#Branches">2) Branches</a></li>
+                                            <li><a data-toggle="tab" href="#BusinessUnits">3) Business Units</a></li>
+                                            <li><a data-toggle="tab" href="#Surveys">4) Surveys</a></li>
+                                            <li><a data-toggle="tab" href="#EscalationCategories">5) Escalation Categories</a></li>
+                                           </ul>
+                                    </div>
+                                </div><!-- /row -->
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="tab-content">
+                                <div id="Divisons" class="tab-pane active">
+                                    <div style="padding-top: 15px;" class="row-fluid">
+                                        <div class="span12">
+                                            <button style="float:right;" href="#divNewDivison" name="btnAddDivision" data-toggle="modal" id="btnAddDivision" class="btn btn-primary">Add Division</button>                                     
+                                        </div>
+                                    </div>
+
+                                    <div id="divDivisions" style="overflow:auto" class="row-fluid">
+                                    <table id="tblDivisions"  class="no-more-tables table table-hover table-striped edfm-bordered-table">
+                                    <thead><tr><th style="width:80%">Division</th>
+                                    <th></th>
+                                    </tr></thead>
+                                    <tbody>
+                                    <tr><td data-title="Division">Technical</td><td nowrap="nowrap"><button  href="#divEditDivison" data-toggle="modal" id="btnEdit1" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableDivision" data-toggle="modal"  class="btn btn-small btn-danger"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Division">Commercial</td><td nowrap="nowrap"><button  href="#divEditDivison" data-toggle="modal" id="btnEdit2" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableDivision" data-toggle="modal"  class="btn btn-small  btn-danger"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Division">Specialist</td><td nowrap="nowrap"><button  href="#divEditDivison"  data-toggle="modal"id="btnEdit3" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableDivision" data-toggle="modal"  class="btn btn-small  btn-danger"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Division">Professional Services</td><td nowrap="nowrap"><button  href="#divEditDivison"  data-toggle="modal"id="btnEdit4" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divEnable" data-toggle="modal"  class="btn btn-small btn-success"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    <tr><td data-title="Division">Healthcare</td><td nowrap="nowrap"><button  href="#divEditDivison" data-toggle="modal" id="btnEdit5" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableDivision" data-toggle="modal"  class="btn btn-small btn-danger"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Division">Technical</td><td nowrap="nowrap"><button  href="#divEditDivison" data-toggle="modal" id="btnEdit6" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableDivision" data-toggle="modal"  class="btn btn-small btn-danger"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Division">Specialist</td><td nowrap="nowrap"><button  href="#divEditDivison" data-toggle="modal" id="btnEdit7" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divEnable" data-toggle="modal"  class="btn btn-small btn-success"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    <tr><td data-title="Division">Professional Services</td><td nowrap="nowrap"><button  href="#divEditDivison" data-toggle="modal" id="btnEdit8" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableDivision" data-toggle="modal"  class="btn btn-small btn-danger"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Division">Healthcare</td><td nowrap="nowrap"><button  href="#divEditDivison" data-toggle="modal" id="btnEdit9" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableDivision" data-toggle="modal"  class="btn btn-small btn-danger"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Division">Commercial</td><td nowrap="nowrap"><button  href="#divEditDivison" data-toggle="modal" id="btnEdit10" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divEnable" data-toggle="modal"  class="btn btn-small btn-success"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    <tr><td data-title="Division">Specialist</td><td nowrap="nowrap"><button  href="#divEditDivison" data-toggle="modal" id="btnEdit11" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableDivision" data-toggle="modal"  class="btn btn-small btn-danger"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    </tbody></table></div>
+                                    <div align="right" style=" margin-top: 0px; margin-bottom: 10px; " class="pagination" name="tablePagination" id="tablePagination"><input type="hidden" value="1" id="currPageNumber" name="currPageNumber"><ul><li class="disabled"><a id="tablePagination_prevPage" href="javascript:void(0);">Prev</a></li><li class="active"><a id="tablePagination_Page1" href="javascript:void(0);">1</a></li><li><a id="tablePagination_Page2" href="javascript:void(0);">2</a></li><li><a id="tablePagination_Page3" href="javascript:void(0);">3</a></li><li><a id="tablePagination_nextPage" href="javascript:void(0);">Next</a></li></ul></div>
+
+                                </div>
+                                <div id="Branches" class="tab-pane">
+                                    <div style="padding-top: 15px;" class="row-fluid">
+                                        <div class="span12">
+                                            <button style="float:right;" href="#divNewBranch" name="btnAddBranch" data-toggle="modal" id="btnAddBranch" class="btn btn-primary">Add Branch</button>                                     
+                                        </div>
+                                    </div>
+
+                                    <div id="divBranches" style="overflow:auto" class="row-fluid">
+                                    <table id="tblBranches"  class="no-more-tables table table-hover table-striped edfm-bordered-table">
+                                    <thead><tr><th style="width:80%">Branch</th>
+                                    <th></th>
+                                    </tr></thead>
+                                    <tbody>
+                                    <tr><td data-title="Branch">Pembroke</td><td nowrap="nowrap"><button  href="#divEditBranch" data-toggle="modal" id="btnEdit1" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBranch" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Branch">Blackheath</td><td nowrap="nowrap"><button  href="#divEditBranch" data-toggle="modal" id="btnEdit2" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBranch" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Branch">Pembroke</td><td nowrap="nowrap"><button  href="#divEditBranch"  data-toggle="modal"id="btnEdit3" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBranch" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Branch">Blackheath</td><td nowrap="nowrap"><button  href="#divEditBranch"  data-toggle="modal"id="btnEdit4" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divEnable" data-toggle="modal"  class="btn btn-success btn-small"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    <tr><td data-title="Branch">Pembroke</td><td nowrap="nowrap"><button  href="#divEditBranch" data-toggle="modal" id="btnEdit5" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBranch" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Branch">Pembroke</td><td nowrap="nowrap"><button  href="#divEditBranch" data-toggle="modal" id="btnEdit6" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBranch" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Branch">Pembroke</td><td nowrap="nowrap"><button  href="#divEditBranch" data-toggle="modal" id="btnEdit7" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divEnable" data-toggle="modal"  class="btn btn-success btn-small"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    <tr><td data-title="Branch">Pembroke</td><td nowrap="nowrap"><button  href="#divEditBranch" data-toggle="modal" id="btnEdit8" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBranch" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Branch">Blackheath</td><td nowrap="nowrap"><button  href="#divEditBranch" data-toggle="modal" id="btnEdit9" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBranch" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Branch">Pembroke</td><td nowrap="nowrap"><button  href="#divEditBranch" data-toggle="modal" id="btnEdit10" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divEnable" data-toggle="modal"  class="btn btn-success btn-small"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    <tr><td data-title="Branch">Blackheath</td><td nowrap="nowrap"><button  href="#divEditBranch" data-toggle="modal" id="btnEdit11" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBranch" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    </tbody></table></div>
+                                    <div align="right" style=" margin-top: 0px; margin-bottom: 10px; " class="pagination" name="tablePagination" id="tablePagination"><input type="hidden" value="1" id="currPageNumber" name="currPageNumber"><ul><li class="disabled"><a id="tablePagination_prevPage" href="javascript:void(0);">Prev</a></li><li class="active"><a id="tablePagination_Page1" href="javascript:void(0);">1</a></li><li><a id="tablePagination_Page2" href="javascript:void(0);">2</a></li><li><a id="tablePagination_Page3" href="javascript:void(0);">3</a></li><li><a id="tablePagination_nextPage" href="javascript:void(0);">Next</a></li></ul></div>
+
+                                </div>
+                                <div id="BusinessUnits" class="tab-pane">
+                                <div id="divViewBusinessUnit">
+                                    <div style="padding-top: 15px;" class="row-fluid">
+                                        <div class="span12">
+                                            <button style="float:right;" onClick="javascript:addBusinessUnit();" name="btnAddBusinessUnit" id="btnAddBusinessUnit" class="btn btn-primary">Add Business Unit</button>                                     
+                                        </div>
+                                    </div>
+
+                                    <div id="divBusinessUnits" style="overflow:auto" class="row-fluid">
+                                    <table id="tblBusinessUnits"  class="no-more-tables table table-hover table-striped edfm-bordered-table">
+                                    <thead><tr><th style="width:30%">Business Unit</th>
+                                    <th style="width:25%">Division</th>
+                                    <th style="width:25%">Branch</th>
+                                    <th></th>
+                                    </tr></thead>
+                                    <tbody>
+                                    <tr><td data-title="Business Unit">Fire</td><td data-title="Division">Technical</td><td data-title="Branch">Pembroke</td><td nowrap="nowrap"><button  onClick="javascript:addBusinessUnit();" id="btnEdit1" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBusinessUnit" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Commercial West</td><td data-title="Division">Commercial <span class="label">Disabled</span></td><td data-title="Branch">Pembroke</td><td nowrap="nowrap"><button  onClick="javascript:addBusinessUnit();" id="btnEdit2" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBusinessUnit" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Water</td><td data-title="Division">Specialist</td><td data-title="Branch">-</td><td nowrap="nowrap"><button  href="#divEditBusinessUnit"  data-toggle="modal"id="btnEdit3" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBusinessUnit" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Eden</td><td data-title="Division">Professional Services</td><td data-title="Branch">-</td><td nowrap="nowrap"><button  href="#divEditBusinessUnit"  data-toggle="modal"id="btnEdit4" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divEnable" data-toggle="modal"  class="btn btn-success btn-small"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Cleaning</td><td data-title="Division">Healthcare <span class="label">Disabled</span></td><td data-title="Branch">-</td><td nowrap="nowrap"><button  onClick="javascript:addBusinessUnit();" id="btnEdit5" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBusinessUnit" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Commercial West</td><td data-title="Division">Technical</td><td data-title="Branch">-</td><td nowrap="nowrap"><button  onClick="javascript:addBusinessUnit();" id="btnEdit6" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBusinessUnit" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Fire</td><td data-title="Division">Specialist</td><td data-title="Branch">-</td><td nowrap="nowrap"><button  onClick="javascript:addBusinessUnit();" id="btnEdit7" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divEnable" data-toggle="modal"  class="btn btn-success btn-small"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Fire</td><td data-title="Division">Professional Services</td><td data-title="Branch">-</td><td nowrap="nowrap"><button  onClick="javascript:addBusinessUnit();" id="btnEdit8" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBusinessUnit" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Fire</td><td data-title="Division">Healthcare <span class="label">Disabled</span></td><td data-title="Branch">-</td><td nowrap="nowrap"><button  onClick="javascript:addBusinessUnit();" id="btnEdit9" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBusinessUnit" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Fire</td><td data-title="Division">Commercial <span class="label">Disabled</span></td><td data-title="Branch">-</td><td nowrap="nowrap"><button  onClick="javascript:addBusinessUnit();" id="btnEdit10" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBusinessUnit" data-toggle="modal"  class="btn btn-success btn-small"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    <tr><td data-title="Business Unit">Fire</td><td data-title="Division">Specialist</td><td data-title="Branch">-</td><td nowrap="nowrap"><button  onClick="javascript:addBusinessUnit();" id="btnEdit11" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableBusinessUnit" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    </tbody></table></div>
+                                    <div align="right" style="margin-top: 0px; margin-bottom: 10px;" class="pagination" id="tablePagination"><input type="hidden" value="1" id="currPageNumber" name="currPageNumber"><ul><li class="disabled"><a id="tablePagination_prevPage" href="javascript:void(0);">Prev</a></li><li class="active"><a id="tablePagination_Page1" href="javascript:void(0);">1</a></li><li><a id="tablePagination_Page2" href="javascript:void(0);">2</a></li><li><a id="tablePagination_Page3" href="javascript:void(0);">3</a></li><li><a id="tablePagination_nextPage" href="javascript:void(0);">Next</a></li></ul></div>
+								</div>
+								<div id="divNewBusinessUnit" class="hide">
+									<div style="margin-bottom: 0px;" class="row-fluid">									
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Business Unit :</label>
+                            <input type="text" maxlength="30" id="txtBusinessUnit" name="txtBusinessUnit">
+                        </div>
+                        </div>
+                        <div style="margin-bottom: 0px;" class="row-fluid">
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Division :</label>
+                             <span style="display: inline-block;vertical-align: middle;" class="select-wrap" >
+                			  <select id="ddlMenuTypes"><option value="" selected="selected">-- Select One -- </option><option>Technical</option><option>Commercial (disabled)</option><option>Specialist</option><option>Professional Services</option><option>Healthcare (disabled)</option></select></span>
+                        </div>
+                        </div>
+                        <div style="margin-bottom: 0px;" class="row-fluid">
+                         <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Has Branch:</label>
+                            <label class="checkbox"><input type="checkbox" id="chkHasBranch" style="margin-left:0px;" onChange="javascript:disableBranch(this)"> &nbsp;Yes</label>
+                            
+                             </div>
+                             </div>
+                             <div style="margin-bottom: 0px;" class="row-fluid">
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Branch:</label>
+                              <div style="border:2px solid #d3d3d3;height: 120px;width:350px; padding:2px; overflow: auto;">
+                              <label class="checkbox"><input id="chkBranch1" type="checkbox" disabled="disabled">Pembroke</label>
+                              <label class="checkbox"><input id="chkBranch2" type="checkbox" disabled="disabled">Blackheath <span class="label">Disabled</span></label>
+                            </div>
+							</div>
+                        </div>
+                        <div id="accordion_digitalFormReports" class="accordion">
+                        <div class="accordion-group">
+                        <div class="accordion-heading">
+                        <a style="text-decoration: none !important;" href="#accFilter" class="accordion-toggle">Access Control & Notifications</a></div>
+                       <div class="accordion-body collapse in" id="accFilter">
+						<div class="accordion-inner">
+        					<div class="form-horizontal">
+        					<div class="span12">
+		                                                        <div class="tabbable tabs-left">
+																	  <ul class="nav nav-tabs">
+																	  <li class="active"><a href="#divDetractors" data-toggle="tab">Detractors</a></li>
+																	  <li><a href="#divNeutrals" data-toggle="tab">Neutrals</a></li>
+																	  <li><a href="#divPromoters" data-toggle="tab">Promoters</a></li>
+																	  <li><a href="#divAccess" data-toggle="tab">Survey Access</a></li>
+																	   </ul>
+																	  <div class="tab-content">
+																	    <div class="tab-pane active" id="divDetractors">
+														                   <div class="form-horizontal">
+									                                <div style="margin-left: 0px;" class="span12">
+									                                    <div class="span5">
+									                                        <div style="margin-bottom: 10px;color: black" class="row-fluid">
+									                                            Available Users
+									                                        </div>
+									
+									                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+									                                            <table style="padding: 10px;border-collapse: separate; border-spacing: 0 5px;" id="lstAvailableAdmin" name="lstAvailableAdmin" class="table">
+									                                                <tbody>
+									                                                <tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2091" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">testing1 test, chandana.r@cognizant.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2194" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">1212 1212, dsfgdfhgf@d.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2197" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">Cadmin Reg, fminsight00+creg@rentokil-initial.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2198" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">Cadmin RegMail, fminsight00@gmail.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2207" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">alex francis, alex.sebastiyan@cognizant.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2266" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">change demo, sylviahema@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2267" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sampledemo sampledemo, sylviahema+1@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2270" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">newcheck newcheck, sylviahema+2@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2271" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">new2 new2, sylviahema+3@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2272" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">newnew newnew, sylviahema+4@gmail.com</td></tr></tbody>
+									                                            </table>
+									                                        </div>
+									
+									                                    </div>
+									                                    <div style="margin-top: 45px;" class="span2 aligncenter"> 
+									                                        <button name="btnAddAdmin" id="btnAddAdmin" class="btn">Add<i style="float: right; vertical-align: middle; " class="icon-arrow-right"></i></button><br>	
+									                                        <button style="width:110px;" name="btnRemoveAdmin" id="btnRemoveAdmin" class="btn"><i style=" float: left; vertical-align: middle;" class="icon-arrow-left"></i> Remove</button>
+									                                    </div>
+									                                    <div class="span5 pull-right">
+									                                        <div style="margin-bottom: 10px;color: black" class="row-fluid">
+									                                            Selected Users
+									                                        </div>
+									                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+									                                            <table style="padding: 10px; border-collapse: separate; border-spacing: 0 5px;" id="lstSelectedAdmin" name="lstSelectedAdmin" class="table">
+									                                                <tbody>
+									                                                <tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="5" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">Customer Admin, cadmin (Jack Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="249" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">insight facility, def@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="1904" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sdas asds, sadas@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="1905" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sad sd, sd@sda.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="185" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">1212 1212, santhoshk1@live.in (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2078" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">12345 12345, 12345 (Default Profile) </td></tr></tbody>
+									                                            </table>
+									                                        </div>
+									
+									                                    </div>		
+									                                </div>
+									
+									                                </div>
+														                </div>
+														                 <div class="tab-pane" id="divNeutrals">
+														                  <div class="form-horizontal">
+									                                <div style="margin-left: 0px;" class="span12">
+									                                    <div class="span5">
+									                                        <div style="margin-bottom: 10px;color: black" class="row-fluid">
+									                                            Available Users
+									                                        </div>
+									
+									                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+									                                            <table style="padding: 10px;border-collapse: separate; border-spacing: 0 5px;" id="lstAvailableAdmin" name="lstAvailableAdmin" class="table">
+									                                                <tbody>
+									                                                <tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2091" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">testing1 test, chandana.r@cognizant.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2194" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">1212 1212, dsfgdfhgf@d.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2197" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">Cadmin Reg, fminsight00+creg@rentokil-initial.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2198" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">Cadmin RegMail, fminsight00@gmail.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2207" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">alex francis, alex.sebastiyan@cognizant.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2266" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">change demo, sylviahema@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2267" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sampledemo sampledemo, sylviahema+1@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2270" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">newcheck newcheck, sylviahema+2@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2271" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">new2 new2, sylviahema+3@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2272" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">newnew newnew, sylviahema+4@gmail.com</td></tr></tbody>
+									                                            </table>
+									                                        </div>
+									
+									                                    </div>
+									                                    <div style="margin-top: 45px;" class="span2 aligncenter"> 
+									                                        <button name="btnAddAdmin" id="btnAddAdmin" class="btn">Add<i style="float: right; vertical-align: middle; " class="icon-arrow-right"></i></button><br>	
+									                                        <button style="width:110px;" name="btnRemoveAdmin" id="btnRemoveAdmin" class="btn"><i style=" float: left; vertical-align: middle;" class="icon-arrow-left"></i> Remove</button>
+									                                    </div>
+									                                    <div class="span5 pull-right">
+									                                        <div style="margin-bottom: 10px;color: black" class="row-fluid">
+									                                            Selected Users
+									                                        </div>
+									                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+									                                            <table style="padding: 10px; border-collapse: separate; border-spacing: 0 5px;" id="lstSelectedAdmin" name="lstSelectedAdmin" class="table">
+									                                                <tbody>
+									                                                <tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="5" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">Customer Admin, cadmin (Jack Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="249" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">insight facility, def@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="1904" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sdas asds, sadas@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="1905" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sad sd, sd@sda.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="185" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">1212 1212, santhoshk1@live.in (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2078" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">12345 12345, 12345 (Default Profile) </td></tr></tbody>
+									                                            </table>
+									                                        </div>
+									
+									                                    </div>		
+									                                </div>
+									
+									                                </div>
+														                </div>
+														                 <div class="tab-pane" id="divPromoters">
+														                    <div class="form-horizontal">
+									                                <div style="margin-left: 0px;" class="span12">
+									                                    <div class="span5">
+									                                        <div style="margin-bottom: 10px;color: black" class="row-fluid">
+									                                            Available Users
+									                                        </div>
+									
+									                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+									                                            <table style="padding: 10px;border-collapse: separate; border-spacing: 0 5px;" id="lstAvailableAdmin" name="lstAvailableAdmin" class="table">
+									                                                <tbody>
+									                                                <tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2091" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">testing1 test, chandana.r@cognizant.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2194" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">1212 1212, dsfgdfhgf@d.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2197" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">Cadmin Reg, fminsight00+creg@rentokil-initial.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2198" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">Cadmin RegMail, fminsight00@gmail.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2207" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">alex francis, alex.sebastiyan@cognizant.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2266" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">change demo, sylviahema@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2267" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sampledemo sampledemo, sylviahema+1@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2270" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">newcheck newcheck, sylviahema+2@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2271" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">new2 new2, sylviahema+3@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2272" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">newnew newnew, sylviahema+4@gmail.com</td></tr></tbody>
+									                                            </table>
+									                                        </div>
+									
+									                                    </div>
+									                                    <div style="margin-top: 45px;" class="span2 aligncenter"> 
+									                                        <button name="btnAddAdmin" id="btnAddAdmin" class="btn">Add<i style="float: right; vertical-align: middle; " class="icon-arrow-right"></i></button><br>	
+									                                        <button style="width:110px;" name="btnRemoveAdmin" id="btnRemoveAdmin" class="btn"><i style=" float: left; vertical-align: middle;" class="icon-arrow-left"></i> Remove</button>
+									                                    </div>
+									                                    <div class="span5 pull-right">
+									                                        <div style="margin-bottom: 10px;color: black" class="row-fluid">
+									                                            Selected Users
+									                                        </div>
+									                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+									                                            <table style="padding: 10px; border-collapse: separate; border-spacing: 0 5px;" id="lstSelectedAdmin" name="lstSelectedAdmin" class="table">
+									                                                <tbody>
+									                                                <tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="5" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">Customer Admin, cadmin (Jack Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="249" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">insight facility, def@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="1904" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sdas asds, sadas@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="1905" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sad sd, sd@sda.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="185" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">1212 1212, santhoshk1@live.in (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2078" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">12345 12345, 12345 (Default Profile) </td></tr></tbody>
+									                                            </table>
+									                                        </div>
+									
+									                                    </div>		
+									                                </div>
+									
+									                                </div>
+														                </div>
+														                 <div class="tab-pane" id="divAccess">
+														                    <div class="form-horizontal">
+									                                <div style="margin-left: 0px;" class="span12">
+									                                    <div class="span5">
+									                                        <div style="margin-bottom: 10px;color: black" class="row-fluid">
+									                                            Available Users
+									                                        </div>
+									
+									                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+									                                            <table style="padding: 10px;border-collapse: separate; border-spacing: 0 5px;" id="lstAvailableAdmin" name="lstAvailableAdmin" class="table">
+									                                                <tbody>
+									                                                <tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2091" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">testing1 test, chandana.r@cognizant.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2194" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">1212 1212, dsfgdfhgf@d.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2197" content="content goes here..." data-original-title="title here."><td style="border:1px solid #d3d3d3">Cadmin Reg, fminsight00+creg@rentokil-initial.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2198" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">Cadmin RegMail, fminsight00@gmail.com</td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2207" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">alex francis, alex.sebastiyan@cognizant.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2266" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">change demo, sylviahema@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2267" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sampledemo sampledemo, sylviahema+1@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2270" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">newcheck newcheck, sylviahema+2@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2271" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">new2 new2, sylviahema+3@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2272" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">newnew newnew, sylviahema+4@gmail.com</td></tr></tbody>
+									                                            </table>
+									                                        </div>
+									
+									                                    </div>
+									                                    <div style="margin-top: 45px;" class="span2 aligncenter"> 
+									                                        <button name="btnAddAdmin" id="btnAddAdmin" class="btn">Add<i style="float: right; vertical-align: middle; " class="icon-arrow-right"></i></button><br>	
+									                                        <button style="width:110px;" name="btnRemoveAdmin" id="btnRemoveAdmin" class="btn"><i style=" float: left; vertical-align: middle;" class="icon-arrow-left"></i> Remove</button>
+									                                    </div>
+									                                    <div class="span5 pull-right">
+									                                        <div style="margin-bottom: 10px;color: black" class="row-fluid">
+									                                            Selected Users
+									                                        </div>
+									                                        <div style="border:2px solid #d3d3d3;height: 250px;overflow: auto;">
+									                                            <table style="padding: 10px; border-collapse: separate; border-spacing: 0 5px;" id="lstSelectedAdmin" name="lstSelectedAdmin" class="table">
+									                                                <tbody>
+									                                                <tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="5" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">Customer Admin, cadmin (Jack Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="249" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">insight facility, def@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="1904" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sdas asds, sadas@gmail.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="1905" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">sad sd, sd@sda.com (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="185" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">1212 1212, santhoshk1@live.in (Default Profile) </td></tr><tr onclick="addRemoveUsers(this);" onmouseout="hidePop(this);" onmouseover="showPop(this);" id="2078" content="content goes here..." title="title here."><td style="border:1px solid #d3d3d3">12345 12345, 12345 (Default Profile) </td></tr></tbody>
+									                                            </table>
+									                                        </div>
+									
+									                                    </div>		
+									                                </div>
+									
+									                                </div>
+														                </div>
+														                 </div>
+																	</div>
+                                                          </div>
+        				</div>
+        				</div>
+        				</div>         
+        				</div></div>
+                        <div style="width: 100%;margin-left: 0px;" class="controls controls-row span12 row-fluid">	
+                                        <button style="float:right;margin-left: 20px;" disabled="disabled" name="btnSaveBusinessUnit" data-toggle="modal" id="btnSaveBusinessUnit" class="btn btn-primary">Save</button>
+                                        <button style="float:right;" name="btnCloseBusinessUnit" data-toggle="modal" id="btnCloseBusinessUnit" class="btn" onClick="javascript:showBusinessUnit();">Close</button>	
+                                    </div>
+								
+								</div>
+                                </div>
+                                <div id="Surveys" class="tab-pane">
+                                <div id="divViewSurvey">
+                                   <div style="padding-top: 15px;" class="row-fluid">
+                                        <div class="span12">
+                                            <button style="float:right;" onClick="javascript:addSurvey();" name="btnAddSurvey" id="btnAddSurvey" class="btn btn-primary">Add Survey</button>                                     
+                                        </div>
+                                    </div>
+
+                                    <div id="divSurveys" style="overflow:auto" class="row-fluid">
+                                    <table id="tblSurveys"  class="no-more-tables table table-hover table-striped edfm-bordered-table">
+                                    <thead><tr><th style="width:30%">Survey </th>
+                                    <th style="width:25%">Start Date</th>
+                                     <th style="width:25%">Target Totals</th>
+                                    <th></th>
+                                    </tr></thead>
+                                    <tbody>
+                                    <tr><td data-title="Survey">Quarter 1 2013</td><td data-title="Start Date">01/01/2013</td><td data-title="Target Totals">250</td><td nowrap="nowrap"><button  onClick="javascript:addSurvey();"  id="btnEdit1" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableSurvey" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Survey">Quarter 2 2013</td><td data-title="Start Date">01/04/2013</td><td data-title="Target Totals">425</td><td nowrap="nowrap"><button  onClick="javascript:addSurvey();"  id="btnEdit2" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableSurvey" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Survey">Quarter 3 2013</td><td data-title="Start Date">01/07/2013</td><td data-title="Target Totals">526</td><td nowrap="nowrap"><button  onClick="javascript:addSurvey();"  id="btnEdit3" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableSurvey" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Survey">Quarter 4 2013</td><td data-title="Start Date">01/10/2013</td><td data-title="Target Totals">290</td><td nowrap="nowrap"><button  onClick="javascript:addSurvey();"  id="btnEdit4" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divEnable" data-toggle="modal"  class="btn btn-success btn-small"><i class="icon-white icon-ok-sign"></i> Enable</button></td></tr>
+                                    </tbody></table></div>
+                                    <div align="right" style=" margin-top: 0px; margin-bottom: 10px; " class="pagination" name="tablePagination" id="tablePagination"><input type="hidden" value="1" id="currPageNumber" name="currPageNumber"><ul><li class="disabled"><a id="tablePagination_prevPage" href="javascript:void(0);">Prev</a></li><li class="active"><a id="tablePagination_Page1" href="javascript:void(0);">1</a></li><li><a id="tablePagination_Page2" href="javascript:void(0);">2</a></li><li><a id="tablePagination_Page3" href="javascript:void(0);">3</a></li><li><a id="tablePagination_nextPage" href="javascript:void(0);">Next</a></li></ul></div>
+
+                                </div>
+                                 <div id="divAddSurvey" class="hide">
+                          <div style="margin-bottom: 0px;" class="row-fluid">									
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Survey Name:</label>
+                            <input type="text" maxlength="30" id="txtSurvey" name="txtSurvey">
+                        </div>
+                        <div class="control-group form-horizontal">
+                            <label for="name" class="control-label">Start Date :</label>
+                            <div data-date-format="dd/mm/yyyy" data-date="01/01/2013" id="divFStartdate" class="controls input-append date" style="width:250px;margin-top: 4px;">
+                               <input type="text" class="input-small" readonly="readonly" size="16" id="txtFStart" value="01/01/2013" style="width:180px;"><span class="add-on"><i class="icon-calendar"></i></span>
+                                                </div>
+                                                </div>
+                        </div>
+                        
+                         <div id="accordion_digitalFormReports" class="accordion">
+                        <div class="accordion-group">
+                        <div class="accordion-heading">
+                        <a style="text-decoration: none !important;" href="#accFilter" class="accordion-toggle">Targets</a></div>
+                       <div class="accordion-body collapse in" id="accFilter">
+						<div class="accordion-inner">
+        					<div class="form-horizontal">
+        					<div class="span12">
+        					
+        					<ul class="nav nav-list">
+				                <li class="nav-header">Technical</li>
+				                <li class="divider"></li>
+				                <li><table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Fire</label></td>
+					                </table>
+					                <ul class="nav nav-list">
+					                <li >
+					                
+					                <table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Pembroke</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                 <tr><td ><label  class="control-label" style="width:200px;">Blackheath <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                </table>
+				                     </li>
+					               </ul>				                
+				                </li>
+				                <li><table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Commercial West</label></td>
+					                </table>
+					                <ul class="nav nav-list">
+					                <li >
+					                <table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Pembroke</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                <tr><td ><label  class="control-label" style="width:200px;">Blackheath <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                </table>
+					                </li></ul>				                
+				                </li>
+				                <li>
+ 									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Water</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td><td style="width:12px;">&nbsp;</td></tr>
+					                </table>
+				                </li>
+				                <li>
+ 									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Cleaning <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td><td style="width:12px;">&nbsp;</td></tr>
+					                </table>
+				                </li>
+				                <li class="nav-header">Commercial</li>
+				                <li class="divider"></li>
+				                 <li><table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Commerical West </label></td>
+					                </table>
+					                <ul class="nav nav-list">
+					                <li >
+					                 <table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Pembroke</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                 <tr><td ><label  class="control-label" style="width:200px;">Blackheath <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                </table>
+					                </li>
+					                </ul>				                
+				                </li>
+				                <li><table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Eden</label></td>
+					                </table>
+					                <ul class="nav nav-list">
+					                <li >
+									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Pembroke</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                 <tr><td ><label  class="control-label" style="width:200px;">Blackheath <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                </table>
+
+									</li>
+					              </ul>				                
+				                </li>
+				                 <li>
+ 									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Water</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td><td style="width:12px;">&nbsp;</td></tr>
+					                </table>
+				                </li>
+				                <li>
+ 									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Cleaning <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td><td style="width:12px;">&nbsp;</td></tr>
+					                </table>
+				                </li>
+				                <li class="nav-header">Specialist</li>
+				                <li class="divider"></li>
+				                 <li><table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Commerical West </label></td>
+					                </table>
+					                <ul class="nav nav-list">
+					                <li >
+					                 <table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Pembroke</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                 <tr><td ><label  class="control-label" style="width:200px;">Blackheath <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                </table>
+					                </li>
+					                </ul>				                
+				                </li>
+				                <li><table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Eden</label></td>
+					                </table>
+					                <ul class="nav nav-list">
+					                <li >
+									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Pembroke</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                 <tr><td ><label  class="control-label" style="width:200px;">Blackheath <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td></tr>
+					                </table>
+
+									</li>
+					              </ul>				                
+				                </li>
+				                 <li>
+ 									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Water</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td><td style="width:12px;">&nbsp;</td></tr>
+					                </table>
+				                </li>
+				                <li>
+ 									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Cleaning <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td><td style="width:12px;">&nbsp;</td></tr>
+					                </table>
+				                </li>
+				                <li class="nav-header">Healthcare <span class="label">Disabled</span></li>
+				                <li class="divider"></li>
+				                 
+				                <li>
+ 									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Water</label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td><td style="width:12px;">&nbsp;</td></tr>
+					                </table>
+				                </li>
+				                <li>
+ 									<table  class="table-hover" style="width:100%">
+					                <tr><td ><label  class="control-label" style="width:200px;">Cleaning <span class="label">Disabled</span></label></td>
+					                <td nowrap="nowrap" style="text-align:right;"><input type="text" style="width:80px;" value=""></td><td style="width:12px;">&nbsp;</td></tr>
+					                </table>
+				                </li>
+				              </ul>
+        					  <table id="tblBusinessUnits"  class="no-more-tables table table-hover table-striped edfm-bordered-table hide">
+                                    <thead><tr><th style="width:30%">Business Unit</th>
+                                    <th style="width:25%">Division</th>
+                                    <th style="width:25%">Branch</th>
+                                    <th>Target</th>
+                                    </tr></thead>
+                                    <tbody>
+                                    <tr><td data-title="Business Unit">Fire</td><td data-title="Division">Technical</td><td data-title="Branch">Pembroke</td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    <tr><td data-title="Business Unit">Commercial West</td><td data-title="Division">Commercial <span class="label">Disabled</span></td><td data-title="Branch">Pembroke</td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    <tr><td data-title="Business Unit">Water <span class="label">Disabled</span></td><td data-title="Division">Specialist</td><td data-title="Branch">-</td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    <tr><td data-title="Business Unit">Eden</td><td data-title="Division">Professional Services</td><td data-title="Branch">Blackheath <span class="label">Disabled</span></td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    <tr><td data-title="Business Unit">Cleaning</td><td data-title="Division">Healthcare <span class="label">Disabled</span></td><td data-title="Branch">-</td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    <tr><td data-title="Business Unit">Fire</td><td data-title="Division">Technical</td><td data-title="Branch">Pembroke</td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    <tr><td data-title="Business Unit">Commercial West</td><td data-title="Division">Commercial <span class="label">Disabled</span></td><td data-title="Branch">Pembroke</td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    <tr><td data-title="Business Unit">Water</td><td data-title="Division">Specialist</td><td data-title="Branch">-</td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    <tr><td data-title="Business Unit">Eden</td><td data-title="Division">Professional Services</td><td data-title="Branch">-</td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    <tr><td data-title="Business Unit">Cleaning</td><td data-title="Division">Healthcare <span class="label">Disabled</span></td><td data-title="Branch">-</td><td nowrap="nowrap" data-title="Target"><input type="text" style="width:80px;" value=""></td></tr>
+                                    </tbody></table>
+                            </div>
+        					</div>
+        					</div>
+        					</div>
+        					</div>
+        					</div>
+                          
+                             <div style="width: 100%;margin-left: 0px;" class="controls controls-row span12 row-fluid">	
+                                        <button style="float:right;margin-left: 20px;" disabled="disabled" name="btnSaveSurvey" data-toggle="modal" id="btnSaveSurvey" class="btn btn-primary">Save</button>
+                                        <button style="float:right;" name="btnCloseSurvey" data-toggle="modal" id="btnCloseBusinessUnit" class="btn" onClick="javascript:showSurvey();">Close</button>	
+                                    </div>
+                          
+                            </div>
+                                </div>
+                                <div id="EscalationCategories" class="tab-pane">
+                                  <div style="padding-top: 15px;" class="row-fluid">
+                                        <div class="span12">
+                                            <button style="float:right;" href="#divNewCategory" name="btnAddCategory" data-toggle="modal" id="btnAddCategory" class="btn btn-primary">Add Category</button>                                     
+                                        </div>
+                                    </div>
+
+                                    <div id="divDivisions" style="overflow:auto" class="row-fluid">
+                                    <table id="tblDivisions"  class="no-more-tables table table-hover table-striped edfm-bordered-table">
+                                    <thead><tr><th style="width:80%">Category</th>
+                                    <th></th>
+                                    </tr></thead>
+                                    <tbody>
+                                    <tr><td data-title="Category">Standards</td><td nowrap="nowrap"><button  href="#divEditCategory" data-toggle="modal" id="btnEdit1" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableCategory" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Category">Attendance</td><td nowrap="nowrap"><button  href="#divEditCategory" data-toggle="modal" id="btnEdit2" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableCategory" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    <tr><td data-title="Category">Management</td><td nowrap="nowrap"><button  href="#divEditCategory"  data-toggle="modal"id="btnEdit3" class="btn btn-small"><i class="icon-pencil"></i> Edit</button> <button style="margin-right:10px;"  href="#divDisableCategory" data-toggle="modal"  class="btn btn-danger btn-small"><i class="icon-white icon-remove-sign"></i> Disable</button></td></tr>
+                                    </tbody></table></div>
+                                    <div align="right" style=" margin-top: 0px; margin-bottom: 10px; " class="pagination" name="tablePagination" id="tablePagination"><input type="hidden" value="1" id="currPageNumber" name="currPageNumber"><ul><li class="disabled"><a id="tablePagination_prevPage" href="javascript:void(0);">Prev</a></li><li class="active"><a id="tablePagination_Page1" href="javascript:void(0);">1</a></li><li><a id="tablePagination_Page2" href="javascript:void(0);">2</a></li><li><a id="tablePagination_Page3" href="javascript:void(0);">3</a></li><li><a id="tablePagination_nextPage" href="javascript:void(0);">Next</a></li></ul></div>
+
+                                </div>
+                            </div>
+                           
+                           
+                        </div><!-- /row -->
+
+                    </div>
+                </div><!-- /row -->
+            </div>
+
+        </div> <!-- /row -->
+    </section>
+</div>
+</div><!-- /container -->
+        
+<footer id="cafooter" class="row-fluid footer"><div class="container">
+	<div class="span4">
+		<h3>Useful links</h3>
+		<div class="footercontent">
+			<div id="lfbi1"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="lfbd1"><a href="#"> Documentation</a></span></div>
+			<div id="lfbi2"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="lfbd2"><a href="#"> Contact us </a></span></div>
+			<div id="lfbi3"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="lfbd3"><a href="#">Privacy </a></span></div> 
+			<div id="lfbi4"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="lfbd4"><a href="#"> Policy </a></span></div> 			
+		</div>
+	</div>
+	<div class="span4">
+		<h3>About Initial</h3>
+		<div class="footercontent">
+			<div id="rfbi1"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="rfbd1"><a href="#"> About us </a></span></div> 
+			<div id="rfbi2"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="rfbd2"><a href="#"> Contact us </a></span></div>
+			<div id="rfbi3"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="rfbd3"><a href="#">Careers </a></span></div> 
+			<div id="rfbi4"><span class="footerarrlinks"> &gt; </span><span class="footerContentlinks" id="rfbd4"><a href="#"> Media </a></span></div>			
+		</div>
+	</div>
+	<div class="span4">
+		<div class="copyright">
+			<p>&copy;2012 Rentokil Initial plc. Registered in England
+				5393279.</p>
+			<p>Registered office: 2 City Place, Beehive Ring Road, Gatwick,
+				RH6 0HA.</p>
+			<p>The names Rentokil&reg; and Initial&reg; are registered trade
+				marks.</p>
+		</div>
+	</div>
+</div>
+<!-- /container --></footer> <!-- /row -->
+
+	<!-- The javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!--DE 521 session check and redirecting to homepage-->
+	<script src="js/jquery/jquery.1.8.2.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/edfm-custom.min.js"></script>
+	<script src="js/jquery/jquery.validate.min.js"></script>
+	<script src="js/jquery/jquery.passstrength.min.js"></script>
+	<script src="js/jquery/jquery.tablePagination.0.5.js"></script>
+    <script>
+    function addBusinessUnit(){
+    $("#divViewBusinessUnit").hide();
+    $("#divNewBusinessUnit").show();
+    }
+    function showBusinessUnit(){
+    	$("#divViewBusinessUnit").show();
+        $("#divNewBusinessUnit").hide();
+        	
+    }
+    function addSurvey(){
+    	$("#divViewSurvey").hide();
+        $("#divAddSurvey").show();
+        }	
+    function disableBranch(f){
+    	if($(f).is(":checked")){$("#chkBranch1").removeAttr("disabled");$("#chkBranch2").removeAttr("disabled");}
+    	else {$("#chkBranch1").attr("checked",false).attr("disabled","disabled");$("#chkBranch2").attr("checked",false).attr("disabled","disabled");}
+    }
+    function showSurvey(){
+    	$("#divViewSurvey").show();
+        $("#divAddSurvey").hide();
+    }
+    </script>
+
+</body></html>

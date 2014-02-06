@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>User Account Screen (logged in)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author"
+	content="Rentokil Initial Facilities Services (UK) Ltd">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" />
+<meta http-equiv="Cache-Control"
+	content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" />
+<meta http-equiv="Cache Control: no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Pragma: no-cache" />
+<!-- Le styles -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/edfm-custom.css" rel="stylesheet">
+<link href="css/print.css" rel="stylesheet" type="text/css"
+	media="print">
+<link href="css/datepicker.css" rel="stylesheet">
+<link href="css/bootstrapweek.css" rel="stylesheet">
+<style>
+body {
+	
+}
+
+<!--
+.dirtyForm {
+	background-color: #ffffcc;
+}
+
+-->
+.dirtyChoice {
+	font-style: italic;
+	font-weight: bold;
+}
+</style>
+<!-- 
+                HTML5 shim, for IE6-8 support of HTML5 elements 
+                Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+<!--[if lt IE 9]>
+                  <script src="js/html5shiv.js"></script>
+            <![endif]-->
+<!--[if IE]>
+                <link href="css/edfm-ie.css" rel="stylesheet">
+            <![endif]-->
+
+<script type="text/javascript">
+	var loadFileName = 'userpeopleservices_body.html'
+</script>
+</head>
+<body>
+<div id="BtnToggleModal" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button name="xdivImport" id="xdivImport" aria-hidden="true" data-dismiss="modal" class="close" type="button">x</button>
+                <h3>Cancel Orders</h3>
+            </div>
+            <div class="modal-body">
+                <label style="" id="ToggleBtnLabel" class="radio inline">Are you sure you want to Cancel all these orders?</label>
+            </div>
+            <div class="modal-footer">
+                <button name="ToggleCancelBtn" id="ToggleCancelBtn" href="#" class="btn" data-dismiss="modal">Cancel</button>
+                <button name="ToggleOkBtn" id="ToggleOkBtn" href="#" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        
+    <div id="divUpdateMessage" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmAddpupil" id="frmAddpupil" method="post"> 
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xNewCustomerAdmin" name="xNewCustomerAdmin">x</button>
+                    <h3 id="myModalLabel">
+                        Update Message</h3>
+                </div>
+                <div class="modal-body"> 
+                <div>						   
+                        <label>System Message:</label> 
+                    </div>               							
+                    <div class="control-group form-horizontal">
+                                                                                                   
+                       <textarea id='txaComments' style="width: 86%;height:60px ;resize: none;" maxlength="250">Pupil has been reactivated by %First name% %Last Name% at 12:45 on 14/09/2013</textarea>
+                    </div>							 
+                    <label style="margin-right: 15px;"></label> 
+                                        
+                </div>
+            </form>
+            <div class="modal-footer">
+                <div class="controls"  >
+
+
+                    <!-- <p><input type="text" class="alert alert-error" id="inputError" style="text-align:center; display:none;"  disabled><button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </p> -->
+                </div> 
+                <div id="AddPupilFooterLabelError">
+                    <label id="AddPupilFooterLabel" style="margin-left: 0px; float:left;"></label>
+                </div>
+                <a class="btn" data-toggle="modal" id="btnNewAddPupilAdminClose" name="btnNewAddPupilAdminClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" href="#" data-toggle="modal" id="btnNewAddPupilAdminSubmit"
+                        name="btnNewAddPupilAdminSubmit">Submit</button>
+            </div>
+        </div>
+        <div id="divEmailParents" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmAddpupil" id="frmAddpupil" method="post"> 
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xNewCustomerAdmin" name="xNewCustomerAdmin">x</button>
+                    <h3 id="myModalLabel">
+                       Email Parents</h3>
+                </div>
+                <div class="modal-body"> 
+                <div>						   
+                        <label>Please see below email message:</label> <br/>
+                    </div>               				
+                    			
+                    <div class="control-group form-horizontal" style="border: 1px solid #ccc;">
+                                                                                                   
+                       <label>Dear &lt;&lt;First name&gt;&gt; &lt;&lt;Last name&gt;&gt;, <br /><br />
+                       The following orders have been updated by the Eden Team <br />
+                       - &lt;&lt;First Name&gt;&gt; &lt;&lt;Last Name&gt;&gt;, meal order for &lt;&lt;Fulfillment Date&gt;&gt;</label> 
+                       
+                       <textarea id='txaComments' placeholder='Enter text....' style="width: 98%;height:100px ;resize: none;" maxlength="250">
+
+The meal orde has been updated due to the reason: Pupil has been updated to allow FSM by %First name% %Last Name% at 12:45 on 14/09/2013
+
+Please review these orders online. Do not respond to this email address because the inbox is not monitored
+
+Any orders that are cancelled will have the value refunded to the account balance.
+
+Regards, 
+
+The Eden Team</textarea>
+                    </div>							 
+                    <label style="margin-right: 15px;"></label> 
+                                        
+                </div>
+            </form>
+            <div class="modal-footer">
+                <div class="controls"  >
+
+
+                    <!-- <p><input type="text" class="alert alert-error" id="inputError" style="text-align:center; display:none;"  disabled><button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </p> -->
+                </div> 
+                <div id="AddPupilFooterLabelError">
+                    <label id="AddPupilFooterLabel" style="margin-left: 0px; float:left;"></label>
+                </div>
+                <a class="btn" data-toggle="modal" id="btnNewAddPupilAdminClose" name="btnNewAddPupilAdminClose" data-dismiss="modal" >Close</a>
+                <button class="btn btn-primary" href="#" data-toggle="modal" id="btnNewAddPupilAdminSubmit"
+                        name="btnNewAddPupilAdminSubmit">Submit</button>
+            </div>
+        </div>
+	<div class="container" id="divcontainer">
+		<header class="row-fluid" id="userheader">
+			<div class="span6">
+				<h1 class="logo">
+					<a href="userpage.html" id="lnkHeaderLogo">EDFM</a>
+				</h1>
+			</div>
+			<!-- text is hidden -->
+			<div class="span6 alignright userlogininfo">
+				<div class="username" id="divWelcome">Welcome tab 1</div>
+				<br class="clear noSmall">
+				<div class="accountlinks">
+					<a href="#divProfileEdit" id="btnProfileEdit" data-toggle="modal"
+						name="btnProfileEdit">My Profile</a> | <a href="#" id="btnLogout"
+						name="btnLogout">Logout</a>
+				</div>
+				<div id="header-divider">
+					<img
+						src="https://riwebqa.cognizant.com/ri_backend/index.php/c_view_assets?skin_id=55&amp;img_name=header_div.png"
+						class="logininfodivider">
+				</div>
+				<div class="location" id="divLoggedAs">sample</div>
+			</div>
+		</header>
+		<!-- /row -->
+		<nav class="navbar-static-top navbar" id="navLevel1">
+			<div class="navbar-inner">
+				<div class="container">
+					<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+					<a class="btn btn-navbar" data-toggle="collapse"
+						data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
+					</a> <a class="brand hidden-desktop" href="#" data-toggle="collapse"
+						data-target=".nav-collapse">Navigation</a>
+					<div class="nav-collapse">
+						<ul class="nav" id="l1nav">
+							<li class=""><a href="userpage.html" id="UHome" name="UHome">Home</a></li>
+							<li class="divider-vertical"></li>
+							<li class="active"><a href="javascript:void(0);"
+								id="UPeople Services" name="UPeople Services">People
+									Services</a></li>
+							<li class="divider-vertical"></li>
+							<li class=""><a href="userbuildingservices.html"
+								id="UBuilding Services" name="UBuilding Services">Building
+									Services</a></li>
+							<li class="divider-vertical"></li>
+							<li class=""><a href="userresourcemanagement.html"
+								id="UResource Management" name="UResource Management">Resource
+									Management</a></li>
+							<li class="divider-vertical"></li>
+							<li class=""><a href="userperformancereports.html"
+								id="UPerformance Reports" name="UPerformance Reports">Performance
+									Reports</a></li>
+						</ul>
+					</div>
+					<!-- /nav-collapse -->
+				</div>
+				<!-- /container -->
+			</div>
+		</nav>
+		<!-- /navbar -->
+		<nav class="row-fluid tabNav" id="navLevel2">
+			<!-- secondary nav selects tabs -->
+			<ul class="nav nav-tabs" id="secondarynav">
+				<li class="active"><a href="#secCatering" data-toggle="tab">Catering</a></li>
+				<li class=""><a href="#secCleaning" data-toggle="tab">Cleaning</a></li>
+			</ul>
+		</nav>
+		<div id="tabcontent" class="tab-content">
+			<!-- begin page tabbed content -->
+			<section class="tab-pane active" id="secCatering">
+				<!-- first tab -->
+				<div class="row-fluid">
+					<!-- left column -->
+					<!-- Row -->
+					<div class="row-fluid">
+						<!-- full width widget -->
+						<div class="span12 widget">
+							<div class="row-fluid noBottom">
+								<div class="span10">
+									<h2 id="headername" style="margin-top: 0px;">Catering
+										Dashboard</h2>
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="row-fluid hasTabs" id="navLevel3" style="">
+								<div class="span12">
+									<div class="row-fluid noBottom">
+										<div class="widgettabs widgetnav" style="width: 99.6%">
+											<ul class="nav nav-tabs" id="widgetnav">
+												<li id="li_mypupilstab" style="display: inline" class=""><a
+													href="#mypupils" data-toggle="tab" id="mypupilstab">My
+														Pupils</a></li>
+												<li id="li_tabMyOrders" style="display: inline" class=""><a
+													href="#divMyOrders" data-toggle="tab" id="tabMyOrders">My
+														Orders</a></li>
+												<li id="lid_dmSchoolOffice" class="dropdown active"
+													style="display: inline"><a href="#"
+													class="dropdown-toggle" data-toggle="dropdown">School
+														Office <b class="caret"></b>
+												</a>
+													<ul class="dropdown-menu">
+														<li id="lid_tabMySchools" style="display: inline" class=""><a
+															href="#myschools" data-toggle="tab" id="tabMySchools">My
+																Schools</a></li>
+														<li id="lid_tabMyMenus" style="display: inline" class=""><a
+															href="#mymenus" data-toggle="tab" id="tabMyMenus">My
+																Menus</a></li>
+														<li id="lid_tabMyHosOrders" style="display: inline"
+															class=""><a href="#myhosorders" data-toggle="tab"
+															id="tabMyHosOrders">Hospitality Orders</a></li>
+														<li id="lid_tabMyHosOrders" style="display: none;"><a
+															href="#myhoshistory" data-toggle="tab"
+															id="tabMyHosOrders">Hospitality History</a></li>
+														<li id="lid_tabMealOrder" style="display: inline"><a
+															href="#divMealOrders" data-toggle="tab" id="tabMealOrder">Meal
+																Order Summary</a></li>
+														<li id="lid_tabDailyMeal" style="display: inline" class=""><a
+															href="#mydailymeal" data-toggle="tab" id="tabDailyMeal">Daily
+																Meal Collection</a></li>
+														<li id="lid_tabCancelMeal" style="display: inline"
+															class="active"><a href="javascript:void(0);"
+															data-toggle="tab" id="tabCancelMeal">Batch Order Cancellation</a></li>
+														</ul></li>
+
+												<li id="lid_dmPayments" class="dropdown"
+													style="display: inline"><a href="#"
+													class="dropdown-toggle" data-toggle="dropdown">Payments<b
+														class="caret"></b></a>
+													<ul class="dropdown-menu">
+														<li id="lid_tabCardMakePayment" style="display: inline"><a
+															href="#cardmakePayment" data-toggle="tab"
+															id="tabCardMakePayment">Make Card Payment</a></li>
+														<li id="lid_tabCardPaymentHistory" style="display: inline"><a
+															href="#cardpaymentHistory" data-toggle="tab"
+															id="tabCardPaymentHistory">Parent Payment History</a></li>
+														<li id="lid_tabCashMakePayment" style="display: inline"><a
+															href="#cashmakePayment" data-toggle="tab"
+															id="tabCashMakePayment">Make Cash Payment</a></li>
+														<li id="lid_tabCashPaymentHistory" style="display: inline"><a
+															href="#cashpaymentHistory" data-toggle="tab"
+															id="tabCashPaymentHistory">School Payment History</a></li>
+														<li id="lid_tabCashMakeRefund" style="display: inline"><a
+															href="#CashMakeRefund" data-toggle="tab"
+															id="tabCashMakeRefund">Make Cash Refund</a></li>
+													</ul></li>
+											</ul>
+										</div>
+									</div>
+									<!-- /row -->
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="row-fluid">
+								<div class="tab-content">
+									<div class="tab-pane active" id="divCancelOrderstab">	
+									<div align="right" id="divOrderSchools" class="row-fluid hide" style="display: block;">
+                                    <table>
+                                        <tbody><tr>
+                                        <td><label  style="margin-top:5px;" class="checkbox"><input type="checkbox" id="chkShowCollected">Show Cleared</label></td>
+                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+											<!-- US 312 item 15 label alignment-->
+                                            <td><label style="margin-bottom: 0px;">School:</label></td>
+                                            <td><span class="select-wrap"><select id="ddlOrderSchools"><option value="347">donbosco</option><option value="281">school123</option></select></span></td>
+
+                                        </tr>
+                                    </tbody></table>
+                                </div>									
+										<div class="accordion" id="accMainMyorders">
+											<div class="accordion-group">
+												<div class="accordion-heading">
+													<a class="accordion-toggle" data-toggle=""
+														data-parent="#accMainMyorders" href="javascript:void(0);"
+														style="text-decoration: none !important;">Batch Order Cancellation</a>
+												</div>
+												<div id="divaccMyOrders1"
+													class="accordion-body collapse in ">
+													<div class="accordion-inner">
+														<div class="accordion" id="divPupMyOrders1">
+														
+														<table class="no-more-tables table table-hover" style="width:100%;" >
+														<thead style="border: none;">
+																	<tr>
+																	<th style="border: none;">System Message</th>
+																	<th style="border: none;">User Message</th>
+																	<th style="border: none;">Impacted Orders (past)</th>
+																	<th style="border: none;">Impacted Orders (today & future)</th>
+																	<th style="border: none; width:15%">&nbsp;</th>
+																	</tr>
+																	</thead>
+                                                   
+                                                    	<tbody><tr><td data-title="System Message"><span>Pupil has been reactivated by %First name% %Last Name% at 12:45 on 14/09/2013</span></td>
+                                                    	<td data-title="User Message"><span>Pupil has been reactivated on 14/09/2013</span></td>
+                                                    	<td data-title="Impacted Orders (past)">20</td>
+                                                    	<td data-title="Impacted Orders (today & future)">100</td>
+                                                    		<td class="alignright" ><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															  <ul class="dropdown-menu" role="menu">
+															    <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li class="disabled"><a href="#"><i class="icon-ok"></i> Email Parents</a></li>
+															   <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li class="disabled"><a href="#"><i class="icon-ok"></i> Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+                                                    <tr><td data-title="System Message"><span>Pupil has been updated to allow FSM by %First name% %Last Name% at 12:45 on 14/09/2013</span></td>
+                                                    <td data-title="User Message"><span>Pupil has been registered for FSM on 14/09/2013</span></td>
+                                                    	<td data-title="Impacted Orders (past)">10</td>
+                                                    	<td data-title="Impacted Orders (today & future)">70</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															 <ul class="dropdown-menu" role="menu">
+															    <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+															<tr><td data-title="System Message"><span>Pupil has been changed from Child to Adult by %First name% %Last Name% at 12:45 on 14/09/2013</span></td>
+                                                    	 <td data-title="User Message"><span>Pupil has been changed to Adult on 14/09/2013</span></td>
+                                                    	<td data-title="Impacted Orders (past)">0</td>
+                                                    	<td data-title="Impacted Orders (today & future)">20</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															<ul class="dropdown-menu" role="menu">
+															     <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+															<tr><td data-title="System Message"><span>Menu 1, Week 2 main menu description has been updated by %First name% %Last Name% at 12:45 on 14/09/2013</span></td>
+                                                    	 <td data-title="User Message"><span>&nbsp;</span></td>
+                                                    	<td data-title="Impacted Orders (past)">2</td>
+                                                    	<td data-title="Impacted Orders (today & future)">100</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															  <ul class="dropdown-menu" role="menu">
+															     <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+															<tr><td data-title="System Message"><span>Menu 1, Week 2 main menu price has been updated by %First name% %Last Name% at 12:45 on 14/09/2013</span></td>
+                                                    	<td data-title="User Message"><span>&nbsp;</span></td>
+                                                    	<td data-title="Impacted Orders (past)">0</td>
+                                                    	<td data-title="Impacted Orders (today & future)">60</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															 <ul class="dropdown-menu" role="menu">
+															      <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+                                                    			<tr><td data-title="System Message"><span>Menu 1 start date has been changed from dd/mm/yyyy to dd/mm/yyyy by %First name% %Last Name% at 12:45 on 14/09/2013</span></td>
+                                                    	<td data-title="User Message"><span>&nbsp;</span></td>
+                                                    	<td data-title="Impacted Orders (past)">0</td>
+                                                    	<td data-title="Impacted Orders (today & future)">60</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															  <ul class="dropdown-menu" role="menu">
+															     <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+															<tr><td data-title="System Message"><span>Menu 1 menu cycles has been changed from 2 to 3 by %First name% %Last Name% at 12:45 on 14/09/2013</span></td>
+                                                    	<td data-title="User Message"><span>&nbsp;</span></td>
+                                                    	<td data-title="Impacted Orders (past)">0</td>
+                                                    	<td data-title="Impacted Orders (today & future)">60</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															  <ul class="dropdown-menu" role="menu">
+															   <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+															<tr><td data-title="System Message"><span>Servery / production relationship changed by %First name% %Last Name% at 12:45 on 14/09/2013. School A now selects it’s menus from School B</span></td>
+                                                    	<td data-title="User Message"><span>&nbsp;</span></td>
+                                                    	<td data-title="Impacted Orders (past)">0</td>
+                                                    	<td data-title="Impacted Orders (today & future)">60</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															  <ul class="dropdown-menu" role="menu">
+															     <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+															<tr><td data-title="System Message"><span>School A disabled by %First name% %Last Name% at 12:45 on 14/09/2013</span></td>
+                                                    	<td data-title="User Message"><span>&nbsp;</span></td>
+                                                    	<td data-title="Impacted Orders (past)">0</td>
+                                                    	<td data-title="Impacted Orders (today & future)">60</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															 <ul class="dropdown-menu" role="menu">
+															  <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+															<tr><td data-title="System Message"><span>School A closed by %First name% %Last Name% at 12:45 on 14/09/2013. School closed until 16/9/2013 for reason “due to snow”</span></td>
+                                                    	<td data-title="User Message"><span>&nbsp;</span></td>
+                                                    	<td data-title="Impacted Orders (past)">0</td>
+                                                    	<td data-title="Impacted Orders (today & future)">60</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															  <ul class="dropdown-menu" role="menu">
+															  <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+															<tr><td data-title="System Message"><span>School A closed by %First name% %Last Name% at 12:45 on 15/09/2013. School closed until 17/9/2013 for reason “due to snow”</span></td>
+                                                    	<td data-title="User Message"><span>&nbsp;</span></td>
+                                                    	<td data-title="Impacted Orders (past)">0</td>
+                                                    	<td data-title="Impacted Orders (today & future)">60</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															 <ul class="dropdown-menu" role="menu">
+													  <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+															
+															<tr><td data-title="System Message"><span>Menu 1, Week 2 menu item selection changed in School A by %First name% %Last Name% at 12:45 on 14/09/2013</span></td>
+                                                    	<td data-title="User Message"><span>&nbsp;</span></td>
+                                                    	<td data-title="Impacted Orders (past)">0</td>
+                                                    	<td data-title="Impacted Orders (today & future)">60</td>
+                                                    		<td class="alignright"><div class="btn-group">
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+															    Action <span class="caret"></span>
+															  </button>
+															 <ul class="dropdown-menu" role="menu">
+															     <li><a href="javascript:void(0);">Export Orders</a></li>
+															    <li><a href="#divEmailParents" data-toggle="modal">Email Parents</a></li>
+															    <li><a href="#divUpdateMessage" data-toggle="modal">Update Message</a></li>
+															    <li><a href="#BtnToggleModal" data-toggle="modal">Cancel Orders</a></li>
+															    <li class="divider"></li>
+															    <li><a href="javascript:void(0);">Clear</a></li>
+															  </ul>
+															</div></td></tr>
+
+                                                    </tbody>
+                                                </table>
+															
+													 <div id="diverrormessage" class="pull-left hide">
+													 	<br />
+                                       					 <label id="lblCarderror" class="alert alert-error" style="margin-top: -20px; margin-bottom: 0px;">There are <b>800</b> Order items have significant impact due to changes in menu items or menu settings. Please click on Export Order Items button to view the orders or click on "Cancel Order Items" button to cancel these orders.</label>
+                                       					 <br />
+                                       					 <table align="center"><tr><td><a class="btn" href="javascript:void(0);"
+                                           id="btnExport" data-toggle="modal" name="btnAddPupil" style="float: right">Export Order Items</a></td>
+                                           <td><a class="btn btn-primary" href="#divCancelOrders"
+                                           id="btnCancel" data-toggle="modal" name="btnAddPupil" style="float: right;margin-top:2px;">Notify Parents</a></td><td><a class="btn btn-primary" href="#divCancelOrders"
+                                           id="btnCancel" data-toggle="modal" name="btnAddPupil" style="float: right;margin-top:2px;">Cancel Order Items</a></td></tr></table>
+                                       					</div>
+													<div> </div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<!-- /row -->
+							</div>
+						</div>
+						<!-- /row -->
+					</div>
+				</div>
+			</section>
+			<section class="tab-pane" id="secCleaning">
+				<div class="row-fluid">
+					<!-- left column -->
+					<!-- Row -->
+					<div class="row-fluid">
+						<!-- full width widget -->
+						<div class="span12 widget">
+							<div class="row-fluid">
+								<div class="span10">
+									<h2 style="margin-top: 0px;">Cleaning Dashboard</h2>
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="row-fluid">
+								<div class="tab-content">
+									<div class="span12">Cleaning coming soon.</div>
+								</div>
+							</div>
+							<!-- /row -->
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /row -->
+			</section>
+		</div>
+		<!-- end tab 1 -->
+	</div>
+	<!-- /container -->
+
+	<footer class="row-fluid footer" id="userfooter">
+		<div class="container">
+			<div class="span4">
+				<h3 id="lfbt">Useful links</h3>
+				<div class="footercontent">
+					<div id="lfbi1">
+						<span class="footerarrlinks"> &gt; </span><span id="lfbd1"
+							class="footerContentlinks"><a href="http://#">Documentation</a></span>
+					</div>
+					<div id="lfbi2">
+						<span class="footerarrlinks"> &gt; </span><span id="lfbd2"
+							class="footerContentlinks"><a href="http://#">Contact
+								us</a></span>
+					</div>
+					<div id="lfbi3">
+						<span class="footerarrlinks"> &gt; </span><span id="lfbd3"
+							class="footerContentlinks"><a href="http://#">Privacy</a></span>
+					</div>
+					<div id="lfbi4">
+						<span class="footerarrlinks"> &gt; </span><span id="lfbd4"
+							class="footerContentlinks"><a href="http://#">Policy</a></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="span4">
+				<h3 id="rfbt">About Initial</h3>
+				<div class="footercontent">
+					<div id="rfbi1">
+						<span class="footerarrlinks"> &gt; </span><span id="rfbd1"
+							class="footerContentlinks"><a href="http://#">About us</a></span>
+					</div>
+					<div id="rfbi2">
+						<span class="footerarrlinks"> &gt; </span><span id="rfbd2"
+							class="footerContentlinks"><a href="http://#">Contact
+								us</a></span>
+					</div>
+					<div id="rfbi3">
+						<span class="footerarrlinks"> &gt; </span><span id="rfbd3"
+							class="footerContentlinks"><a href="http://#">Careers</a></span>
+					</div>
+					<div id="rfbi4">
+						<span class="footerarrlinks"> &gt; </span><span id="rfbd4"
+							class="footerContentlinks"><a href="http://#">Media</a></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="span4">
+				<div class="copyright" id="fct">©2012 Rentokil Initial plc.
+					Registered in England 5393279.Registered office: 2 City Place,
+					Beehive Ring Road, Gatwick, RH6 0HA.The names Rentokil® and
+					Initial® are registered trade marks.</div>
+			</div>
+		</div>
+		<!-- /container -->
+	</footer>
+	<!-- /row -->
+
+	<!-- The javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+	<script src="js/jquery/jquery.1.8.2.min.js"></script>
+	<script src="js/jquery/jquery.dirtyFields.packed.js"></script>
+	<script src="js/jquery/jquery.validate.min.js"></script>
+	<script src="js/jquery/jquery.passstrength.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<script src="js/bootstrap/bootstrap-paginator.min.js"></script>
+	<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+	<script src="js/edfm-custom.min.js"></script>
+	<script src="js/bootstrap/bootstrap-datepicker.js"></script>
+	<script src="js/jquery/jquery.ui.widget.js"></script>
+	<script src="js/jquery/jquery.iframe-transport.js"></script>
+	<script src="js/jquery/jquery.fileupload.js"></script>
+</body>
+</html>
+

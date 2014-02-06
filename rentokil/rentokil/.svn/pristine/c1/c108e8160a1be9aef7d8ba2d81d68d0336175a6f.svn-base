@@ -1,0 +1,315 @@
+/*!
+ * Print CSS
+ */
+* {
+    text-shadow: none !important;
+    color: #000 !important; 
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none!important;
+}
+
+.row-fluid{
+background: none;
+
+}
+.printspan{
+width:60% !important;
+height:40% !important;
+border:1px solid black !important;
+padding-bottom:40px !important;
+}
+.label, .badge{
+	background-color: #999999 !important;
+}
+
+.label-info, .badge-info{
+	background-color: #3a87ad !important;
+}
+
+html, body {
+    overflow:hidden !important;
+	
+	}
+body {
+	font-size:14px !important;
+	line-height:1.3em;
+    word-spacing:1px;
+    letter-spacing:0.2px;
+    font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;color:#000;background:none;
+
+}
+.container {background:none;}
+hr {
+    background:#ccc;
+    color:#ccc;
+    width:100%;
+    height:2px;
+    margin:2em 0;
+    padding:0;
+    border:none;
+}
+/* .table{
+border:1px solid;
+} */
+ .table  {
+  border: 1px solid #e5e5e5 !important;
+}
+
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9 !important;
+} 
+
+hr.space {
+    background:#fff;
+    color:#fff;
+    visibility:hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family:"Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+}
+code {font:.9em "Courier New", Monaco, Courier, monospace;}
+a img {border:none;}
+p img.top {margin-top:0;}
+p {font-size:14px !important}
+b {font-size:14px !important}
+blockquote {
+    margin:1.5em;
+    padding:1em;
+    font-style:italic;
+    font-size:.9em;
+}
+.small {font-size:.9em;}
+.large {font-size:1.1em;}
+.quiet {color:#999;}
+.hide {display:none;}
+.widget, .widgettabs, .widgetnav{border: none;}
+.tab-content{
+    overflow-x: hidden!important; 
+    overflow-y: hidden!important;
+}
+a:hover{border: none;}
+a:link, a:visited {
+    background:transparent;
+    color:#333;
+    text-decoration:none;
+}
+a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
+.noBottom, .widget .noBottom{margin-bottom: 0px; border: none;}
+
+
+.nav-tabs, .nav-tabs#widgetnav{border:none;}
+/*Image*/
+img, img a, .more-link a {border:none;}
+
+/*Remove Element*/
+#logo, #catnavi, .topnavi, .more-link, .navigation, #sidebartop, #related, #social, #sponsors, .tabs, #allpost, .toolbar, .splitbox, #commentform, #commentabs .idTabs, .postmeta-content .comments, #respond h3, .tag, .footerlinks, #header, #nav, #button {display:none;}
+
+/*Post*/
+.post {border-bottom:1px solid #000;}
+.postmeta {font-size:10pt; margin-top:10px;}
+.postfooter {font-size:10pt; margin-bottom:20px;}
+span.select-wrap select
+{
+    border: none;   
+}
+/*Comment Section*/
+.commentlist .avatar {float:left; margin-right:10px;}
+.commentlist .children {margin-top:10px;}
+#comments {page-break-before: always;}
+
+/*Footer*/
+footer, header, nav,ul {margin-top:10px;display: none}
+
+.alert.alert-error{
+    border: none;
+}
+.print{
+    display: none;
+}
+
+/*Accordion - open all the accordion */
+
+
+#headername{
+    display: none;
+}
+
+a[href]:after { content: none !important;}
+
+/* Page Alignments */
+@page {
+    size:auto; 
+    margin-top:2cm;
+    margin-bottom:2cm;
+    margin-left:1cm;
+    margin-right:1cm;
+	
+}
+
+@page :first {
+    margin-top: -0.5cm ;
+}
+
+.printTextHeader{
+		position:absolute;
+         width:300px;
+         height:300px;
+         z-index:15;
+         top:14%;
+         left:50%;
+         margin:-150px 0 0 -150px;
+/* margin-left: auto !important;
+margin-right: auto !important;
+width: 16% !important;
+ */    font-size:20px!important;
+    display: inline!important;
+	margin-bottom:80px !important;
+	font-weight:bold !important;
+}
+
+.widget.row-fluid
+{
+    margin-bottom: 0px;
+}
+/* Accordion controls */
+.accordion{
+    margin-top: 0px;
+}
+.accordion-group {
+  margin-bottom: 10px;
+  border: 1px solid #e5e5e5 !important;
+}
+.accordion-heading{
+  border: 1px solid #e5e5e5 !important;
+  
+}
+
+ .accordion-heading .accordion-toggle {
+  display: block;
+  padding: 8px 15px;
+ 
+  
+} 
+
+.accordion-toggle {
+  cursor: pointer;
+  font-size:18px !important;
+}
+
+.accordion-inner {
+  padding: 9px 15px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.icon-th-list.icon-white{
+    margin-left: -25px;
+}
+
+.accordion-body .collapse{
+    height: auto;
+}
+
+#divNotify{
+	display:none;
+}
+.btn-success {
+ 
+  background-color: #5bb75b !important;
+ }
+.alert-error {
+background-color: #f2dede !important;
+border-color: #eed3d7 !important;
+color: #b94a48 !important;
+}
+.btn-danger {
+
+background-color: #da4f49 !important;
+
+}
+@media print
+{
+/* table {page-break-after:always} */
+.accordion-group{page-break-after:always;}
+/* .accordion-group {page-break-after:always} */
+.accordion-group:last-child {page-break-after: auto;}
+
+}
+.media-heading{
+font-size:16px !important;
+}
+
+
+
+    /* Force table to not be like tables anymore */
+	.table,
+    .nomoretables table, 
+    .nomoretables thead, 
+    .nomoretables tbody, 
+    .nomoretables th, 
+    .nomoretables td, 
+    .nomoretables tr { 
+        display: block; border: none;
+
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .nomoretables thead tr { 
+	
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .control-group{
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    .nomoretables th {color: #454545;}
+
+    .nomoretables tr { border-bottom: 1px solid #eee;page-break-after:always; }
+
+    .nomoretables td { 
+        /* Behave  like a "row" */
+        border: none;
+        /* border-bottom: 1px solid #eee; */
+        position: relative;
+        padding-left: 50%; 
+        white-space: normal;
+        text-align:left!important;
+    }
+    
+    .nomoretables td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: wrap;
+        text-align:left;
+        font-weight: bold;
+    }
+
+/* Label the data */
+	.nomoretables td:before { content: attr(data-title); color: #000000;}
+ 
+    .tSubmod{margin-left: -120px!important;}
+
+@media (min-width: 979px) {    .tSubmod{margin-left: -320px!important;}
+    .imageUpld{width:80px!important;}
+    .input-ftrLnk{
+        margin-left:240px;
+        margin-top:10px;
+    }
+}
+.hidden-print{
+display:none;
+}
+
+#redtest{
+background-color:red !important;
+}

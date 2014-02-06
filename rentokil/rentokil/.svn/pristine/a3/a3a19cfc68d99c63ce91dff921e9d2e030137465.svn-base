@@ -1,0 +1,25 @@
+<div class="span4">
+                    <h3>Edenpay</h3>
+                    <div class="footercontent">
+                         <div id="lfbi1"><span class="footerarrlinks"> > </span><span id="lfbd1" class="footerContentlinks"><a href="accessibility.html" target="_blank">Accessibility</a></span></div>
+                         <div id="lfbi2"><span class="footerarrlinks"> > </span><span id="lfbd2" class="footerContentlinks"><a href="legal-statment.html" target="_blank"> Legal Statement </a></span></div>
+                         <div id="lfbi3"><span class="footerarrlinks"> > </span><span id="lfbd3" class="footerContentlinks"><a href="privacy-policy.html" target="_blank"> Privacy Policy</a></span></div> 
+                         <div id="lfbi4"><span class="footerarrlinks"> > </span><span id="lfbd4" class="footerContentlinks"><a href="http://www.rentokil-initial.com/cookie-and-privacy-policy/cookie-policy/index.html" target="_blank">Cookie Policy</a></span></div>                        
+                    </div>
+                </div>
+                <div class="span4">
+                    <h3>About Eden</h3>
+                    <div class="footercontent">                    
+                            <div id="rfbi1"><span class="footerarrlinks"> > </span><span id="rfbd1" class="footerContentlinks"><a href="http://www.edenfoodservice.co.uk" target="_blank">For Children</a></span></div> 
+                            <div id="rfbi2"><span class="footerarrlinks"> > </span><span id="rfbd2" class="footerContentlinks"><a href="http://www.edenfoodservice.co.uk" target="_blank">For Parents </a></span></div>  
+                            <div id="rfbi3"><span class="footerarrlinks"> > </span><span id="rfbd3" class="footerContentlinks"><a href="http://www.edenfoodservice.co.uk" target="_blank"> About us </a></span></div>  
+                            <div id="rfbi4"><span class="footerarrlinks"> > </span><span id="rfbd4" class="footerContentlinks"><a href="http://www.edenfoodservice.co.uk" target="_blank">Contact us </a></span></div>                        
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="copyright">
+                        <p>&copy;2012 Rentokil Initial plc. Registered in England 5393279.</p>
+                        <p>Registered office: 2 City Place, Beehive Ring Road, Gatwick, RH6 0HA. </p>
+                        <p>The names Rentokil&reg; and Initial&reg; are registered trade marks.</p>
+                    </div>
+                </div>

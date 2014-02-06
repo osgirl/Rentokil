@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Customer Administration (logged in)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <!-- Le styles -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <!-- 
+               HTML5 shim, for IE6-8 support of HTML5 elements 
+               Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+        <!--[if lt IE 9]>
+              <script src="js/html5shiv.js"></script>
+        <![endif]-->
+        <!--[if IE]>
+            <link href="css/edfm-ie.css" rel="stylesheet">
+        <![endif]-->
+        <script type="text/javascript">
+            var loadFileName = 'contractadmin_body.html'
+        </script> 
+    </head>
+    <body class="dashboard">
+        <!--  Models Start -->
+
+        <div id="CreateContractModal" data-keyboard="false" data-backdrop="static" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3>Create new contract</h3>
+            </div>
+            <div class="modal-body">
+                Success! The contract has been created!
+            </div>	
+            <div class="modal-footer">
+                <button  id="CreateSubmitButton" class="btn btn-primary">Done</button>
+            </div>
+
+        </div>
+        <div id="divAddContract" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true" id="xAddContract" name="xAddContract">x</button>
+                <h3 id="myModalLabel">Add Contract</h3>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label style="margin-right: 15px;">
+                                    Contract Name</label>
+                            </td>
+                            <td><input type="text" name="txtContractname" placeholder="enter text"
+                                       id="txtContractname" />
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <label id="AddContractModalSubmitBtnLabel" style="float:left; color:red;"></label>
+                <button class="btn"  id="btnNewContractClose" name="btnNewContractClose" type="button"  data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn btn-primary"  id="btnNewContractSubmit" name="btnNewContractSubmit" >Submit</button>
+
+
+            </div>
+        </div>
+
+        <div id="divProfileEdit"  data-keyboard="false" data-backdrop="static" class="modal hide fade" tabindex="-1"
+             role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:625px;">
+            <form name="frmUpdateAdminHomeProfile" id="frmUpdateAdminHomeProfile" class="form-horizontal" method="post" style="height:390px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true" id="xNewCustomerAdmin" name="xNewCustomerAdmin">x</button>
+                    <h3 id="myModalLabel">Update my details</h3>
+                </div>
+                <div class="modal-body" style="height:270px;">
+                    <div class="accordion" id="accordion_Profile">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_Profile" style="text-decoration: none !important;"
+                                   href="#collapseProfile">Profile Settings</a>
+                            </div>
+                            <div id="collapseProfile" class="accordion-body collapse in">
+                                <div class="accordion-inner">
+                                    <div class="control-group">
+                                        <label class="control-label" style="margin-left:0px;width: 155px">Title</label>
+                                        <select id="selectTitle" name="selectTitle" class="select-wrap" style="line-height:12px;"></select>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="FirstName" class="control-label" style="margin-left:0px;width: 155px">First Name</label>
+                                        <input type="text" class="input-xmedium" id="txtCustomerAdminNewFName" name="txtCustomerAdminNewFName" maxlength="50" value=""/>					
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="LastName" class="control-label" style="margin-left:0px;width: 155px">Last Name</label>
+                                        <input type="text" class="input-xmedium" id="txtCustomerAdminNewLName" name="txtCustomerAdminNewLName" maxlength="50" value=""/>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="Email" class="control-label" style="margin-left:0px;width: 155px">Email</label>
+                                        <input type="text" class="input-xmedium" id="txtCustomerAdminNewemail" name="txtCustomerAdminNewemail" maxlength="120" value=""/>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="HomeTelephone" class="control-label" style="margin-left:0px;width: 155px">Home Telephone</label>
+                                        <input type="text" class="input-xmedium" id="txtCustomerAdminNewCemail" name="txtCustomerAdminNewCemail" maxlength="20" value=""/>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="WorkTelephone" class="control-label" style="margin-left:0px;width: 155px">Work Telephone</label>
+                                        <input type="text" class="input-xmedium" id="txtCustomerAdminWorkTelephone" name="txtCustomerAdminWorkTelephone" maxlength="20" value=""/>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="MobileNumber" class="control-label" style="margin-left:0px;width: 155px">Mobile Number</label>
+                                        <input type="text" class="input-xmedium" id="txtCustomerAdminMobileNumber" name="txtCustomerAdminMobileNumber" maxlength="20" value=""/>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="ReceiveNotify" class="control-label" style="margin-left:0px;width: 155px">Receive notifications?</label>
+                                        <label style="display:inline;"><input type="checkbox" value="1" id="chkCustomerAdminEmail" name="chkCustomerAdminEmail" style="display:inline;margin-top:0px;" ><span style="vertical-align:middle;display:inline;"> Yes, by email</span></label>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" style="margin-left:0px;width: 155px"></label>
+                                        <label style="display:inline;"><input type="checkbox" value="1" id="chkCustomerAdminSms" name="chkCustomerAdminSms" style="display:inline;margin-top:0px;"><span style="vertical-align:middle;"> Yes, by SMS<span></label>
+                                                    </div>
+                                                    </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="accordion-group">
+                                                        <div class="accordion-heading">
+                                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_Password" style="text-decoration: none !important;"
+                                                               href="#collapsePassword">Change Password?</a>
+                                                        </div>
+                                                        <div id="collapsePassword" class="accordion-body collapse">
+                                                            <div class="accordion-inner">	
+                                                                <div class="control-group">
+                                                                    <label for="Oldpwd" class="control-label" style="margin-left:0px;width: 155px">Current Password</label>
+                                                                    <input type="password" class="input-xmedium" id="txtCustomerAdminOldpwd" name="txtCustomerAdminOldpwd" maxlength="16" value=""/>
+                                                                </div>
+                                                                <div id="newpass" class="control-group">
+                                                                    <label for="newpwd" class="control-label" style="margin-left:0px;width: 155px">New Password</label>
+                                                                    <input type="password" class="input-xmedium" id="txtCustomerAdminnewpwd" name="txtCustomerAdminnewpwd" maxlength="16" value="" disabled/>
+                                                                    <span id="pwdStrengthify" class="passStrengthify" style="display: none;margin-bottom:13px;vertical-align: middle;">
+                                                                        <div>
+                                                                            <span style="font-size: smaller;color:#8e8e8e">Password strength:<span id="pwdquality" style="margin-left: 1em;"></span></span>
+                                                                        </div>
+                                                                        <span id="pwdbar1" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+                                                                        <span id="pwdbar2" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+                                                                        <span id="pwdbar3" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+                                                                        <span id="pwdbar4" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+                                                                        <span id="pwdbar5" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+                                                                        <span id="pwdbar6" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+                                                                        <span id="pwdbar7" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="control-group">
+                                                                    <label class="control-label" style="margin-left:0px;width: 155px"></label>
+                                                                    <p><small style="font-size:10px;">Min 8 chars, max 16 chars, 1 * upper & 1 * lower, numeric, 1  * special character</small></p>
+                                                                </div>
+                                                                <div id="repass" class="control-group">
+                                                                    <label for="renternewpwd" class="control-label" style="margin-left:0px;width: 155px">Confirm New Password</label>
+                                                                    <input type="password" class="input-xmedium" id="txtCustomerAdminrenternewpwd" name="txtCustomerAdminrenternewpwd" maxlength="16" value="" disabled />
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>	
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <label id="updateProfileLabelContract" style="margin-left: 0px; float:left; color:red;"></label>
+                                                        <button type="button" class="btn btn" data-dismiss="modal"
+                                                                aria-hidden="true" id="xcloseCustomerAdmin" name="xcloseCustomerAdmin">Close</button>
+                                                        <button type="submit" class="btn btn-primary" href="#editBtnClose" data-dismiss="modal" data-toggle="modal" id="btnNewCustomerAdminSubmit"
+                                                                name="btnNewCustomerAdminSubmit">Submit</button>
+                                                        <!--<input type="submit" value="Submit" class="btn btn-primary" id="btnNewCustomerAdminSubmit" name="btnNewCustomerAdminSubmit">-->
+                                                    </div>
+                                                    </form>
+                                                    </div>	
+                                                    <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1"
+                                                         role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-hidden="true" id="xNewCustomer" name="xNewCustomer">x</button>
+                                                            <h3 id="myModalLabel">Update my details</h3>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <label>
+                                                                Success, you've succesfully updated your profile settings!
+                                                            </label>						
+                                                            <a class="btn btn-primary" data-toggle="modal" id="editCloseBtn" name="editCloseBtn" data-dismiss="modal" style="margin-left: 80%; margin-top: 3%; width: 14%; height: 18px;">Close</a>
+                                                        </div>
+                                                    </div>
+                                                    <!--  Models End -->	
+                                                    <div class="container" id="divcontainer"></div>
+                                                    <!-- /container -->
+                                                    <footer class="row-fluid footer" id ="cafooter"></footer> 
+                                                    <!-- /row -->
+
+                                                    <!-- The javascript  -->
+                                                    <!-- Placed at the end of the document so the pages load faster -->
+                                                    <script>
+                                                        if ((localStorage['SESSIONID'] == '') || (localStorage['SESSIONID'] == undefined)) {
+                                                            localStorage.clear();
+                                                            location.href = 'index.html';
+                                                        }
+                                                    </script> 
+                                                    <script src="minjs/contractadmin.min.js"></script>  
+                                                    </body>
+                                                    </html>

@@ -1,0 +1,108 @@
+	<form name="frmUpdateAdminProfile" id="frmUpdateAdminProfile" class="form-horizontal" style="height:390px;">
+	<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true" id="xNewCustomerAdmin" name="xNewCustomerAdmin">x</button>
+			<h3 id="myModalLabel">Update my details</h3>
+		</div>
+		
+		<div class="modal-body" style="height:270px;">
+			<div class="accordion" id="accordion_Profile">
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_Profile" style="text-decoration: none !important;"
+						href="#collapseProfile">Profile Settings</a>
+				</div>
+				<div id="collapseProfile" class="accordion-body collapse in">
+				<div class="accordion-inner">
+                                        <div class="control-group">
+						<label class="control-label" style="margin-left:0px;width: 155px">Title</label>
+						<select id="ddlUserTitle" name="ddlUserTitle" class="select-wrap" style="line-height:12px;"></select>
+					</div>
+                                        <div class="control-group">
+						<label class="control-label" for="FirstName" style="margin-left:0px;width: 155px">First Name</label>
+						<input type="text" class="input-xmedium" id="txtUserSchoolAdminFName" name="txtUserSchoolAdminFName" maxlength="50" value=""></input>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="LastName" style="margin-left:0px;width: 155px">Last Name</label>
+						<input type="text" class="input-xmedium" id="txtUserSchoolAdminLName" name="txtUserSchoolAdminLName" maxlength="50" value=""></input>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="Email" style="margin-left:0px;width: 155px">Email</label>
+						<input type="text" class="input-xmedium" id="txtUserSchoolAdminemail" name="txtUserSchoolAdminemail" maxlength="120" value=""></input>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="HomeTelephone" style="margin-left:0px;width: 155px">Home Telephone</label>
+						<input type="text" class="input-xmedium" id="txtUserSchoolAdminphone" name="txtUserSchoolAdminphone" maxlength="20" value=""></input>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="WorkTelephone" style="margin-left:0px;width: 155px">Work Telephone</label>
+						<input type="text" class="input-xmedium" id="txtAdminWorkTelephone" name="txtAdminWorkTelephone" maxlength="20" value=""></input>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="MobileNumber" style="margin-left:0px;width: 155px">Mobile Number</label>
+						<input type="text" class="input-xmedium" id="txtAdminMobileNumber" name="txtAdminMobileNumber" maxlength="20" value=""></input>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="ReceiveNotify" style="margin-left:0px;width: 155px">Receive notifications?</label>
+						<label style="display:inline;"><input type="checkbox" value="1" id="chkAdminEmail" name="chkAdminEmail" style="display:inline;margin-top:0px;" ><span style="vertical-align:middle;display:inline;"> Yes, by email</span></label>
+					</div>
+                                        <div class="control-group">
+						<label class="control-label" style="margin-left:0px;width: 155px"></label>
+						<label style="display:inline;"><input type="checkbox" value="1" id="chkAdminSms" name="chkAdminSms" style="display:inline;margin-top:0px;"><span style="vertical-align:middle;"> Yes, by SMS<span></label>
+					</div>
+                           
+				</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_Password" style="text-decoration: none !important;"
+						href="#collapsePassword">Change Password?</a>
+				</div>
+				<div id="collapsePassword" class="accordion-body collapse">
+				<div class="accordion-inner">	
+					<div class="control-group">
+						<label for="Oldpwd" class="control-label" style="margin-left:0px;width: 155px">Current Password</label>
+						<input type="password" class="input-xmedium" id="txtAdminOldpwd" name="txtAdminOldpwd" maxlength="16" value=""></input>
+					</div>
+					<div id="newpass" class="control-group">
+						<label for="newpwd" class="control-label" style="margin-left:0px;width: 155px">New Password</label>
+						<input type="password" class="input-xmedium" id="txtAdminnewpwd" name="txtAdminnewpwd" maxlength="16" value="" disabled></input>
+						<span id="pwdStrengthify" class="passStrengthify" style="display: none;margin-bottom:13px;vertical-align: middle;">
+							<div>
+								<span style="font-size: smaller;color:#8e8e8e">Password strength:<span id="pwdquality" style="margin-left: 1em;"></span></span>
+							</div>
+							<span id="pwdbar1" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+							<span id="pwdbar2" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+							<span id="pwdbar3" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+							<span id="pwdbar4" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+							<span id="pwdbar5" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+							<span id="pwdbar6" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+							<span id="pwdbar7" style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; background-color: gray;"></span>
+						</span>
+					</div>
+					<div class="control-group">
+						<label class="control-label" style="margin-left:0px;width: 155px"></label>
+						<p><small style="font-size:10px;">Min 8 chars, max 16 chars, 1 * upper & 1 * lower, numeric, 1  * special character</small></p>
+					</div>
+					<div id="repass" class="control-group">
+						<label class="control-label" for="renternewpwd"  style="margin-left:0px;width: 155px">Confirm New Password</label>
+						<input type="password" class="input-xmedium" id="txtAdminrenternewpwd" name="txtAdminrenternewpwd" maxlength="16" value="" disabled></input>
+					</div>
+					
+				</div>
+				</div>
+			</div>
+			</div>	
+		</div>
+		<div class="modal-footer">
+			<label id="updateProfileLabelAdmin" style="margin-left: 0px; float:left; color:red;"></label>
+			<button type="button" class="btn btn" data-dismiss="modal"
+				aria-hidden="true" id="xcloseCustomerAdmin" name="xcloseCustomerAdmin">Close</button>
+			<button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" href="#editBtnClose" id="btnUserProfileSubmit"
+			name="btnUserProfileSubmit">Submit</button>
+			<!--<input type="submit" value="Submit" class="btn btn-primary" id="btnAdminSubmit" name="btnAdminSubmit">-->
+			<!--<button type="submit" class="btn btn-primary" href="#editBtnClose" data-dismiss="modal" data-toggle="modal" id="btnUserProfileSubmit"
+				name="btnUserProfileSubmit">Submit</button>-->
+		</div>
+	</form>

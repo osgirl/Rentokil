@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>User Account Screen (logged in)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Initial prototype">
+        <meta name="author" content="Rentokil Initial Facilities Services (UK) Ltd">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, max-age=0, s-maxage=0, must-revalidate, proxy-revalidate, no-store, private" /> 
+        <meta http-equiv="Cache Control: no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" /> 
+        <meta http-equiv="Pragma: no-cache" />
+        <!-- Le styles -->
+
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/edfm-custom.css" rel="stylesheet">
+        <link href="css/bootstrappanels.css" rel="stylesheet">
+        <link href="css/datepicker.css" rel="stylesheet">
+        <style>
+            .row-fluid [class*="span"]:nth-child(4n+1) {
+                margin-left : 0px;
+            } 
+
+        </style>
+        <!-- 
+               HTML5 shim, for IE6-8 support of HTML5 elements 
+               Avoid using CDN-based scripts to stop untested updates breaking things!
+        -->
+        <!--[if lt IE 9]>
+              <script src="js/html5shiv.js"></script>
+        <![endif]-->
+        <!--[if IE]>
+            <link href="css/edfm-ie.css" rel="stylesheet">
+        <![endif]-->
+        <script type="text/javascript">
+            var loadFileName = 'caresourcemanagement_body.html'
+        </script>
+    </head>
+    <body>
+        <!--  Models Start -->
+        <div id="divProfileEdit" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:625px">
+        </div>
+        <div id="selectCreate" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+        <div id="editBtnClose" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        </div>
+
+        <!--new zone modal-->
+        <div id="divNewZone" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmCreateZone" id="frmCreateZone" method="post" >  
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xNewZone" name="xNewZone">x</button>
+                    <h3 id="myModalLabel">Add Zone</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row-fluid" style="margin-bottom: 0px;">									
+                        <div class="control-group form-horizontal">
+                            <label class="control-label" for="name">Zone Name</label>
+                            <input type="text" name="txtnewZoneName" id="txtnewZoneName" maxlength="7" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <label id="Zoneerror" class="alert alert-error" style="margin-left: 0px; float:left; display: none"> </label>
+                <button class="btn" id="btncancelZone" data-dismiss="modal" aria-hidden="true">Close</button>					
+                <button class="btn btn-primary" id="btnNewZoneSubmit" name="btnNewZoneSubmit">Submit</button>
+            </div>
+        </div>
+
+        <!--new asset modal-->
+        <div id="divNewAsset" data-backdrop="static" data-keyboard="false" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmCreateAsset" id="frmCreateAsset" method="post" >  
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xNewAsset" name="xNewAsset">x</button>
+                    <h3 id="myModalLabel">Add Asset</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row-fluid" style="margin-bottom: 0px;">									
+                        <div class="control-group form-horizontal">
+                            <label class="control-label" for="name">Tag Number</label>
+                            <input type="text" name="txtnewAssetTagNumber" id="txtnewAssetTagNumber" maxlength="4" minlength="1"/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <label id="Asseterror" class="alert alert-error" style="margin-left: 0px; float:left; display: none"> </label>
+                <button class="btn" id="btncancelAsset" data-dismiss="modal" aria-hidden="true">Close</button>					
+                <button class="btn btn-primary" id="btnNewAssetSubmit" name="btnNewAssetSubmit">Submit</button>
+            </div>
+        </div>
+
+        <!--Zone Alert delete modal-->
+        <div id="divAlertDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmAlertDelete" id="frmAlertDelete" method="post" style="height:146px;">  
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xAlertDelete" name="xAlertDelete">x</button>
+                    <h3 id="myAlertLabel">Confirm Delete</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="control-group">				  
+                        <label id="lblConfirmation" for="Username" class="span1" style="margin-left:0px;width: 350px;">Are you sure you want to delete the selected Zone?</label>                                                     						  
+                    </div>                            
+                </div>
+                <div class="modal-footer">                                                                               
+                    <a class="btn" data-toggle="modal" id="btnNoAlert" name="btnNewAddPupilAdminClose" data-dismiss="modal" >Cancel</a>
+                    <button class="btn btn-primary" href="#" data-toggle="modal" id="btnYesAlert"
+                            name="btnYesAlert">Delete</button>
+                </div>
+            </form>
+        </div>
+
+        <!--Asset Alert delete modal-->
+        <div id="divAssetAlertDelete" data-backdrop="static" data-keyboard="false" class="modal hide fade"  data-toggle='modal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form name="frmAssetAlertDelete" id="frmAssetAlertDelete" method="post" style="height:146px;">  
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xAlertDelete" name="xAlertDelete">x</button>
+                    <h3 id="myAlertLabel">Delete Asset</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="control-group">				  
+                        <label id="lblConfirmation" for="Username" class="span1" style="margin-left:0px;width: 350px;">Are you sure you want to delete this Asset?</label>                                                     						  
+                    </div>                            
+                </div>
+                <div class="modal-footer">                                                                               
+                    <a class="btn" data-toggle="modal" id="btnNoAlert" name="btnNewAddPupilAdminClose" data-dismiss="modal" >Close</a>
+                    <button class="btn btn-primary" href="#" data-toggle="modal" id="btnAssetYesAlert"
+                            name="btnAssetYesAlert">Delete</button>
+                </div>
+            </form>
+        </div>
+        <!--  Models End -->
+        <div class="container" id="divcontainer">
+        </div><!-- /container -->
+
+        <footer class="row-fluid footer" id="cafooter"></footer> <!-- /row -->
+
+        <!-- The javascript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!--DE 521 session check and redirecting to homepage-->
+        <script>
+            if ((localStorage['SESSIONID'] == '') || (localStorage['SESSIONID'] == undefined)) {
+                localStorage.clear();
+                location.href = 'index.html';
+            }
+        </script>
+        <script src="minjs/caresourcemanagement.min.js"></script>		
+    </body>
+</html>

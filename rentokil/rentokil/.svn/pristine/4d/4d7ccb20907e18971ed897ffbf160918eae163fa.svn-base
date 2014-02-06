@@ -1,0 +1,45 @@
+
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="xNewSuperSelectCreate" name="xNewSuperSelectCreate">x</button>
+			<h3 id="mySuperModalLabel">What would you like to do?</h3>
+		</div>
+		<div class="modal-body">
+			<table>
+				<tbody>
+					<tr>
+						<td><label style="margin-right: 15px;">Select existing customer</label>
+						</td>
+						<td><span class="select-wrap"><select id="selectSuperCustomer" name="selectSuperCustomer" style="height:30px"></select></span>
+						</td>
+						
+						<td><button class="btn btn-primary"  href="#"   id="btnSuperadminGo" name="btnSuperadminGo" style="float:left;  margin-left: 30px;">Select</button>
+						
+						</td>
+					</tr>
+					<tr><td colspan="3">
+					<div style="text-align:center">
+					<div style="border-top:1px solid #B7B7B7;float:left;width:45%;margin-top:10px;"></div>OR
+					<div style="border-top:1px solid #B7B7B7;width:45%;float:right;margin-top:10px;"></div></div>
+			        </td>
+					</tr>
+					<tr>
+						<td><label style="margin-right: 15px;">Create new customer</label>
+						</td>
+						
+						<td><input type="text" name="CreateNewCustomer"  maxlength="50" placeholder="Enter name...." style="width:92%;" id="CreateNewCustomer" />
+						</td>
+						
+						<td><button class="btn btn-primary"  href="#" id="CreateCustomerbtnCreate" data-toggle="modal" name="CreateCustomerbtnCreate" style="float:left; margin-left:30px;">Create</button>
+						
+						</td>
+					</tr>
+					</tbody>
+			</table>
+		</div>
+		<div class="modal-footer">
+		<label id="SelectOrCreateContractNewLabel" style="float:left;"></label>
+		<button type="button" class="btn btn" data-dismiss="modal" aria-hidden="true" id="ManageContractClose" name="ManageContractClose" type="button"  data-dismiss="modal" aria-hidden="true">Close</button>
+								
+		</div>
+		
+	</div>

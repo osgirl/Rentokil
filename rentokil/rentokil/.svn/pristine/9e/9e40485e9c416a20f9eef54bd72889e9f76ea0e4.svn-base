@@ -1,0 +1,8 @@
+<div class="span6"><h1 class="logo"><a href="#">EDFM</a></h1></div><!-- text is hidden -->
+<div class="span6 alignright userlogininfo">
+    <div class="username" id="divWelcome"></div>
+    <br class="clear noSmall" />
+    <div class="accountlinks"><a href="#" id="btnLogout" name="btnLogout">Logout</a></div>
+	<div id="header-divider"><img src="img/header-logininfo-divider.png" class="logininfodivider"></div>
+    <div class="location"  id="divLoggedAsCustomerAdmin"></div>
+</div>
